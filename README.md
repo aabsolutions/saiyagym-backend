@@ -83,7 +83,8 @@ test/           e2e suites (one in-memory database per file) + utils
 
 ## Local setup
 
-Requirements: **Node ≥ 24.9** (`.nvmrc`; Nest 12 ships as ESM and Jest loads it via `require(esm)` +
+Requirements: **Node ≥ 24.9 with its bundled npm ≥ 11.19** (`.nvmrc` pins the exact release CI and
+Render use — an older global npm writes a lockfile CI rejects; Nest 12 ships as ESM and Jest loads it via `require(esm)` +
 `--experimental-vm-modules` — tests fail below 24.9) and a MongoDB.
 
 ```bash

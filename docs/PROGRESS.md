@@ -30,6 +30,7 @@
 ` en headers.
 - Deploy: primero con deploy hook desde Actions; cambiado (a pedido) a auto-deploy nativo de Render con `autoDeployTrigger: checksPass` (`autoDeploy` está deprecado): push a main → despliega solo si todos los checks de GitHub del commit pasan. Sin secrets. Si un commit no tiene checks, Render no despliega → el workflow debe seguir corriendo en push a main.
 - Render free: sin IP fija (Atlas `0.0.0.0/0` salvo rangos de salida), posible bloqueo de SMTP 25/465/587 (usar 2525), se duerme a los 15 min.
+- **CI roto en el primer push** (`npm ci`: `Missing: @emnapi/core@1.11.3 from lock file`): el lock lo escribió un npm global viejo (11.6.1, pisaba al 11.19 de Node 24.21); el CI (Node 24.22 → npm 11.19.1) resuelve los peers de `@napi-rs/wasm-runtime` (opcional de Jest) en la raíz. Un lock regenerado con 11.21 rompía a su vez el 11.6.1. Fix: lock regenerado con npm 11.19.1 (verificado con `npm ci --dry-run` en 11.19.0/11.19.1/11.21.1), `.nvmrc` fijado a `24.22.0`, `engines.npm >= 11.19.0`.
 - `CORS_ORIGINS` es el origen sin path: `https://<user>.github.io`, no `…/<repo>/`.
 
 ### Pendiente / próximo

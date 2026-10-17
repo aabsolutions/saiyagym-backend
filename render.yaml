@@ -10,7 +10,8 @@ services:
     # Auto-deploy on every push to main, but only once ALL GitHub checks of that commit pass
     # (.github/workflows/ci.yml: lint, unit, e2e, build). A failed check → no deploy.
     autoDeployTrigger: checksPass
-    # Node version comes from .nvmrc (24.x; Nest 12 + require(esm) need >= 24.9).
+    # Node version comes from .nvmrc, pinned to an exact release so Render, CI and local use the
+    # same bundled npm (lockfiles written by different npm versions are rejected by `npm ci`).
     # NODE_ENV=production is also set at build time, so devDependencies (nest CLI, TypeScript)
     # must be included explicitly, then pruned to keep the runtime image small.
     buildCommand: npm ci --include=dev && npm run build && npm prune --omit=dev

@@ -40,7 +40,10 @@ Indexes are created by the app at startup (see [INDEXES.md](INDEXES.md)); nothin
 
 Build: `npm ci --include=dev && npm run build && npm prune --omit=dev` — `NODE_ENV=production` is
 present at build time too, so dev dependencies (Nest CLI, TypeScript) must be requested explicitly.
-Start: `node dist/main` (no CLI/compiler in the boot path). Node version: `.nvmrc` (24.x).
+Start: `node dist/main` (no CLI/compiler in the boot path). Node version: `.nvmrc`, pinned to an
+exact release (bundled npm ≥ 11.19): CI and Render must use the npm that wrote `package-lock.json`,
+or `npm ci` fails with `Missing: … from lock file`. Bump `.nvmrc` deliberately, then regenerate the
+lock with that npm.
 
 ### Environment variables
 
