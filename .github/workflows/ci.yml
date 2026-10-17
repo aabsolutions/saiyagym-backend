@@ -1,0 +1,83 @@
+name: CI
+
+# Pull requests: lint + unit + e2e + build (+ openapi.json drift check).
+# Merge to main: the same checks, then deploy to Render through its deploy hook.
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Lint, test, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc # Jest needs Node >= 24.9 (require(esm))
+          cache: npm
+
+      # mongodb-memory-server downloads a mongod binary (~100 MB) for the e2e suite.
+      - name: Cache MongoDB binaries
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/mongodb-binaries
+          key: mongodb-binaries-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit tests
+        run: npm test
+
+      - name: E2E tests (in-memory MongoDB)
+        run: npm run test:e2e
+
+      - name: Build
+        run: npm run build
+
+      # The committed openapi.json is the contract the web and mobile clients generate from.
+      - name: openapi.json is up to date
+        run: |
+          npm run openapi
+          git diff --exit-code -- openapi.json || {
+            echo "::error file=openapi.json::openapi.json is stale. Run 'npm run openapi' and commit it."
+            exit 1
+          }
+
+  deploy:
+    name: Deploy to Render
+    needs: check
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: production
+    concurrency:
+      group: deploy-production
+      cancel-in-progress: false
+    steps:
+      # Repository secret RENDER_DEPLOY_HOOK_URL: Render dashboard → service → Settings → Deploy Hook.
+      # The hook deploys the latest commit of `main`, which is the one that just passed `check`.
+      - name: Trigger Render deploy
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$RENDER_DEPLOY_HOOK_URL" ]; then
+            echo "::error::Secret RENDER_DEPLOY_HOOK_URL is not set"
+            exit 1
+          fi
+          curl --fail --silent --show-error --max-time 30 -X POST "$RENDER_DEPLOY_HOOK_URL" > /dev/null
+          echo "Deploy triggered for ${GITHUB_SHA}"

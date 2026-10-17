@@ -1,0 +1,2171 @@
+{
+  "templates": [
+    {
+      "slug": "ppl-6-days",
+      "name": {
+        "es": "Empuje / Tirón / Pierna (6 días)",
+        "en": "Push / Pull / Legs (6 days)"
+      },
+      "description": {
+        "es": "Hipertrofia con alta frecuencia: cada grupo muscular dos veces por semana. Doble progresión en todos los ejercicios y semana 6 de descarga (mitad de series).",
+        "en": "High-frequency hypertrophy: every muscle group twice a week. Double progression on every exercise and a deload in week 6 (half the sets)."
+      },
+      "goal": "hypertrophy",
+      "level": "intermediate",
+      "durationWeeks": 6,
+      "routines": [
+        {
+          "key": "push",
+          "name": {
+            "es": "Empuje",
+            "en": "Push"
+          },
+          "exercises": [
+            {
+              "exerciseSlug": "barbell-bench-press",
+              "sets": [
+                {
+                  "type": "warmup",
+                  "repsMin": 10,
+                  "repsMax": 10,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "incline-dumbbell-press",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 120
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "seated-dumbbell-shoulder-press",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 120
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "cable-lateral-raise",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 12,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 12,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 12,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "triceps-pushdown",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              },
+              "groupId": "triceps"
+            },
+            {
+              "exerciseSlug": "overhead-cable-triceps-extension",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              },
+              "groupId": "triceps"
+            }
+          ]
+        },
+        {
+          "key": "pull",
+          "name": {
+            "es": "Tirón",
+            "en": "Pull"
+          },
+          "exercises": [
+            {
+              "exerciseSlug": "lat-pulldown",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 120
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "barbell-row",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "seated-cable-row",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "face-pull",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 15,
+                  "repsMax": 20,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 15,
+                  "repsMax": 20,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 15,
+                  "repsMax": 20,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "incline-dumbbell-curl",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              },
+              "groupId": "arms"
+            },
+            {
+              "exerciseSlug": "hammer-curl",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              },
+              "groupId": "arms"
+            }
+          ]
+        },
+        {
+          "key": "legs",
+          "name": {
+            "es": "Pierna",
+            "en": "Legs"
+          },
+          "exercises": [
+            {
+              "exerciseSlug": "barbell-back-squat",
+              "sets": [
+                {
+                  "type": "warmup",
+                  "repsMin": 8,
+                  "repsMax": 8,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "romanian-deadlift",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "leg-press",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 120
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "seated-leg-curl",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 90
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "standing-calf-raise",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            }
+          ]
+        }
+      ],
+      "weeks": [
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "push"
+            },
+            {
+              "weekday": 2,
+              "routineKey": "pull"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "legs"
+            },
+            {
+              "weekday": 4,
+              "routineKey": "push"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "pull"
+            },
+            {
+              "weekday": 6,
+              "routineKey": "legs"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "push"
+            },
+            {
+              "weekday": 2,
+              "routineKey": "pull"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "legs"
+            },
+            {
+              "weekday": 4,
+              "routineKey": "push"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "pull"
+            },
+            {
+              "weekday": 6,
+              "routineKey": "legs"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "push"
+            },
+            {
+              "weekday": 2,
+              "routineKey": "pull"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "legs"
+            },
+            {
+              "weekday": 4,
+              "routineKey": "push"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "pull"
+            },
+            {
+              "weekday": 6,
+              "routineKey": "legs"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "push"
+            },
+            {
+              "weekday": 2,
+              "routineKey": "pull"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "legs"
+            },
+            {
+              "weekday": 4,
+              "routineKey": "push"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "pull"
+            },
+            {
+              "weekday": 6,
+              "routineKey": "legs"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "push"
+            },
+            {
+              "weekday": 2,
+              "routineKey": "pull"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "legs"
+            },
+            {
+              "weekday": 4,
+              "routineKey": "push"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "pull"
+            },
+            {
+              "weekday": 6,
+              "routineKey": "legs"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "push"
+            },
+            {
+              "weekday": 2,
+              "routineKey": "pull"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "legs"
+            },
+            {
+              "weekday": 4,
+              "routineKey": "push"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "pull"
+            },
+            {
+              "weekday": 6,
+              "routineKey": "legs"
+            }
+          ]
+        }
+      ],
+      "deload": {
+        "weeks": [6],
+        "mode": "sets",
+        "percent": 50
+      }
+    },
+    {
+      "slug": "upper-lower-4-days",
+      "name": {
+        "es": "Torso / Pierna (4 días)",
+        "en": "Upper / Lower (4 days)"
+      },
+      "description": {
+        "es": "Equilibrio entre fuerza e hipertrofia en 4 días. Básicos en rangos de 5-8 y accesorios en 8-15, con doble progresión. Semana 6 de descarga (-40 % de peso).",
+        "en": "Balanced strength and hypertrophy in 4 days. Compounds in the 5-8 range and accessories in 8-15, with double progression. Deload in week 6 (-40 % weight)."
+      },
+      "goal": "both",
+      "level": "intermediate",
+      "durationWeeks": 6,
+      "routines": [
+        {
+          "key": "upper",
+          "name": {
+            "es": "Torso",
+            "en": "Upper"
+          },
+          "exercises": [
+            {
+              "exerciseSlug": "barbell-bench-press",
+              "sets": [
+                {
+                  "type": "warmup",
+                  "repsMin": 8,
+                  "repsMax": 8,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "one-arm-dumbbell-row",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "overhead-press",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "lat-pulldown",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "dumbbell-lateral-raise",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 12,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 12,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 12,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "ez-bar-curl",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              },
+              "groupId": "arms"
+            },
+            {
+              "exerciseSlug": "skull-crusher",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              },
+              "groupId": "arms"
+            }
+          ]
+        },
+        {
+          "key": "lower",
+          "name": {
+            "es": "Pierna",
+            "en": "Lower"
+          },
+          "exercises": [
+            {
+              "exerciseSlug": "barbell-back-squat",
+              "sets": [
+                {
+                  "type": "warmup",
+                  "repsMin": 8,
+                  "repsMax": 8,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 8,
+                  "restSeconds": 180
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "romanian-deadlift",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "bulgarian-split-squat",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "lying-leg-curl",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "leg-extension",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 12,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 12,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "standing-calf-raise",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "cable-crunch",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            }
+          ]
+        }
+      ],
+      "weeks": [
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "upper"
+            },
+            {
+              "weekday": 2,
+              "routineKey": "lower"
+            },
+            {
+              "weekday": 4,
+              "routineKey": "upper"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "lower"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "upper"
+            },
+            {
+              "weekday": 2,
+              "routineKey": "lower"
+            },
+            {
+              "weekday": 4,
+              "routineKey": "upper"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "lower"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "upper"
+            },
+            {
+              "weekday": 2,
+              "routineKey": "lower"
+            },
+            {
+              "weekday": 4,
+              "routineKey": "upper"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "lower"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "upper"
+            },
+            {
+              "weekday": 2,
+              "routineKey": "lower"
+            },
+            {
+              "weekday": 4,
+              "routineKey": "upper"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "lower"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "upper"
+            },
+            {
+              "weekday": 2,
+              "routineKey": "lower"
+            },
+            {
+              "weekday": 4,
+              "routineKey": "upper"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "lower"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "upper"
+            },
+            {
+              "weekday": 2,
+              "routineKey": "lower"
+            },
+            {
+              "weekday": 4,
+              "routineKey": "upper"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "lower"
+            }
+          ]
+        }
+      ],
+      "deload": {
+        "weeks": [6],
+        "mode": "weight",
+        "percent": 40
+      }
+    },
+    {
+      "slug": "full-body-3-days",
+      "name": {
+        "es": "Cuerpo completo (3 días)",
+        "en": "Full Body (3 days)"
+      },
+      "description": {
+        "es": "Para principiantes: dos rutinas A/B alternadas tres días por semana (A-B-A, luego B-A-B). Pocos ejercicios, técnica primero y doble progresión.",
+        "en": "For beginners: two alternating A/B routines three days a week (A-B-A, then B-A-B). Few exercises, technique first and double progression."
+      },
+      "goal": "hypertrophy",
+      "level": "beginner",
+      "durationWeeks": 6,
+      "routines": [
+        {
+          "key": "full-body-a",
+          "name": {
+            "es": "Cuerpo completo A",
+            "en": "Full Body A"
+          },
+          "exercises": [
+            {
+              "exerciseSlug": "barbell-back-squat",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "dumbbell-bench-press",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 120
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "lat-pulldown",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "lying-leg-curl",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "dumbbell-lateral-raise",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 12,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 12,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            }
+          ]
+        },
+        {
+          "key": "full-body-b",
+          "name": {
+            "es": "Cuerpo completo B",
+            "en": "Full Body B"
+          },
+          "exercises": [
+            {
+              "exerciseSlug": "romanian-deadlift",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 10,
+                  "restSeconds": 150
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "machine-shoulder-press",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "seated-cable-row",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 90
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "leg-press",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 120
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "cable-curl",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 12,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 12,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              },
+              "groupId": "arms"
+            },
+            {
+              "exerciseSlug": "triceps-pushdown",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 12,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 12,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              },
+              "groupId": "arms"
+            }
+          ]
+        }
+      ],
+      "weeks": [
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "full-body-a"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "full-body-b"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "full-body-a"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "full-body-b"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "full-body-a"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "full-body-b"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "full-body-a"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "full-body-b"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "full-body-a"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "full-body-b"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "full-body-a"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "full-body-b"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "full-body-a"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "full-body-b"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "full-body-a"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "full-body-b"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "full-body-a"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "full-body-b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "strength-block-4-weeks",
+      "name": {
+        "es": "Bloque de fuerza (4 semanas)",
+        "en": "Strength block (4 weeks)"
+      },
+      "description": {
+        "es": "Powerlifting: sentadilla, banca y peso muerto con porcentajes crecientes (70 → 85 %) y menos repeticiones cada semana. Indica tus training max (~90 % de tu 1RM) al copiarlo. Accesorios con doble progresión.",
+        "en": "Powerlifting: squat, bench and deadlift with rising percentages (70 → 85 %) and fewer reps each week. Enter your training maxes (~90 % of your 1RM) when copying. Accessories use double progression."
+      },
+      "goal": "powerlifting",
+      "level": "intermediate",
+      "durationWeeks": 4,
+      "routines": [
+        {
+          "key": "squat-day",
+          "name": {
+            "es": "Día de sentadilla",
+            "en": "Squat day"
+          },
+          "exercises": [
+            {
+              "exerciseSlug": "barbell-back-squat",
+              "sets": [
+                {
+                  "type": "warmup",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 120,
+                  "percent1RM": 50
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 240
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 240
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 240
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 240
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 240
+                }
+              ],
+              "progression": {
+                "type": "percent_1rm",
+                "weeks": [
+                  {
+                    "percent": 70,
+                    "reps": 5,
+                    "sets": 5
+                  },
+                  {
+                    "percent": 75,
+                    "reps": 4,
+                    "sets": 5
+                  },
+                  {
+                    "percent": 80,
+                    "reps": 3,
+                    "sets": 4
+                  },
+                  {
+                    "percent": 85,
+                    "reps": 2,
+                    "sets": 3
+                  }
+                ]
+              }
+            },
+            {
+              "exerciseSlug": "paused-squat",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 3,
+                  "repsMax": 5,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 3,
+                  "repsMax": 5,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 3,
+                  "repsMax": 5,
+                  "restSeconds": 180
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "bulgarian-split-squat",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 10,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 10,
+                  "restSeconds": 90
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 8,
+                  "repsMax": 10,
+                  "restSeconds": 90
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "hanging-leg-raise",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 15,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            }
+          ]
+        },
+        {
+          "key": "bench-day",
+          "name": {
+            "es": "Día de banca",
+            "en": "Bench day"
+          },
+          "exercises": [
+            {
+              "exerciseSlug": "barbell-bench-press",
+              "sets": [
+                {
+                  "type": "warmup",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 120,
+                  "percent1RM": 50
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 180
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 180
+                }
+              ],
+              "progression": {
+                "type": "percent_1rm",
+                "weeks": [
+                  {
+                    "percent": 70,
+                    "reps": 5,
+                    "sets": 5
+                  },
+                  {
+                    "percent": 75,
+                    "reps": 4,
+                    "sets": 5
+                  },
+                  {
+                    "percent": 80,
+                    "reps": 3,
+                    "sets": 4
+                  },
+                  {
+                    "percent": 85,
+                    "reps": 2,
+                    "sets": 3
+                  }
+                ]
+              }
+            },
+            {
+              "exerciseSlug": "close-grip-bench-press",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 8,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 8,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 8,
+                  "restSeconds": 150
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "pendlay-row",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 8,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 8,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 8,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 8,
+                  "restSeconds": 120
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "face-pull",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 15,
+                  "repsMax": 20,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 15,
+                  "repsMax": 20,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 15,
+                  "repsMax": 20,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            }
+          ]
+        },
+        {
+          "key": "deadlift-day",
+          "name": {
+            "es": "Día de peso muerto",
+            "en": "Deadlift day"
+          },
+          "exercises": [
+            {
+              "exerciseSlug": "conventional-deadlift",
+              "sets": [
+                {
+                  "type": "warmup",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 120,
+                  "percent1RM": 50
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 240
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 240
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 5,
+                  "restSeconds": 240
+                }
+              ],
+              "progression": {
+                "type": "percent_1rm",
+                "weeks": [
+                  {
+                    "percent": 70,
+                    "reps": 5,
+                    "sets": 3
+                  },
+                  {
+                    "percent": 75,
+                    "reps": 4,
+                    "sets": 3
+                  },
+                  {
+                    "percent": 80,
+                    "reps": 3,
+                    "sets": 3
+                  },
+                  {
+                    "percent": 85,
+                    "reps": 2,
+                    "sets": 2
+                  }
+                ]
+              }
+            },
+            {
+              "exerciseSlug": "overhead-press",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 8,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 8,
+                  "restSeconds": 150
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 5,
+                  "repsMax": 8,
+                  "restSeconds": 150
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "chin-up",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 10,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 10,
+                  "restSeconds": 120
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 6,
+                  "repsMax": 10,
+                  "restSeconds": 120
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            },
+            {
+              "exerciseSlug": "back-extension",
+              "sets": [
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 60
+                },
+                {
+                  "type": "normal",
+                  "repsMin": 10,
+                  "repsMax": 12,
+                  "restSeconds": 60
+                }
+              ],
+              "progression": {
+                "type": "double_progression"
+              }
+            }
+          ]
+        }
+      ],
+      "weeks": [
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "squat-day"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "bench-day"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "deadlift-day"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "squat-day"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "bench-day"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "deadlift-day"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "squat-day"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "bench-day"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "deadlift-day"
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "weekday": 1,
+              "routineKey": "squat-day"
+            },
+            {
+              "weekday": 3,
+              "routineKey": "bench-day"
+            },
+            {
+              "weekday": 5,
+              "routineKey": "deadlift-day"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

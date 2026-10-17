@@ -1,0 +1,2168 @@
+{
+  "tags": [
+    { "slug": "basic", "name": { "es": "Básico", "en": "Staple" } },
+    { "slug": "competition", "name": { "es": "Competición", "en": "Competition lift" } },
+    { "slug": "paused", "name": { "es": "Con pausa", "en": "Paused" } },
+    { "slug": "unilateral", "name": { "es": "Unilateral", "en": "Unilateral" } },
+    {
+      "slug": "stretch-focused",
+      "name": { "es": "Énfasis en estiramiento", "en": "Stretch-focused" }
+    },
+    { "slug": "lumbar-friendly", "name": { "es": "Amigable lumbar", "en": "Lower-back friendly" } },
+    {
+      "slug": "shoulder-friendly",
+      "name": { "es": "Amigable con el hombro", "en": "Shoulder friendly" }
+    },
+    {
+      "slug": "beginner-friendly",
+      "name": { "es": "Apto principiantes", "en": "Beginner friendly" }
+    },
+    { "slug": "home-friendly", "name": { "es": "Apto para casa", "en": "Home friendly" } }
+  ],
+  "exercises": [
+    {
+      "slug": "barbell-bench-press",
+      "name": { "es": "Press de banca con barra", "en": "Barbell bench press" },
+      "description": {
+        "es": "Press horizontal tumbado en banco plano; levantamiento de competición.",
+        "en": "Horizontal press lying on a flat bench; competition lift."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["triceps", "front_delts"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "powerlifting_main",
+      "tiers": { "hypertrophy": "A", "powerlifting": "S" },
+      "tags": ["basic", "competition"]
+    },
+    {
+      "slug": "paused-bench-press",
+      "name": { "es": "Press de banca con pausa", "en": "Paused bench press" },
+      "description": {
+        "es": "Press de banca con pausa completa en el pecho, como exige la competición.",
+        "en": "Bench press with a full pause on the chest, as required in competition."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["triceps", "front_delts"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "powerlifting_main",
+      "tiers": { "hypertrophy": "B", "powerlifting": "S" },
+      "tags": ["competition", "paused"]
+    },
+    {
+      "slug": "close-grip-bench-press",
+      "name": { "es": "Press de banca agarre cerrado", "en": "Close-grip bench press" },
+      "description": {
+        "es": "Press de banca con agarre al ancho de hombros; más tríceps y bloqueo.",
+        "en": "Shoulder-width grip bench press; more triceps and lockout work."
+      },
+      "primaryMuscle": "triceps",
+      "secondaryMuscles": ["chest", "front_delts"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "A" },
+      "tags": ["basic"]
+    },
+    {
+      "slug": "larsen-press",
+      "name": { "es": "Press Larsen", "en": "Larsen press" },
+      "description": {
+        "es": "Press de banca con las piernas extendidas y sin empuje de piernas; exige estabilidad del torso.",
+        "en": "Bench press with legs extended and no leg drive; demands upper-body stability."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["triceps", "front_delts"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "A" },
+      "tags": []
+    },
+    {
+      "slug": "pin-press",
+      "name": { "es": "Press desde pines", "en": "Pin press" },
+      "description": {
+        "es": "Press de banca partiendo desde pines a media altura; refuerza el punto débil.",
+        "en": "Bench press starting from pins at mid-range; strengthens the sticking point."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["triceps", "front_delts"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "C", "powerlifting": "A" },
+      "tags": []
+    },
+    {
+      "slug": "spoto-press",
+      "name": { "es": "Spoto press", "en": "Spoto press" },
+      "description": {
+        "es": "Press de banca con pausa a unos centímetros del pecho, sin tocarlo.",
+        "en": "Bench press paused an inch above the chest without touching it."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["triceps", "front_delts"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "A" },
+      "tags": ["paused"]
+    },
+    {
+      "slug": "floor-press",
+      "name": { "es": "Press en el suelo", "en": "Floor press" },
+      "description": {
+        "es": "Press tumbado en el suelo; recorrido corto con énfasis en el bloqueo.",
+        "en": "Press lying on the floor; short range with lockout emphasis."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["triceps"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "C", "powerlifting": "B" },
+      "tags": ["shoulder-friendly"]
+    },
+    {
+      "slug": "incline-barbell-bench-press",
+      "name": { "es": "Press inclinado con barra", "en": "Incline barbell bench press" },
+      "description": {
+        "es": "Press en banco inclinado a 30-45°; mayor énfasis en la parte superior del pecho.",
+        "en": "Press on a 30-45° incline bench; more upper-chest emphasis."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["front_delts", "triceps"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": []
+    },
+    {
+      "slug": "dumbbell-bench-press",
+      "name": { "es": "Press de banca con mancuernas", "en": "Dumbbell bench press" },
+      "description": {
+        "es": "Press en banco plano con mancuernas; mayor recorrido que con barra.",
+        "en": "Flat bench press with dumbbells; longer range of motion than the barbell."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["triceps", "front_delts"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["shoulder-friendly"]
+    },
+    {
+      "slug": "incline-dumbbell-press",
+      "name": { "es": "Press inclinado con mancuernas", "en": "Incline dumbbell press" },
+      "description": {
+        "es": "Press inclinado con mancuernas; gran estiramiento del pecho superior.",
+        "en": "Incline press with dumbbells; deep upper-chest stretch."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["front_delts", "triceps"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "S", "powerlifting": "B" },
+      "tags": ["stretch-focused", "shoulder-friendly"]
+    },
+    {
+      "slug": "decline-bench-press",
+      "name": { "es": "Press declinado", "en": "Decline bench press" },
+      "description": {
+        "es": "Press en banco declinado; recorrido más corto con énfasis en el pecho inferior.",
+        "en": "Press on a decline bench; shorter range with lower-chest emphasis."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["triceps"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "machine-chest-press",
+      "name": { "es": "Press de pecho en máquina", "en": "Machine chest press" },
+      "description": {
+        "es": "Press horizontal guiado; muy estable, ideal para llegar cerca del fallo.",
+        "en": "Guided horizontal press; very stable, great for training close to failure."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["triceps", "front_delts"],
+      "equipment": "machine",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "S", "powerlifting": "C" },
+      "tags": ["beginner-friendly"]
+    },
+    {
+      "slug": "smith-machine-incline-press",
+      "name": { "es": "Press inclinado en máquina Smith", "en": "Smith machine incline press" },
+      "description": {
+        "es": "Press inclinado con barra guiada; estable y fácil de progresar.",
+        "en": "Incline press on a guided bar; stable and easy to progress."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["front_delts", "triceps"],
+      "equipment": "smith",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "cable-fly",
+      "name": { "es": "Aperturas en polea", "en": "Cable fly" },
+      "description": {
+        "es": "Aperturas con poleas; tensión constante en todo el recorrido.",
+        "en": "Fly with cables; constant tension through the whole range."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["front_delts"],
+      "equipment": "cable",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["stretch-focused"]
+    },
+    {
+      "slug": "dumbbell-fly",
+      "name": { "es": "Aperturas con mancuernas", "en": "Dumbbell fly" },
+      "description": {
+        "es": "Aperturas en banco con mancuernas; gran estiramiento, poca tensión arriba.",
+        "en": "Bench fly with dumbbells; big stretch, little tension at the top."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["front_delts"],
+      "equipment": "dumbbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["stretch-focused"]
+    },
+    {
+      "slug": "pec-deck",
+      "name": { "es": "Contractor de pecho (pec deck)", "en": "Pec deck" },
+      "description": {
+        "es": "Aperturas en máquina; aislamiento estable del pecho.",
+        "en": "Machine fly; stable chest isolation."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["front_delts"],
+      "equipment": "machine",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["beginner-friendly"]
+    },
+    {
+      "slug": "push-up",
+      "name": { "es": "Flexiones", "en": "Push-up" },
+      "description": {
+        "es": "Empuje horizontal con el peso corporal; se puede lastrar.",
+        "en": "Bodyweight horizontal push; can be weighted."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["triceps", "front_delts", "abs"],
+      "equipment": "bodyweight",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["home-friendly", "beginner-friendly"]
+    },
+    {
+      "slug": "chest-dip",
+      "name": { "es": "Fondos para pecho", "en": "Chest dip" },
+      "description": {
+        "es": "Fondos en paralelas con el torso inclinado hacia delante.",
+        "en": "Parallel-bar dips with the torso leaning forward."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["triceps", "front_delts"],
+      "equipment": "bodyweight",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["stretch-focused"]
+    },
+
+    {
+      "slug": "pull-up",
+      "name": { "es": "Dominadas", "en": "Pull-up" },
+      "description": {
+        "es": "Tracción vertical con agarre prono; se puede lastrar.",
+        "en": "Vertical pull with an overhand grip; can be weighted."
+      },
+      "primaryMuscle": "lats",
+      "secondaryMuscles": ["biceps", "upper_back", "rear_delts"],
+      "equipment": "bodyweight",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["basic", "home-friendly"]
+    },
+    {
+      "slug": "chin-up",
+      "name": { "es": "Dominadas supinas", "en": "Chin-up" },
+      "description": {
+        "es": "Tracción vertical con agarre supino; más implicación de bíceps.",
+        "en": "Vertical pull with an underhand grip; more biceps involvement."
+      },
+      "primaryMuscle": "lats",
+      "secondaryMuscles": ["biceps", "upper_back"],
+      "equipment": "bodyweight",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["home-friendly"]
+    },
+    {
+      "slug": "lat-pulldown",
+      "name": { "es": "Jalón al pecho", "en": "Lat pulldown" },
+      "description": {
+        "es": "Tracción vertical en polea; fácil de ajustar la carga.",
+        "en": "Vertical pull on a cable stack; easy to adjust the load."
+      },
+      "primaryMuscle": "lats",
+      "secondaryMuscles": ["biceps", "upper_back"],
+      "equipment": "cable",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["basic", "beginner-friendly"]
+    },
+    {
+      "slug": "neutral-grip-lat-pulldown",
+      "name": { "es": "Jalón agarre neutro", "en": "Neutral-grip lat pulldown" },
+      "description": {
+        "es": "Jalón con agarre neutro estrecho; buen recorrido para el dorsal.",
+        "en": "Pulldown with a close neutral grip; good lat range of motion."
+      },
+      "primaryMuscle": "lats",
+      "secondaryMuscles": ["biceps", "upper_back"],
+      "equipment": "cable",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["shoulder-friendly"]
+    },
+    {
+      "slug": "single-arm-lat-pulldown",
+      "name": { "es": "Jalón a una mano", "en": "Single-arm lat pulldown" },
+      "description": {
+        "es": "Jalón unilateral; permite mayor estiramiento y foco en el dorsal.",
+        "en": "Unilateral pulldown; allows a deeper stretch and lat focus."
+      },
+      "primaryMuscle": "lats",
+      "secondaryMuscles": ["biceps"],
+      "equipment": "cable",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["unilateral", "stretch-focused"]
+    },
+    {
+      "slug": "barbell-row",
+      "name": { "es": "Remo con barra", "en": "Barbell row" },
+      "description": {
+        "es": "Remo inclinado con barra; tracción horizontal pesada.",
+        "en": "Bent-over row with a barbell; heavy horizontal pull."
+      },
+      "primaryMuscle": "upper_back",
+      "secondaryMuscles": ["lats", "rear_delts", "biceps", "lower_back"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "A", "powerlifting": "A" },
+      "tags": ["basic"]
+    },
+    {
+      "slug": "pendlay-row",
+      "name": { "es": "Remo Pendlay", "en": "Pendlay row" },
+      "description": {
+        "es": "Remo con barra desde el suelo en cada repetición, torso paralelo.",
+        "en": "Barbell row from the floor every rep with a parallel torso."
+      },
+      "primaryMuscle": "upper_back",
+      "secondaryMuscles": ["lats", "rear_delts", "lower_back"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "B", "powerlifting": "A" },
+      "tags": []
+    },
+    {
+      "slug": "seal-row",
+      "name": { "es": "Remo en banco (seal row)", "en": "Seal row" },
+      "description": {
+        "es": "Remo tumbado boca abajo en banco alto; sin carga lumbar.",
+        "en": "Row lying face down on a high bench; no lower-back load."
+      },
+      "primaryMuscle": "upper_back",
+      "secondaryMuscles": ["lats", "rear_delts", "biceps"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "S", "powerlifting": "B" },
+      "tags": ["lumbar-friendly"]
+    },
+    {
+      "slug": "chest-supported-dumbbell-row",
+      "name": {
+        "es": "Remo con mancuernas con apoyo en pecho",
+        "en": "Chest-supported dumbbell row"
+      },
+      "description": {
+        "es": "Remo en banco inclinado con apoyo de pecho; aísla la espalda.",
+        "en": "Row on an incline bench with chest support; isolates the back."
+      },
+      "primaryMuscle": "upper_back",
+      "secondaryMuscles": ["lats", "rear_delts", "biceps"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "S", "powerlifting": "B" },
+      "tags": ["lumbar-friendly"]
+    },
+    {
+      "slug": "one-arm-dumbbell-row",
+      "name": { "es": "Remo a una mano con mancuerna", "en": "One-arm dumbbell row" },
+      "description": {
+        "es": "Remo unilateral apoyado en banco; buen recorrido del dorsal.",
+        "en": "Unilateral row braced on a bench; good lat range of motion."
+      },
+      "primaryMuscle": "lats",
+      "secondaryMuscles": ["upper_back", "rear_delts", "biceps"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["unilateral", "home-friendly"]
+    },
+    {
+      "slug": "seated-cable-row",
+      "name": { "es": "Remo sentado en polea", "en": "Seated cable row" },
+      "description": {
+        "es": "Remo horizontal en polea baja; tensión constante.",
+        "en": "Horizontal row on a low cable; constant tension."
+      },
+      "primaryMuscle": "upper_back",
+      "secondaryMuscles": ["lats", "rear_delts", "biceps"],
+      "equipment": "cable",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["beginner-friendly"]
+    },
+    {
+      "slug": "t-bar-row",
+      "name": { "es": "Remo en T", "en": "T-bar row" },
+      "description": {
+        "es": "Remo con barra anclada; permite mucha carga con agarre neutro.",
+        "en": "Row with a landmine bar; allows heavy loading with a neutral grip."
+      },
+      "primaryMuscle": "upper_back",
+      "secondaryMuscles": ["lats", "rear_delts", "biceps", "lower_back"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": []
+    },
+    {
+      "slug": "machine-row",
+      "name": { "es": "Remo en máquina", "en": "Machine row" },
+      "description": {
+        "es": "Remo guiado con apoyo de pecho; estable y seguro cerca del fallo.",
+        "en": "Guided chest-supported row; stable and safe close to failure."
+      },
+      "primaryMuscle": "upper_back",
+      "secondaryMuscles": ["lats", "rear_delts", "biceps"],
+      "equipment": "machine",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["lumbar-friendly", "beginner-friendly"]
+    },
+    {
+      "slug": "meadows-row",
+      "name": { "es": "Remo Meadows", "en": "Meadows row" },
+      "description": {
+        "es": "Remo unilateral con barra anclada agarrando el extremo.",
+        "en": "Unilateral landmine row gripping the end of the bar."
+      },
+      "primaryMuscle": "upper_back",
+      "secondaryMuscles": ["lats", "rear_delts"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["unilateral"]
+    },
+    {
+      "slug": "inverted-row",
+      "name": { "es": "Remo invertido", "en": "Inverted row" },
+      "description": {
+        "es": "Remo con el peso corporal bajo una barra o anillas.",
+        "en": "Bodyweight row under a bar or rings."
+      },
+      "primaryMuscle": "upper_back",
+      "secondaryMuscles": ["lats", "biceps", "rear_delts"],
+      "equipment": "bodyweight",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["home-friendly", "beginner-friendly"]
+    },
+    {
+      "slug": "straight-arm-pulldown",
+      "name": { "es": "Pullover en polea con brazos rectos", "en": "Straight-arm pulldown" },
+      "description": {
+        "es": "Extensión de hombro en polea con brazos rectos; aísla el dorsal.",
+        "en": "Shoulder extension on a cable with straight arms; isolates the lats."
+      },
+      "primaryMuscle": "lats",
+      "secondaryMuscles": ["triceps"],
+      "equipment": "cable",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "dumbbell-pullover",
+      "name": { "es": "Pullover con mancuerna", "en": "Dumbbell pullover" },
+      "description": {
+        "es": "Pullover tumbado en banco; estiramiento de dorsal y pecho.",
+        "en": "Pullover lying on a bench; stretches lats and chest."
+      },
+      "primaryMuscle": "lats",
+      "secondaryMuscles": ["chest", "triceps"],
+      "equipment": "dumbbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["stretch-focused"]
+    },
+
+    {
+      "slug": "barbell-shrug",
+      "name": { "es": "Encogimientos con barra", "en": "Barbell shrug" },
+      "description": {
+        "es": "Elevación de hombros con barra para el trapecio superior.",
+        "en": "Shoulder elevation with a barbell for the upper traps."
+      },
+      "primaryMuscle": "traps",
+      "secondaryMuscles": ["forearms"],
+      "equipment": "barbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "dumbbell-shrug",
+      "name": { "es": "Encogimientos con mancuernas", "en": "Dumbbell shrug" },
+      "description": {
+        "es": "Elevación de hombros con mancuernas; recorrido libre.",
+        "en": "Shoulder elevation with dumbbells; free range of motion."
+      },
+      "primaryMuscle": "traps",
+      "secondaryMuscles": ["forearms"],
+      "equipment": "dumbbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["home-friendly"]
+    },
+    {
+      "slug": "farmers-walk",
+      "name": { "es": "Paseo del granjero", "en": "Farmer's walk" },
+      "description": {
+        "es": "Caminar con carga pesada en cada mano; agarre y estabilidad del tronco.",
+        "en": "Walking with a heavy load in each hand; grip and trunk stability."
+      },
+      "primaryMuscle": "forearms",
+      "secondaryMuscles": ["traps", "abs", "obliques"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "C", "powerlifting": "B" },
+      "tags": []
+    },
+
+    {
+      "slug": "back-extension",
+      "name": { "es": "Hiperextensiones", "en": "Back extension" },
+      "description": {
+        "es": "Extensión de cadera y espalda en banco de 45°; se puede lastrar.",
+        "en": "Hip and back extension on a 45° bench; can be weighted."
+      },
+      "primaryMuscle": "lower_back",
+      "secondaryMuscles": ["glutes", "hamstrings"],
+      "equipment": "bodyweight",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "B" },
+      "tags": ["beginner-friendly"]
+    },
+    {
+      "slug": "reverse-hyperextension",
+      "name": { "es": "Hiperextensión inversa", "en": "Reverse hyperextension" },
+      "description": {
+        "es": "Extensión de cadera con el torso apoyado; descomprime la zona lumbar.",
+        "en": "Hip extension with the torso supported; decompresses the lower back."
+      },
+      "primaryMuscle": "lower_back",
+      "secondaryMuscles": ["glutes", "hamstrings"],
+      "equipment": "machine",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "C", "powerlifting": "B" },
+      "tags": []
+    },
+    {
+      "slug": "good-morning",
+      "name": { "es": "Buenos días", "en": "Good morning" },
+      "description": {
+        "es": "Bisagra de cadera con barra en la espalda; cadena posterior.",
+        "en": "Hip hinge with the bar on the back; posterior chain."
+      },
+      "primaryMuscle": "hamstrings",
+      "secondaryMuscles": ["lower_back", "glutes"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "A" },
+      "tags": ["stretch-focused"]
+    },
+
+    {
+      "slug": "overhead-press",
+      "name": { "es": "Press militar con barra", "en": "Overhead press" },
+      "description": {
+        "es": "Press vertical de pie con barra.",
+        "en": "Standing vertical press with a barbell."
+      },
+      "primaryMuscle": "front_delts",
+      "secondaryMuscles": ["side_delts", "triceps", "upper_back"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["basic"]
+    },
+    {
+      "slug": "seated-dumbbell-shoulder-press",
+      "name": {
+        "es": "Press de hombros con mancuernas sentado",
+        "en": "Seated dumbbell shoulder press"
+      },
+      "description": {
+        "es": "Press vertical sentado con mancuernas y respaldo.",
+        "en": "Seated vertical press with dumbbells and back support."
+      },
+      "primaryMuscle": "front_delts",
+      "secondaryMuscles": ["side_delts", "triceps"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": []
+    },
+    {
+      "slug": "machine-shoulder-press",
+      "name": { "es": "Press de hombros en máquina", "en": "Machine shoulder press" },
+      "description": {
+        "es": "Press vertical guiado; estable para trabajar cerca del fallo.",
+        "en": "Guided vertical press; stable for training close to failure."
+      },
+      "primaryMuscle": "front_delts",
+      "secondaryMuscles": ["side_delts", "triceps"],
+      "equipment": "machine",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["beginner-friendly"]
+    },
+    {
+      "slug": "push-press",
+      "name": { "es": "Push press", "en": "Push press" },
+      "description": {
+        "es": "Press vertical con impulso de piernas; permite más carga.",
+        "en": "Vertical press with leg drive; allows heavier loads."
+      },
+      "primaryMuscle": "front_delts",
+      "secondaryMuscles": ["triceps", "quads", "side_delts"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "C", "powerlifting": "B" },
+      "tags": []
+    },
+    {
+      "slug": "arnold-press",
+      "name": { "es": "Press Arnold", "en": "Arnold press" },
+      "description": {
+        "es": "Press con mancuernas rotando de supino a prono.",
+        "en": "Dumbbell press rotating from supinated to pronated."
+      },
+      "primaryMuscle": "front_delts",
+      "secondaryMuscles": ["side_delts", "triceps"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "landmine-press",
+      "name": { "es": "Press landmine", "en": "Landmine press" },
+      "description": {
+        "es": "Press en diagonal con barra anclada; trayectoria cómoda para el hombro.",
+        "en": "Angled press with an anchored bar; shoulder-friendly path."
+      },
+      "primaryMuscle": "front_delts",
+      "secondaryMuscles": ["chest", "triceps"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["shoulder-friendly", "unilateral"]
+    },
+    {
+      "slug": "dumbbell-lateral-raise",
+      "name": { "es": "Elevaciones laterales con mancuernas", "en": "Dumbbell lateral raise" },
+      "description": {
+        "es": "Abducción de hombro con mancuernas para el deltoides lateral.",
+        "en": "Shoulder abduction with dumbbells for the side delts."
+      },
+      "primaryMuscle": "side_delts",
+      "secondaryMuscles": ["traps"],
+      "equipment": "dumbbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["basic", "home-friendly"]
+    },
+    {
+      "slug": "cable-lateral-raise",
+      "name": { "es": "Elevaciones laterales en polea", "en": "Cable lateral raise" },
+      "description": {
+        "es": "Elevación lateral en polea baja; tensión también en la parte baja.",
+        "en": "Lateral raise on a low cable; tension at the bottom too."
+      },
+      "primaryMuscle": "side_delts",
+      "secondaryMuscles": ["traps"],
+      "equipment": "cable",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "S", "powerlifting": "C" },
+      "tags": ["unilateral", "stretch-focused"]
+    },
+    {
+      "slug": "machine-lateral-raise",
+      "name": { "es": "Elevaciones laterales en máquina", "en": "Machine lateral raise" },
+      "description": {
+        "es": "Elevación lateral guiada; fácil de llevar al fallo.",
+        "en": "Guided lateral raise; easy to take to failure."
+      },
+      "primaryMuscle": "side_delts",
+      "secondaryMuscles": [],
+      "equipment": "machine",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["beginner-friendly"]
+    },
+    {
+      "slug": "upright-row",
+      "name": { "es": "Remo al mentón", "en": "Upright row" },
+      "description": {
+        "es": "Tracción vertical cerca del cuerpo; mejor con agarre ancho.",
+        "en": "Vertical pull close to the body; better with a wide grip."
+      },
+      "primaryMuscle": "side_delts",
+      "secondaryMuscles": ["traps", "front_delts"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "reverse-pec-deck",
+      "name": { "es": "Pájaro en máquina (reverse pec deck)", "en": "Reverse pec deck" },
+      "description": {
+        "es": "Aperturas inversas en máquina para el deltoides posterior.",
+        "en": "Reverse fly on a machine for the rear delts."
+      },
+      "primaryMuscle": "rear_delts",
+      "secondaryMuscles": ["upper_back"],
+      "equipment": "machine",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["beginner-friendly"]
+    },
+    {
+      "slug": "rear-delt-dumbbell-fly",
+      "name": { "es": "Pájaros con mancuernas", "en": "Bent-over rear delt fly" },
+      "description": {
+        "es": "Aperturas inversas inclinado con mancuernas.",
+        "en": "Bent-over reverse fly with dumbbells."
+      },
+      "primaryMuscle": "rear_delts",
+      "secondaryMuscles": ["upper_back"],
+      "equipment": "dumbbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["home-friendly"]
+    },
+    {
+      "slug": "face-pull",
+      "name": { "es": "Face pull", "en": "Face pull" },
+      "description": {
+        "es": "Tracción en polea alta hacia la cara con rotación externa.",
+        "en": "High-cable pull to the face with external rotation."
+      },
+      "primaryMuscle": "rear_delts",
+      "secondaryMuscles": ["upper_back", "traps"],
+      "equipment": "cable",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["shoulder-friendly"]
+    },
+    {
+      "slug": "front-raise",
+      "name": { "es": "Elevaciones frontales", "en": "Front raise" },
+      "description": {
+        "es": "Flexión de hombro con mancuernas; el deltoides frontal ya trabaja en los press.",
+        "en": "Shoulder flexion with dumbbells; front delts already work in presses."
+      },
+      "primaryMuscle": "front_delts",
+      "secondaryMuscles": [],
+      "equipment": "dumbbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "C", "powerlifting": "C" },
+      "tags": []
+    },
+
+    {
+      "slug": "barbell-curl",
+      "name": { "es": "Curl con barra", "en": "Barbell curl" },
+      "description": {
+        "es": "Flexión de codo con barra recta.",
+        "en": "Elbow flexion with a straight bar."
+      },
+      "primaryMuscle": "biceps",
+      "secondaryMuscles": ["forearms"],
+      "equipment": "barbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["basic"]
+    },
+    {
+      "slug": "ez-bar-curl",
+      "name": { "es": "Curl con barra Z", "en": "EZ-bar curl" },
+      "description": {
+        "es": "Curl con barra Z; más cómodo para las muñecas.",
+        "en": "Curl with an EZ bar; easier on the wrists."
+      },
+      "primaryMuscle": "biceps",
+      "secondaryMuscles": ["forearms"],
+      "equipment": "barbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "dumbbell-curl",
+      "name": { "es": "Curl con mancuernas", "en": "Dumbbell curl" },
+      "description": {
+        "es": "Curl de pie con mancuernas, alterno o simultáneo.",
+        "en": "Standing curl with dumbbells, alternating or together."
+      },
+      "primaryMuscle": "biceps",
+      "secondaryMuscles": ["forearms"],
+      "equipment": "dumbbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["home-friendly"]
+    },
+    {
+      "slug": "incline-dumbbell-curl",
+      "name": { "es": "Curl inclinado con mancuernas", "en": "Incline dumbbell curl" },
+      "description": {
+        "es": "Curl sentado en banco inclinado; bíceps en posición estirada.",
+        "en": "Curl seated on an incline bench; biceps in a stretched position."
+      },
+      "primaryMuscle": "biceps",
+      "secondaryMuscles": ["forearms"],
+      "equipment": "dumbbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "S", "powerlifting": "C" },
+      "tags": ["stretch-focused"]
+    },
+    {
+      "slug": "hammer-curl",
+      "name": { "es": "Curl martillo", "en": "Hammer curl" },
+      "description": {
+        "es": "Curl con agarre neutro; braquial y braquiorradial.",
+        "en": "Neutral-grip curl; brachialis and brachioradialis."
+      },
+      "primaryMuscle": "biceps",
+      "secondaryMuscles": ["forearms"],
+      "equipment": "dumbbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["home-friendly"]
+    },
+    {
+      "slug": "preacher-curl",
+      "name": { "es": "Curl predicador", "en": "Preacher curl" },
+      "description": {
+        "es": "Curl con los brazos apoyados en banco Scott; sin impulso.",
+        "en": "Curl with arms braced on a preacher bench; no momentum."
+      },
+      "primaryMuscle": "biceps",
+      "secondaryMuscles": [],
+      "equipment": "barbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["stretch-focused"]
+    },
+    {
+      "slug": "machine-preacher-curl",
+      "name": { "es": "Curl predicador en máquina", "en": "Machine preacher curl" },
+      "description": {
+        "es": "Curl predicador guiado; resistencia uniforme.",
+        "en": "Guided preacher curl; even resistance."
+      },
+      "primaryMuscle": "biceps",
+      "secondaryMuscles": [],
+      "equipment": "machine",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["beginner-friendly"]
+    },
+    {
+      "slug": "cable-curl",
+      "name": { "es": "Curl en polea", "en": "Cable curl" },
+      "description": {
+        "es": "Curl en polea baja; tensión constante.",
+        "en": "Curl on a low cable; constant tension."
+      },
+      "primaryMuscle": "biceps",
+      "secondaryMuscles": ["forearms"],
+      "equipment": "cable",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "bayesian-cable-curl",
+      "name": { "es": "Curl bayesiano en polea", "en": "Bayesian cable curl" },
+      "description": {
+        "es": "Curl a una mano de espaldas a la polea; máxima tensión en estiramiento.",
+        "en": "One-arm curl facing away from the cable; max tension when stretched."
+      },
+      "primaryMuscle": "biceps",
+      "secondaryMuscles": [],
+      "equipment": "cable",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "S", "powerlifting": "C" },
+      "tags": ["stretch-focused", "unilateral"]
+    },
+    {
+      "slug": "concentration-curl",
+      "name": { "es": "Curl concentrado", "en": "Concentration curl" },
+      "description": {
+        "es": "Curl unilateral sentado con el codo apoyado en el muslo.",
+        "en": "Seated unilateral curl with the elbow braced on the thigh."
+      },
+      "primaryMuscle": "biceps",
+      "secondaryMuscles": [],
+      "equipment": "dumbbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["unilateral", "home-friendly"]
+    },
+    {
+      "slug": "reverse-curl",
+      "name": { "es": "Curl invertido", "en": "Reverse curl" },
+      "description": {
+        "es": "Curl con agarre prono; braquiorradial y extensores.",
+        "en": "Overhand-grip curl; brachioradialis and extensors."
+      },
+      "primaryMuscle": "forearms",
+      "secondaryMuscles": ["biceps"],
+      "equipment": "barbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "wrist-curl",
+      "name": { "es": "Curl de muñeca", "en": "Wrist curl" },
+      "description": {
+        "es": "Flexión de muñeca con barra o mancuernas.",
+        "en": "Wrist flexion with a barbell or dumbbells."
+      },
+      "primaryMuscle": "forearms",
+      "secondaryMuscles": [],
+      "equipment": "barbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": []
+    },
+
+    {
+      "slug": "triceps-pushdown",
+      "name": { "es": "Extensión de tríceps en polea (pushdown)", "en": "Triceps pushdown" },
+      "description": {
+        "es": "Extensión de codo en polea alta con barra o cuerda.",
+        "en": "Elbow extension on a high cable with a bar or rope."
+      },
+      "primaryMuscle": "triceps",
+      "secondaryMuscles": [],
+      "equipment": "cable",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["basic", "beginner-friendly"]
+    },
+    {
+      "slug": "overhead-cable-triceps-extension",
+      "name": {
+        "es": "Extensión de tríceps sobre la cabeza en polea",
+        "en": "Overhead cable triceps extension"
+      },
+      "description": {
+        "es": "Extensión con los brazos por encima de la cabeza; cabeza larga estirada.",
+        "en": "Extension with arms overhead; long head in a stretched position."
+      },
+      "primaryMuscle": "triceps",
+      "secondaryMuscles": [],
+      "equipment": "cable",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "S", "powerlifting": "C" },
+      "tags": ["stretch-focused"]
+    },
+    {
+      "slug": "dumbbell-overhead-triceps-extension",
+      "name": {
+        "es": "Extensión de tríceps sobre la cabeza con mancuerna",
+        "en": "Dumbbell overhead triceps extension"
+      },
+      "description": {
+        "es": "Extensión por encima de la cabeza con una mancuerna, sentado o de pie.",
+        "en": "Overhead extension with one dumbbell, seated or standing."
+      },
+      "primaryMuscle": "triceps",
+      "secondaryMuscles": [],
+      "equipment": "dumbbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["stretch-focused", "home-friendly"]
+    },
+    {
+      "slug": "skull-crusher",
+      "name": { "es": "Press francés", "en": "Skull crusher" },
+      "description": {
+        "es": "Extensión de tríceps tumbado con barra Z hacia la frente o detrás de la cabeza.",
+        "en": "Lying triceps extension with an EZ bar to the forehead or behind the head."
+      },
+      "primaryMuscle": "triceps",
+      "secondaryMuscles": [],
+      "equipment": "barbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["stretch-focused"]
+    },
+    {
+      "slug": "jm-press",
+      "name": { "es": "Press JM", "en": "JM press" },
+      "description": {
+        "es": "Híbrido entre press cerrado y press francés; muy específico para el bloqueo.",
+        "en": "Hybrid of close-grip press and skull crusher; very specific for lockout."
+      },
+      "primaryMuscle": "triceps",
+      "secondaryMuscles": ["chest"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "A" },
+      "tags": []
+    },
+    {
+      "slug": "triceps-dip",
+      "name": { "es": "Fondos para tríceps", "en": "Triceps dip" },
+      "description": {
+        "es": "Fondos en paralelas con el torso vertical.",
+        "en": "Parallel-bar dips with an upright torso."
+      },
+      "primaryMuscle": "triceps",
+      "secondaryMuscles": ["chest", "front_delts"],
+      "equipment": "bodyweight",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": []
+    },
+    {
+      "slug": "cable-triceps-kickback",
+      "name": { "es": "Patada de tríceps en polea", "en": "Cable triceps kickback" },
+      "description": {
+        "es": "Extensión de codo unilateral inclinado con polea.",
+        "en": "Bent-over unilateral elbow extension with a cable."
+      },
+      "primaryMuscle": "triceps",
+      "secondaryMuscles": [],
+      "equipment": "cable",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["unilateral"]
+    },
+
+    {
+      "slug": "cable-crunch",
+      "name": { "es": "Crunch en polea", "en": "Cable crunch" },
+      "description": {
+        "es": "Flexión de tronco de rodillas con polea alta; fácil de progresar.",
+        "en": "Kneeling trunk flexion with a high cable; easy to progress."
+      },
+      "primaryMuscle": "abs",
+      "secondaryMuscles": [],
+      "equipment": "cable",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": []
+    },
+    {
+      "slug": "machine-crunch",
+      "name": { "es": "Crunch en máquina", "en": "Machine crunch" },
+      "description": {
+        "es": "Flexión de tronco guiada con carga regulable.",
+        "en": "Guided trunk flexion with adjustable load."
+      },
+      "primaryMuscle": "abs",
+      "secondaryMuscles": [],
+      "equipment": "machine",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["beginner-friendly"]
+    },
+    {
+      "slug": "decline-crunch",
+      "name": { "es": "Crunch declinado", "en": "Decline crunch" },
+      "description": {
+        "es": "Crunch en banco declinado; se puede lastrar.",
+        "en": "Crunch on a decline bench; can be weighted."
+      },
+      "primaryMuscle": "abs",
+      "secondaryMuscles": [],
+      "equipment": "bodyweight",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "hanging-leg-raise",
+      "name": { "es": "Elevación de piernas colgado", "en": "Hanging leg raise" },
+      "description": {
+        "es": "Elevación de piernas colgado de una barra con retroversión pélvica.",
+        "en": "Leg raise hanging from a bar with posterior pelvic tilt."
+      },
+      "primaryMuscle": "abs",
+      "secondaryMuscles": ["obliques"],
+      "equipment": "bodyweight",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": []
+    },
+    {
+      "slug": "ab-wheel-rollout",
+      "name": { "es": "Rueda abdominal", "en": "Ab wheel rollout" },
+      "description": {
+        "es": "Antiextensión con rueda; muy exigente para el core.",
+        "en": "Anti-extension with an ab wheel; very demanding for the core."
+      },
+      "primaryMuscle": "abs",
+      "secondaryMuscles": ["obliques", "lats"],
+      "equipment": "other",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["home-friendly"]
+    },
+    {
+      "slug": "pallof-press",
+      "name": { "es": "Press Pallof", "en": "Pallof press" },
+      "description": {
+        "es": "Antirrotación con polea; estabilidad del tronco.",
+        "en": "Anti-rotation with a cable; trunk stability."
+      },
+      "primaryMuscle": "obliques",
+      "secondaryMuscles": ["abs"],
+      "equipment": "cable",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "C", "powerlifting": "B" },
+      "tags": ["lumbar-friendly"]
+    },
+    {
+      "slug": "dumbbell-side-bend",
+      "name": { "es": "Flexión lateral con mancuerna", "en": "Dumbbell side bend" },
+      "description": {
+        "es": "Inclinación lateral de tronco con mancuerna.",
+        "en": "Lateral trunk bend holding a dumbbell."
+      },
+      "primaryMuscle": "obliques",
+      "secondaryMuscles": [],
+      "equipment": "dumbbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["home-friendly"]
+    },
+
+    {
+      "slug": "barbell-back-squat",
+      "name": { "es": "Sentadilla trasera con barra", "en": "Barbell back squat" },
+      "description": {
+        "es": "Sentadilla con la barra en la espalda; levantamiento de competición.",
+        "en": "Squat with the bar on the back; competition lift."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "adductors", "lower_back"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "powerlifting_main",
+      "tiers": { "hypertrophy": "S", "powerlifting": "S" },
+      "tags": ["basic", "competition"]
+    },
+    {
+      "slug": "low-bar-squat",
+      "name": { "es": "Sentadilla barra baja", "en": "Low-bar squat" },
+      "description": {
+        "es": "Sentadilla con la barra baja en la espalda; más cadera y más carga.",
+        "en": "Squat with the bar low on the back; more hips and heavier loads."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "adductors", "hamstrings", "lower_back"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "powerlifting_main",
+      "tiers": { "hypertrophy": "B", "powerlifting": "S" },
+      "tags": ["competition"]
+    },
+    {
+      "slug": "paused-squat",
+      "name": { "es": "Sentadilla con pausa", "en": "Paused squat" },
+      "description": {
+        "es": "Sentadilla con pausa de 2-3 s en el fondo; posición y salida del hoyo.",
+        "en": "Squat with a 2-3 s pause at the bottom; position and out-of-the-hole strength."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "adductors", "lower_back"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "A" },
+      "tags": ["paused"]
+    },
+    {
+      "slug": "front-squat",
+      "name": { "es": "Sentadilla frontal", "en": "Front squat" },
+      "description": {
+        "es": "Sentadilla con la barra delante; torso erguido y más cuádriceps.",
+        "en": "Squat with the bar in front; upright torso and more quads."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "upper_back", "abs"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "A", "powerlifting": "A" },
+      "tags": []
+    },
+    {
+      "slug": "pin-squat",
+      "name": { "es": "Sentadilla desde pines", "en": "Pin squat" },
+      "description": {
+        "es": "Sentadilla iniciada desde pines sin rebote; fuerza desde parado.",
+        "en": "Squat started from pins with no rebound; strength from a dead stop."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "lower_back"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "A" },
+      "tags": []
+    },
+    {
+      "slug": "box-squat",
+      "name": { "es": "Sentadilla al cajón", "en": "Box squat" },
+      "description": {
+        "es": "Sentadilla sentándose en un cajón; controla profundidad y técnica.",
+        "en": "Squat sitting back onto a box; controls depth and technique."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "hamstrings"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "B" },
+      "tags": []
+    },
+    {
+      "slug": "safety-squat-bar-squat",
+      "name": { "es": "Sentadilla con barra de seguridad (SSB)", "en": "Safety squat bar squat" },
+      "description": {
+        "es": "Sentadilla con barra SSB; menos estrés en hombros y más espalda alta.",
+        "en": "Squat with a safety squat bar; less shoulder stress, more upper back."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "upper_back", "lower_back"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "A" },
+      "tags": ["shoulder-friendly"]
+    },
+    {
+      "slug": "belt-squat",
+      "name": { "es": "Sentadilla con cinturón (belt squat)", "en": "Belt squat" },
+      "description": {
+        "es": "Sentadilla con la carga en la cadera; sin compresión de columna.",
+        "en": "Squat with the load on the hips; no spinal compression."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "adductors"],
+      "equipment": "machine",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["lumbar-friendly"]
+    },
+    {
+      "slug": "hack-squat",
+      "name": { "es": "Sentadilla hack", "en": "Hack squat" },
+      "description": {
+        "es": "Sentadilla en máquina inclinada; gran recorrido de cuádriceps con estabilidad.",
+        "en": "Squat on an angled machine; deep quad range with stability."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "adductors"],
+      "equipment": "machine",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "S", "powerlifting": "B" },
+      "tags": ["lumbar-friendly"]
+    },
+    {
+      "slug": "pendulum-squat",
+      "name": { "es": "Sentadilla péndulo", "en": "Pendulum squat" },
+      "description": {
+        "es": "Sentadilla en máquina de péndulo; mucha profundidad con la espalda apoyada.",
+        "en": "Squat on a pendulum machine; very deep with the back supported."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes"],
+      "equipment": "machine",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "S", "powerlifting": "B" },
+      "tags": ["lumbar-friendly", "stretch-focused"]
+    },
+    {
+      "slug": "leg-press",
+      "name": { "es": "Prensa de piernas", "en": "Leg press" },
+      "description": {
+        "es": "Empuje de piernas en máquina; mucha carga sin cargar la columna.",
+        "en": "Machine leg push; heavy loading without loading the spine."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "adductors"],
+      "equipment": "machine",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["lumbar-friendly", "beginner-friendly"]
+    },
+    {
+      "slug": "smith-machine-squat",
+      "name": { "es": "Sentadilla en máquina Smith", "en": "Smith machine squat" },
+      "description": {
+        "es": "Sentadilla con barra guiada; permite adelantar los pies para más cuádriceps.",
+        "en": "Squat on a guided bar; feet can go forward for more quads."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes"],
+      "equipment": "smith",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "goblet-squat",
+      "name": { "es": "Sentadilla goblet", "en": "Goblet squat" },
+      "description": {
+        "es": "Sentadilla sujetando una mancuerna o kettlebell al pecho.",
+        "en": "Squat holding a dumbbell or kettlebell at the chest."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "abs"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["beginner-friendly", "home-friendly"]
+    },
+    {
+      "slug": "bulgarian-split-squat",
+      "name": { "es": "Sentadilla búlgara", "en": "Bulgarian split squat" },
+      "description": {
+        "es": "Sentadilla unilateral con el pie trasero elevado.",
+        "en": "Unilateral squat with the rear foot elevated."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "adductors"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "S", "powerlifting": "B" },
+      "tags": ["unilateral", "stretch-focused", "home-friendly"]
+    },
+    {
+      "slug": "walking-lunge",
+      "name": { "es": "Zancadas caminando", "en": "Walking lunge" },
+      "description": {
+        "es": "Zancadas alternas avanzando con mancuernas.",
+        "en": "Alternating forward lunges with dumbbells."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "adductors"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["unilateral", "home-friendly"]
+    },
+    {
+      "slug": "step-up",
+      "name": { "es": "Subida al cajón", "en": "Step-up" },
+      "description": {
+        "es": "Subida unilateral a un cajón con mancuernas.",
+        "en": "Unilateral step onto a box with dumbbells."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["unilateral", "home-friendly"]
+    },
+    {
+      "slug": "leg-extension",
+      "name": { "es": "Extensión de cuádriceps", "en": "Leg extension" },
+      "description": {
+        "es": "Extensión de rodilla en máquina; aísla el cuádriceps, incluido el recto femoral.",
+        "en": "Machine knee extension; isolates the quads, including the rectus femoris."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": [],
+      "equipment": "machine",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["beginner-friendly", "lumbar-friendly"]
+    },
+    {
+      "slug": "sissy-squat",
+      "name": { "es": "Sentadilla sissy", "en": "Sissy squat" },
+      "description": {
+        "es": "Sentadilla inclinando el cuerpo hacia atrás sobre las rodillas; cuádriceps estirado.",
+        "en": "Squat leaning back over the knees; quads in a stretched position."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": [],
+      "equipment": "bodyweight",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["stretch-focused", "home-friendly"]
+    },
+
+    {
+      "slug": "conventional-deadlift",
+      "name": { "es": "Peso muerto convencional", "en": "Conventional deadlift" },
+      "description": {
+        "es": "Peso muerto con los pies al ancho de cadera y agarre por fuera; levantamiento de competición.",
+        "en": "Deadlift with hip-width stance and grip outside the legs; competition lift."
+      },
+      "primaryMuscle": "hamstrings",
+      "secondaryMuscles": ["glutes", "lower_back", "quads", "traps", "forearms"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "powerlifting_main",
+      "tiers": { "hypertrophy": "B", "powerlifting": "S" },
+      "tags": ["basic", "competition"]
+    },
+    {
+      "slug": "sumo-deadlift",
+      "name": { "es": "Peso muerto sumo", "en": "Sumo deadlift" },
+      "description": {
+        "es": "Peso muerto con postura amplia y agarre por dentro; levantamiento de competición.",
+        "en": "Deadlift with a wide stance and grip inside the legs; competition lift."
+      },
+      "primaryMuscle": "glutes",
+      "secondaryMuscles": ["quads", "adductors", "hamstrings", "lower_back"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "powerlifting_main",
+      "tiers": { "hypertrophy": "B", "powerlifting": "S" },
+      "tags": ["competition"]
+    },
+    {
+      "slug": "paused-deadlift",
+      "name": { "es": "Peso muerto con pausa", "en": "Paused deadlift" },
+      "description": {
+        "es": "Peso muerto con pausa justo bajo la rodilla; posición y control.",
+        "en": "Deadlift paused just below the knee; position and control."
+      },
+      "primaryMuscle": "hamstrings",
+      "secondaryMuscles": ["glutes", "lower_back", "quads"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "C", "powerlifting": "A" },
+      "tags": ["paused"]
+    },
+    {
+      "slug": "deficit-deadlift",
+      "name": { "es": "Peso muerto en déficit", "en": "Deficit deadlift" },
+      "description": {
+        "es": "Peso muerto de pie sobre una plataforma; refuerza el despegue.",
+        "en": "Deadlift standing on a platform; strengthens the pull off the floor."
+      },
+      "primaryMuscle": "hamstrings",
+      "secondaryMuscles": ["glutes", "lower_back", "quads"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "A" },
+      "tags": []
+    },
+    {
+      "slug": "block-pull",
+      "name": { "es": "Peso muerto desde bloques", "en": "Block pull" },
+      "description": {
+        "es": "Peso muerto desde bloques o pines; sobrecarga del bloqueo.",
+        "en": "Deadlift from blocks or pins; overloads the lockout."
+      },
+      "primaryMuscle": "lower_back",
+      "secondaryMuscles": ["glutes", "hamstrings", "traps", "forearms"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "C", "powerlifting": "A" },
+      "tags": []
+    },
+    {
+      "slug": "snatch-grip-deadlift",
+      "name": { "es": "Peso muerto agarre de arrancada", "en": "Snatch-grip deadlift" },
+      "description": {
+        "es": "Peso muerto con agarre muy ancho; más recorrido y espalda alta.",
+        "en": "Deadlift with a very wide grip; longer range and more upper back."
+      },
+      "primaryMuscle": "hamstrings",
+      "secondaryMuscles": ["upper_back", "traps", "glutes", "lower_back"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "A" },
+      "tags": []
+    },
+    {
+      "slug": "trap-bar-deadlift",
+      "name": { "es": "Peso muerto con barra hexagonal", "en": "Trap bar deadlift" },
+      "description": {
+        "es": "Peso muerto con barra hexagonal; carga centrada y técnica sencilla.",
+        "en": "Deadlift with a hex bar; centered load and simple technique."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "hamstrings", "lower_back", "traps"],
+      "equipment": "other",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["beginner-friendly"]
+    },
+    {
+      "slug": "romanian-deadlift",
+      "name": { "es": "Peso muerto rumano", "en": "Romanian deadlift" },
+      "description": {
+        "es": "Bisagra de cadera con rodillas semiflexionadas; isquios en estiramiento.",
+        "en": "Hip hinge with soft knees; hamstrings in a stretched position."
+      },
+      "primaryMuscle": "hamstrings",
+      "secondaryMuscles": ["glutes", "lower_back"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "S", "powerlifting": "A" },
+      "tags": ["basic", "stretch-focused"]
+    },
+    {
+      "slug": "dumbbell-romanian-deadlift",
+      "name": { "es": "Peso muerto rumano con mancuernas", "en": "Dumbbell Romanian deadlift" },
+      "description": {
+        "es": "Peso muerto rumano con mancuernas; más fácil de aprender.",
+        "en": "Romanian deadlift with dumbbells; easier to learn."
+      },
+      "primaryMuscle": "hamstrings",
+      "secondaryMuscles": ["glutes", "lower_back"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["stretch-focused", "home-friendly"]
+    },
+    {
+      "slug": "stiff-leg-deadlift",
+      "name": { "es": "Peso muerto piernas rígidas", "en": "Stiff-leg deadlift" },
+      "description": {
+        "es": "Peso muerto desde el suelo con rodillas casi extendidas.",
+        "en": "Deadlift from the floor with nearly straight knees."
+      },
+      "primaryMuscle": "hamstrings",
+      "secondaryMuscles": ["glutes", "lower_back"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["stretch-focused"]
+    },
+    {
+      "slug": "seated-leg-curl",
+      "name": { "es": "Curl femoral sentado", "en": "Seated leg curl" },
+      "description": {
+        "es": "Flexión de rodilla sentado; isquios trabajando en posición estirada.",
+        "en": "Seated knee flexion; hamstrings working in a stretched position."
+      },
+      "primaryMuscle": "hamstrings",
+      "secondaryMuscles": ["calves"],
+      "equipment": "machine",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "S", "powerlifting": "C" },
+      "tags": ["stretch-focused", "lumbar-friendly"]
+    },
+    {
+      "slug": "lying-leg-curl",
+      "name": { "es": "Curl femoral tumbado", "en": "Lying leg curl" },
+      "description": {
+        "es": "Flexión de rodilla tumbado boca abajo en máquina.",
+        "en": "Knee flexion lying face down on a machine."
+      },
+      "primaryMuscle": "hamstrings",
+      "secondaryMuscles": ["calves"],
+      "equipment": "machine",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["lumbar-friendly", "beginner-friendly"]
+    },
+    {
+      "slug": "nordic-hamstring-curl",
+      "name": { "es": "Curl nórdico", "en": "Nordic hamstring curl" },
+      "description": {
+        "es": "Descenso excéntrico de rodillas con los pies fijados; muy exigente.",
+        "en": "Eccentric lowering from the knees with feet anchored; very demanding."
+      },
+      "primaryMuscle": "hamstrings",
+      "secondaryMuscles": [],
+      "equipment": "bodyweight",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["home-friendly"]
+    },
+    {
+      "slug": "glute-ham-raise",
+      "name": { "es": "Glute-ham raise (GHR)", "en": "Glute-ham raise" },
+      "description": {
+        "es": "Flexión de rodilla y extensión de cadera en banco GHR.",
+        "en": "Knee flexion and hip extension on a GHR bench."
+      },
+      "primaryMuscle": "hamstrings",
+      "secondaryMuscles": ["glutes", "calves"],
+      "equipment": "machine",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": []
+    },
+    {
+      "slug": "barbell-hip-thrust",
+      "name": { "es": "Hip thrust con barra", "en": "Barbell hip thrust" },
+      "description": {
+        "es": "Extensión de cadera con la espalda apoyada en banco y barra en la cadera.",
+        "en": "Hip extension with the upper back on a bench and the bar on the hips."
+      },
+      "primaryMuscle": "glutes",
+      "secondaryMuscles": ["hamstrings"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": ["lumbar-friendly"]
+    },
+    {
+      "slug": "cable-pull-through",
+      "name": { "es": "Pull-through en polea", "en": "Cable pull-through" },
+      "description": {
+        "es": "Bisagra de cadera con polea baja entre las piernas.",
+        "en": "Hip hinge with a low cable between the legs."
+      },
+      "primaryMuscle": "glutes",
+      "secondaryMuscles": ["hamstrings"],
+      "equipment": "cable",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "B" },
+      "tags": ["lumbar-friendly", "beginner-friendly"]
+    },
+    {
+      "slug": "kettlebell-swing",
+      "name": { "es": "Swing con kettlebell", "en": "Kettlebell swing" },
+      "description": {
+        "es": "Extensión explosiva de cadera con kettlebell.",
+        "en": "Explosive hip extension with a kettlebell."
+      },
+      "primaryMuscle": "glutes",
+      "secondaryMuscles": ["hamstrings", "lower_back"],
+      "equipment": "kettlebell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "C", "powerlifting": "B" },
+      "tags": ["home-friendly"]
+    },
+    {
+      "slug": "hip-abduction-machine",
+      "name": { "es": "Abducción de cadera en máquina", "en": "Hip abduction machine" },
+      "description": {
+        "es": "Separación de piernas sentado en máquina; glúteo medio.",
+        "en": "Seated leg spreading on a machine; glute medius."
+      },
+      "primaryMuscle": "abductors",
+      "secondaryMuscles": ["glutes"],
+      "equipment": "machine",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["beginner-friendly"]
+    },
+    {
+      "slug": "hip-adduction-machine",
+      "name": { "es": "Aducción de cadera en máquina", "en": "Hip adduction machine" },
+      "description": {
+        "es": "Cierre de piernas sentado en máquina; aductores.",
+        "en": "Seated leg closing on a machine; adductors."
+      },
+      "primaryMuscle": "adductors",
+      "secondaryMuscles": [],
+      "equipment": "machine",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["beginner-friendly"]
+    },
+
+    {
+      "slug": "standing-calf-raise",
+      "name": { "es": "Elevación de talones de pie", "en": "Standing calf raise" },
+      "description": {
+        "es": "Flexión plantar de pie con rodillas extendidas; gastrocnemio.",
+        "en": "Standing plantar flexion with straight knees; gastrocnemius."
+      },
+      "primaryMuscle": "calves",
+      "secondaryMuscles": [],
+      "equipment": "machine",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["stretch-focused"]
+    },
+    {
+      "slug": "seated-calf-raise",
+      "name": { "es": "Elevación de talones sentado", "en": "Seated calf raise" },
+      "description": {
+        "es": "Flexión plantar sentado con rodillas flexionadas; sóleo.",
+        "en": "Seated plantar flexion with bent knees; soleus."
+      },
+      "primaryMuscle": "calves",
+      "secondaryMuscles": [],
+      "equipment": "machine",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "leg-press-calf-raise",
+      "name": { "es": "Elevación de talones en prensa", "en": "Leg press calf raise" },
+      "description": {
+        "es": "Flexión plantar en la prensa de piernas; gran recorrido y carga.",
+        "en": "Plantar flexion on the leg press; long range and heavy load."
+      },
+      "primaryMuscle": "calves",
+      "secondaryMuscles": [],
+      "equipment": "machine",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["stretch-focused"]
+    },
+    {
+      "slug": "smith-machine-calf-raise",
+      "name": { "es": "Elevación de talones en Smith", "en": "Smith machine calf raise" },
+      "description": {
+        "es": "Elevación de talones de pie con barra guiada sobre un escalón.",
+        "en": "Standing calf raise with a guided bar on a step."
+      },
+      "primaryMuscle": "calves",
+      "secondaryMuscles": [],
+      "equipment": "smith",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "single-leg-calf-raise",
+      "name": { "es": "Elevación de talón a una pierna", "en": "Single-leg calf raise" },
+      "description": {
+        "es": "Elevación de talón unilateral en escalón, con o sin mancuerna.",
+        "en": "Unilateral calf raise on a step, with or without a dumbbell."
+      },
+      "primaryMuscle": "calves",
+      "secondaryMuscles": [],
+      "equipment": "bodyweight",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["unilateral", "home-friendly", "stretch-focused"]
+    },
+
+    {
+      "slug": "dumbbell-shoulder-press-standing",
+      "name": {
+        "es": "Press de hombros con mancuernas de pie",
+        "en": "Standing dumbbell shoulder press"
+      },
+      "description": {
+        "es": "Press vertical de pie con mancuernas; más estabilidad del tronco.",
+        "en": "Standing vertical press with dumbbells; more trunk stability."
+      },
+      "primaryMuscle": "front_delts",
+      "secondaryMuscles": ["side_delts", "triceps", "abs"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "B", "powerlifting": "B" },
+      "tags": ["home-friendly"]
+    },
+    {
+      "slug": "lean-away-lateral-raise",
+      "name": {
+        "es": "Elevación lateral inclinada en polea",
+        "en": "Lean-away cable lateral raise"
+      },
+      "description": {
+        "es": "Elevación lateral a una mano inclinándose lejos de la polea.",
+        "en": "One-arm lateral raise leaning away from the cable."
+      },
+      "primaryMuscle": "side_delts",
+      "secondaryMuscles": [],
+      "equipment": "cable",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["unilateral", "stretch-focused"]
+    },
+    {
+      "slug": "cable-rear-delt-fly",
+      "name": { "es": "Cruce inverso en polea", "en": "Cable rear delt fly" },
+      "description": {
+        "es": "Aperturas inversas con poleas cruzadas para el deltoides posterior.",
+        "en": "Reverse fly with crossed cables for the rear delts."
+      },
+      "primaryMuscle": "rear_delts",
+      "secondaryMuscles": ["upper_back"],
+      "equipment": "cable",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "incline-cable-fly",
+      "name": { "es": "Aperturas inclinadas en polea", "en": "Incline cable fly" },
+      "description": {
+        "es": "Aperturas en banco inclinado entre poleas; pecho superior.",
+        "en": "Fly on an incline bench between cables; upper chest."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["front_delts"],
+      "equipment": "cable",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["stretch-focused"]
+    },
+    {
+      "slug": "deficit-push-up",
+      "name": { "es": "Flexiones en déficit", "en": "Deficit push-up" },
+      "description": {
+        "es": "Flexiones con las manos elevadas para bajar más allá de las manos.",
+        "en": "Push-ups with hands elevated to sink below hand level."
+      },
+      "primaryMuscle": "chest",
+      "secondaryMuscles": ["triceps", "front_delts"],
+      "equipment": "bodyweight",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["stretch-focused", "home-friendly"]
+    },
+    {
+      "slug": "weighted-pull-up",
+      "name": { "es": "Dominadas lastradas", "en": "Weighted pull-up" },
+      "description": {
+        "es": "Dominadas con lastre en cinturón o chaleco.",
+        "en": "Pull-ups with added weight on a belt or vest."
+      },
+      "primaryMuscle": "lats",
+      "secondaryMuscles": ["biceps", "upper_back"],
+      "equipment": "bodyweight",
+      "mechanic": "compound",
+      "category": "strength",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": []
+    },
+    {
+      "slug": "machine-pulldown",
+      "name": { "es": "Jalón en máquina", "en": "Machine pulldown" },
+      "description": {
+        "es": "Tracción vertical en máquina de palancas; muy estable.",
+        "en": "Vertical pull on a plate-loaded machine; very stable."
+      },
+      "primaryMuscle": "lats",
+      "secondaryMuscles": ["biceps", "upper_back"],
+      "equipment": "machine",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["beginner-friendly"]
+    },
+    {
+      "slug": "kroc-row",
+      "name": { "es": "Remo Kroc", "en": "Kroc row" },
+      "description": {
+        "es": "Remo a una mano pesado y a altas repeticiones con algo de impulso.",
+        "en": "Heavy, high-rep one-arm row with some body English."
+      },
+      "primaryMuscle": "lats",
+      "secondaryMuscles": ["upper_back", "biceps", "forearms"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "B" },
+      "tags": ["unilateral"]
+    },
+    {
+      "slug": "smith-machine-shrug",
+      "name": { "es": "Encogimientos en Smith", "en": "Smith machine shrug" },
+      "description": {
+        "es": "Encogimientos con barra guiada; fácil de cargar.",
+        "en": "Shrugs on a guided bar; easy to load."
+      },
+      "primaryMuscle": "traps",
+      "secondaryMuscles": [],
+      "equipment": "smith",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "high-cable-curl",
+      "name": { "es": "Curl alto en polea", "en": "High cable curl" },
+      "description": {
+        "es": "Curl con los brazos en cruz entre poleas altas.",
+        "en": "Curl with arms out to the sides between high cables."
+      },
+      "primaryMuscle": "biceps",
+      "secondaryMuscles": [],
+      "equipment": "cable",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "spider-curl",
+      "name": { "es": "Curl araña", "en": "Spider curl" },
+      "description": {
+        "es": "Curl boca abajo en banco inclinado; máxima tensión al final.",
+        "en": "Curl lying face down on an incline bench; max tension at the top."
+      },
+      "primaryMuscle": "biceps",
+      "secondaryMuscles": [],
+      "equipment": "dumbbell",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": []
+    },
+    {
+      "slug": "diamond-push-up",
+      "name": { "es": "Flexiones diamante", "en": "Diamond push-up" },
+      "description": {
+        "es": "Flexiones con las manos juntas; énfasis en tríceps.",
+        "en": "Push-ups with hands together; triceps emphasis."
+      },
+      "primaryMuscle": "triceps",
+      "secondaryMuscles": ["chest", "front_delts"],
+      "equipment": "bodyweight",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["home-friendly"]
+    },
+    {
+      "slug": "board-press",
+      "name": { "es": "Press con tablas", "en": "Board press" },
+      "description": {
+        "es": "Press de banca con tablas sobre el pecho; recorrido parcial y sobrecarga.",
+        "en": "Bench press with boards on the chest; partial range and overload."
+      },
+      "primaryMuscle": "triceps",
+      "secondaryMuscles": ["chest", "front_delts"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "C", "powerlifting": "B" },
+      "tags": []
+    },
+    {
+      "slug": "tempo-squat",
+      "name": { "es": "Sentadilla con tempo", "en": "Tempo squat" },
+      "description": {
+        "es": "Sentadilla con bajada lenta controlada (3-5 s); técnica y control.",
+        "en": "Squat with a slow controlled descent (3-5 s); technique and control."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "adductors"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "B" },
+      "tags": []
+    },
+    {
+      "slug": "zercher-squat",
+      "name": { "es": "Sentadilla Zercher", "en": "Zercher squat" },
+      "description": {
+        "es": "Sentadilla con la barra en el pliegue de los codos.",
+        "en": "Squat with the bar in the crook of the elbows."
+      },
+      "primaryMuscle": "quads",
+      "secondaryMuscles": ["glutes", "upper_back", "abs"],
+      "equipment": "barbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "B" },
+      "tags": []
+    },
+    {
+      "slug": "reverse-lunge",
+      "name": { "es": "Zancada hacia atrás", "en": "Reverse lunge" },
+      "description": {
+        "es": "Zancada dando el paso hacia atrás; más amable con la rodilla.",
+        "en": "Lunge stepping backward; easier on the knees."
+      },
+      "primaryMuscle": "glutes",
+      "secondaryMuscles": ["quads", "adductors"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "A", "powerlifting": "C" },
+      "tags": ["unilateral", "home-friendly"]
+    },
+    {
+      "slug": "single-leg-romanian-deadlift",
+      "name": { "es": "Peso muerto rumano a una pierna", "en": "Single-leg Romanian deadlift" },
+      "description": {
+        "es": "Bisagra de cadera unilateral; isquios, glúteo y equilibrio.",
+        "en": "Unilateral hip hinge; hamstrings, glutes and balance."
+      },
+      "primaryMuscle": "hamstrings",
+      "secondaryMuscles": ["glutes"],
+      "equipment": "dumbbell",
+      "mechanic": "compound",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "C" },
+      "tags": ["unilateral", "home-friendly"]
+    },
+    {
+      "slug": "copenhagen-adduction",
+      "name": { "es": "Aducción Copenhague", "en": "Copenhagen adduction" },
+      "description": {
+        "es": "Elevaciones de cadera de lado con la pierna superior apoyada en un banco.",
+        "en": "Side-lying hip raises with the top leg on a bench."
+      },
+      "primaryMuscle": "adductors",
+      "secondaryMuscles": ["obliques"],
+      "equipment": "bodyweight",
+      "mechanic": "isolation",
+      "category": "accessory",
+      "tiers": { "hypertrophy": "B", "powerlifting": "B" },
+      "tags": ["home-friendly"]
+    }
+  ]
+}

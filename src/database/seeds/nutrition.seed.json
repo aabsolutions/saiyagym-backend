@@ -1,0 +1,2399 @@
+{
+  "foods": [
+    {
+      "slug": "chicken-breast",
+      "name": {
+        "es": "Pechuga de pollo",
+        "en": "Chicken breast"
+      },
+      "category": "meat",
+      "per100g": {
+        "kcal": 120,
+        "proteinG": 22.5,
+        "carbsG": 0,
+        "fatG": 2.6
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein", "low-fat"]
+    },
+    {
+      "slug": "chicken-thigh",
+      "name": {
+        "es": "Muslo de pollo sin piel",
+        "en": "Skinless chicken thigh"
+      },
+      "category": "meat",
+      "per100g": {
+        "kcal": 121,
+        "proteinG": 19.7,
+        "carbsG": 0,
+        "fatG": 4.1
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein"]
+    },
+    {
+      "slug": "turkey-breast",
+      "name": {
+        "es": "Pechuga de pavo",
+        "en": "Turkey breast"
+      },
+      "category": "meat",
+      "per100g": {
+        "kcal": 114,
+        "proteinG": 23.7,
+        "carbsG": 0,
+        "fatG": 1.5
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein", "low-fat"]
+    },
+    {
+      "slug": "lean-ground-beef",
+      "name": {
+        "es": "Carne picada de ternera magra (5 %)",
+        "en": "Lean ground beef (5%)"
+      },
+      "category": "meat",
+      "per100g": {
+        "kcal": 137,
+        "proteinG": 21.4,
+        "carbsG": 0,
+        "fatG": 5
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein"]
+    },
+    {
+      "slug": "lean-beef-steak",
+      "name": {
+        "es": "Filete de ternera magro",
+        "en": "Lean beef steak"
+      },
+      "category": "meat",
+      "per100g": {
+        "kcal": 150,
+        "proteinG": 22,
+        "carbsG": 0,
+        "fatG": 6.8
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein"]
+    },
+    {
+      "slug": "pork-loin",
+      "name": {
+        "es": "Lomo de cerdo",
+        "en": "Pork loin"
+      },
+      "category": "meat",
+      "per100g": {
+        "kcal": 143,
+        "proteinG": 21,
+        "carbsG": 0,
+        "fatG": 6.3
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein"]
+    },
+    {
+      "slug": "cooked-ham",
+      "name": {
+        "es": "Jamón cocido",
+        "en": "Cooked ham"
+      },
+      "category": "meat",
+      "per100g": {
+        "kcal": 107,
+        "proteinG": 18,
+        "carbsG": 1.5,
+        "fatG": 3
+      },
+      "tags": ["lactose-free", "high-protein"]
+    },
+    {
+      "slug": "serrano-ham",
+      "name": {
+        "es": "Jamón serrano",
+        "en": "Serrano ham"
+      },
+      "category": "meat",
+      "per100g": {
+        "kcal": 241,
+        "proteinG": 31,
+        "carbsG": 0,
+        "fatG": 13
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein"]
+    },
+    {
+      "slug": "rabbit",
+      "name": {
+        "es": "Conejo",
+        "en": "Rabbit"
+      },
+      "category": "meat",
+      "per100g": {
+        "kcal": 136,
+        "proteinG": 21,
+        "carbsG": 0,
+        "fatG": 5.5
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein"]
+    },
+    {
+      "slug": "salmon",
+      "name": {
+        "es": "Salmón",
+        "en": "Salmon"
+      },
+      "category": "fish",
+      "per100g": {
+        "kcal": 208,
+        "proteinG": 20,
+        "carbsG": 0,
+        "fatG": 13
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein"]
+    },
+    {
+      "slug": "canned-tuna-water",
+      "name": {
+        "es": "Atún al natural (lata)",
+        "en": "Canned tuna in water"
+      },
+      "category": "fish",
+      "per100g": {
+        "kcal": 116,
+        "proteinG": 26,
+        "carbsG": 0,
+        "fatG": 1
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein", "low-fat"]
+    },
+    {
+      "slug": "hake",
+      "name": {
+        "es": "Merluza",
+        "en": "Hake"
+      },
+      "category": "fish",
+      "per100g": {
+        "kcal": 86,
+        "proteinG": 17,
+        "carbsG": 0,
+        "fatG": 2
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein", "low-fat"]
+    },
+    {
+      "slug": "cod",
+      "name": {
+        "es": "Bacalao fresco",
+        "en": "Cod"
+      },
+      "category": "fish",
+      "per100g": {
+        "kcal": 82,
+        "proteinG": 18,
+        "carbsG": 0,
+        "fatG": 0.7
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein", "low-fat"]
+    },
+    {
+      "slug": "canned-sardines",
+      "name": {
+        "es": "Sardinas en aceite (escurridas)",
+        "en": "Canned sardines in oil (drained)"
+      },
+      "category": "fish",
+      "per100g": {
+        "kcal": 208,
+        "proteinG": 24.6,
+        "carbsG": 0,
+        "fatG": 11.5
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein"]
+    },
+    {
+      "slug": "shrimp",
+      "name": {
+        "es": "Gambas",
+        "en": "Shrimp"
+      },
+      "category": "fish",
+      "per100g": {
+        "kcal": 85,
+        "proteinG": 20,
+        "carbsG": 0,
+        "fatG": 0.5
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein", "low-fat"]
+    },
+    {
+      "slug": "tilapia",
+      "name": {
+        "es": "Tilapia",
+        "en": "Tilapia"
+      },
+      "category": "fish",
+      "per100g": {
+        "kcal": 96,
+        "proteinG": 20,
+        "carbsG": 0,
+        "fatG": 1.7
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein", "low-fat"]
+    },
+    {
+      "slug": "mackerel",
+      "name": {
+        "es": "Caballa",
+        "en": "Mackerel"
+      },
+      "category": "fish",
+      "per100g": {
+        "kcal": 205,
+        "proteinG": 19,
+        "carbsG": 0,
+        "fatG": 13.9
+      },
+      "tags": ["gluten-free", "lactose-free", "high-protein"]
+    },
+    {
+      "slug": "whole-egg",
+      "name": {
+        "es": "Huevo entero",
+        "en": "Whole egg"
+      },
+      "category": "eggs",
+      "per100g": {
+        "kcal": 143,
+        "proteinG": 12.6,
+        "carbsG": 0.7,
+        "fatG": 9.5
+      },
+      "tags": ["vegetarian", "gluten-free", "lactose-free"]
+    },
+    {
+      "slug": "egg-whites",
+      "name": {
+        "es": "Claras de huevo",
+        "en": "Egg whites"
+      },
+      "category": "eggs",
+      "per100g": {
+        "kcal": 52,
+        "proteinG": 10.9,
+        "carbsG": 0.7,
+        "fatG": 0.2
+      },
+      "tags": ["vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "skim-milk",
+      "name": {
+        "es": "Leche desnatada",
+        "en": "Skim milk"
+      },
+      "category": "dairy",
+      "per100g": {
+        "kcal": 34,
+        "proteinG": 3.4,
+        "carbsG": 5,
+        "fatG": 0.1
+      },
+      "tags": ["vegetarian", "gluten-free", "low-fat"]
+    },
+    {
+      "slug": "whole-milk",
+      "name": {
+        "es": "Leche entera",
+        "en": "Whole milk"
+      },
+      "category": "dairy",
+      "per100g": {
+        "kcal": 61,
+        "proteinG": 3.2,
+        "carbsG": 4.8,
+        "fatG": 3.3
+      },
+      "tags": ["vegetarian", "gluten-free"]
+    },
+    {
+      "slug": "nonfat-greek-yogurt",
+      "name": {
+        "es": "Yogur griego 0 %",
+        "en": "Nonfat Greek yogurt"
+      },
+      "category": "dairy",
+      "per100g": {
+        "kcal": 59,
+        "proteinG": 10.2,
+        "carbsG": 3.6,
+        "fatG": 0.4
+      },
+      "tags": ["vegetarian", "gluten-free", "high-protein", "low-fat"]
+    },
+    {
+      "slug": "plain-yogurt",
+      "name": {
+        "es": "Yogur natural",
+        "en": "Plain yogurt"
+      },
+      "category": "dairy",
+      "per100g": {
+        "kcal": 61,
+        "proteinG": 3.5,
+        "carbsG": 4.7,
+        "fatG": 3.3
+      },
+      "tags": ["vegetarian", "gluten-free"]
+    },
+    {
+      "slug": "cottage-cheese",
+      "name": {
+        "es": "Requesón / queso cottage",
+        "en": "Cottage cheese (low fat)"
+      },
+      "category": "dairy",
+      "per100g": {
+        "kcal": 84,
+        "proteinG": 11,
+        "carbsG": 4.3,
+        "fatG": 2.3
+      },
+      "tags": ["vegetarian", "gluten-free", "high-protein", "low-fat"]
+    },
+    {
+      "slug": "skyr",
+      "name": {
+        "es": "Skyr natural",
+        "en": "Plain skyr"
+      },
+      "category": "dairy",
+      "per100g": {
+        "kcal": 63,
+        "proteinG": 11,
+        "carbsG": 4,
+        "fatG": 0.2
+      },
+      "tags": ["vegetarian", "gluten-free", "high-protein", "low-fat"]
+    },
+    {
+      "slug": "mozzarella",
+      "name": {
+        "es": "Mozzarella",
+        "en": "Mozzarella"
+      },
+      "category": "dairy",
+      "per100g": {
+        "kcal": 280,
+        "proteinG": 28,
+        "carbsG": 3,
+        "fatG": 17
+      },
+      "tags": ["vegetarian", "gluten-free", "high-protein"]
+    },
+    {
+      "slug": "parmesan",
+      "name": {
+        "es": "Queso parmesano",
+        "en": "Parmesan cheese"
+      },
+      "category": "dairy",
+      "per100g": {
+        "kcal": 431,
+        "proteinG": 38,
+        "carbsG": 4,
+        "fatG": 29
+      },
+      "tags": ["vegetarian", "gluten-free", "high-protein"]
+    },
+    {
+      "slug": "cooked-lentils",
+      "name": {
+        "es": "Lentejas cocidas",
+        "en": "Cooked lentils"
+      },
+      "category": "legumes",
+      "per100g": {
+        "kcal": 116,
+        "proteinG": 9,
+        "carbsG": 20,
+        "fatG": 0.4
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "high-fiber", "low-fat"]
+    },
+    {
+      "slug": "cooked-chickpeas",
+      "name": {
+        "es": "Garbanzos cocidos",
+        "en": "Cooked chickpeas"
+      },
+      "category": "legumes",
+      "per100g": {
+        "kcal": 164,
+        "proteinG": 8.9,
+        "carbsG": 27.4,
+        "fatG": 2.6
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "high-fiber", "low-fat"]
+    },
+    {
+      "slug": "cooked-black-beans",
+      "name": {
+        "es": "Alubias negras cocidas",
+        "en": "Cooked black beans"
+      },
+      "category": "legumes",
+      "per100g": {
+        "kcal": 132,
+        "proteinG": 8.9,
+        "carbsG": 23.7,
+        "fatG": 0.5
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "high-fiber", "low-fat"]
+    },
+    {
+      "slug": "firm-tofu",
+      "name": {
+        "es": "Tofu firme",
+        "en": "Firm tofu"
+      },
+      "category": "legumes",
+      "per100g": {
+        "kcal": 144,
+        "proteinG": 15.7,
+        "carbsG": 2.8,
+        "fatG": 8.7
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "high-protein"]
+    },
+    {
+      "slug": "tempeh",
+      "name": {
+        "es": "Tempeh",
+        "en": "Tempeh"
+      },
+      "category": "legumes",
+      "per100g": {
+        "kcal": 192,
+        "proteinG": 20.3,
+        "carbsG": 7.6,
+        "fatG": 10.8
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "high-protein"]
+    },
+    {
+      "slug": "edamame",
+      "name": {
+        "es": "Edamame",
+        "en": "Edamame"
+      },
+      "category": "legumes",
+      "per100g": {
+        "kcal": 121,
+        "proteinG": 11.9,
+        "carbsG": 8.9,
+        "fatG": 5.2
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "high-fiber"]
+    },
+    {
+      "slug": "hummus",
+      "name": {
+        "es": "Hummus",
+        "en": "Hummus"
+      },
+      "category": "legumes",
+      "per100g": {
+        "kcal": 166,
+        "proteinG": 7.9,
+        "carbsG": 14.3,
+        "fatG": 9.6
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "high-fiber"]
+    },
+    {
+      "slug": "cooked-white-rice",
+      "name": {
+        "es": "Arroz blanco cocido",
+        "en": "Cooked white rice"
+      },
+      "category": "grains",
+      "per100g": {
+        "kcal": 130,
+        "proteinG": 2.7,
+        "carbsG": 28.2,
+        "fatG": 0.3
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "cooked-brown-rice",
+      "name": {
+        "es": "Arroz integral cocido",
+        "en": "Cooked brown rice"
+      },
+      "category": "grains",
+      "per100g": {
+        "kcal": 123,
+        "proteinG": 2.7,
+        "carbsG": 25.6,
+        "fatG": 1
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "cooked-pasta",
+      "name": {
+        "es": "Pasta cocida",
+        "en": "Cooked pasta"
+      },
+      "category": "grains",
+      "per100g": {
+        "kcal": 158,
+        "proteinG": 5.8,
+        "carbsG": 30.9,
+        "fatG": 0.9
+      },
+      "tags": ["vegan", "vegetarian", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "cooked-whole-wheat-pasta",
+      "name": {
+        "es": "Pasta integral cocida",
+        "en": "Cooked whole wheat pasta"
+      },
+      "category": "grains",
+      "per100g": {
+        "kcal": 149,
+        "proteinG": 6,
+        "carbsG": 30,
+        "fatG": 1.7
+      },
+      "tags": ["vegan", "vegetarian", "lactose-free", "high-fiber", "low-fat"]
+    },
+    {
+      "slug": "rolled-oats",
+      "name": {
+        "es": "Copos de avena",
+        "en": "Rolled oats"
+      },
+      "category": "grains",
+      "per100g": {
+        "kcal": 379,
+        "proteinG": 13.2,
+        "carbsG": 67.7,
+        "fatG": 6.5
+      },
+      "tags": ["vegan", "vegetarian", "lactose-free", "high-fiber"]
+    },
+    {
+      "slug": "cooked-quinoa",
+      "name": {
+        "es": "Quinoa cocida",
+        "en": "Cooked quinoa"
+      },
+      "category": "grains",
+      "per100g": {
+        "kcal": 120,
+        "proteinG": 4.4,
+        "carbsG": 21.3,
+        "fatG": 1.9
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "whole-wheat-bread",
+      "name": {
+        "es": "Pan integral",
+        "en": "Whole wheat bread"
+      },
+      "category": "grains",
+      "per100g": {
+        "kcal": 247,
+        "proteinG": 13,
+        "carbsG": 41,
+        "fatG": 3.4
+      },
+      "tags": ["vegan", "vegetarian", "lactose-free", "high-fiber"]
+    },
+    {
+      "slug": "white-bread",
+      "name": {
+        "es": "Pan blanco",
+        "en": "White bread"
+      },
+      "category": "grains",
+      "per100g": {
+        "kcal": 265,
+        "proteinG": 9,
+        "carbsG": 49,
+        "fatG": 3.2
+      },
+      "tags": ["vegan", "vegetarian", "lactose-free"]
+    },
+    {
+      "slug": "rice-cakes",
+      "name": {
+        "es": "Tortitas de arroz",
+        "en": "Rice cakes"
+      },
+      "category": "grains",
+      "per100g": {
+        "kcal": 387,
+        "proteinG": 8,
+        "carbsG": 81.5,
+        "fatG": 2.8
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "corn-tortilla",
+      "name": {
+        "es": "Tortilla de maíz",
+        "en": "Corn tortilla"
+      },
+      "category": "grains",
+      "per100g": {
+        "kcal": 218,
+        "proteinG": 5.7,
+        "carbsG": 44.6,
+        "fatG": 2.9
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "cooked-couscous",
+      "name": {
+        "es": "Cuscús cocido",
+        "en": "Cooked couscous"
+      },
+      "category": "grains",
+      "per100g": {
+        "kcal": 112,
+        "proteinG": 3.8,
+        "carbsG": 23.2,
+        "fatG": 0.2
+      },
+      "tags": ["vegan", "vegetarian", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "corn-flakes",
+      "name": {
+        "es": "Copos de maíz",
+        "en": "Corn flakes"
+      },
+      "category": "grains",
+      "per100g": {
+        "kcal": 357,
+        "proteinG": 7.5,
+        "carbsG": 84,
+        "fatG": 0.4
+      },
+      "tags": ["vegan", "vegetarian", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "boiled-potato",
+      "name": {
+        "es": "Patata cocida",
+        "en": "Boiled potato"
+      },
+      "category": "tubers",
+      "per100g": {
+        "kcal": 87,
+        "proteinG": 1.9,
+        "carbsG": 20.1,
+        "fatG": 0.1
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "baked-sweet-potato",
+      "name": {
+        "es": "Boniato asado",
+        "en": "Baked sweet potato"
+      },
+      "category": "tubers",
+      "per100g": {
+        "kcal": 90,
+        "proteinG": 2,
+        "carbsG": 20.7,
+        "fatG": 0.2
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "banana",
+      "name": {
+        "es": "Plátano",
+        "en": "Banana"
+      },
+      "category": "fruits",
+      "per100g": {
+        "kcal": 89,
+        "proteinG": 1.1,
+        "carbsG": 22.8,
+        "fatG": 0.3
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "apple",
+      "name": {
+        "es": "Manzana",
+        "en": "Apple"
+      },
+      "category": "fruits",
+      "per100g": {
+        "kcal": 52,
+        "proteinG": 0.3,
+        "carbsG": 13.8,
+        "fatG": 0.2
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "orange",
+      "name": {
+        "es": "Naranja",
+        "en": "Orange"
+      },
+      "category": "fruits",
+      "per100g": {
+        "kcal": 47,
+        "proteinG": 0.9,
+        "carbsG": 11.8,
+        "fatG": 0.1
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "strawberries",
+      "name": {
+        "es": "Fresas",
+        "en": "Strawberries"
+      },
+      "category": "fruits",
+      "per100g": {
+        "kcal": 32,
+        "proteinG": 0.7,
+        "carbsG": 7.7,
+        "fatG": 0.3
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "blueberries",
+      "name": {
+        "es": "Arándanos",
+        "en": "Blueberries"
+      },
+      "category": "fruits",
+      "per100g": {
+        "kcal": 57,
+        "proteinG": 0.7,
+        "carbsG": 14.5,
+        "fatG": 0.3
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "kiwi",
+      "name": {
+        "es": "Kiwi",
+        "en": "Kiwi"
+      },
+      "category": "fruits",
+      "per100g": {
+        "kcal": 61,
+        "proteinG": 1.1,
+        "carbsG": 14.7,
+        "fatG": 0.5
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "pineapple",
+      "name": {
+        "es": "Piña",
+        "en": "Pineapple"
+      },
+      "category": "fruits",
+      "per100g": {
+        "kcal": 50,
+        "proteinG": 0.5,
+        "carbsG": 13.1,
+        "fatG": 0.1
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "dates",
+      "name": {
+        "es": "Dátiles",
+        "en": "Dates"
+      },
+      "category": "fruits",
+      "per100g": {
+        "kcal": 282,
+        "proteinG": 2.5,
+        "carbsG": 75,
+        "fatG": 0.4
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "high-fiber", "low-fat"]
+    },
+    {
+      "slug": "mango",
+      "name": {
+        "es": "Mango",
+        "en": "Mango"
+      },
+      "category": "fruits",
+      "per100g": {
+        "kcal": 60,
+        "proteinG": 0.8,
+        "carbsG": 15,
+        "fatG": 0.4
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "broccoli",
+      "name": {
+        "es": "Brócoli",
+        "en": "Broccoli"
+      },
+      "category": "vegetables",
+      "per100g": {
+        "kcal": 34,
+        "proteinG": 2.8,
+        "carbsG": 6.6,
+        "fatG": 0.4
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "high-fiber", "low-fat"]
+    },
+    {
+      "slug": "spinach",
+      "name": {
+        "es": "Espinacas",
+        "en": "Spinach"
+      },
+      "category": "vegetables",
+      "per100g": {
+        "kcal": 23,
+        "proteinG": 2.9,
+        "carbsG": 3.6,
+        "fatG": 0.4
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "tomato",
+      "name": {
+        "es": "Tomate",
+        "en": "Tomato"
+      },
+      "category": "vegetables",
+      "per100g": {
+        "kcal": 18,
+        "proteinG": 0.9,
+        "carbsG": 3.9,
+        "fatG": 0.2
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "lettuce",
+      "name": {
+        "es": "Lechuga",
+        "en": "Lettuce"
+      },
+      "category": "vegetables",
+      "per100g": {
+        "kcal": 15,
+        "proteinG": 1.4,
+        "carbsG": 2.9,
+        "fatG": 0.2
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "carrot",
+      "name": {
+        "es": "Zanahoria",
+        "en": "Carrot"
+      },
+      "category": "vegetables",
+      "per100g": {
+        "kcal": 41,
+        "proteinG": 0.9,
+        "carbsG": 9.6,
+        "fatG": 0.2
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "zucchini",
+      "name": {
+        "es": "Calabacín",
+        "en": "Zucchini"
+      },
+      "category": "vegetables",
+      "per100g": {
+        "kcal": 17,
+        "proteinG": 1.2,
+        "carbsG": 3.1,
+        "fatG": 0.3
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "red-bell-pepper",
+      "name": {
+        "es": "Pimiento rojo",
+        "en": "Red bell pepper"
+      },
+      "category": "vegetables",
+      "per100g": {
+        "kcal": 31,
+        "proteinG": 1,
+        "carbsG": 6,
+        "fatG": 0.3
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "green-beans",
+      "name": {
+        "es": "Judías verdes",
+        "en": "Green beans"
+      },
+      "category": "vegetables",
+      "per100g": {
+        "kcal": 31,
+        "proteinG": 1.8,
+        "carbsG": 7,
+        "fatG": 0.2
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "onion",
+      "name": {
+        "es": "Cebolla",
+        "en": "Onion"
+      },
+      "category": "vegetables",
+      "per100g": {
+        "kcal": 40,
+        "proteinG": 1.1,
+        "carbsG": 9.3,
+        "fatG": 0.1
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "mushrooms",
+      "name": {
+        "es": "Champiñones",
+        "en": "Mushrooms"
+      },
+      "category": "vegetables",
+      "per100g": {
+        "kcal": 22,
+        "proteinG": 3.1,
+        "carbsG": 3.3,
+        "fatG": 0.3
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "cucumber",
+      "name": {
+        "es": "Pepino",
+        "en": "Cucumber"
+      },
+      "category": "vegetables",
+      "per100g": {
+        "kcal": 15,
+        "proteinG": 0.7,
+        "carbsG": 3.6,
+        "fatG": 0.1
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "cauliflower",
+      "name": {
+        "es": "Coliflor",
+        "en": "Cauliflower"
+      },
+      "category": "vegetables",
+      "per100g": {
+        "kcal": 25,
+        "proteinG": 1.9,
+        "carbsG": 5,
+        "fatG": 0.3
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "almonds",
+      "name": {
+        "es": "Almendras",
+        "en": "Almonds"
+      },
+      "category": "nuts_seeds",
+      "per100g": {
+        "kcal": 579,
+        "proteinG": 21.2,
+        "carbsG": 21.6,
+        "fatG": 49.9
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "high-fiber"]
+    },
+    {
+      "slug": "walnuts",
+      "name": {
+        "es": "Nueces",
+        "en": "Walnuts"
+      },
+      "category": "nuts_seeds",
+      "per100g": {
+        "kcal": 654,
+        "proteinG": 15.2,
+        "carbsG": 13.7,
+        "fatG": 65.2
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free"]
+    },
+    {
+      "slug": "peanut-butter",
+      "name": {
+        "es": "Crema de cacahuete",
+        "en": "Peanut butter"
+      },
+      "category": "nuts_seeds",
+      "per100g": {
+        "kcal": 588,
+        "proteinG": 25,
+        "carbsG": 20,
+        "fatG": 50
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free"]
+    },
+    {
+      "slug": "chia-seeds",
+      "name": {
+        "es": "Semillas de chía",
+        "en": "Chia seeds"
+      },
+      "category": "nuts_seeds",
+      "per100g": {
+        "kcal": 486,
+        "proteinG": 16.5,
+        "carbsG": 42.1,
+        "fatG": 30.7
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "high-fiber"]
+    },
+    {
+      "slug": "cashews",
+      "name": {
+        "es": "Anacardos",
+        "en": "Cashews"
+      },
+      "category": "nuts_seeds",
+      "per100g": {
+        "kcal": 553,
+        "proteinG": 18.2,
+        "carbsG": 30.2,
+        "fatG": 43.9
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free"]
+    },
+    {
+      "slug": "olive-oil",
+      "name": {
+        "es": "Aceite de oliva virgen extra",
+        "en": "Extra virgin olive oil"
+      },
+      "category": "fats_oils",
+      "per100g": {
+        "kcal": 884,
+        "proteinG": 0,
+        "carbsG": 0,
+        "fatG": 100
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free"]
+    },
+    {
+      "slug": "avocado",
+      "name": {
+        "es": "Aguacate",
+        "en": "Avocado"
+      },
+      "category": "fats_oils",
+      "per100g": {
+        "kcal": 160,
+        "proteinG": 2,
+        "carbsG": 8.5,
+        "fatG": 14.7
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "high-fiber"]
+    },
+    {
+      "slug": "butter",
+      "name": {
+        "es": "Mantequilla",
+        "en": "Butter"
+      },
+      "category": "fats_oils",
+      "per100g": {
+        "kcal": 717,
+        "proteinG": 0.9,
+        "carbsG": 0.1,
+        "fatG": 81
+      },
+      "tags": ["vegetarian", "gluten-free"]
+    },
+    {
+      "slug": "whey-protein",
+      "name": {
+        "es": "Proteína de suero (whey)",
+        "en": "Whey protein powder"
+      },
+      "category": "supplements",
+      "per100g": {
+        "kcal": 380,
+        "proteinG": 78,
+        "carbsG": 8,
+        "fatG": 5
+      },
+      "tags": ["vegetarian", "gluten-free", "high-protein"]
+    },
+    {
+      "slug": "dark-chocolate",
+      "name": {
+        "es": "Chocolate negro 70-85 %",
+        "en": "Dark chocolate 70-85%"
+      },
+      "category": "other",
+      "per100g": {
+        "kcal": 598,
+        "proteinG": 7.8,
+        "carbsG": 45.9,
+        "fatG": 42.6
+      },
+      "tags": ["vegetarian", "gluten-free"]
+    },
+    {
+      "slug": "honey",
+      "name": {
+        "es": "Miel",
+        "en": "Honey"
+      },
+      "category": "other",
+      "per100g": {
+        "kcal": 304,
+        "proteinG": 0.3,
+        "carbsG": 82.4,
+        "fatG": 0
+      },
+      "tags": ["vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    },
+    {
+      "slug": "soy-drink",
+      "name": {
+        "es": "Bebida de soja sin azúcar",
+        "en": "Unsweetened soy drink"
+      },
+      "category": "other",
+      "per100g": {
+        "kcal": 33,
+        "proteinG": 2.9,
+        "carbsG": 1.7,
+        "fatG": 1.6
+      },
+      "tags": ["vegan", "vegetarian", "gluten-free", "lactose-free", "low-fat"]
+    }
+  ],
+  "mealSuggestions": [
+    {
+      "slug": "bulk-oats-banana-pb",
+      "name": {
+        "es": "Avena con plátano y crema de cacahuete",
+        "en": "Oats with banana and peanut butter"
+      },
+      "description": {
+        "es": "Avena cocida en leche entera con plátano y crema de cacahuete: muchas calorías fáciles de comer.",
+        "en": "Oats cooked in whole milk with banana and peanut butter: lots of easy-to-eat calories."
+      },
+      "goal": "bulk",
+      "mealType": "breakfast",
+      "items": [
+        {
+          "foodSlug": "rolled-oats",
+          "grams": 100
+        },
+        {
+          "foodSlug": "whole-milk",
+          "grams": 300
+        },
+        {
+          "foodSlug": "banana",
+          "grams": 120
+        },
+        {
+          "foodSlug": "peanut-butter",
+          "grams": 30
+        }
+      ],
+      "isSample": true,
+      "sortOrder": 0
+    },
+    {
+      "slug": "bulk-eggs-toast-avocado",
+      "name": {
+        "es": "Huevos con tostadas y aguacate",
+        "en": "Eggs on toast with avocado"
+      },
+      "description": {
+        "es": "Tres huevos, pan integral y aguacate, con un vaso de leche.",
+        "en": "Three eggs, whole wheat bread and avocado, with a glass of milk."
+      },
+      "goal": "bulk",
+      "mealType": "breakfast",
+      "items": [
+        {
+          "foodSlug": "whole-egg",
+          "grams": 150
+        },
+        {
+          "foodSlug": "whole-wheat-bread",
+          "grams": 100
+        },
+        {
+          "foodSlug": "avocado",
+          "grams": 70
+        },
+        {
+          "foodSlug": "whole-milk",
+          "grams": 250
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 1
+    },
+    {
+      "slug": "bulk-chicken-rice-broccoli",
+      "name": {
+        "es": "Pollo con arroz y brócoli",
+        "en": "Chicken with rice and broccoli"
+      },
+      "description": {
+        "es": "El clásico: pechuga de pollo, ración generosa de arroz, brócoli y aceite de oliva.",
+        "en": "The classic: chicken breast, a generous serving of rice, broccoli and olive oil."
+      },
+      "goal": "bulk",
+      "mealType": "lunch",
+      "items": [
+        {
+          "foodSlug": "chicken-breast",
+          "grams": 200
+        },
+        {
+          "foodSlug": "cooked-white-rice",
+          "grams": 300
+        },
+        {
+          "foodSlug": "broccoli",
+          "grams": 150
+        },
+        {
+          "foodSlug": "olive-oil",
+          "grams": 15
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 2
+    },
+    {
+      "slug": "bulk-beef-pasta",
+      "name": {
+        "es": "Pasta con carne picada y tomate",
+        "en": "Pasta with ground beef and tomato"
+      },
+      "description": {
+        "es": "Pasta con salsa de carne magra, tomate y parmesano.",
+        "en": "Pasta with lean beef and tomato sauce, topped with parmesan."
+      },
+      "goal": "bulk",
+      "mealType": "lunch",
+      "items": [
+        {
+          "foodSlug": "cooked-pasta",
+          "grams": 300
+        },
+        {
+          "foodSlug": "lean-ground-beef",
+          "grams": 150
+        },
+        {
+          "foodSlug": "tomato",
+          "grams": 150
+        },
+        {
+          "foodSlug": "parmesan",
+          "grams": 15
+        },
+        {
+          "foodSlug": "olive-oil",
+          "grams": 10
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 3
+    },
+    {
+      "slug": "bulk-salmon-potatoes",
+      "name": {
+        "es": "Salmón con patatas y ensalada",
+        "en": "Salmon with potatoes and salad"
+      },
+      "description": {
+        "es": "Salmón al horno con patata cocida y ensalada aliñada con aceite de oliva.",
+        "en": "Baked salmon with boiled potatoes and a salad dressed with olive oil."
+      },
+      "goal": "bulk",
+      "mealType": "dinner",
+      "items": [
+        {
+          "foodSlug": "salmon",
+          "grams": 180
+        },
+        {
+          "foodSlug": "boiled-potato",
+          "grams": 300
+        },
+        {
+          "foodSlug": "lettuce",
+          "grams": 80
+        },
+        {
+          "foodSlug": "tomato",
+          "grams": 100
+        },
+        {
+          "foodSlug": "olive-oil",
+          "grams": 10
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 4
+    },
+    {
+      "slug": "bulk-pork-sweet-potato",
+      "name": {
+        "es": "Lomo de cerdo con boniato",
+        "en": "Pork loin with sweet potato"
+      },
+      "description": {
+        "es": "Lomo a la plancha con boniato asado y judías verdes.",
+        "en": "Grilled pork loin with baked sweet potato and green beans."
+      },
+      "goal": "bulk",
+      "mealType": "dinner",
+      "items": [
+        {
+          "foodSlug": "pork-loin",
+          "grams": 180
+        },
+        {
+          "foodSlug": "baked-sweet-potato",
+          "grams": 300
+        },
+        {
+          "foodSlug": "green-beans",
+          "grams": 150
+        },
+        {
+          "foodSlug": "olive-oil",
+          "grams": 10
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 5
+    },
+    {
+      "slug": "bulk-yogurt-nuts-honey",
+      "name": {
+        "es": "Yogur griego con frutos secos y miel",
+        "en": "Greek yogurt with nuts and honey"
+      },
+      "description": {
+        "es": "Snack denso en calorías y proteína para sumar sin llenarte demasiado.",
+        "en": "Calorie- and protein-dense snack that adds up without filling you too much."
+      },
+      "goal": "bulk",
+      "mealType": "snack",
+      "items": [
+        {
+          "foodSlug": "nonfat-greek-yogurt",
+          "grams": 250
+        },
+        {
+          "foodSlug": "walnuts",
+          "grams": 30
+        },
+        {
+          "foodSlug": "honey",
+          "grams": 20
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 6
+    },
+    {
+      "slug": "bulk-pre-ham-sandwich",
+      "name": {
+        "es": "Bocadillo de jamón y plátano",
+        "en": "Ham sandwich and banana"
+      },
+      "description": {
+        "es": "Hidratos fáciles de digerir y algo de proteína 60-90 minutos antes de entrenar.",
+        "en": "Easy-to-digest carbs and some protein 60-90 minutes before training."
+      },
+      "goal": "bulk",
+      "mealType": "pre_workout",
+      "items": [
+        {
+          "foodSlug": "white-bread",
+          "grams": 100
+        },
+        {
+          "foodSlug": "serrano-ham",
+          "grams": 40
+        },
+        {
+          "foodSlug": "banana",
+          "grams": 120
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 7
+    },
+    {
+      "slug": "bulk-post-shake-oats",
+      "name": {
+        "es": "Batido de proteína con avena y plátano",
+        "en": "Protein shake with oats and banana"
+      },
+      "description": {
+        "es": "Batido de whey en leche con avena y plátano: proteína e hidratos tras entrenar.",
+        "en": "Whey shake in milk with oats and banana: protein and carbs after training."
+      },
+      "goal": "bulk",
+      "mealType": "post_workout",
+      "items": [
+        {
+          "foodSlug": "whey-protein",
+          "grams": 30
+        },
+        {
+          "foodSlug": "whole-milk",
+          "grams": 300
+        },
+        {
+          "foodSlug": "rolled-oats",
+          "grams": 60
+        },
+        {
+          "foodSlug": "banana",
+          "grams": 120
+        }
+      ],
+      "isSample": true,
+      "sortOrder": 8
+    },
+    {
+      "slug": "bulk-post-rice-tuna",
+      "name": {
+        "es": "Arroz con atún y pimiento",
+        "en": "Rice bowl with tuna"
+      },
+      "description": {
+        "es": "Bol rápido de arroz con atún y verduras.",
+        "en": "Quick rice bowl with tuna and vegetables."
+      },
+      "goal": "bulk",
+      "mealType": "post_workout",
+      "items": [
+        {
+          "foodSlug": "cooked-white-rice",
+          "grams": 300
+        },
+        {
+          "foodSlug": "canned-tuna-water",
+          "grams": 120
+        },
+        {
+          "foodSlug": "red-bell-pepper",
+          "grams": 80
+        },
+        {
+          "foodSlug": "olive-oil",
+          "grams": 10
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 9
+    },
+    {
+      "slug": "cut-skyr-berries",
+      "name": {
+        "es": "Skyr con frutos rojos y avena",
+        "en": "Skyr with berries and oats"
+      },
+      "description": {
+        "es": "Mucha proteína y volumen con pocas calorías para empezar el día saciado.",
+        "en": "High protein and volume for few calories, to start the day full."
+      },
+      "goal": "cut",
+      "mealType": "breakfast",
+      "items": [
+        {
+          "foodSlug": "skyr",
+          "grams": 250
+        },
+        {
+          "foodSlug": "strawberries",
+          "grams": 100
+        },
+        {
+          "foodSlug": "blueberries",
+          "grams": 50
+        },
+        {
+          "foodSlug": "rolled-oats",
+          "grams": 30
+        }
+      ],
+      "isSample": true,
+      "sortOrder": 10
+    },
+    {
+      "slug": "cut-egg-white-omelette",
+      "name": {
+        "es": "Tortilla de claras con espinacas",
+        "en": "Egg white omelette with spinach"
+      },
+      "description": {
+        "es": "Tortilla de claras y un huevo con espinacas y champiñones, con una tostada integral.",
+        "en": "Egg white omelette with one whole egg, spinach and mushrooms, plus a slice of whole wheat toast."
+      },
+      "goal": "cut",
+      "mealType": "breakfast",
+      "items": [
+        {
+          "foodSlug": "egg-whites",
+          "grams": 200
+        },
+        {
+          "foodSlug": "whole-egg",
+          "grams": 50
+        },
+        {
+          "foodSlug": "spinach",
+          "grams": 60
+        },
+        {
+          "foodSlug": "mushrooms",
+          "grams": 80
+        },
+        {
+          "foodSlug": "whole-wheat-bread",
+          "grams": 40
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 11
+    },
+    {
+      "slug": "cut-turkey-salad",
+      "name": {
+        "es": "Ensalada de pavo y quinoa",
+        "en": "Turkey and quinoa salad"
+      },
+      "description": {
+        "es": "Ensalada completa con pavo, quinoa y verduras crudas.",
+        "en": "Complete salad with turkey, quinoa and raw vegetables."
+      },
+      "goal": "cut",
+      "mealType": "lunch",
+      "items": [
+        {
+          "foodSlug": "turkey-breast",
+          "grams": 150
+        },
+        {
+          "foodSlug": "cooked-quinoa",
+          "grams": 120
+        },
+        {
+          "foodSlug": "lettuce",
+          "grams": 100
+        },
+        {
+          "foodSlug": "tomato",
+          "grams": 100
+        },
+        {
+          "foodSlug": "cucumber",
+          "grams": 100
+        },
+        {
+          "foodSlug": "olive-oil",
+          "grams": 8
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 12
+    },
+    {
+      "slug": "cut-hake-vegetables",
+      "name": {
+        "es": "Merluza con verduras al vapor",
+        "en": "Hake with steamed vegetables"
+      },
+      "description": {
+        "es": "Pescado blanco con verduras y una ración pequeña de patata.",
+        "en": "White fish with vegetables and a small serving of potato."
+      },
+      "goal": "cut",
+      "mealType": "lunch",
+      "items": [
+        {
+          "foodSlug": "hake",
+          "grams": 200
+        },
+        {
+          "foodSlug": "zucchini",
+          "grams": 150
+        },
+        {
+          "foodSlug": "carrot",
+          "grams": 100
+        },
+        {
+          "foodSlug": "boiled-potato",
+          "grams": 150
+        },
+        {
+          "foodSlug": "olive-oil",
+          "grams": 8
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 13
+    },
+    {
+      "slug": "cut-chicken-cauliflower",
+      "name": {
+        "es": "Pollo con arroz de coliflor",
+        "en": "Chicken with cauliflower rice"
+      },
+      "description": {
+        "es": "Pechuga de pollo con coliflor salteada y pimiento: plato grande y ligero.",
+        "en": "Chicken breast with sautéed cauliflower and pepper: big, light plate."
+      },
+      "goal": "cut",
+      "mealType": "dinner",
+      "items": [
+        {
+          "foodSlug": "chicken-breast",
+          "grams": 180
+        },
+        {
+          "foodSlug": "cauliflower",
+          "grams": 200
+        },
+        {
+          "foodSlug": "red-bell-pepper",
+          "grams": 100
+        },
+        {
+          "foodSlug": "olive-oil",
+          "grams": 8
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 14
+    },
+    {
+      "slug": "cut-cod-green-beans",
+      "name": {
+        "es": "Bacalao con judías verdes",
+        "en": "Cod with green beans"
+      },
+      "description": {
+        "es": "Bacalao al horno con judías verdes y tomate.",
+        "en": "Baked cod with green beans and tomato."
+      },
+      "goal": "cut",
+      "mealType": "dinner",
+      "items": [
+        {
+          "foodSlug": "cod",
+          "grams": 200
+        },
+        {
+          "foodSlug": "green-beans",
+          "grams": 200
+        },
+        {
+          "foodSlug": "tomato",
+          "grams": 100
+        },
+        {
+          "foodSlug": "olive-oil",
+          "grams": 8
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 15
+    },
+    {
+      "slug": "cut-cottage-apple",
+      "name": {
+        "es": "Requesón con manzana",
+        "en": "Cottage cheese with apple"
+      },
+      "description": {
+        "es": "Snack saciante con proteína y fibra.",
+        "en": "Filling snack with protein and fiber."
+      },
+      "goal": "cut",
+      "mealType": "snack",
+      "items": [
+        {
+          "foodSlug": "cottage-cheese",
+          "grams": 200
+        },
+        {
+          "foodSlug": "apple",
+          "grams": 150
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 16
+    },
+    {
+      "slug": "cut-pre-rice-cakes",
+      "name": {
+        "es": "Tortitas de arroz con pavo",
+        "en": "Rice cakes with turkey"
+      },
+      "description": {
+        "es": "Hidratos rápidos y proteína magra antes de entrenar.",
+        "en": "Fast carbs and lean protein before training."
+      },
+      "goal": "cut",
+      "mealType": "pre_workout",
+      "items": [
+        {
+          "foodSlug": "rice-cakes",
+          "grams": 30
+        },
+        {
+          "foodSlug": "turkey-breast",
+          "grams": 60
+        },
+        {
+          "foodSlug": "banana",
+          "grams": 100
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 17
+    },
+    {
+      "slug": "cut-post-shake-berries",
+      "name": {
+        "es": "Batido de proteína con frutos rojos",
+        "en": "Protein shake with berries"
+      },
+      "description": {
+        "es": "Whey con leche desnatada y frutos rojos: recuperación con pocas calorías.",
+        "en": "Whey with skim milk and berries: recovery for few calories."
+      },
+      "goal": "cut",
+      "mealType": "post_workout",
+      "items": [
+        {
+          "foodSlug": "whey-protein",
+          "grams": 30
+        },
+        {
+          "foodSlug": "skim-milk",
+          "grams": 250
+        },
+        {
+          "foodSlug": "blueberries",
+          "grams": 100
+        }
+      ],
+      "isSample": true,
+      "sortOrder": 18
+    },
+    {
+      "slug": "cut-post-chicken-potato",
+      "name": {
+        "es": "Pollo con patata y ensalada",
+        "en": "Chicken with potato and salad"
+      },
+      "description": {
+        "es": "Comida post-entreno completa y controlada en calorías.",
+        "en": "Complete, calorie-controlled post-workout meal."
+      },
+      "goal": "cut",
+      "mealType": "post_workout",
+      "items": [
+        {
+          "foodSlug": "chicken-breast",
+          "grams": 150
+        },
+        {
+          "foodSlug": "boiled-potato",
+          "grams": 200
+        },
+        {
+          "foodSlug": "lettuce",
+          "grams": 80
+        },
+        {
+          "foodSlug": "tomato",
+          "grams": 100
+        },
+        {
+          "foodSlug": "olive-oil",
+          "grams": 5
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 19
+    },
+    {
+      "slug": "maint-yogurt-oats-fruit",
+      "name": {
+        "es": "Yogur con avena y fruta",
+        "en": "Yogurt with oats and fruit"
+      },
+      "description": {
+        "es": "Desayuno equilibrado con yogur griego, avena, kiwi y chía.",
+        "en": "Balanced breakfast with Greek yogurt, oats, kiwi and chia."
+      },
+      "goal": "maintenance",
+      "mealType": "breakfast",
+      "items": [
+        {
+          "foodSlug": "nonfat-greek-yogurt",
+          "grams": 200
+        },
+        {
+          "foodSlug": "rolled-oats",
+          "grams": 50
+        },
+        {
+          "foodSlug": "kiwi",
+          "grams": 100
+        },
+        {
+          "foodSlug": "chia-seeds",
+          "grams": 10
+        }
+      ],
+      "isSample": true,
+      "sortOrder": 20
+    },
+    {
+      "slug": "maint-toast-eggs-tomato",
+      "name": {
+        "es": "Tostadas con tomate y huevos",
+        "en": "Toast with tomato and eggs"
+      },
+      "description": {
+        "es": "Pan integral con tomate y aceite, dos huevos y una naranja.",
+        "en": "Whole wheat toast with tomato and olive oil, two eggs and an orange."
+      },
+      "goal": "maintenance",
+      "mealType": "breakfast",
+      "items": [
+        {
+          "foodSlug": "whole-wheat-bread",
+          "grams": 80
+        },
+        {
+          "foodSlug": "tomato",
+          "grams": 80
+        },
+        {
+          "foodSlug": "olive-oil",
+          "grams": 10
+        },
+        {
+          "foodSlug": "whole-egg",
+          "grams": 100
+        },
+        {
+          "foodSlug": "orange",
+          "grams": 150
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 21
+    },
+    {
+      "slug": "maint-lentil-stew",
+      "name": {
+        "es": "Lentejas con verduras y arroz",
+        "en": "Lentils with vegetables and rice"
+      },
+      "description": {
+        "es": "Plato vegano completo: lentejas, arroz integral y verduras.",
+        "en": "Complete vegan dish: lentils, brown rice and vegetables."
+      },
+      "goal": "maintenance",
+      "mealType": "lunch",
+      "items": [
+        {
+          "foodSlug": "cooked-lentils",
+          "grams": 250
+        },
+        {
+          "foodSlug": "cooked-brown-rice",
+          "grams": 100
+        },
+        {
+          "foodSlug": "carrot",
+          "grams": 80
+        },
+        {
+          "foodSlug": "onion",
+          "grams": 50
+        },
+        {
+          "foodSlug": "olive-oil",
+          "grams": 10
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 22
+    },
+    {
+      "slug": "maint-chicken-couscous",
+      "name": {
+        "es": "Pollo con cuscús y verduras",
+        "en": "Chicken with couscous and vegetables"
+      },
+      "description": {
+        "es": "Muslo de pollo con cuscús, calabacín y pimiento.",
+        "en": "Chicken thigh with couscous, zucchini and pepper."
+      },
+      "goal": "maintenance",
+      "mealType": "lunch",
+      "items": [
+        {
+          "foodSlug": "chicken-thigh",
+          "grams": 180
+        },
+        {
+          "foodSlug": "cooked-couscous",
+          "grams": 200
+        },
+        {
+          "foodSlug": "zucchini",
+          "grams": 100
+        },
+        {
+          "foodSlug": "red-bell-pepper",
+          "grams": 80
+        },
+        {
+          "foodSlug": "olive-oil",
+          "grams": 10
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 23
+    },
+    {
+      "slug": "maint-tofu-stir-fry",
+      "name": {
+        "es": "Salteado de tofu con arroz",
+        "en": "Tofu stir-fry with rice"
+      },
+      "description": {
+        "es": "Tofu firme salteado con brócoli, champiñones y arroz.",
+        "en": "Firm tofu stir-fried with broccoli, mushrooms and rice."
+      },
+      "goal": "maintenance",
+      "mealType": "dinner",
+      "items": [
+        {
+          "foodSlug": "firm-tofu",
+          "grams": 200
+        },
+        {
+          "foodSlug": "broccoli",
+          "grams": 150
+        },
+        {
+          "foodSlug": "mushrooms",
+          "grams": 100
+        },
+        {
+          "foodSlug": "cooked-white-rice",
+          "grams": 150
+        },
+        {
+          "foodSlug": "olive-oil",
+          "grams": 10
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 24
+    },
+    {
+      "slug": "maint-sardines-salad",
+      "name": {
+        "es": "Ensalada de sardinas y garbanzos",
+        "en": "Sardine and chickpea salad"
+      },
+      "description": {
+        "es": "Ensalada templada con sardinas, garbanzos y verduras.",
+        "en": "Warm salad with sardines, chickpeas and vegetables."
+      },
+      "goal": "maintenance",
+      "mealType": "dinner",
+      "items": [
+        {
+          "foodSlug": "canned-sardines",
+          "grams": 100
+        },
+        {
+          "foodSlug": "cooked-chickpeas",
+          "grams": 150
+        },
+        {
+          "foodSlug": "lettuce",
+          "grams": 80
+        },
+        {
+          "foodSlug": "tomato",
+          "grams": 100
+        },
+        {
+          "foodSlug": "olive-oil",
+          "grams": 5
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 25
+    },
+    {
+      "slug": "maint-hummus-veggies",
+      "name": {
+        "es": "Hummus con crudités",
+        "en": "Hummus with crudités"
+      },
+      "description": {
+        "es": "Snack vegano con hummus, zanahoria, pepino y pan integral.",
+        "en": "Vegan snack with hummus, carrot, cucumber and whole wheat bread."
+      },
+      "goal": "maintenance",
+      "mealType": "snack",
+      "items": [
+        {
+          "foodSlug": "hummus",
+          "grams": 80
+        },
+        {
+          "foodSlug": "carrot",
+          "grams": 100
+        },
+        {
+          "foodSlug": "cucumber",
+          "grams": 100
+        },
+        {
+          "foodSlug": "whole-wheat-bread",
+          "grams": 30
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 26
+    },
+    {
+      "slug": "maint-pre-banana-dates",
+      "name": {
+        "es": "Plátano, dátiles y yogur",
+        "en": "Banana, dates and yogurt"
+      },
+      "description": {
+        "es": "Hidratos de rápida digestión con algo de proteína 30-60 minutos antes.",
+        "en": "Fast-digesting carbs with some protein 30-60 minutes before training."
+      },
+      "goal": "maintenance",
+      "mealType": "pre_workout",
+      "items": [
+        {
+          "foodSlug": "banana",
+          "grams": 120
+        },
+        {
+          "foodSlug": "dates",
+          "grams": 30
+        },
+        {
+          "foodSlug": "plain-yogurt",
+          "grams": 125
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 27
+    },
+    {
+      "slug": "maint-post-shake-soy",
+      "name": {
+        "es": "Batido vegetal de proteína",
+        "en": "Plant-based protein shake"
+      },
+      "description": {
+        "es": "Bebida de soja con whey, plátano y crema de cacahuete.",
+        "en": "Soy drink with whey, banana and peanut butter."
+      },
+      "goal": "maintenance",
+      "mealType": "post_workout",
+      "items": [
+        {
+          "foodSlug": "soy-drink",
+          "grams": 300
+        },
+        {
+          "foodSlug": "whey-protein",
+          "grams": 30
+        },
+        {
+          "foodSlug": "banana",
+          "grams": 100
+        },
+        {
+          "foodSlug": "peanut-butter",
+          "grams": 15
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 28
+    },
+    {
+      "slug": "maint-post-salmon-quinoa",
+      "name": {
+        "es": "Salmón con quinoa y espinacas",
+        "en": "Salmon with quinoa and spinach"
+      },
+      "description": {
+        "es": "Proteína, hidratos y grasas saludables después de entrenar.",
+        "en": "Protein, carbs and healthy fats after training."
+      },
+      "goal": "maintenance",
+      "mealType": "post_workout",
+      "items": [
+        {
+          "foodSlug": "salmon",
+          "grams": 150
+        },
+        {
+          "foodSlug": "cooked-quinoa",
+          "grams": 200
+        },
+        {
+          "foodSlug": "spinach",
+          "grams": 80
+        }
+      ],
+      "isSample": false,
+      "sortOrder": 29
+    }
+  ],
+  "guidelines": [
+    {
+      "slug": "daily-protein",
+      "goals": ["bulk", "cut", "maintenance"],
+      "title": {
+        "es": "Proteína diaria orientativa",
+        "en": "Daily protein: a rough guide"
+      },
+      "summary": {
+        "es": "Para ganar o mantener músculo, entre 1,6 y 2,2 g de proteína por kg de peso al día suele ser suficiente.",
+        "en": "To build or keep muscle, about 1.6-2.2 g of protein per kg of body weight per day is usually enough."
+      },
+      "body": {
+        "es": "La mayoría de personas que entrenan fuerza cubren sus necesidades con 1,6-2,2 g/kg/día. En definición conviene acercarse a la parte alta para proteger la masa muscular.\n\nReparte la proteína en 3-5 comidas de unos 0,3-0,4 g/kg cada una. Prioriza fuentes completas: carne, pescado, huevos, lácteos, soja o combinaciones de legumbres y cereales.\n\nSi tienes alguna enfermedad renal u otra condición médica, consulta con un profesional antes de aumentar la proteína.",
+        "en": "Most people who strength train meet their needs with 1.6-2.2 g/kg/day. When cutting, aim for the upper end to protect muscle mass.\n\nSpread protein over 3-5 meals of about 0.3-0.4 g/kg each. Favour complete sources: meat, fish, eggs, dairy, soy or legume-and-grain combinations.\n\nIf you have kidney disease or another medical condition, talk to a professional before increasing protein."
+      },
+      "sortOrder": 0
+    },
+    {
+      "slug": "hydration",
+      "goals": ["bulk", "cut", "maintenance"],
+      "title": {
+        "es": "Hidratación",
+        "en": "Hydration"
+      },
+      "summary": {
+        "es": "Bebe agua a lo largo del día y repón lo que pierdes al entrenar; el color de la orina es una buena guía.",
+        "en": "Drink water throughout the day and replace what you lose in training; urine colour is a good guide."
+      },
+      "body": {
+        "es": "Una referencia habitual son 30-35 ml de agua por kg de peso al día, más lo que pierdas sudando. La orina de color amarillo pálido suele indicar buena hidratación.\n\nEn sesiones largas o con mucho calor, bebe durante el entrenamiento y considera reponer sodio. Pequeñas pérdidas de líquido ya reducen el rendimiento.\n\nEl café y el té también cuentan para la hidratación diaria en cantidades moderadas.",
+        "en": "A common reference is 30-35 ml of water per kg of body weight per day, plus what you sweat out. Pale yellow urine usually means you are well hydrated.\n\nIn long or hot sessions, drink during training and consider replacing sodium. Even small fluid losses reduce performance.\n\nCoffee and tea also count toward daily hydration in moderate amounts."
+      },
+      "sortOrder": 1
+    },
+    {
+      "slug": "nutrient-timing",
+      "goals": ["bulk", "cut", "maintenance"],
+      "title": {
+        "es": "Timing de las comidas",
+        "en": "Meal timing"
+      },
+      "summary": {
+        "es": "Lo más importante es el total del día; comer algo con hidratos y proteína alrededor del entreno ayuda a rendir y recuperar.",
+        "en": "Daily totals matter most; eating carbs and protein around training helps performance and recovery."
+      },
+      "body": {
+        "es": "El total diario de calorías y proteína pesa mucho más que la hora exacta de cada comida.\n\nAun así, una comida con hidratos y algo de proteína 1-3 horas antes de entrenar mejora el rendimiento, y una comida con proteína en las horas posteriores favorece la recuperación. No hace falta correr a tomar el batido al terminar.\n\nSi entrenas en ayunas y te encuentras bien, también es válido: ajusta según tu tolerancia.",
+        "en": "Total daily calories and protein matter far more than the exact time of each meal.\n\nStill, a meal with carbs and some protein 1-3 hours before training improves performance, and a protein-rich meal in the following hours supports recovery. There is no need to rush your shake after the session.\n\nIf you train fasted and feel fine, that works too: adjust to your tolerance."
+      },
+      "sortOrder": 2
+    },
+    {
+      "slug": "bulk-surplus",
+      "goals": ["bulk"],
+      "title": {
+        "es": "Superávit moderado",
+        "en": "A moderate surplus"
+      },
+      "summary": {
+        "es": "Para ganar músculo con poca grasa, come entre un 5 y un 15 % por encima de tu mantenimiento.",
+        "en": "To gain muscle with little fat, eat about 5-15% above maintenance."
+      },
+      "body": {
+        "es": "Un superávit pequeño (unas 200-400 kcal al día) suele bastar. Comer mucho más no acelera la ganancia de músculo; sobre todo añade grasa.\n\nUn ritmo razonable es ganar un 0,25-0,5 % del peso corporal por semana. Los principiantes pueden ir algo más rápido.\n\nSi te cuesta llegar a las calorías, usa alimentos densos: frutos secos, aceite de oliva, avena, leche o batidos.",
+        "en": "A small surplus (about 200-400 kcal a day) is usually enough. Eating much more does not speed up muscle gain; it mostly adds fat.\n\nA reasonable pace is gaining 0.25-0.5% of body weight per week. Beginners can go a little faster.\n\nIf hitting your calories is hard, use dense foods: nuts, olive oil, oats, milk or shakes."
+      },
+      "sortOrder": 3
+    },
+    {
+      "slug": "bulk-tracking",
+      "goals": ["bulk"],
+      "title": {
+        "es": "Controla tu progreso en volumen",
+        "en": "Tracking progress while bulking"
+      },
+      "summary": {
+        "es": "Pésate varias veces por semana y mira la media semanal, no el dato de un día.",
+        "en": "Weigh yourself several times a week and look at the weekly average, not a single day."
+      },
+      "body": {
+        "es": "El peso diario fluctúa por agua, sal y comida en el intestino. Usa la media de la semana para decidir.\n\nSi en 2-3 semanas la media no sube, añade unas 100-200 kcal al día. Si sube mucho más rápido de lo previsto, recorta un poco.\n\nCompleta el control con medidas de cintura y con tu rendimiento en el gimnasio.",
+        "en": "Daily weight fluctuates with water, salt and food in your gut. Decide based on the weekly average.\n\nIf the average does not move in 2-3 weeks, add about 100-200 kcal a day. If it rises much faster than planned, cut back slightly.\n\nComplement it with waist measurements and your performance in the gym."
+      },
+      "sortOrder": 4
+    },
+    {
+      "slug": "cut-deficit",
+      "goals": ["cut"],
+      "title": {
+        "es": "Déficit sostenible",
+        "en": "A sustainable deficit"
+      },
+      "summary": {
+        "es": "Un déficit del 15-25 % permite perder grasa manteniendo el músculo y el rendimiento.",
+        "en": "A 15-25% deficit lets you lose fat while keeping muscle and performance."
+      },
+      "body": {
+        "es": "Perder un 0,5-1 % del peso corporal por semana es un ritmo sostenible para la mayoría. Déficits más agresivos aumentan el hambre y el riesgo de perder músculo.\n\nPrioriza alimentos con mucho volumen y pocas calorías: verduras, frutas, proteína magra y legumbres.\n\nNo bajes de tu metabolismo basal sin supervisión profesional.",
+        "en": "Losing 0.5-1% of body weight per week is a sustainable pace for most people. More aggressive deficits increase hunger and the risk of losing muscle.\n\nFavour high-volume, low-calorie foods: vegetables, fruit, lean protein and legumes.\n\nDo not go below your basal metabolic rate without professional supervision."
+      },
+      "sortOrder": 5
+    },
+    {
+      "slug": "cut-keep-muscle",
+      "goals": ["cut"],
+      "title": {
+        "es": "Mantén el músculo en definición",
+        "en": "Keep your muscle while cutting"
+      },
+      "summary": {
+        "es": "Proteína alta y seguir entrenando pesado son las dos claves para no perder fuerza.",
+        "en": "High protein and keeping heavy training are the two keys to not losing strength."
+      },
+      "body": {
+        "es": "Mantén la intensidad (los pesos) aunque reduzcas algo el volumen. El estímulo de fuerza es la señal para conservar el músculo.\n\nSube la proteína hacia 2-2,2 g/kg y duerme lo suficiente: el mal descanso empeora la composición corporal en déficit.\n\nEs normal que el rendimiento baje un poco al final de una definición larga; plantea pausas de mantenimiento si lo necesitas.",
+        "en": "Keep the intensity (the weights) even if you reduce volume somewhat. Strength stimulus is the signal to keep muscle.\n\nRaise protein toward 2-2.2 g/kg and get enough sleep: poor rest worsens body composition in a deficit.\n\nIt is normal for performance to dip toward the end of a long cut; plan maintenance breaks if needed."
+      },
+      "sortOrder": 6
+    },
+    {
+      "slug": "maintenance-balance",
+      "goals": ["maintenance"],
+      "title": {
+        "es": "Comer en mantenimiento",
+        "en": "Eating at maintenance"
+      },
+      "summary": {
+        "es": "En mantenimiento, busca estabilidad: peso medio estable y una dieta variada que puedas sostener.",
+        "en": "At maintenance, aim for stability: a steady average weight and a varied diet you can sustain."
+      },
+      "body": {
+        "es": "Las calorías de mantenimiento son las que mantienen tu peso medio estable durante semanas. La calculadora da un punto de partida; ajústalo según la evolución real.\n\nEs una buena fase para consolidar hábitos: horarios regulares, verduras en la mayoría de comidas y proteína suficiente.\n\nPequeñas variaciones de peso (±1 kg) son normales.",
+        "en": "Maintenance calories are those that keep your average weight stable over weeks. The calculator gives a starting point; adjust it to how your weight actually changes.\n\nIt is a good phase to consolidate habits: regular meal times, vegetables at most meals and enough protein.\n\nSmall weight swings (±1 kg) are normal."
+      },
+      "sortOrder": 7
+    },
+    {
+      "slug": "fiber-vegetables",
+      "goals": ["bulk", "cut", "maintenance"],
+      "title": {
+        "es": "Fibra, frutas y verduras",
+        "en": "Fiber, fruit and vegetables"
+      },
+      "summary": {
+        "es": "Intenta comer verduras o fruta en la mayoría de comidas y unos 25-35 g de fibra al día.",
+        "en": "Try to have vegetables or fruit at most meals and about 25-35 g of fiber a day."
+      },
+      "body": {
+        "es": "La fibra mejora la saciedad y la salud digestiva. Legumbres, cereales integrales, frutas, verduras y frutos secos son buenas fuentes.\n\nSi ahora comes poca fibra, auméntala poco a poco y bebe suficiente agua para evitar molestias.\n\nJusto antes de entrenar puede convenir reducirla para no sentirte pesado.",
+        "en": "Fiber improves satiety and digestive health. Legumes, whole grains, fruit, vegetables and nuts are good sources.\n\nIf you currently eat little fiber, increase it gradually and drink enough water to avoid discomfort.\n\nRight before training you may want to reduce it so you do not feel heavy."
+      },
+      "sortOrder": 8
+    },
+    {
+      "slug": "supplement-basics",
+      "goals": ["bulk", "cut", "maintenance"],
+      "title": {
+        "es": "Suplementos: lo básico",
+        "en": "Supplements: the basics"
+      },
+      "summary": {
+        "es": "Los suplementos son opcionales; la creatina y la proteína en polvo son los que tienen más respaldo.",
+        "en": "Supplements are optional; creatine and protein powder have the strongest support."
+      },
+      "body": {
+        "es": "La comida es lo primero. La proteína en polvo solo es una forma cómoda de llegar a tu proteína diaria.\n\nLa creatina monohidrato (3-5 g al día) es uno de los suplementos más estudiados para la fuerza. La cafeína puede mejorar el rendimiento puntual.\n\nAntes de tomar cualquier suplemento, sobre todo si tienes una condición médica o tomas medicación, consulta con un profesional de la salud.",
+        "en": "Food comes first. Protein powder is just a convenient way to reach your daily protein.\n\nCreatine monohydrate (3-5 g a day) is one of the most studied supplements for strength. Caffeine can improve acute performance.\n\nBefore taking any supplement, especially if you have a medical condition or take medication, consult a health professional."
+      },
+      "sortOrder": 9
+    }
+  ]
+}

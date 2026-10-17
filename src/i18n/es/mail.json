@@ -1,0 +1,21 @@
+{
+  "layout": {
+    "greeting": "Hola, {name}:",
+    "greetingAnonymous": "Hola:",
+    "footer": "GymApp · Este es un mensaje automático, no respondas a este email."
+  },
+  "verifyEmail": {
+    "subject": "Confirma tu email en GymApp",
+    "intro": "Gracias por registrarte. Confirma tu dirección de email para asegurar tu cuenta.",
+    "action": "Confirmar email",
+    "expires": "El enlace caduca en {hours} horas.",
+    "ignore": "Si no creaste una cuenta en GymApp, ignora este mensaje."
+  },
+  "resetPassword": {
+    "subject": "Restablece tu contraseña de GymApp",
+    "intro": "Recibimos una solicitud para restablecer tu contraseña.",
+    "action": "Elegir nueva contraseña",
+    "expires": "El enlace caduca en {minutes} minutos y solo puede usarse una vez.",
+    "ignore": "Si no lo solicitaste, ignora este mensaje: tu contraseña no cambiará."
+  }
+}

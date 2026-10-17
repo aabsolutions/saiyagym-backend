@@ -1,0 +1,21 @@
+{
+  "layout": {
+    "greeting": "Hi {name},",
+    "greetingAnonymous": "Hi,",
+    "footer": "GymApp · This is an automated message, please do not reply."
+  },
+  "verifyEmail": {
+    "subject": "Confirm your GymApp email",
+    "intro": "Thanks for signing up. Please confirm your email address to secure your account.",
+    "action": "Confirm email",
+    "expires": "This link expires in {hours} hours.",
+    "ignore": "If you didn't create a GymApp account, you can ignore this email."
+  },
+  "resetPassword": {
+    "subject": "Reset your GymApp password",
+    "intro": "We received a request to reset your password.",
+    "action": "Choose a new password",
+    "expires": "This link expires in {minutes} minutes and can only be used once.",
+    "ignore": "If you didn't request this, ignore this email: your password won't change."
+  }
+}
