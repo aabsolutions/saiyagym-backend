@@ -1,5 +1,30 @@
 # Progress — gymapp-api
 
+## 2026-10-17 — Primer despliegue en producción
+
+### Hecho
+- Repo en GitHub (`aabsolutions/saiyagym-backend`), CI verde. Render (Blueprint, plan free, `virginia`): **https://saiyagym-api.onrender.com** — Live.
+- Deploy: auto-deploy nativo de Render tras CI (`autoDeployTrigger: checksPass`), sin deploy hook.
+- Seeds cargados en la BD de producción desde local: planes + admin, 141 ejercicios + 9 tags, 4 plantillas, 81 alimentos, 30 comidas, 10 guías.
+
+### Verificación (contra producción)
+- `/health` 200 con Mongo `up`; `X-Request-Id` (reutiliza el de Render y uno válido del cliente); `/plans` Free/Premium; 401 con sobre de error y i18n (es por defecto, en con `Accept-Language`); Swagger apagado (404); CORS permite `https://aabsolutions.github.io` y no otros orígenes; helmet (HSTS, CSP, nosniff); `/exercise-tags` 9.
+- Con el admin (verificado por el usuario): rol `admin`, 141 / 4 / 81 / 30 / 10.
+
+### Decisiones y gotchas
+- `npm ci` falló en CI por un npm global viejo (ver entrada anterior) → `.nvmrc` fijado a 24.22.0; Render lo usa sin problema.
+- `MAIL_DRIVER` pasó a `sync: false` en `render.yaml`: con `value: smtp` un sync del Blueprint lo restablecería y la app no arranca sin `SMTP_HOST`. Hoy está en `console` en el dashboard.
+- Un deploy aparece como "Build failed" con `npm error signal SIGTERM` cuando otro deploy más nuevo lo cancela (guardar una variable + push casi simultáneos). No es un error real.
+- Ping a Mongo ~114 ms desde Render: probablemente el cluster de Atlas no está en AWS `us-east-1`. Cada query paga esa latencia.
+
+### Pendiente / próximo
+- Revisar la región del cluster de Atlas (M0 no se mueve: nuevo cluster en `us-east-1` + migrar datos/seeds + cambiar `MONGODB_URI`).
+- SMTP (Brevo, puerto 2525) → `MAIL_DRIVER=smtp`: hoy no salen emails de verificación ni de recuperación de contraseña.
+- Cloudinary (las tres variables) → imágenes y fotos de progreso (hoy 503 `MEDIA_NOT_CONFIGURED`).
+- Protección de `main` en GitHub; `LOG_LEVEL=` en `.env.example`.
+- Clientes: base URL `https://saiyagym-api.onrender.com/api/v1`; tolerar el arranque en frío (~1 min tras 15 min sin tráfico).
+
+
 ## 2026-10-16 — Preparación para producción
 
 ### Hecho
