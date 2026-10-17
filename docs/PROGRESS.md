@@ -9,8 +9,8 @@
 - **Logging estructurado (pino, `nestjs-pino`)**: JSON por línea; una línea por request (`req.id`, método, path **sin query**, status, `responseTime`, `userId`); 4xx `warn`, 5xx `error`; health no se loguea; `X-Request-Id` (reutiliza el de Render si es válido); logs de la app dentro de un request llevan `reqId`. Nunca headers, bodies, tokens ni emails: `redact` + `scrubText()` para texto libre (mensajes de Mongo `E11000 … email`, stacks). `LOG_LEVEL` (info prod · debug dev · silent tests); pretty en desarrollo.
 - Datos sensibles en logs corregidos: email del destinatario en errores SMTP (ahora `a***@dominio`), `ConsoleMailService` en producción ya no imprime el cuerpo (tokens de verificación/reset), errores 500 y stacks de sync/PRs pasan por `scrubText()`.
 - **Arranque en frío**: Nest arranca en ~0,4 s (con índices). Quitado del arranque: el backfill de `serverUpdatedAt` (escaneo sin índice de 6 colecciones en cada boot → `npm run db:backfill-sync`) y la espera del hash argon2 dummy (segundos en 0,1 CPU; ahora en background). Mongo: `serverSelectionTimeoutMS` 10 s, `maxPoolSize` 10.
-- **`render.yaml`**: web service Node free, `virginia`, `node dist/main`, health `/api/v1/health`, build con devDeps + prune, `autoDeploy: false`, todas las variables (secretos `sync: false`, `JWT_ACCESS_SECRET` generado).
-- **GitHub Actions** (`.github/workflows/ci.yml`): en PR y main → lint, unit, e2e (binario de Mongo cacheado), build y `openapi.json` sin cambios; en main → deploy hook de Render (`RENDER_DEPLOY_HOOK_URL`, environment `production`, sin solapamientos).
+- **`render.yaml`**: web service Node free, `virginia`, `node dist/main`, health `/api/v1/health`, build con devDeps + prune, `autoDeployTrigger: checksPass`, todas las variables (secretos `sync: false`, `JWT_ACCESS_SECRET` generado).
+- **GitHub Actions** (`.github/workflows/ci.yml`): en PR y main → lint, unit, e2e (binario de Mongo cacheado), build y `openapi.json` sin cambios. El deploy lo hace Render solo (ver decisión abajo).
 - **Docs**: `docs/DEPLOYMENT.md` (Atlas, Render, variables con el porqué, GitHub Pages en `CORS_ORIGINS`, SMTP en plan free, arranque en frío y mitigaciones, primer despliegue con seeds, logs, CI/CD, operaciones); README reescrito (arquitectura, módulos, seeds, testing, despliegue, referencia de dominio).
 - `openapi.json` regenerado (sin cambios de contrato en esta tarea).
 
@@ -28,12 +28,12 @@
 - `export` tiene throttle propio 5/min por IP: los tests comparten IP.
 - pino-http: el serializer `req` recibe el objeto estándar (con `id`); `quietReqLogger` pone `reqId` en los logs de la app. `fetch` no permite `
 ` en headers.
-- Deploy por hook (no `autoDeploy`) para que solo despliegue lo que pasó CI. El hook despliega el último commit de `main`.
+- Deploy: primero con deploy hook desde Actions; cambiado (a pedido) a auto-deploy nativo de Render con `autoDeployTrigger: checksPass` (`autoDeploy` está deprecado): push a main → despliega solo si todos los checks de GitHub del commit pasan. Sin secrets. Si un commit no tiene checks, Render no despliega → el workflow debe seguir corriendo en push a main.
 - Render free: sin IP fija (Atlas `0.0.0.0/0` salvo rangos de salida), posible bloqueo de SMTP 25/465/587 (usar 2525), se duerme a los 15 min.
 - `CORS_ORIGINS` es el origen sin path: `https://<user>.github.io`, no `…/<repo>/`.
 
 ### Pendiente / próximo
-- **Commit** (sigue sin commits) + crear el remoto en GitHub, secret `RENDER_DEPLOY_HOOK_URL` y protección de `main`.
+- Protección de `main` en GitHub (PR + check "Lint, test, build").
 - **Manual** (`.env*` bloqueado para el agente): añadir `LOG_LEVEL=` a `.env.example`.
 - Primer despliegue según `docs/DEPLOYMENT.md` §4.
 - Paginación de `/sync/pull`; store compartido para el throttler si se escala a varias instancias.

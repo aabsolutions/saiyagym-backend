@@ -1,14 +1,14 @@
 # Deployment — Render + MongoDB Atlas
 
 Production runs as one Render **web service** (Node, free plan) built from `render.yaml`, talking
-to a MongoDB **Atlas** cluster. GitHub Actions gates every deploy: lint, unit + e2e tests and build
-must pass on `main` before Render is told to deploy.
+to a MongoDB **Atlas** cluster. Every push to `main` deploys automatically — but only after GitHub
+Actions (lint, unit + e2e tests, build) passes on that commit (`autoDeployTrigger: checksPass`).
 
 ```
-GitHub PR ──► Actions: lint · unit · e2e · build · openapi drift
-merge to main ──► same checks ──► POST Render deploy hook ──► npm ci + build ──► node dist/main
-                                                                   │
-                                     health check /api/v1/health ◄─┘ (pings Atlas; must pass to go live)
+GitHub PR ──► Actions: lint · unit · e2e · build · openapi drift   (no deploy)
+push/merge to main ──► same checks ──► all green? ──► Render auto-deploy ──► npm ci + build ──► node dist/main
+                                       └─ any red ──► no deploy                    │
+                       health check /api/v1/health ◄──────────────────────────────┘ (pings Atlas; must pass to go live)
 ```
 
 ## 1. MongoDB Atlas (production)
@@ -32,11 +32,11 @@ Indexes are created by the app at startup (see [INDEXES.md](INDEXES.md)); nothin
 
 1. Render Dashboard → **New → Blueprint** → select this repository. Render reads `render.yaml`.
 2. Fill in every variable marked `sync: false` (table below). `JWT_ACCESS_SECRET` is generated.
-3. Service → **Settings → Deploy Hook** → copy the URL.
-4. GitHub repo → **Settings → Secrets and variables → Actions** → secret `RENDER_DEPLOY_HOOK_URL`.
-   Optionally add protection rules to the `production` environment (the deploy job uses it).
-5. `autoDeploy: false` is deliberate: Render deploys only when CI calls the hook, i.e. after the
-   checks pass. (Render's native alternative is *Auto-Deploy → After CI checks pass*.)
+3. Auto-deploy comes from `render.yaml` (`autoDeployTrigger: checksPass`; in the dashboard:
+   Settings → *Auto-Deploy* → **After CI Checks Pass**). Render waits for every GitHub check of a
+   new `main` commit; it deploys if all end `success`/`neutral`/`skipped`, and doesn't if any fails
+   **or if the commit has no checks at all** — that's why `ci.yml` also runs on push to `main`.
+   No secrets or deploy hooks to configure.
 
 Build: `npm ci --include=dev && npm run build && npm prune --omit=dev` — `NODE_ENV=production` is
 present at build time too, so dev dependencies (Nest CLI, TypeScript) must be requested explicitly.
@@ -150,7 +150,7 @@ log drain:
 | Trigger | Jobs |
 |---|---|
 | Pull request to `main` | `check`: `npm ci` → lint → unit tests → e2e tests (in-memory MongoDB, binary cached) → build → `openapi.json` must match `npm run openapi` |
-| Push/merge to `main` | `check`, then `deploy`: POST to `RENDER_DEPLOY_HOOK_URL` (environment `production`, one deploy at a time) |
+| Push/merge to `main` | `check` (same steps). Render sees the commit's checks pass and auto-deploys it; a red check means no deploy |
 
 Recommended branch protection on `main`: require the `Lint, test, build` check and a PR.
 

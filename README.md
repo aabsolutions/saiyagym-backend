@@ -172,7 +172,8 @@ invalid variable. Production values and the reasoning behind each: [docs/DEPLOYM
 
 Render web service from [`render.yaml`](render.yaml) (free plan, health check `/api/v1/health`),
 MongoDB Atlas, GitHub Actions ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)): lint, unit,
-e2e and build on every PR; on merge to `main` the same checks, then the Render deploy hook. The free
+e2e and build on every PR and push; Render auto-deploys each `main` commit once those checks pass
+(`autoDeployTrigger: checksPass`). The free
 plan sleeps after 15 idle minutes — first request takes up to ~1 min. Everything (variables, Atlas
 network access, SMTP on the free plan, cold-start mitigation, first-deploy seeding, logs):
 **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)**.

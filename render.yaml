@@ -7,9 +7,9 @@ services:
     plan: free # sleeps after 15 min idle → cold start (see docs/DEPLOYMENT.md#cold-starts)
     region: virginia # keep it next to the Atlas cluster (AWS us-east-1)
     branch: main
-    # Deploys are triggered by GitHub Actions (.github/workflows/ci.yml) only after lint, tests and
-    # build pass on main — not by Render on every push.
-    autoDeploy: false
+    # Auto-deploy on every push to main, but only once ALL GitHub checks of that commit pass
+    # (.github/workflows/ci.yml: lint, unit, e2e, build). A failed check → no deploy.
+    autoDeployTrigger: checksPass
     # Node version comes from .nvmrc (24.x; Nest 12 + require(esm) need >= 24.9).
     # NODE_ENV=production is also set at build time, so devDependencies (nest CLI, TypeScript)
     # must be included explicitly, then pruned to keep the runtime image small.
