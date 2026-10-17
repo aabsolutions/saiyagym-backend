@@ -41,7 +41,7 @@ services:
 
       # --- Mail (SMTP) ---
       - key: MAIL_DRIVER
-        value: smtp
+        sync: false # `smtp` once SMTP_* are set; `console` until then (smtp without SMTP_HOST won't boot)
       - key: MAIL_FROM
         sync: false # "SaiyaGym <no-reply@your-domain>"
       - key: SMTP_HOST
