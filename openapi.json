@@ -4072,10 +4072,49 @@
       "get": {
         "description": "`format=json` → everything. `format=csv&dataset=workouts|measurements` → one table.",
         "operationId": "ExportController_export",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "format",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "csv",
+                "json"
+              ]
+            }
+          },
+          {
+            "name": "dataset",
+            "required": false,
+            "in": "query",
+            "description": "CSV holds one table: pick which. JSON always includes everything.",
+            "schema": {
+              "default": "workouts",
+              "type": "string",
+              "enum": [
+                "workouts",
+                "measurements"
+              ]
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
           }
         },
         "security": [

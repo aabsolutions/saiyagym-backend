@@ -4,6 +4,7 @@
 
 ### Hecho
 - Los controllers de `records`, `stats`, `body-metrics` y `progress-photos` vivían dentro del `*.module.ts`; el plugin de swagger solo infiere respuestas en archivos `*.controller.ts`, así que esos endpoints salían sin schema y el cliente generado de la web devolvía `void` (perdía el body). Movidos a su propio `*.controller.ts`; el servicio de fotos también pasó a `progress-photos.service.ts`. Sin cambios de rutas ni de comportamiento.
+- `export`: `ExportQueryDto` pasó a `dto/export.dto.ts` (el plugin solo infiere propiedades en `*.dto.ts`) y el módulo se separó en controller/service: `GET /export` ahora documenta `format` y `dataset`.
 - `openapi.json` regenerado: todas las respuestas 2xx tienen schema salvo las esperadas (202 de `verify-email/resend` y `password/forgot`, sin body; `GET /export` es una descarga de archivo).
 
 ### Verificación
