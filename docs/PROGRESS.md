@@ -1,5 +1,14 @@
 # Progress — gymapp-api
 
+## 2026-10-18 — Cloudinary: carpeta en la Media Library
+
+### Hecho
+- Las imágenes quedaban en la raíz de la Media Library: en *dynamic folder mode* (todas las cuentas nuevas) el path del `public_id` no ubica el asset en carpetas; eso lo hace `asset_folder`. La firma ahora incluye `asset_folder` (misma carpeta que el `public_id`, sin el id). `public_id`, URLs y validación (`assertValidImageUrl`) no cambian; las cuentas en *fixed mode* lo ignoran.
+- `SignedUploadParamsDto.asset_folder` documentado; `openapi.json` regenerado.
+
+### Verificación
+- `npm run lint` ✅ · unit (media) ✅ · e2e 203/203 ✅.
+
 ## 2026-10-18 — Respuestas tipadas en OpenAPI (records, stats, medidas, fotos)
 
 ### Hecho

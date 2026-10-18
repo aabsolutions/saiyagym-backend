@@ -21,6 +21,8 @@ export class UploadSignatureRequestDto {
 export class SignedUploadParamsDto {
   timestamp!: number;
   public_id!: string;
+  /** Media Library folder (dynamic folder mode). Same path as `public_id`, minus the id. */
+  asset_folder!: string;
   allowed_formats!: string;
   /** Incoming transformation: caps dimensions before Cloudinary stores the image. */
   transformation!: string;

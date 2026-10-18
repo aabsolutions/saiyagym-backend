@@ -43,6 +43,8 @@ describe('MediaService', () => {
     expect(result.params.public_id).toMatch(
       /^gymapp\/test\/users\/user-1\/exercises\/[0-9a-f-]{36}$/,
     );
+    // Dynamic folder mode places assets by `asset_folder`, not by the public_id path.
+    expect(result.params.asset_folder).toBe('gymapp/test/users/user-1/exercises');
     expect(result.params.allowed_formats).toContain('webp');
     expect(result.expiresAt.getTime() - result.params.timestamp * 1000).toBe(3_600_000);
   });

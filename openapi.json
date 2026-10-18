@@ -7759,6 +7759,10 @@
           "public_id": {
             "type": "string"
           },
+          "asset_folder": {
+            "type": "string",
+            "description": "Media Library folder (dynamic folder mode). Same path as `public_id`, minus the id."
+          },
           "allowed_formats": {
             "type": "string"
           },
@@ -7770,6 +7774,7 @@
         "required": [
           "timestamp",
           "public_id",
+          "asset_folder",
           "allowed_formats",
           "transformation"
         ]

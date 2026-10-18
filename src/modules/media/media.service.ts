@@ -35,8 +35,10 @@ interface CloudinaryCredentials {
  * formats and max dimensions — the client can't change them without breaking the signature.
  * The API secret never leaves the server.
  *
- * The full path goes into `public_id` (not the `folder` param) so it behaves the same in
- * Cloudinary's fixed and dynamic folder modes, and so `assertValidImageUrl` can check it.
+ * The full path goes into `public_id` (not the `folder` param), so the delivery URL carries it
+ * and `assertValidImageUrl` can check it. In dynamic folder mode (every new account) a slashed
+ * `public_id` does NOT place the asset in a Media Library folder — that's `asset_folder`, so we
+ * sign it too (fixed-folder accounts ignore it and use the `public_id` path).
  */
 @Injectable()
 export class MediaService {
@@ -76,9 +78,11 @@ export class MediaService {
           ? { kind: 'progress', userId: user.id }
           : { kind: 'user', userId: user.id };
     const timestamp = Math.floor(Date.now() / 1000);
+    const folder = this.folderFor(scope);
     const params = {
       timestamp,
-      public_id: `${this.folderFor(scope)}/${randomUUID()}`,
+      public_id: `${folder}/${randomUUID()}`,
+      asset_folder: folder,
       allowed_formats: ALLOWED_FORMATS.join(','),
       transformation: MAX_DIMENSION_TRANSFORMATION,
       // Private delivery: the asset is only reachable through URLs signed by our server.
