@@ -160,6 +160,16 @@ export class WorkoutListQueryDto extends PaginationQueryDto {
   @IsOptional()
   @IsIn(WORKOUT_STATUS_FILTERS)
   status: (typeof WORKOUT_STATUS_FILTERS)[number] = 'all';
+
+  /** Only sessions started from this routine. */
+  @IsOptional()
+  @IsUUID('4')
+  routineId?: string;
+
+  /** Only sessions that include this exercise (index workouts(userId, exercises.exerciseId, startedAt)). */
+  @IsOptional()
+  @IsUUID('4')
+  exerciseId?: string;
 }
 
 // ---------- Responses ----------

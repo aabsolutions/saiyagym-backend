@@ -1,5 +1,15 @@
 # Progress — gymapp-api
 
+## 2026-10-18 — Filtros del historial de sesiones
+
+### Hecho
+- `GET /workouts` acepta `routineId` y `exerciseId` (UUID v4), combinables entre sí y con `from`/`to`/`status`; `meta.total` cuenta con los filtros. Pedido por el historial de la web (filtrar por rutina y por ejercicio con paginación correcta).
+- `exerciseId` usa el índice existente `workouts(userId, exercises.exerciseId, startedAt)`; `routineId` filtra sobre `workouts(userId, startedAt)`. Sin índices nuevos (`docs/INDEXES.md` sin cambios).
+- `openapi.json` regenerado.
+
+### Verificación
+- `npm run lint` ✅ · unit 188/188 ✅ · e2e 203/203 ✅ (+1: por rutina, por ejercicio, combinado con fecha, id inválido → 400).
+
 ## 2026-10-18 — Tier personal por objetivo
 
 ### Hecho

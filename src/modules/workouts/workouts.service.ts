@@ -127,6 +127,8 @@ export class WorkoutsService implements OnModuleInit {
     }
     if (query.status === 'finished') filter.finishedAt = { $ne: null };
     if (query.status === 'in_progress') filter.finishedAt = null;
+    if (query.routineId) filter.routineId = query.routineId;
+    if (query.exerciseId) filter['exercises.exerciseId'] = query.exerciseId;
 
     const [items, total] = await Promise.all([
       this.workouts

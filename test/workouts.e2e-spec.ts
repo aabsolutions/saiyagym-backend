@@ -218,6 +218,52 @@ describe('Workouts (e2e)', () => {
     });
   });
 
+  describe('listing filters by routine and exercise', () => {
+    it('combines routineId / exerciseId with the date range; counts match the filter', async () => {
+      // Own user: keeps the other tests' totals untouched.
+      const { tokens } = await register('filters');
+      const me = tokens.accessToken;
+      const routine = await as(me, http().post('/api/v1/routines'))
+        .send({
+          name: 'Push',
+          exercises: [
+            {
+              exerciseId: ex.get('barbell-bench-press'),
+              sets: [{ type: 'normal', repsMin: 5, repsMax: 5 }],
+            },
+          ],
+        })
+        .expect(201);
+      const routineId = (routine.body as { id: string }).id;
+      const bench = { slug: 'barbell-bench-press', sets: [set('normal', 100, 5)] };
+      const squat = { slug: 'barbell-back-squat', sets: [set('normal', 140, 5)] };
+
+      const post = (body: object) => as(me, http().post('/api/v1/workouts')).send(body).expect(201);
+      await post({ ...workout('2024-05-01T10:00:00.000Z', true, [bench]), routineId });
+      await post({ ...workout('2024-05-03T10:00:00.000Z', true, [bench, squat]), routineId });
+      await post(workout('2024-05-05T10:00:00.000Z', true, [squat]));
+
+      const list = (query: string) => as(me, http().get(`/api/v1/workouts?${query}`)).expect(200);
+      const dates = (res: request.Response) =>
+        (res.body.items as { startedAt: string }[]).map((w) => w.startedAt.slice(0, 10));
+
+      const byRoutine = await list(`routineId=${routineId}`);
+      expect(byRoutine.body.meta.total).toBe(2);
+      expect(dates(byRoutine)).toEqual(['2024-05-03', '2024-05-01']);
+
+      const bySquat = await list(`exerciseId=${ex.get('barbell-back-squat')}`);
+      expect(dates(bySquat)).toEqual(['2024-05-05', '2024-05-03']);
+
+      const combined = await list(
+        `routineId=${routineId}&exerciseId=${ex.get('barbell-back-squat')}&from=2024-05-02`,
+      );
+      expect(combined.body.meta.total).toBe(1);
+      expect(dates(combined)).toEqual(['2024-05-03']);
+
+      await as(me, http().get('/api/v1/workouts?exerciseId=nope')).expect(400);
+    });
+  });
+
   describe('per-exercise history', () => {
     it('last-performance: most recent FINISHED session, all slots merged', async () => {
       const bench = ex.get('barbell-bench-press')!;
