@@ -6367,16 +6367,6 @@
             "type": "string",
             "nullable": true
           },
-          "personalTier": {
-            "nullable": true,
-            "enum": [
-              "S",
-              "A",
-              "B",
-              "C"
-            ],
-            "type": "string"
-          },
           "id": {
             "type": "string"
           },
@@ -6401,6 +6391,14 @@
           },
           "isFavorite": {
             "type": "boolean"
+          },
+          "personalTiers": {
+            "description": "The caller's own tier per goal; `null` = none (the global tier applies).",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TiersDto"
+              }
+            ]
           }
         },
         "required": [
@@ -6412,14 +6410,14 @@
           "category",
           "trackingType",
           "imageUrl",
-          "personalTier",
           "id",
           "name",
           "tags",
           "tiers",
           "isGlobal",
           "isCustom",
-          "isFavorite"
+          "isFavorite",
+          "personalTiers"
         ]
       },
       "ExercisePageDto": {
@@ -6608,16 +6606,6 @@
             "type": "string",
             "nullable": true
           },
-          "personalTier": {
-            "nullable": true,
-            "enum": [
-              "S",
-              "A",
-              "B",
-              "C"
-            ],
-            "type": "string"
-          },
           "id": {
             "type": "string"
           },
@@ -6643,6 +6631,14 @@
           "isFavorite": {
             "type": "boolean"
           },
+          "personalTiers": {
+            "description": "The caller's own tier per goal; `null` = none (the global tier applies).",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TiersDto"
+              }
+            ]
+          },
           "description": {
             "type": "string"
           },
@@ -6659,7 +6655,6 @@
           "category",
           "trackingType",
           "imageUrl",
-          "personalTier",
           "id",
           "name",
           "tags",
@@ -6667,6 +6662,7 @@
           "isGlobal",
           "isCustom",
           "isFavorite",
+          "personalTiers",
           "description",
           "instructions"
         ]
@@ -6909,12 +6905,11 @@
           }
         }
       },
-      "UpdateExercisePrefsDto": {
+      "PersonalTiersPatchDto": {
         "type": "object",
         "properties": {
-          "personalTier": {
+          "hypertrophy": {
             "nullable": true,
-            "description": "`null` clears the personal tier.",
             "enum": [
               "S",
               "A",
@@ -6922,6 +6917,29 @@
               "C"
             ],
             "type": "string"
+          },
+          "powerlifting": {
+            "nullable": true,
+            "enum": [
+              "S",
+              "A",
+              "B",
+              "C"
+            ],
+            "type": "string"
+          }
+        }
+      },
+      "UpdateExercisePrefsDto": {
+        "type": "object",
+        "properties": {
+          "personalTiers": {
+            "description": "Personal tier per goal, like the global `tiers`. Only the sent goals change.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PersonalTiersPatchDto"
+              }
+            ]
           },
           "isFavorite": {
             "type": "boolean"
@@ -6931,27 +6949,25 @@
       "ExercisePrefsDto": {
         "type": "object",
         "properties": {
-          "personalTier": {
-            "nullable": true,
-            "enum": [
-              "S",
-              "A",
-              "B",
-              "C"
-            ],
-            "type": "string"
-          },
           "exerciseId": {
             "type": "string"
           },
           "isFavorite": {
             "type": "boolean"
+          },
+          "personalTiers": {
+            "description": "`null` for a goal = no personal tier there (the global one applies).",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TiersDto"
+              }
+            ]
           }
         },
         "required": [
-          "personalTier",
           "exerciseId",
-          "isFavorite"
+          "isFavorite",
+          "personalTiers"
         ]
       },
       "ExerciseTagDto": {

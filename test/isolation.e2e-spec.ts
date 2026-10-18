@@ -112,7 +112,7 @@ describe('Per-user data isolation (e2e)', () => {
       .expect(201);
     ids.exercise = (exercise.body as { id: string }).id;
     await call(bob, 'patch', `/exercises/${bench}/prefs`)
-      .send({ isFavorite: true, personalTier: 'C' })
+      .send({ isFavorite: true, personalTiers: { hypertrophy: 'C', powerlifting: 'C' } })
       .expect(200);
 
     const routine = await call(bob, 'post', '/routines')

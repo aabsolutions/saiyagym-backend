@@ -27,8 +27,15 @@ import {
   SyncExercisePrefDto,
   UpdateGlobalExerciseDto,
 } from './dto/exercise.dto';
-import { ExercisePrefsService, NO_PREFS, type PrefView } from './exercise-prefs.service';
+import {
+  ExercisePrefsService,
+  NO_PERSONAL_TIERS,
+  NO_PREFS,
+  personalTiersOf,
+  type PrefView,
+} from './exercise-prefs.service';
 import { ExerciseTagsService } from './exercise-tags.service';
+import type { Tiers } from './exercise.constants';
 import { Exercise, ExerciseDocument } from './schemas/exercise.schema';
 import { UserExercisePref } from './schemas/user-exercise-pref.schema';
 import { groupByTier } from './tier-list';
@@ -90,11 +97,24 @@ export class ExercisesService implements OnModuleInit {
             });
           }
           if (!existing) await this.assertAccessible(ctx.userId, [dto.exerciseId]);
+          // Full state per sync doc, but personal tiers merge per goal: a device that only
+          // knows one goal's tier never wipes the other.
+          const stored = existing
+            ? personalTiersOf(existing as { personalTiers?: Partial<Tiers> | null })
+            : NO_PERSONAL_TIERS;
           return {
             exerciseId: dto.exerciseId,
             isFavorite: dto.isFavorite ?? existing?.isFavorite ?? false,
-            personalTier:
-              dto.personalTier !== undefined ? dto.personalTier : (existing?.personalTier ?? null),
+            personalTiers: {
+              hypertrophy:
+                dto.personalTiers?.hypertrophy !== undefined
+                  ? dto.personalTiers.hypertrophy
+                  : stored.hypertrophy,
+              powerlifting:
+                dto.personalTiers?.powerlifting !== undefined
+                  ? dto.personalTiers.powerlifting
+                  : stored.powerlifting,
+            },
           };
         },
       },
@@ -436,7 +456,7 @@ export class ExercisesService implements OnModuleInit {
       isGlobal: e.isGlobal,
       isCustom: !e.isGlobal && e.ownerId === userId,
       isFavorite: pref.isFavorite,
-      personalTier: pref.personalTier,
+      personalTiers: pref.personalTiers,
     };
   }
 

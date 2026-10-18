@@ -202,13 +202,17 @@ describe('Exercises catalog (e2e)', () => {
     });
   });
 
-  describe('favorites & personal tier', () => {
+  describe('favorites & personal tiers', () => {
     it('stores prefs per user and exposes them in listings', async () => {
       const id = ids.get('t-leg-ext')!;
       const res = await as(ana, http().patch(`/api/v1/exercises/${id}/prefs`))
-        .send({ isFavorite: true, personalTier: 'S' })
+        .send({ isFavorite: true, personalTiers: { hypertrophy: 'S' } })
         .expect(200);
-      expect(res.body).toEqual({ exerciseId: id, isFavorite: true, personalTier: 'S' });
+      expect(res.body).toEqual({
+        exerciseId: id,
+        isFavorite: true,
+        personalTiers: { hypertrophy: 'S', powerlifting: null },
+      });
 
       // Partial update keeps the other field.
       await as(ana, http().patch(`/api/v1/exercises/${ids.get('t-cable-fly')!}/prefs`))
@@ -218,16 +222,44 @@ describe('Exercises catalog (e2e)', () => {
       const favorites = await list('favorites=true').expect(200);
       expect(slugsOf(favorites.body)).toEqual(['t-cable-fly', 't-leg-ext']);
       const legExt = favorites.body.items.find((i: { slug: string }) => i.slug === 't-leg-ext');
-      expect(legExt).toMatchObject({ isFavorite: true, personalTier: 'S' });
+      expect(legExt).toMatchObject({
+        isFavorite: true,
+        personalTiers: { hypertrophy: 'S', powerlifting: null },
+      });
 
       // Prefs are private.
       const forBruno = await list('favorites=true', bruno).expect(200);
       expect(forBruno.body.items).toEqual([]);
     });
 
-    it('rejects an invalid tier', async () => {
-      await as(ana, http().patch(`/api/v1/exercises/${ids.get('t-bench')!}/prefs`))
-        .send({ personalTier: 'X' })
+    it('personal tiers are per goal: patching one goal keeps the other', async () => {
+      const id = ids.get('t-bench')!;
+      const prefs = () => as(ana, http().patch(`/api/v1/exercises/${id}/prefs`));
+
+      await prefs()
+        .send({ personalTiers: { hypertrophy: 'A', powerlifting: 'S' } })
+        .expect(200);
+      const res = await prefs()
+        .send({ personalTiers: { powerlifting: null } })
+        .expect(200);
+      expect(res.body.personalTiers).toEqual({ hypertrophy: 'A', powerlifting: null });
+
+      // Restore: later tests expect bench without personal tiers.
+      await prefs()
+        .send({ personalTiers: { hypertrophy: null } })
+        .expect(200);
+    });
+
+    it('rejects an invalid tier and the old single `personalTier` field', async () => {
+      const id = ids.get('t-bench')!;
+      await as(ana, http().patch(`/api/v1/exercises/${id}/prefs`))
+        .send({ personalTiers: { hypertrophy: 'X' } })
+        .expect(400);
+      await as(ana, http().patch(`/api/v1/exercises/${id}/prefs`))
+        .send({ personalTiers: { cardio: 'S' } })
+        .expect(400);
+      await as(ana, http().patch(`/api/v1/exercises/${id}/prefs`))
+        .send({ personalTier: 'S' })
         .expect(400);
     });
   });
@@ -257,7 +289,7 @@ describe('Exercises catalog (e2e)', () => {
     });
 
     it('source=personal applies the caller’s personal tiers', async () => {
-      // ana set leg extension to S personally (previous block).
+      // ana set leg extension to S personally for hypertrophy (previous block).
       const res = await as(
         ana,
         http().get('/api/v1/exercises/tier-list?goal=hypertrophy&muscle=quads&source=personal'),
@@ -268,6 +300,19 @@ describe('Exercises catalog (e2e)', () => {
         'Sentadilla trasera',
       ]);
       expect(res.body.tiers.A).toEqual([]);
+    });
+
+    it('source=personal only applies the personal tier of the requested goal', async () => {
+      // Leg extension is personal S for hypertrophy only: powerlifting keeps the global tier.
+      const personal = await as(
+        ana,
+        http().get('/api/v1/exercises/tier-list?goal=powerlifting&muscle=quads&source=personal'),
+      ).expect(200);
+      const global = await as(
+        ana,
+        http().get('/api/v1/exercises/tier-list?goal=powerlifting&muscle=quads&source=global'),
+      ).expect(200);
+      expect(personal.body.tiers).toEqual(global.body.tiers);
     });
 
     it('requires a valid goal', async () => {

@@ -27,7 +27,8 @@
     "seed:templates": "nest build && node dist/database/seeds/seed-templates.js",
     "seed:nutrition": "nest build && node dist/database/seeds/seed-nutrition.js",
     "db:indexes": "nest build && node dist/database/sync-indexes.js",
-    "db:backfill-sync": "nest build && node dist/database/backfill-sync.js"
+    "db:backfill-sync": "nest build && node dist/database/backfill-sync.js",
+    "db:migrate-personal-tiers": "nest build && node dist/database/migrate-personal-tiers.js"
   },
   "jest": {
     "moduleFileExtensions": [

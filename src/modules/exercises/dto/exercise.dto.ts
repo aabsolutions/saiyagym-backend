@@ -249,16 +249,30 @@ export class BulkTiersResultDto {
 
 // ---------- Preferences ----------
 
+/** Partial, per goal: omit a goal to leave it unchanged; `null` clears it (→ global tier). */
+export class PersonalTiersPatchDto {
+  @ApiProperty({ enum: TIERS, nullable: true, required: false })
+  @ValidateIf((_o, value) => value !== undefined && value !== null)
+  @IsIn(TIERS)
+  hypertrophy?: Tier | null;
+
+  @ApiProperty({ enum: TIERS, nullable: true, required: false })
+  @ValidateIf((_o, value) => value !== undefined && value !== null)
+  @IsIn(TIERS)
+  powerlifting?: Tier | null;
+}
+
 export class UpdateExercisePrefsDto {
   @IsOptionalNonNull()
   @IsBoolean()
   isFavorite?: boolean;
 
-  /** `null` clears the personal tier. */
-  @ApiProperty({ enum: TIERS, nullable: true, required: false })
-  @ValidateIf((_o, value) => value !== undefined && value !== null)
-  @IsIn(TIERS)
-  personalTier?: Tier | null;
+  /** Personal tier per goal, like the global `tiers`. Only the sent goals change. */
+  @ApiProperty({ type: PersonalTiersPatchDto, required: false })
+  @IsOptionalNonNull()
+  @ValidateNested()
+  @Type(() => PersonalTiersPatchDto)
+  personalTiers?: PersonalTiersPatchDto;
 }
 
 /** Sync payload for user_exercise_prefs (full state of the pref for one exercise). */
@@ -270,7 +284,8 @@ export class SyncExercisePrefDto extends UpdateExercisePrefsDto {
 export class ExercisePrefsDto {
   exerciseId!: string;
   isFavorite!: boolean;
-  @ApiProperty({ enum: TIERS, nullable: true }) personalTier!: Tier | null;
+  /** `null` for a goal = no personal tier there (the global one applies). */
+  personalTiers!: TiersDto;
 }
 
 // ---------- Responses ----------
@@ -293,7 +308,8 @@ export class ExerciseSummaryDto {
   /** Created by the caller. */
   isCustom!: boolean;
   isFavorite!: boolean;
-  @ApiProperty({ enum: TIERS, nullable: true }) personalTier!: Tier | null;
+  /** The caller's own tier per goal; `null` = none (the global tier applies). */
+  personalTiers!: TiersDto;
 }
 
 export class ExerciseDetailDto extends ExerciseSummaryDto {

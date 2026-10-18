@@ -217,7 +217,7 @@ describe('Sync (e2e)', () => {
             updatedAt: iso(HOUR),
             exerciseId,
             isFavorite: true,
-            personalTier: 'S',
+            personalTiers: { hypertrophy: 'S' },
           },
         },
       ]);
@@ -225,7 +225,33 @@ describe('Sync (e2e)', () => {
       expect(await db.collection('user_exercise_prefs').countDocuments({ exerciseId })).toBe(1);
 
       const list = await as(ana, http().get('/api/v1/exercises?favorites=true')).expect(200);
-      expect(list.body.items[0]).toMatchObject({ isFavorite: true, personalTier: 'S' });
+      expect(list.body.items[0]).toMatchObject({
+        isFavorite: true,
+        personalTiers: { hypertrophy: 'S', powerlifting: null },
+      });
+    });
+
+    it('a device that only sends one goal’s personal tier keeps the other goal', async () => {
+      const exerciseId = ex.get('pull-up');
+      const res = await push(ana, [
+        {
+          collection: 'user_exercise_prefs',
+          op: 'upsert',
+          doc: {
+            id: randomUUID(),
+            updatedAt: iso(HOUR / 2), // newer than the last write (iso(HOUR)): LWW applies it
+            exerciseId,
+            personalTiers: { powerlifting: 'B' },
+          },
+        },
+      ]);
+      expect(res.body.results[0]).toMatchObject({ status: 'applied' });
+      const pref = await db.collection('user_exercise_prefs').findOne({ exerciseId });
+      // hypertrophy: 'S' came from the previous test; favorite untouched too.
+      expect(pref).toMatchObject({
+        isFavorite: true,
+        personalTiers: { hypertrophy: 'S', powerlifting: 'B' },
+      });
     });
 
     it('routines follow the same plan rules as REST (Free: 3)', async () => {

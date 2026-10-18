@@ -68,7 +68,7 @@ test/           e2e suites (one in-memory database per file) + utils
 | `auth` | `/auth/register · login · refresh · logout · logout-all · verify-email · password/*`, `/users/me/password`, `DELETE /users/me` | argon2id; access JWT 15 min + opaque refresh token with rotation and reuse detection; strict rate limits |
 | `users` | `/users/me`, `/admin/users` | Profile + preferences; admin search, role change, manual plan assignment |
 | `plans` · `entitlements` | `/plans`, `/admin/plans` | Admin-editable limits/features; `@RequireFeature()` / `@CheckLimit()` |
-| `exercises` | `/exercises`, `/exercise-tags`, `/admin/exercises`, `/admin/exercise-tags` | Global + custom in one collection; per-goal tiers S/A/B/C, tier list, favorites/personal tier, text search |
+| `exercises` | `/exercises`, `/exercise-tags`, `/admin/exercises`, `/admin/exercise-tags` | Global + custom in one collection; per-goal tiers S/A/B/C, tier list, favorites/per-goal personal tiers, text search |
 | `media` | `/media/upload-signature` | Cloudinary signed uploads; URL validation |
 | `routines` | `/routines` | Embedded slots + target sets, supersets, progression rules (Premium) |
 | `programs` | `/programs`, `/programs/active/today`, `/program-templates`, `/admin/program-templates` | Weeks → days → routine, deloads, training maxes; copyable templates |

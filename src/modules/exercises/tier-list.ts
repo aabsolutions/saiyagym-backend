@@ -4,7 +4,7 @@ import { TIERS, type Tier, type TierGoal, type Tiers } from './exercise.constant
 export interface TierListItem {
   name: string;
   tiers: Tiers;
-  personalTier: Tier | null;
+  personalTiers: Tiers;
 }
 
 export interface TierListGroups<T> {
@@ -15,7 +15,7 @@ export interface TierListGroups<T> {
 /**
  * Groups exercises into S/A/B/C columns for one goal.
  * - `global`: the admin tier for that goal.
- * - `personal`: the user's personal tier wins when set, otherwise the global tier.
+ * - `personal`: the user's personal tier FOR THAT GOAL wins when set, otherwise the global tier.
  * Exercises without a tier (custom ones, or unranked for that goal) go to `unranked`.
  * Each column is sorted by localized name (locale-aware: "Élévation" next to "Elevation").
  */
@@ -29,7 +29,8 @@ export function groupByTier<T extends TierListItem>(
   const unranked: T[] = [];
 
   for (const item of items) {
-    const tier = source === 'personal' ? (item.personalTier ?? item.tiers[goal]) : item.tiers[goal];
+    const tier =
+      source === 'personal' ? (item.personalTiers[goal] ?? item.tiers[goal]) : item.tiers[goal];
     (tier ? tiers[tier] : unranked).push(item);
   }
 

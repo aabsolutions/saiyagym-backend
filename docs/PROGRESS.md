@@ -1,5 +1,31 @@
 # Progress — gymapp-api
 
+## 2026-10-18 — Tier personal por objetivo
+
+### Hecho
+- `user_exercise_prefs.personalTier` (un tier para todo) → **`personalTiers: { hypertrophy, powerlifting }`**, igual que el tier global. `null` en un objetivo = se usa el global. Pedido desde la web (tablero de tier list): un curl puede ser A en hipertrofia y C en powerlifting.
+- Contrato (cambio incompatible, a propósito antes de que exista la app móvil):
+  - `PATCH /exercises/:id/prefs` → `{ isFavorite?, personalTiers?: { hypertrophy?, powerlifting? } }`, parcial por objetivo (solo cambian los objetivos enviados; `null` limpia uno). El campo viejo `personalTier` → 400 (`forbidNonWhitelisted`).
+  - Respuestas (`ExerciseSummaryDto`, `ExerciseDetailDto`, `ExercisePrefsDto`) → `personalTiers` completo.
+  - `GET /exercises/tier-list?source=personal` usa el tier personal **del objetivo pedido**.
+  - Sync `user_exercise_prefs`: `personalTiers` se fusiona por objetivo con lo guardado (un dispositivo que manda solo un objetivo no borra el otro).
+- Migración one-off `npm run db:migrate-personal-tiers`: el `personalTier` viejo pasa a ambos objetivos (nadie pierde lo que tenía), sube `serverUpdatedAt`, idempotente y sin pisar valores por objetivo ya existentes. Lectura tolerante a documentos sin migrar (`personalTiersOf`).
+- `openapi.json` regenerado; `SPEC.md` actualizado en los tres repos; README y CLAUDE.md raíz.
+
+### Verificación
+- `npm run lint` ✅ · `tsc --noEmit` ✅ · `npm run openapi` ✅.
+- Unit 188/188 ✅ (+2: tier personal solo aplica a su objetivo; cada objetivo con el suyo).
+- e2e 202/202 ✅ (+6: PATCH parcial por objetivo, rechazo del campo viejo y de objetivos desconocidos, tier-list personal por objetivo, sync que fusiona por objetivo, migración: ambos objetivos + `serverUpdatedAt`, idempotencia sin pisar, lectura por la API).
+- **No ejecutado**: la migración contra la BD de producción.
+
+### Decisiones y gotchas
+- Sin campo de compatibilidad (`personalTier` deprecado): el único cliente es la web, que se actualiza en el mismo cambio, y la app móvil todavía no sincroniza. Hacerlo después habría exigido versionar el contrato de sync.
+- La migración usa la colección nativa: el filtro apunta a un campo que el schema ya no tiene y los updates con pipeline no pasan por `syncTrackingPlugin` (por eso fija `serverUpdatedAt: '$$NOW'`).
+- `findOneAndUpdate` con `$set` sobre `personalTiers.<goal>` + `upsert` + `setDefaultsOnInsert` funciona (cubierto por e2e): Mongoose no agrega el default del subdocumento cuando ya se setea un hijo.
+
+### Pendiente / próximo
+- **Producción, después del deploy**: `npm run db:migrate-personal-tiers` contra Atlas (desde local con el `MONGODB_URI` de producción). Hasta correrlo, los tiers personales viejos se leen como vacíos (no hay errores).
+
 ## 2026-10-17 — Primer despliegue en producción
 
 ### Hecho

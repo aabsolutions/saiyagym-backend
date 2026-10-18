@@ -67,7 +67,8 @@ hipertrofia y powerlifting. Monetizable con planes Free y Premium.
 - Tier S/A/B/C POR OBJETIVO: `tiers: { hypertrophy: "S"|"A"|"B"|"C", powerlifting: ... }`,
   asignado por admin. Ejemplo: sentadilla trasera = S en powerlifting y S en hipertrofia;
   curl de concentración = C en powerlifting y B en hipertrofia.
-- Cada usuario puede poner su propio tier personal y marcar favoritos (colección aparte).
+- Cada usuario puede poner su propio tier personal POR OBJETIVO (hipertrofia/powerlifting, como el
+  global; vacío = usa el global) y marcar favoritos (colección aparte).
 - Etiquetas libres administrables (p. ej. "básico", "unilateral", "lumbar-friendly").
 - Vistas: lista con filtros (músculo, equipo, tier, etiqueta, favoritos) y vista tablero
   tier list (columnas S, A, B, C) filtrable por grupo muscular y objetivo.
@@ -127,7 +128,7 @@ hipertrofia y powerlifting. Monetizable con planes Free y Premium.
 
 ## Modelo de datos (colecciones MongoDB)
 - users, refresh_tokens, plans
-- exercises, user_exercise_prefs (favorito + tier personal), tags
+- exercises, user_exercise_prefs (favorito + tier personal por objetivo), tags
 - routines (ejercicios y series objetivo EMBEBIDOS)
 - programs, program_templates
 - workouts (ejercicios y series EMBEBIDOS; ref a routineId/programId)
