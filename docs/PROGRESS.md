@@ -1,5 +1,14 @@
 # Progress — gymapp-api
 
+## 2026-10-18 — Respuestas tipadas en OpenAPI (records, stats, medidas, fotos)
+
+### Hecho
+- Los controllers de `records`, `stats`, `body-metrics` y `progress-photos` vivían dentro del `*.module.ts`; el plugin de swagger solo infiere respuestas en archivos `*.controller.ts`, así que esos endpoints salían sin schema y el cliente generado de la web devolvía `void` (perdía el body). Movidos a su propio `*.controller.ts`; el servicio de fotos también pasó a `progress-photos.service.ts`. Sin cambios de rutas ni de comportamiento.
+- `openapi.json` regenerado: todas las respuestas 2xx tienen schema salvo las esperadas (202 de `verify-email/resend` y `password/forgot`, sin body; `GET /export` es una descarga de archivo).
+
+### Verificación
+- `npm run lint` ✅ · unit 188/188 ✅ · e2e 203/203 ✅.
+
 ## 2026-10-18 — Filtros del historial de sesiones
 
 ### Hecho

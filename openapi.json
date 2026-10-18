@@ -3209,7 +3209,17 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RecordsSummaryItemDto"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3238,7 +3248,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExerciseRecordsDto"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3269,7 +3286,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SummaryDto"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3327,7 +3351,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExerciseStatsDto"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3377,7 +3408,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MuscleVolumeDto"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3419,7 +3457,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FrequencyDto"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3483,7 +3528,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PowerliftingTotalDto"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3522,7 +3574,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgramAdherenceDto"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3582,7 +3641,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyMetricPageDto"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3610,7 +3676,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyMetricDto"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3668,7 +3741,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyMetricSeriesDto"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3697,7 +3777,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyMetricDto"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3733,7 +3820,14 @@
         },
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BodyMetricDto"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3788,7 +3882,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgressPhotoDto"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3859,7 +3960,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgressPhotoPageDto"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3910,7 +4018,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompareDto"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -9911,6 +10026,644 @@
           "meta"
         ]
       },
+      "RecordEntryDto": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "description": "kg for weight/e1RM/volume records, reps for repsAtWeight."
+          },
+          "weightKg": {
+            "type": "number"
+          },
+          "reps": {
+            "type": "number"
+          },
+          "workoutId": {
+            "type": "string"
+          },
+          "achievedAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "value",
+          "weightKg",
+          "reps",
+          "workoutId",
+          "achievedAt"
+        ]
+      },
+      "RecordsSummaryItemDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "maxWeight": {
+            "nullable": true,
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RecordEntryDto"
+              }
+            ]
+          },
+          "bestE1RM": {
+            "nullable": true,
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RecordEntryDto"
+              }
+            ]
+          },
+          "maxVolume": {
+            "nullable": true,
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RecordEntryDto"
+              }
+            ]
+          },
+          "exerciseId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "maxWeight",
+          "bestE1RM",
+          "maxVolume",
+          "exerciseId"
+        ]
+      },
+      "ExerciseRecordsDto": {
+        "type": "object",
+        "properties": {
+          "maxWeight": {
+            "nullable": true,
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RecordEntryDto"
+              }
+            ]
+          },
+          "bestE1RM": {
+            "nullable": true,
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RecordEntryDto"
+              }
+            ]
+          },
+          "maxVolume": {
+            "nullable": true,
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RecordEntryDto"
+              }
+            ]
+          },
+          "repsAtWeight": {
+            "description": "Most reps at each exact weight, ascending by weight (`value` = reps).",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RecordEntryDto"
+            }
+          },
+          "exerciseId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "maxWeight",
+          "bestE1RM",
+          "maxVolume",
+          "repsAtWeight",
+          "exerciseId"
+        ]
+      },
+      "PeriodTotalsDto": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "description": "Local date the period starts on."
+          },
+          "sessions": {
+            "type": "number"
+          },
+          "volumeKg": {
+            "type": "number"
+          },
+          "workingSets": {
+            "type": "number"
+          },
+          "durationSeconds": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "from",
+          "sessions",
+          "volumeKg",
+          "workingSets",
+          "durationSeconds"
+        ]
+      },
+      "WindowDto": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "format": "date-time",
+            "type": "string",
+            "nullable": true
+          },
+          "to": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "limitedByPlan": {
+            "type": "boolean",
+            "description": "Data before `from` exists but your plan doesn't include it."
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "limitedByPlan"
+        ]
+      },
+      "SummaryDto": {
+        "type": "object",
+        "properties": {
+          "week": {
+            "$ref": "#/components/schemas/PeriodTotalsDto"
+          },
+          "month": {
+            "$ref": "#/components/schemas/PeriodTotalsDto"
+          },
+          "streakWeeks": {
+            "type": "number",
+            "description": "Consecutive weeks with ≥ 1 session (the current week doesn't break it until it ends)."
+          },
+          "window": {
+            "$ref": "#/components/schemas/WindowDto"
+          }
+        },
+        "required": [
+          "week",
+          "month",
+          "streakWeeks",
+          "window"
+        ]
+      },
+      "ExerciseStatPointDto": {
+        "type": "object",
+        "properties": {
+          "bestE1RM": {
+            "type": "number",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "description": "Local date of the session."
+          },
+          "workoutId": {
+            "type": "string"
+          },
+          "maxWeightKg": {
+            "type": "number"
+          },
+          "volumeKg": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "bestE1RM",
+          "date",
+          "workoutId",
+          "maxWeightKg",
+          "volumeKg"
+        ]
+      },
+      "ExerciseStatsDto": {
+        "type": "object",
+        "properties": {
+          "points": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExerciseStatPointDto"
+            }
+          },
+          "exerciseId": {
+            "type": "string"
+          },
+          "window": {
+            "$ref": "#/components/schemas/WindowDto"
+          }
+        },
+        "required": [
+          "points",
+          "exerciseId",
+          "window"
+        ]
+      },
+      "MuscleVolumeRowDto": {
+        "type": "object",
+        "properties": {
+          "week": {
+            "type": "string",
+            "description": "Local date the week starts on (user's first day of week)."
+          },
+          "muscle": {
+            "type": "string"
+          },
+          "sets": {
+            "type": "number",
+            "description": "Completed working sets (primary muscle)."
+          },
+          "volumeKg": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "week",
+          "muscle",
+          "sets",
+          "volumeKg"
+        ]
+      },
+      "MuscleVolumeDto": {
+        "type": "object",
+        "properties": {
+          "rows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MuscleVolumeRowDto"
+            }
+          },
+          "window": {
+            "$ref": "#/components/schemas/WindowDto"
+          }
+        },
+        "required": [
+          "rows",
+          "window"
+        ]
+      },
+      "WeekFrequencyDto": {
+        "type": "object",
+        "properties": {
+          "weekStart": {
+            "type": "string"
+          },
+          "daysTrained": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "weekStart",
+          "daysTrained"
+        ]
+      },
+      "HeatmapDayDto": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "sessions": {
+            "type": "number"
+          },
+          "volumeKg": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "date",
+          "sessions",
+          "volumeKg"
+        ]
+      },
+      "FrequencyDto": {
+        "type": "object",
+        "properties": {
+          "weeks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WeekFrequencyDto"
+            }
+          },
+          "heatmap": {
+            "description": "Only days with sessions.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HeatmapDayDto"
+            }
+          },
+          "year": {
+            "type": "number"
+          },
+          "window": {
+            "$ref": "#/components/schemas/WindowDto"
+          }
+        },
+        "required": [
+          "weeks",
+          "heatmap",
+          "year",
+          "window"
+        ]
+      },
+      "TotalPointDto": {
+        "type": "object",
+        "properties": {
+          "squat": {
+            "type": "number",
+            "nullable": true,
+            "description": "Best so far (running max) per lift; null until the lift has data."
+          },
+          "bench": {
+            "type": "number",
+            "nullable": true
+          },
+          "deadlift": {
+            "type": "number",
+            "nullable": true
+          },
+          "total": {
+            "type": "number",
+            "nullable": true,
+            "description": "Only once all three lifts have data."
+          },
+          "weekStart": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "squat",
+          "bench",
+          "deadlift",
+          "total",
+          "weekStart"
+        ]
+      },
+      "PowerliftingTotalDto": {
+        "type": "object",
+        "properties": {
+          "metric": {
+            "type": "string",
+            "enum": [
+              "e1rm",
+              "max_weight"
+            ]
+          },
+          "points": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TotalPointDto"
+            }
+          },
+          "bestTotal": {
+            "type": "number",
+            "nullable": true
+          },
+          "window": {
+            "$ref": "#/components/schemas/WindowDto"
+          }
+        },
+        "required": [
+          "metric",
+          "points",
+          "bestTotal",
+          "window"
+        ]
+      },
+      "AdherenceWeekDto": {
+        "type": "object",
+        "properties": {
+          "week": {
+            "type": "number"
+          },
+          "planned": {
+            "type": "number"
+          },
+          "completed": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "week",
+          "planned",
+          "completed"
+        ]
+      },
+      "ProgramAdherenceDto": {
+        "type": "object",
+        "properties": {
+          "adherencePercent": {
+            "type": "number",
+            "nullable": true
+          },
+          "weeks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdherenceWeekDto"
+            }
+          },
+          "programId": {
+            "type": "string"
+          },
+          "plannedSessions": {
+            "type": "number",
+            "description": "Planned training days from the start up to today (or the end/completion)."
+          },
+          "completedSessions": {
+            "type": "number",
+            "description": "Planned days with a finished workout of this program that day."
+          },
+          "extraSessions": {
+            "type": "number",
+            "description": "Finished workouts of this program on unscheduled days."
+          },
+          "window": {
+            "$ref": "#/components/schemas/WindowDto"
+          }
+        },
+        "required": [
+          "adherencePercent",
+          "weeks",
+          "programId",
+          "plannedSessions",
+          "completedSessions",
+          "extraSessions",
+          "window"
+        ]
+      },
+      "BodyMetricDto": {
+        "type": "object",
+        "properties": {
+          "weightKg": {
+            "type": "number",
+            "nullable": true
+          },
+          "bodyFatPercent": {
+            "type": "number",
+            "nullable": true
+          },
+          "waistCm": {
+            "type": "number",
+            "nullable": true
+          },
+          "chestCm": {
+            "type": "number",
+            "nullable": true
+          },
+          "hipsCm": {
+            "type": "number",
+            "nullable": true
+          },
+          "armCm": {
+            "type": "number",
+            "nullable": true
+          },
+          "thighCm": {
+            "type": "number",
+            "nullable": true
+          },
+          "calfCm": {
+            "type": "number",
+            "nullable": true
+          },
+          "neckCm": {
+            "type": "number",
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "measuredAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "weightKg",
+          "bodyFatPercent",
+          "waistCm",
+          "chestCm",
+          "hipsCm",
+          "armCm",
+          "thighCm",
+          "calfCm",
+          "neckCm",
+          "id",
+          "measuredAt",
+          "notes",
+          "updatedAt"
+        ]
+      },
+      "BodyMetricPageDto": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BodyMetricDto"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/PageMetaDto"
+          }
+        },
+        "required": [
+          "items",
+          "meta"
+        ]
+      },
+      "SeriesPointDto": {
+        "type": "object",
+        "properties": {
+          "measuredAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "measuredAt",
+          "value"
+        ]
+      },
+      "BodyMetricSeriesDto": {
+        "type": "object",
+        "properties": {
+          "metric": {
+            "type": "string",
+            "enum": [
+              "weightKg",
+              "bodyFatPercent",
+              "waistCm",
+              "chestCm",
+              "hipsCm",
+              "armCm",
+              "thighCm",
+              "calfCm",
+              "neckCm"
+            ]
+          },
+          "points": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SeriesPointDto"
+            }
+          },
+          "window": {
+            "type": "object",
+            "properties": {
+              "from": {
+                "format": "date-time",
+                "type": "string",
+                "nullable": true
+              },
+              "to": {
+                "format": "date-time",
+                "type": "string"
+              },
+              "limitedByPlan": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "from",
+              "to",
+              "limitedByPlan"
+            ]
+          }
+        },
+        "required": [
+          "metric",
+          "points",
+          "window"
+        ]
+      },
       "CreateBodyMetricDto": {
         "type": "object",
         "properties": {
@@ -10064,6 +10817,100 @@
           "format",
           "url",
           "takenAt"
+        ]
+      },
+      "ProgressPhotoDto": {
+        "type": "object",
+        "properties": {
+          "view": {
+            "enum": [
+              "front",
+              "side",
+              "back"
+            ],
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "takenAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "description": "Signed delivery URL generated for this response (the asset is private)."
+          },
+          "publicId": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "view",
+          "id",
+          "takenAt",
+          "url",
+          "publicId",
+          "notes"
+        ]
+      },
+      "ProgressPhotoPageDto": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProgressPhotoDto"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/PageMetaDto"
+          }
+        },
+        "required": [
+          "items",
+          "meta"
+        ]
+      },
+      "CompareDto": {
+        "type": "object",
+        "properties": {
+          "view": {
+            "enum": [
+              "front",
+              "side",
+              "back"
+            ],
+            "type": "string"
+          },
+          "before": {
+            "nullable": true,
+            "description": "Earliest photo in range.",
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProgressPhotoDto"
+              }
+            ]
+          },
+          "after": {
+            "nullable": true,
+            "description": "Latest photo in range (null if there's only one).",
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProgressPhotoDto"
+              }
+            ]
+          }
+        },
+        "required": [
+          "view",
+          "before",
+          "after"
         ]
       },
       "Per100gDto": {
