@@ -1,5 +1,18 @@
 # Progress — gymapp-api
 
+## 2026-10-22 — Sonidos de recordatorios + limpieza de assets (backend)
+
+### Hecho
+- Borrar o reemplazar el audio de un sonido (`DELETE`/`PATCH publicId` en `/admin/sounds`) destruye el asset anterior en Cloudinary DESPUÉS de escribir en la DB (best-effort: si falla solo se registra un warning con `scrubText`, la respuesta sigue siendo 2xx). No se destruye si el `publicId` no cambia ni si otra fila de `rest_sounds` (incluso borrada) lo referencia. Sin índice nuevo: la colección es curada por admin (decenas de filas).
+- Nuevas preferencias `trainingReminderSoundId` y `weighInSoundId` en `PATCH /users/me`, idénticas a `restSoundId` (null = por defecto; 404 `SOUND_NOT_FOUND`; 403 `PLAN_FEATURE_REQUIRED`). `/users/me` devuelve el valor EFECTIVO (null si se borró el sonido, bajó el plan o es un usuario legacy sin el campo; sin backfill). Claves en `users/sound-preferences.ts` (`SOUND_PREFERENCE_KEYS`).
+
+### Verificación
+- `eslint` ✅ · unit `sounds` + `users` 30/30 ✅ · e2e `sounds` + `isolation` 103/103 ✅ (resto del e2e y `npm run openapi` los corre el orquestador).
+- Desplegar el backend ANTES que la app móvil (campos nuevos nullable, retrocompatibles).
+
+### Decisiones y gotchas
+- El destroy va después de la DB (al revés que `progress-photos`): la DB es la verdad; un huérfano cuesta bytes, una fila apuntando a un asset destruido rompe clientes.
+
 ## 2026-10-22 — Sonidos de alarma de descanso (backend)
 
 ### Hecho
@@ -17,7 +30,7 @@
 
 ### Decisiones y gotchas
 - El DTO usa `@IsOptional() @IsUUID('4')` para `restSoundId`: `IsOptional` deja pasar `null` (reset) sin `IsOptionalNonNull`.
-- Reemplazar el audio (`PATCH publicId`) NO borra el asset anterior (clientes con caché); borrar un sonido tampoco borra su asset.
+- ~~Reemplazar el audio o borrar un sonido NO destruía el asset~~ → desde "Sonidos de recordatorios + limpieza de assets" se destruye (después de la DB, best-effort).
 - `.env.example` no documenta `MEDIA_MAX_SOUND_BYTES` (regla de denegación): está en `docs/DEPLOYMENT.md`.
 
 ## 2026-10-18 — Cloudinary: carpeta en la Media Library

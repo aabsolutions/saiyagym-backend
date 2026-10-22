@@ -44,6 +44,10 @@ export class UserPreferences {
    * `/users/me` returns the effective one (null when deleted or no longer allowed by the plan).
    */
   @Prop({ type: String, default: null }) restSoundId!: string | null;
+  /** Sound for training reminders (same semantics as `restSoundId`). */
+  @Prop({ type: String, default: null }) trainingReminderSoundId!: string | null;
+  /** Sound for weigh-in reminders (same semantics as `restSoundId`). */
+  @Prop({ type: String, default: null }) weighInSoundId!: string | null;
 }
 
 @Schema({ _id: false })

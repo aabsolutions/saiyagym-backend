@@ -6120,6 +6120,16 @@
             "nullable": true,
             "description": "Effective sound: null when none is chosen, it was deleted, or the plan no longer allows it."
           },
+          "trainingReminderSoundId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Effective training-reminder sound (same rules as `restSoundId`)."
+          },
+          "weighInSoundId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Effective weigh-in-reminder sound (same rules as `restSoundId`)."
+          },
           "language": {
             "type": "string"
           },
@@ -6134,6 +6144,8 @@
           "units",
           "theme",
           "restSoundId",
+          "trainingReminderSoundId",
+          "weighInSoundId",
           "language",
           "defaultRestSeconds",
           "firstDayOfWeek"
@@ -6303,6 +6315,18 @@
             "type": "string",
             "nullable": true,
             "description": "Rest-alarm sound id; `null` goes back to the default sound.",
+            "format": "uuid"
+          },
+          "trainingReminderSoundId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Training-reminder sound id; `null` goes back to the default sound.",
+            "format": "uuid"
+          },
+          "weighInSoundId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Weigh-in-reminder sound id; `null` goes back to the default sound.",
             "format": "uuid"
           },
           "units": {

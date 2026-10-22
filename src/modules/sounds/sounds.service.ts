@@ -1,10 +1,11 @@
-import { HttpStatus, Injectable, OnModuleInit } from '@nestjs/common';
+import { HttpStatus, Injectable, Logger, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { ErrorCode } from '../../common/constants/error-codes';
 import { skipFor } from '../../common/dto/pagination.dto';
 import { AppException } from '../../common/exceptions/app.exception';
+import { scrubText } from '../../common/utils/log-redaction.util';
 import { localize } from '../../common/utils/translatable.util';
 import type { Env } from '../../config/env.schema';
 import { notDeleted } from '../../database/base.schema';
@@ -25,11 +26,13 @@ import { mp3Url, wavUrl } from './sound-urls';
 
 /**
  * Admin-managed rest-alarm sounds. Premium ones are listed to everybody but `locked` (and without
- * URLs) unless the plan has `premiumSounds`. Soft delete keeps the Cloudinary asset: apps that
- * already cached the file keep playing it.
+ * URLs) unless the plan has `premiumSounds`. Deleting or replacing a sound destroys its old
+ * Cloudinary asset AFTER the DB write (best-effort: a leftover asset only costs bytes, a row
+ * pointing to a destroyed asset would break clients), unless another row still references it.
  */
 @Injectable()
 export class SoundsService implements OnModuleInit {
+  private readonly logger = new Logger(SoundsService.name);
   private readonly cloudName: string | undefined;
 
   constructor(
@@ -124,14 +127,34 @@ export class SoundsService implements OnModuleInit {
       )
       .lean<RestSound>();
     if (!sound) throw notFound();
+    if ('publicId' in replacement) await this.discardAsset(current.publicId, id);
     return this.toAdmin(sound);
   }
 
   async remove(id: string): Promise<void> {
-    const result = await this.sounds.updateOne(notDeleted<RestSound>({ _id: id }), {
-      deletedAt: new Date(),
-    });
-    if (!result.matchedCount) throw notFound();
+    const sound = await this.sounds
+      .findOneAndUpdate(
+        notDeleted<RestSound>({ _id: id }),
+        { deletedAt: new Date() },
+        { projection: { publicId: 1 } },
+      )
+      .lean<Pick<RestSound, 'publicId'>>();
+    if (!sound) throw notFound();
+    await this.discardAsset(sound.publicId, id);
+  }
+
+  /**
+   * Destroys a no-longer-used asset. Rows count even when soft-deleted (they keep their publicId),
+   * so a shared asset survives. Never throws: the DB change already happened.
+   */
+  private async discardAsset(publicId: string, ownerId: string): Promise<void> {
+    try {
+      if (await this.sounds.exists({ publicId, _id: { $ne: ownerId } })) return;
+      await this.media.destroySound(publicId);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      this.logger.warn(`sound asset not deleted ${publicId}: ${scrubText(message)}`);
+    }
   }
 
   private async require(id: string): Promise<RestSound> {

@@ -9,7 +9,10 @@ const PREMIUM_SOUND = 'premium-sound';
 const FREE_SOUND = 'free-sound';
 const DELETED_SOUND = 'deleted-sound';
 
-function userDoc(restSoundId: string | null): UserDocument {
+function userDoc(
+  restSoundId: string | null,
+  extra: Record<string, string | null> = {},
+): UserDocument {
   return {
     _id: 'u1',
     email: 'a@b.c',
@@ -23,6 +26,7 @@ function userDoc(restSoundId: string | null): UserDocument {
       defaultRestSeconds: 120,
       firstDayOfWeek: 1,
       restSoundId,
+      ...extra,
     },
     subscription: {},
     createdAt: new Date(),
@@ -137,6 +141,52 @@ describe('UsersService rest sound preference', () => {
     it('null when nothing is stored', async () => {
       const me = await service.toMe(userDoc(null), 'es');
       expect(me.preferences.restSoundId).toBeNull();
+    });
+  });
+  describe.each(['trainingReminderSoundId', 'weighInSoundId'] as const)('%s', (key) => {
+    it('stores a free sound and null clears without lookup', async () => {
+      await service.updateMe('u1', { preferences: { [key]: FREE_SOUND } });
+      expect(updates[0]).toEqual({ [`preferences.${key}`]: FREE_SOUND });
+      await service.updateMe('u1', { preferences: { [key]: null } });
+      expect(updates[1]).toEqual({ [`preferences.${key}`]: null });
+    });
+
+    it('404 for unknown/deleted, 403 for premium on Free, nothing written', async () => {
+      const notFound = await errorOf(
+        service.updateMe('u1', { preferences: { [key]: DELETED_SOUND } }),
+      );
+      expect(notFound?.code).toBe('SOUND_NOT_FOUND');
+      const forbidden = await errorOf(
+        service.updateMe('u1', { preferences: { [key]: PREMIUM_SOUND } }),
+      );
+      expect(forbidden?.code).toBe('PLAN_FEATURE_REQUIRED');
+      expect(updates).toHaveLength(0);
+    });
+
+    it('validates every distinct sound id of one PATCH', async () => {
+      const error = await errorOf(
+        service.updateMe('u1', {
+          preferences: { restSoundId: FREE_SOUND, [key]: DELETED_SOUND },
+        }),
+      );
+      expect(error?.code).toBe('SOUND_NOT_FOUND');
+    });
+
+    it('effective id: stored, null when deleted / downgraded, null for legacy docs', async () => {
+      expect(
+        (await service.toMe(userDoc(null, { [key]: FREE_SOUND }), 'es')).preferences[key],
+      ).toBe(FREE_SOUND);
+      expect(
+        (await service.toMe(userDoc(null, { [key]: DELETED_SOUND }), 'es')).preferences[key],
+      ).toBeNull();
+      expect(
+        (await service.toMe(userDoc(null, { [key]: PREMIUM_SOUND }), 'es')).preferences[key],
+      ).toBeNull();
+      premiumSounds = true;
+      expect(
+        (await service.toMe(userDoc(null, { [key]: PREMIUM_SOUND }), 'es')).preferences[key],
+      ).toBe(PREMIUM_SOUND);
+      expect((await service.toMe(userDoc(null), 'es')).preferences[key]).toBeNull();
     });
   });
 });

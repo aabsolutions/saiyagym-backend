@@ -47,7 +47,7 @@ hipertrofia y powerlifting. Monetizable con planes Free y Premium.
    dispositivos, verificación de email, recuperación de contraseña.
 2. Perfil y preferencias: nombre, fecha de nacimiento, sexo, altura, nivel
    (principiante/intermedio/avanzado), objetivo (hipertrofia/powerlifting/ambos),
-   unidades, idioma, tema, descanso por defecto, sonido de fin de descanso, primer día de la semana.
+   unidades, idioma, tema, descanso por defecto, sonidos (fin de descanso, recordatorio de entreno, pesaje), primer día de la semana.
 3. Catálogo de ejercicios: globales (seed + admin) y personalizados del usuario.
 4. Rutinas (plantillas) y programas (rutinas en el tiempo, con progresión).
 5. Sesiones (workouts): registro en móvil, consulta/edición en web.
@@ -55,12 +55,18 @@ hipertrofia y powerlifting. Monetizable con planes Free y Premium.
 7. Medidas corporales y fotos de progreso.
 8. Nutrición: base de datos estática de sugerencias generales, administrable.
 9. Administración: catálogo, tiers, nutrición, sonidos, planes, usuarios.
-10. Notificaciones: locales en móvil (descanso, recordatorios de entreno).
+10. Notificaciones: locales en móvil (descanso, recordatorios de entreno y de pesaje).
     - Sonido de fin de descanso: biblioteca administrable (`rest_sounds`); el admin sube
       audios (< 30 s, ≤ `MEDIA_MAX_SOUND_BYTES`, 1 MiB por defecto) y marca cada uno
       free o premium (feature `premiumSounds`). El usuario elige uno en su perfil
       (`preferences.restSoundId`); si deja de estar disponible (borrado o downgrade)
       se usa el sonido por defecto. El móvil lo descarga y cachea (funciona offline).
+    - Los recordatorios de entreno y de pesaje también tienen sonido propio, de la misma
+      biblioteca y con las mismas reglas (`preferences.trainingReminderSoundId`,
+      `preferences.weighInSoundId`). Días y horas de los recordatorios siguen en el dispositivo.
+    - Limpieza: borrar o reemplazar un sonido destruye su audio en Cloudinary (después de
+      guardar en la DB, sin bloquear al admin). Cerrar sesión o entrar con otro usuario borra
+      del dispositivo los sonidos descargados y sus canales; una sesión expirada los conserva.
 
 ## Catálogo de ejercicios y tier list
 - Campos: name (traducible), description/instructions (traducibles), primaryMuscle,

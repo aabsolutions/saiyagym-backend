@@ -74,7 +74,7 @@ export class UpdateProfileDto {
   goal?: Goal | null;
 }
 
-/** Every field is optional and none can be `null`, except `restSoundId` (null = default sound). */
+/** Every field is optional and none can be `null`, except the sound ids (null = default sound). */
 export class UpdatePreferencesDto {
   @IsOptionalNonNull()
   @IsIn(UNIT_SYSTEMS)
@@ -106,6 +106,18 @@ export class UpdatePreferencesDto {
   @IsOptional()
   @IsUUID('4')
   restSoundId?: string | null;
+
+  /** Training-reminder sound id; `null` goes back to the default sound. */
+  @ApiProperty({ type: String, format: 'uuid', required: false, nullable: true })
+  @IsOptional()
+  @IsUUID('4')
+  trainingReminderSoundId?: string | null;
+
+  /** Weigh-in-reminder sound id; `null` goes back to the default sound. */
+  @ApiProperty({ type: String, format: 'uuid', required: false, nullable: true })
+  @IsOptional()
+  @IsUUID('4')
+  weighInSoundId?: string | null;
 }
 
 export class UpdateMeDto {
@@ -139,6 +151,10 @@ export class PreferencesDto {
   firstDayOfWeek!: number;
   /** Effective sound: null when none is chosen, it was deleted, or the plan no longer allows it. */
   @ApiProperty({ type: String, nullable: true }) restSoundId!: string | null;
+  /** Effective training-reminder sound (same rules as `restSoundId`). */
+  @ApiProperty({ type: String, nullable: true }) trainingReminderSoundId!: string | null;
+  /** Effective weigh-in-reminder sound (same rules as `restSoundId`). */
+  @ApiProperty({ type: String, nullable: true }) weighInSoundId!: string | null;
 }
 
 export class SubscriptionDto {

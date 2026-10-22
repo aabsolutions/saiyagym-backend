@@ -192,7 +192,13 @@ describe('Per-user data isolation (e2e)', () => {
       updatedAt: now,
     });
     await call(bob, 'patch', '/users/me')
-      .send({ preferences: { restSoundId: ids.sound } })
+      .send({
+        preferences: {
+          restSoundId: ids.sound,
+          trainingReminderSoundId: ids.sound,
+          weighInSoundId: ids.sound,
+        },
+      })
       .expect(200);
 
     for (const [collection, key] of OWNED) {
@@ -262,16 +268,30 @@ describe('Per-user data isolation (e2e)', () => {
       },
     );
 
-    it('rest sound choice: Bob sees his, Alice and Carol keep the default (null)', async () => {
-      const prefs = async (token: string) =>
-        (
-          (await call(token, 'get', '/users/me').expect(200)).body as {
-            preferences: { restSoundId: string | null };
-          }
-        ).preferences.restSoundId;
-      expect(await prefs(bob)).toBe(ids.sound);
-      expect(await prefs(alice)).toBeNull();
-      expect(await prefs(carol)).toBeNull();
+    it.each(['restSoundId', 'trainingReminderSoundId', 'weighInSoundId'])(
+      'sound choice %s: Bob sees his, Alice and Carol keep the default (null)',
+      async (key) => {
+        const prefs = async (token: string) =>
+          (
+            (await call(token, 'get', '/users/me').expect(200)).body as {
+              preferences: Record<string, string | null>;
+            }
+          ).preferences[key];
+        expect(await prefs(bob)).toBe(ids.sound);
+        expect(await prefs(alice)).toBeNull();
+        expect(await prefs(carol)).toBeNull();
+      },
+    );
+
+    it("writing sound prefs as Alice never changes Bob's", async () => {
+      await call(alice, 'patch', '/users/me')
+        .send({ preferences: { trainingReminderSoundId: null, weighInSoundId: null } })
+        .expect(200);
+      const bobMe = (await call(bob, 'get', '/users/me').expect(200)).body as {
+        preferences: Record<string, string | null>;
+      };
+      expect(bobMe.preferences.trainingReminderSoundId).toBe(ids.sound);
+      expect(bobMe.preferences.weighInSoundId).toBe(ids.sound);
     });
 
     it('GET /users/me is the caller', async () => {

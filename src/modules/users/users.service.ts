@@ -14,6 +14,7 @@ import { AdminUserDto, AdminUserListQueryDto, AssignPlanDto } from './dto/admin-
 import { MeDto, UpdateMeDto } from './dto/user.dto';
 import { RestSoundRegistry } from './rest-sound.registry';
 import { User, UserDocument } from './schemas/user.schema';
+import { SOUND_PREFERENCE_KEYS } from './sound-preferences';
 
 export interface CreateUserInput {
   email: string;
@@ -86,8 +87,12 @@ export class UsersService {
 
   /** Partial, field-level merge: omitted fields are untouched, `null` clears profile fields. */
   async updateMe(id: string, dto: UpdateMeDto): Promise<UserDocument> {
-    const restSoundId = dto.preferences?.restSoundId;
-    if (typeof restSoundId === 'string') await this.assertSelectableSound(id, restSoundId);
+    const soundIds = new Set<string>();
+    for (const key of SOUND_PREFERENCE_KEYS) {
+      const value = dto.preferences?.[key];
+      if (typeof value === 'string') soundIds.add(value);
+    }
+    for (const soundId of soundIds) await this.assertSelectableSound(id, soundId);
 
     const $set: Record<string, unknown> = {};
     for (const [section, values] of Object.entries({
@@ -124,9 +129,18 @@ export class UsersService {
   }
 
   /** The stored choice, or null when the sound is gone or the plan no longer allows it. */
-  private async effectiveSoundId(stored: string | null, premiumAllowed: boolean) {
+  private async effectiveSoundId(
+    stored: string | null,
+    premiumAllowed: boolean,
+    cache: Map<string, ReturnType<RestSoundRegistry['find']>>,
+  ) {
     if (!stored) return null;
-    const sound = await this.restSounds.find(stored);
+    let lookup = cache.get(stored);
+    if (!lookup) {
+      lookup = this.restSounds.find(stored);
+      cache.set(stored, lookup);
+    }
+    const sound = await lookup;
     if (!sound) return null;
     return sound.access === 'premium' && !premiumAllowed ? null : stored;
   }
@@ -205,6 +219,8 @@ export class UsersService {
 
   async toMe(user: UserDocument, lang: string): Promise<MeDto> {
     const plan = await this.plans.resolveEffectivePlan(user.subscription);
+    const lookups = new Map<string, ReturnType<RestSoundRegistry['find']>>();
+    const premiumAllowed = plan.entitlements.features.premiumSounds;
     return {
       id: user._id,
       email: user.email,
@@ -219,7 +235,18 @@ export class UsersService {
         firstDayOfWeek: user.preferences.firstDayOfWeek,
         restSoundId: await this.effectiveSoundId(
           user.preferences.restSoundId ?? null,
-          plan.entitlements.features.premiumSounds,
+          premiumAllowed,
+          lookups,
+        ),
+        trainingReminderSoundId: await this.effectiveSoundId(
+          user.preferences.trainingReminderSoundId ?? null,
+          premiumAllowed,
+          lookups,
+        ),
+        weighInSoundId: await this.effectiveSoundId(
+          user.preferences.weighInSoundId ?? null,
+          premiumAllowed,
+          lookups,
         ),
       },
       subscription: user.subscription,
