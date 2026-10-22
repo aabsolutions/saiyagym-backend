@@ -8,6 +8,8 @@ export const UPLOAD_PURPOSES = [
   'custom_exercise_image',
   /** Private progress photo (Premium). Uploaded with type=authenticated. */
   'progress_photo',
+  /** Rest-alarm sound (audio, Cloudinary `video` resource). Admin only. */
+  'rest_sound',
 ] as const;
 export type UploadPurpose = (typeof UPLOAD_PURPOSES)[number];
 
@@ -24,8 +26,8 @@ export class SignedUploadParamsDto {
   /** Media Library folder (dynamic folder mode). Same path as `public_id`, minus the id. */
   asset_folder!: string;
   allowed_formats!: string;
-  /** Incoming transformation: caps dimensions before Cloudinary stores the image. */
-  transformation!: string;
+  /** Incoming transformation: caps dimensions before Cloudinary stores the image. Absent for sounds. */
+  @ApiProperty({ required: false }) transformation?: string;
   /** Only for progress photos: private delivery. Must be sent as-is (it is signed). */
   @ApiProperty({ required: false, enum: ['authenticated'] }) type?: string;
 }

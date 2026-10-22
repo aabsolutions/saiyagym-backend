@@ -88,6 +88,13 @@ Conventions:
 | `nutrition_guidelines` | `slug_1` | **Unique** slug (seed upsert key). |
 | `nutrition_guidelines` | `goals_1` | Multikey. `?goal=` filter. |
 
+## Rest sounds (small admin catalog)
+
+| Collection | Index | Why |
+|---|---|---|
+| `rest_sounds` | `slug_1` | **Unique** slug, kept after soft delete so it can't be reused. |
+| `rest_sounds` | `sortOrder_1` | `GET /sounds` and the admin list in admin-defined order. |
+
 ## Removed on 2026-10-16 (production hardening)
 
 Redundant with a compound prefix or with no selectivity; each costs a write per insert/update.

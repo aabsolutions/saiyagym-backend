@@ -15,6 +15,7 @@ function serviceWith(overrides: Partial<Record<keyof Env, unknown>> = {}): Media
     CLOUDINARY_FOLDER: 'gymapp',
     NODE_ENV: 'test',
     MEDIA_MAX_IMAGE_BYTES: 5_000_000,
+    MEDIA_MAX_SOUND_BYTES: 1_048_576,
     ...overrides,
   };
   return new MediaService({ get: (key: keyof Env) => values[key] } as ConfigService<Env, true>);
@@ -102,6 +103,112 @@ describe('MediaService', () => {
       ],
     ])('rejects %s', (_label, url) => {
       expect(codeOf(() => service.assertValidImageUrl(url, userScope))).toBe('INVALID_IMAGE_URL');
+    });
+  });
+
+  describe('rest_sound', () => {
+    const SOUND_ID = `gymapp/test/sounds/${UUID}`;
+    const asset = (overrides: Record<string, unknown> = {}) => ({
+      public_id: SOUND_ID,
+      bytes: 200_000,
+      duration: 12.5,
+      is_audio: true,
+      format: 'mp3',
+      ...overrides,
+    });
+    let resourceSpy: jest.SpyInstance;
+    let destroySpy: jest.SpyInstance;
+
+    beforeEach(() => {
+      resourceSpy = jest.spyOn(cloudinary.api, 'resource').mockResolvedValue(asset());
+      destroySpy = jest.spyOn(cloudinary.uploader, 'destroy').mockResolvedValue({ result: 'ok' });
+    });
+    afterEach(() => {
+      jest.restoreAllMocks();
+    });
+
+    const errorOf = (promise: Promise<unknown>) =>
+      promise.then(
+        () => null,
+        (error: unknown) => error as AppException,
+      );
+
+    it('is admin-only', () => {
+      expect(codeOf(() => serviceWith().createUploadSignature('rest_sound', user))).toBe(
+        'FORBIDDEN',
+      );
+    });
+
+    it('signs a video upload into the sounds folder with audio formats only', () => {
+      const result = serviceWith().createUploadSignature('rest_sound', admin);
+
+      expect(result.uploadUrl).toBe('https://api.cloudinary.com/v1_1/demo-cloud/video/upload');
+      expect(result.params.public_id).toMatch(/^gymapp\/test\/sounds\/[0-9a-f-]{36}$/);
+      expect(result.params.asset_folder).toBe('gymapp/test/sounds');
+      expect(result.params.allowed_formats).toBe('mp3,wav,m4a,ogg,aac');
+      expect(result.params.transformation).toBeUndefined();
+      expect(result.maxFileSizeBytes).toBe(1_048_576);
+      expect(result.signature).toBe(cloudinary.utils.api_sign_request(result.params, SECRET));
+    });
+
+    it('verifySoundAsset returns what Cloudinary reports, never client values', async () => {
+      const result = await serviceWith().verifySoundAsset(SOUND_ID);
+
+      // Without media_metadata the Admin API omits `duration` (every sound would be rejected).
+      expect(resourceSpy).toHaveBeenCalledWith(SOUND_ID, {
+        resource_type: 'video',
+        media_metadata: true,
+      });
+      expect(result).toEqual({ bytes: 200_000, durationSec: 12.5, format: 'mp3' });
+      expect(destroySpy).not.toHaveBeenCalled();
+    });
+
+    it.each([
+      ['too big', { bytes: 1_048_577 }, 'size'],
+      ['30 s or longer', { duration: 30 }, 'duration'],
+      ['without duration', { duration: undefined }, 'duration'],
+      ['not audio', { is_audio: false }, 'format'],
+    ])('rejects an asset that is %s and destroys it', async (_label, override, reason) => {
+      resourceSpy.mockResolvedValue(asset(override));
+
+      const error = await errorOf(serviceWith().verifySoundAsset(SOUND_ID));
+
+      expect(error?.code).toBe('INVALID_SOUND_ASSET');
+      expect(error?.details).toEqual({ reason });
+      expect(destroySpy).toHaveBeenCalledWith(SOUND_ID, {
+        resource_type: 'video',
+        invalidate: true,
+      });
+    });
+
+    it('rejects a public id outside the sounds folder without calling Cloudinary', async () => {
+      const error = await errorOf(
+        serviceWith().verifySoundAsset(`gymapp/test/users/user-1/exercises/${UUID}`),
+      );
+
+      expect(error?.code).toBe('INVALID_SOUND_ASSET');
+      expect(error?.details).toEqual({ reason: 'folder' });
+      expect(resourceSpy).not.toHaveBeenCalled();
+      expect(destroySpy).not.toHaveBeenCalled();
+    });
+
+    it('rejects an asset that was never uploaded', async () => {
+      resourceSpy.mockRejectedValue({ error: { http_code: 404, message: 'Resource not found' } });
+
+      const error = await errorOf(serviceWith().verifySoundAsset(SOUND_ID));
+
+      expect(error?.code).toBe('INVALID_SOUND_ASSET');
+      expect(error?.details).toEqual({ reason: 'not_found' });
+    });
+
+    it('destroySound treats "not found" as done and fails on anything else', async () => {
+      destroySpy.mockResolvedValueOnce({ result: 'not found' });
+      await expect(serviceWith().destroySound(SOUND_ID)).resolves.toBeUndefined();
+
+      destroySpy.mockResolvedValueOnce({ result: 'error' });
+      expect((await errorOf(serviceWith().destroySound(SOUND_ID)))?.code).toBe(
+        'MEDIA_DELETE_FAILED',
+      );
     });
   });
 });

@@ -104,6 +104,7 @@ describe('Admin: users, roles & plans (e2e)', () => {
           fullStats: true,
           fullNutrition: false,
           dataExport: false,
+          premiumSounds: false,
         },
       },
     };
@@ -140,6 +141,7 @@ describe('Admin: users, roles & plans (e2e)', () => {
             fullStats: false,
             fullNutrition: false,
             dataExport: false,
+            premiumSounds: false,
           },
         },
       })

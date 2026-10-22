@@ -44,5 +44,8 @@
   "MEAL_SUGGESTION_NOT_FOUND": "La sugerencia de comida no existe.",
   "NUTRITION_GUIDELINE_NOT_FOUND": "La guía de nutrición no existe.",
   "NUTRITION_SLUG_TAKEN": "Ya existe (o existió) un elemento con ese identificador.",
-  "NUTRITION_PROFILE_INCOMPLETE": "Faltan datos para el cálculo o no son válidos. Complétalos en tu perfil o envíalos en la solicitud."
+  "NUTRITION_PROFILE_INCOMPLETE": "Faltan datos para el cálculo o no son válidos. Complétalos en tu perfil o envíalos en la solicitud.",
+  "SOUND_NOT_FOUND": "El sonido no existe.",
+  "INVALID_SOUND_ASSET": "El archivo de sonido no es válido (máximo 1 MB y menos de 30 segundos). Súbelo de nuevo.",
+  "SOUND_SLUG_TAKEN": "Ya existe (o existió) un sonido con ese identificador."
 }

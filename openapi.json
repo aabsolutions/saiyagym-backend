@@ -5131,6 +5131,221 @@
         ]
       }
     },
+    "/api/v1/sounds": {
+      "get": {
+        "operationId": "SoundsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RestSoundListDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Rest-alarm sounds in admin order. Premium ones are `locked` (and have no URLs) without premiumSounds.",
+        "tags": [
+          "sounds"
+        ]
+      }
+    },
+    "/api/v1/admin/sounds": {
+      "get": {
+        "operationId": "AdminSoundsController_list",
+        "parameters": [
+          {
+            "name": "page",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "minimum": 1,
+              "default": 1,
+              "type": "number"
+            }
+          },
+          {
+            "name": "limit",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "minimum": 1,
+              "maximum": 100,
+              "default": 20,
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminRestSoundPageDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "admin / sounds"
+        ]
+      },
+      "post": {
+        "operationId": "AdminSoundsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRestSoundDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminRestSoundDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Upload first with a rest_sound signature (POST /media/upload-signature), then send its publicId. The API verifies size/duration/format with Cloudinary (400 INVALID_SOUND_ASSET).",
+        "tags": [
+          "admin / sounds"
+        ]
+      }
+    },
+    "/api/v1/admin/sounds/{id}": {
+      "get": {
+        "operationId": "AdminSoundsController_get",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminRestSoundDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "admin / sounds"
+        ]
+      },
+      "patch": {
+        "operationId": "AdminSoundsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRestSoundDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminRestSoundDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "admin / sounds"
+        ]
+      },
+      "delete": {
+        "operationId": "AdminSoundsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Soft delete; the Cloudinary asset is kept for cached clients",
+        "tags": [
+          "admin / sounds"
+        ]
+      }
+    },
     "/api/v1/health": {
       "get": {
         "operationId": "HealthController_check",
@@ -5620,6 +5835,9 @@
           },
           "dataExport": {
             "type": "boolean"
+          },
+          "premiumSounds": {
+            "type": "boolean"
           }
         },
         "required": [
@@ -5627,7 +5845,8 @@
           "autoProgression",
           "fullStats",
           "fullNutrition",
-          "dataExport"
+          "dataExport",
+          "premiumSounds"
         ]
       },
       "PlanEntitlementsDto": {
@@ -5896,6 +6115,11 @@
             ],
             "type": "string"
           },
+          "restSoundId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Effective sound: null when none is chosen, it was deleted, or the plan no longer allows it."
+          },
           "language": {
             "type": "string"
           },
@@ -5909,6 +6133,7 @@
         "required": [
           "units",
           "theme",
+          "restSoundId",
           "language",
           "defaultRestSeconds",
           "firstDayOfWeek"
@@ -6074,6 +6299,12 @@
       "UpdatePreferencesDto": {
         "type": "object",
         "properties": {
+          "restSoundId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Rest-alarm sound id; `null` goes back to the default sound.",
+            "format": "uuid"
+          },
           "units": {
             "type": "string",
             "enum": [
@@ -7734,7 +7965,8 @@
             "enum": [
               "exercise_image",
               "custom_exercise_image",
-              "progress_photo"
+              "progress_photo",
+              "rest_sound"
             ],
             "type": "string"
           }
@@ -7746,6 +7978,10 @@
       "SignedUploadParamsDto": {
         "type": "object",
         "properties": {
+          "transformation": {
+            "type": "string",
+            "description": "Incoming transformation: caps dimensions before Cloudinary stores the image. Absent for sounds."
+          },
           "type": {
             "type": "string",
             "description": "Only for progress photos: private delivery. Must be sent as-is (it is signed).",
@@ -7765,18 +8001,13 @@
           },
           "allowed_formats": {
             "type": "string"
-          },
-          "transformation": {
-            "type": "string",
-            "description": "Incoming transformation: caps dimensions before Cloudinary stores the image."
           }
         },
         "required": [
           "timestamp",
           "public_id",
           "asset_folder",
-          "allowed_formats",
-          "transformation"
+          "allowed_formats"
         ]
       },
       "UploadSignatureDto": {
@@ -12048,6 +12279,218 @@
               "type": "string"
             },
             "description": "Plain text, paragraphs separated by a blank line."
+          },
+          "sortOrder": {
+            "type": "number"
+          }
+        }
+      },
+      "RestSoundDto": {
+        "type": "object",
+        "properties": {
+          "access": {
+            "enum": [
+              "free",
+              "premium"
+            ],
+            "type": "string"
+          },
+          "wavUrl": {
+            "type": "string",
+            "nullable": true,
+            "description": "iOS delivery (wav). Null while locked."
+          },
+          "mp3Url": {
+            "type": "string",
+            "nullable": true,
+            "description": "Android delivery (mp3). Null while locked."
+          },
+          "id": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "locked": {
+            "type": "boolean",
+            "description": "True when the sound is premium and the user's plan lacks `premiumSounds`."
+          },
+          "durationSec": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "access",
+          "wavUrl",
+          "mp3Url",
+          "id",
+          "slug",
+          "name",
+          "locked",
+          "durationSec"
+        ]
+      },
+      "RestSoundListDto": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RestSoundDto"
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      },
+      "AdminRestSoundDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "access": {
+            "enum": [
+              "free",
+              "premium"
+            ],
+            "type": "string"
+          },
+          "wavUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "mp3Url": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "publicId": {
+            "type": "string"
+          },
+          "format": {
+            "type": "string"
+          },
+          "durationSec": {
+            "type": "number"
+          },
+          "bytes": {
+            "type": "number"
+          },
+          "sortOrder": {
+            "type": "number"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "access",
+          "wavUrl",
+          "mp3Url",
+          "id",
+          "slug",
+          "publicId",
+          "format",
+          "durationSec",
+          "bytes",
+          "sortOrder",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      "AdminRestSoundPageDto": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminRestSoundDto"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/PageMetaDto"
+          }
+        },
+        "required": [
+          "items",
+          "meta"
+        ]
+      },
+      "CreateRestSoundDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "access": {
+            "enum": [
+              "free",
+              "premium"
+            ],
+            "type": "string"
+          },
+          "slug": {
+            "type": "string",
+            "maxLength": 60
+          },
+          "publicId": {
+            "type": "string",
+            "description": "Cloudinary public id returned by a `rest_sound` upload signature. Verified by the API.",
+            "maxLength": 200
+          },
+          "sortOrder": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "name",
+          "access",
+          "slug",
+          "publicId"
+        ]
+      },
+      "UpdateRestSoundDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "access": {
+            "enum": [
+              "free",
+              "premium"
+            ],
+            "type": "string"
+          },
+          "publicId": {
+            "type": "string",
+            "description": "Cloudinary public id returned by a `rest_sound` upload signature. Verified by the API.",
+            "maxLength": 200
           },
           "sortOrder": {
             "type": "number"

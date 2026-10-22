@@ -59,6 +59,8 @@ export const envSchema = z
     CLOUDINARY_FOLDER: z.string().default('gymapp'),
     /** Advisory for clients; enforce the hard cap in a Cloudinary upload preset. */
     MEDIA_MAX_IMAGE_BYTES: positiveInt.default(5 * 1024 * 1024),
+    /** Hard cap for rest-alarm sounds, verified by the API after upload (Admin API). */
+    MEDIA_MAX_SOUND_BYTES: positiveInt.default(1024 * 1024),
 
     // --- Seed (only read by `npm run seed`) ---
     ADMIN_EMAIL: z.email().optional(),

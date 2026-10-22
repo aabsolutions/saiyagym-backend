@@ -14,6 +14,7 @@ const FREE: Entitlements = {
     fullStats: false,
     fullNutrition: false,
     dataExport: false,
+    premiumSounds: false,
   },
 };
 

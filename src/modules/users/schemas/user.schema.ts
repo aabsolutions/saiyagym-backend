@@ -39,6 +39,11 @@ export class UserPreferences {
   @Prop({ type: Number, default: 120, min: 0, max: 1800 }) defaultRestSeconds!: number;
   /** ISO weekday: 1 = Monday … 7 = Sunday. */
   @Prop({ type: Number, default: 1, min: 1, max: 7 }) firstDayOfWeek!: number;
+  /**
+   * Chosen rest-alarm sound (`rest_sounds._id`); null = default sound. This is the STORED choice:
+   * `/users/me` returns the effective one (null when deleted or no longer allowed by the plan).
+   */
+  @Prop({ type: String, default: null }) restSoundId!: string | null;
 }
 
 @Schema({ _id: false })

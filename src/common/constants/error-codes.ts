@@ -67,6 +67,11 @@ export const ErrorCode = {
   MEDIA_NOT_CONFIGURED: 'MEDIA_NOT_CONFIGURED',
   INVALID_IMAGE_URL: 'INVALID_IMAGE_URL',
   MEDIA_DELETE_FAILED: 'MEDIA_DELETE_FAILED',
+
+  // --- Rest sounds ---
+  SOUND_NOT_FOUND: 'SOUND_NOT_FOUND',
+  INVALID_SOUND_ASSET: 'INVALID_SOUND_ASSET',
+  SOUND_SLUG_TAKEN: 'SOUND_SLUG_TAKEN',
 } as const;
 
 export type ErrorCode = (typeof ErrorCode)[keyof typeof ErrorCode];

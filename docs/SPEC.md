@@ -23,7 +23,7 @@ hipertrofia y powerlifting. Monetizable con planes Free y Premium.
   10 ejercicios personalizados, estadísticas de los últimos 90 días, sin fotos de progreso,
   sin progresión automática.
 - Premium: sin límites, estadísticas completas, progresión automática, fotos de progreso,
-  sugerencias nutricionales completas, exportación CSV/JSON.
+  sugerencias nutricionales completas, exportación CSV/JSON, sonidos de descanso premium.
 - La API decide siempre los permisos (guard de entitlements); los clientes solo ocultan UI.
 - El usuario tiene `subscription { planId, status, currentPeriodEnd, provider }`.
   En esta versión NO se integra pasarela de pago: el admin asigna planes manualmente.
@@ -47,15 +47,20 @@ hipertrofia y powerlifting. Monetizable con planes Free y Premium.
    dispositivos, verificación de email, recuperación de contraseña.
 2. Perfil y preferencias: nombre, fecha de nacimiento, sexo, altura, nivel
    (principiante/intermedio/avanzado), objetivo (hipertrofia/powerlifting/ambos),
-   unidades, idioma, tema, descanso por defecto, primer día de la semana.
+   unidades, idioma, tema, descanso por defecto, sonido de fin de descanso, primer día de la semana.
 3. Catálogo de ejercicios: globales (seed + admin) y personalizados del usuario.
 4. Rutinas (plantillas) y programas (rutinas en el tiempo, con progresión).
 5. Sesiones (workouts): registro en móvil, consulta/edición en web.
 6. Estadísticas y récords personales (PR).
 7. Medidas corporales y fotos de progreso.
 8. Nutrición: base de datos estática de sugerencias generales, administrable.
-9. Administración: catálogo, tiers, nutrición, planes, usuarios.
+9. Administración: catálogo, tiers, nutrición, sonidos, planes, usuarios.
 10. Notificaciones: locales en móvil (descanso, recordatorios de entreno).
+    - Sonido de fin de descanso: biblioteca administrable (`rest_sounds`); el admin sube
+      audios (< 30 s, ≤ `MEDIA_MAX_SOUND_BYTES`, 1 MiB por defecto) y marca cada uno
+      free o premium (feature `premiumSounds`). El usuario elige uno en su perfil
+      (`preferences.restSoundId`); si deja de estar disponible (borrado o downgrade)
+      se usa el sonido por defecto. El móvil lo descarga y cachea (funciona offline).
 
 ## Catálogo de ejercicios y tier list
 - Campos: name (traducible), description/instructions (traducibles), primaryMuscle,

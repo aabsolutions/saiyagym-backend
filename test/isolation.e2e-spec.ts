@@ -41,7 +41,7 @@ const media = new MediaService({
 jest.spyOn(media, 'destroyPrivateImage').mockResolvedValue(undefined);
 
 type Method = 'get' | 'post' | 'patch' | 'put' | 'delete';
-type Key = 'exercise' | 'routine' | 'slot' | 'program' | 'workout' | 'metric' | 'photo';
+type Key = 'exercise' | 'routine' | 'slot' | 'program' | 'workout' | 'metric' | 'photo' | 'sound';
 
 describe('Per-user data isolation (e2e)', () => {
   let app: INestApplication<App>;
@@ -175,6 +175,26 @@ describe('Per-user data isolation (e2e)', () => {
       serverUpdatedAt: now,
     });
 
+    // Rest sound preference: the catalog is global, the CHOICE is per user.
+    ids.sound = randomUUID();
+    await db.collection('rest_sounds').insertOne({
+      _id: ids.sound as never,
+      slug: `isolation-${ids.sound}`,
+      name: { es: 'Campana', en: 'Bell' },
+      access: 'free',
+      publicId: `gymapp/test/sounds/${ids.sound}`,
+      format: 'mp3',
+      durationSec: 3,
+      bytes: 1000,
+      sortOrder: 0,
+      deletedAt: null,
+      createdAt: now,
+      updatedAt: now,
+    });
+    await call(bob, 'patch', '/users/me')
+      .send({ preferences: { restSoundId: ids.sound } })
+      .expect(200);
+
     for (const [collection, key] of OWNED) {
       bobSnapshot.set(key, await db.collection(collection).findOne({ _id: ids[key] as never }));
     }
@@ -241,6 +261,18 @@ describe('Per-user data isolation (e2e)', () => {
         for (const trace of bobTraces()) expect(aliceRes.text).not.toContain(trace);
       },
     );
+
+    it('rest sound choice: Bob sees his, Alice and Carol keep the default (null)', async () => {
+      const prefs = async (token: string) =>
+        (
+          (await call(token, 'get', '/users/me').expect(200)).body as {
+            preferences: { restSoundId: string | null };
+          }
+        ).preferences.restSoundId;
+      expect(await prefs(bob)).toBe(ids.sound);
+      expect(await prefs(alice)).toBeNull();
+      expect(await prefs(carol)).toBeNull();
+    });
 
     it('GET /users/me is the caller', async () => {
       const res = await call(alice, 'get', '/users/me').expect(200);

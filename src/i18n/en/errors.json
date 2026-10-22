@@ -44,5 +44,8 @@
   "MEAL_SUGGESTION_NOT_FOUND": "The meal suggestion does not exist.",
   "NUTRITION_GUIDELINE_NOT_FOUND": "The nutrition guideline does not exist.",
   "NUTRITION_SLUG_TAKEN": "An item with that identifier exists (or existed).",
-  "NUTRITION_PROFILE_INCOMPLETE": "Some data for the calculation is missing or out of range. Complete your profile or send it in the request."
+  "NUTRITION_PROFILE_INCOMPLETE": "Some data for the calculation is missing or out of range. Complete your profile or send it in the request.",
+  "SOUND_NOT_FOUND": "The sound does not exist.",
+  "INVALID_SOUND_ASSET": "The sound file is not valid (maximum 1 MB and under 30 seconds). Upload it again.",
+  "SOUND_SLUG_TAKEN": "A sound with that identifier exists (or existed)."
 }

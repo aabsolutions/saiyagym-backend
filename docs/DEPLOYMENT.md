@@ -65,6 +65,7 @@ the full list of problems (visible in the deploy log), instead of failing later 
 | `SMTP_HOST` / `SMTP_PORT` / `SMTP_USER` / `SMTP_PASS` | from the provider | Any transactional provider with SMTP (Brevo, Mailgun, Resend, SES…). `SMTP_SECURE` defaults to `true` only for port 465 (587/2525 use STARTTLS). **Render's free plan may block outbound SMTP on 25/465/587** — check Render's current docs; if blocked, use the provider's port **2525** or a paid instance. |
 | `CLOUDINARY_CLOUD_NAME` / `CLOUDINARY_API_KEY` / `CLOUDINARY_API_SECRET` | Cloudinary dashboard → API Keys | All three or none (without them media endpoints answer `503 MEDIA_NOT_CONFIGURED`). The secret never leaves the API: clients get signed upload params. |
 | `CLOUDINARY_FOLDER` | `gymapp` | Assets go under `gymapp/production/…`, so dev uploads never mix in. Set the max upload size in a Cloudinary upload preset / account settings (`MEDIA_MAX_IMAGE_BYTES` is only advisory). |
+| `MEDIA_MAX_SOUND_BYTES` | unset (default `1048576`, 1 MiB) | Max size of a rest-alarm sound. Unlike the image limit it is **enforced**: after an admin uploads, `POST /admin/sounds` asks Cloudinary for the asset and rejects (and destroys) it when it is bigger, 30 s or longer, or not audio. Not in `.env.example` (blocked by a deny rule); set it here only to change the default. |
 | `LOG_LEVEL` | `info` | `debug` temporarily to investigate; `warn` to reduce volume. |
 | `SWAGGER_ENABLED` | unset (`false`) | The contract is `openapi.json` in the repo; no need to expose `/api/docs` publicly. |
 | `THROTTLE_TTL_MS` / `THROTTLE_LIMIT` | defaults `60000` / `100` | Global per-IP limit; auth routes have stricter fixed limits. In-memory: fine for one instance, needs a shared store (Redis) if you scale out. |
@@ -127,6 +128,26 @@ included):
    curl -s https://<service>.onrender.com/api/v1/plans        # Free / Premium
    ```
 5. Web client: build with the API base URL `https://<service>.onrender.com/api/v1`. Mobile: same.
+
+### Releasing the rest-alarm sounds feature (`premiumSounds`)
+
+Plans already in the database don't have the new `premiumSounds` feature key, and the seeds are
+insert-only, so enable it explicitly. Order matters:
+
+1. Deploy the backend (Render auto-deploys `main` once CI passes). New collection `rest_sounds` and
+   its indexes are created at boot (`IndexesReadyService`).
+2. From your machine, against production (same recipe as §4 step 3):
+   ```bash
+   export MONGODB_URI='mongodb+srv://…/saiyagym…'   # production — double-check!
+   npm run db:backfill-premium-sounds
+   unset MONGODB_URI
+   ```
+   Sets `entitlements.features.premiumSounds` to `true` on the `premium` plan and `false` on the
+   others, **only where the key is missing**: idempotent, and it never overrides an admin's edit.
+   Until it runs, premium users keep `premiumSounds` unset (treated as off).
+3. Then ship the admin web and finally the mobile app (they consume the new endpoints).
+
+Rollback: revert the repos; a stray `preferences.restSoundId` or feature key is harmless.
 
 ## 5. Logs
 

@@ -12,6 +12,7 @@ import { notDeleted } from '../../database/base.schema';
 import { PlansService } from '../plans/plans.service';
 import { AdminUserDto, AdminUserListQueryDto, AssignPlanDto } from './dto/admin-user.dto';
 import { MeDto, UpdateMeDto } from './dto/user.dto';
+import { RestSoundRegistry } from './rest-sound.registry';
 import { User, UserDocument } from './schemas/user.schema';
 
 export interface CreateUserInput {
@@ -28,6 +29,7 @@ export class UsersService {
   constructor(
     @InjectModel(User.name) private readonly users: Model<User>,
     private readonly plans: PlansService,
+    private readonly restSounds: RestSoundRegistry,
   ) {}
 
   // --- Lookups (soft-deleted users are invisible everywhere) ---
@@ -84,6 +86,9 @@ export class UsersService {
 
   /** Partial, field-level merge: omitted fields are untouched, `null` clears profile fields. */
   async updateMe(id: string, dto: UpdateMeDto): Promise<UserDocument> {
+    const restSoundId = dto.preferences?.restSoundId;
+    if (typeof restSoundId === 'string') await this.assertSelectableSound(id, restSoundId);
+
     const $set: Record<string, unknown> = {};
     for (const [section, values] of Object.entries({
       profile: dto.profile,
@@ -101,6 +106,29 @@ export class UsersService {
     );
     if (!user) throw new AppException(ErrorCode.USER_NOT_FOUND, HttpStatus.NOT_FOUND);
     return user;
+  }
+
+  /** The sound must exist (404) and, when premium, the user's plan must allow it (403). */
+  private async assertSelectableSound(userId: string, soundId: string): Promise<void> {
+    const sound = await this.restSounds.find(soundId);
+    if (!sound) throw new AppException(ErrorCode.SOUND_NOT_FOUND, HttpStatus.NOT_FOUND);
+    if (sound.access === 'premium') {
+      const user = await this.requireActiveById(userId);
+      const plan = await this.plans.resolveEffectivePlan(user.subscription);
+      if (!plan.entitlements.features.premiumSounds) {
+        throw new AppException(ErrorCode.PLAN_FEATURE_REQUIRED, HttpStatus.FORBIDDEN, {
+          details: { feature: 'premiumSounds' },
+        });
+      }
+    }
+  }
+
+  /** The stored choice, or null when the sound is gone or the plan no longer allows it. */
+  private async effectiveSoundId(stored: string | null, premiumAllowed: boolean) {
+    if (!stored) return null;
+    const sound = await this.restSounds.find(stored);
+    if (!sound) return null;
+    return sound.access === 'premium' && !premiumAllowed ? null : stored;
   }
 
   async markEmailVerified(id: string): Promise<void> {
@@ -183,7 +211,17 @@ export class UsersService {
       role: user.role,
       emailVerified: user.emailVerifiedAt !== null,
       profile: user.profile,
-      preferences: user.preferences,
+      preferences: {
+        units: user.preferences.units,
+        language: user.preferences.language,
+        theme: user.preferences.theme,
+        defaultRestSeconds: user.preferences.defaultRestSeconds,
+        firstDayOfWeek: user.preferences.firstDayOfWeek,
+        restSoundId: await this.effectiveSoundId(
+          user.preferences.restSoundId ?? null,
+          plan.entitlements.features.premiumSounds,
+        ),
+      },
       subscription: user.subscription,
       plan: {
         id: plan._id,

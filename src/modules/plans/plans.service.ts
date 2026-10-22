@@ -7,6 +7,7 @@ import { AppException } from '../../common/exceptions/app.exception';
 import { localize } from '../../common/utils/translatable.util';
 import { notDeleted } from '../../database/base.schema';
 import { DEFAULT_PLANS } from './default-plans';
+import type { FeatureKey } from './plan-entitlements';
 import { CreatePlanDto, PlanResponseDto, PublicPlanDto, UpdatePlanDto } from './dto/plan.dto';
 import { Plan, PlanDocument } from './schemas/plan.schema';
 
@@ -63,6 +64,20 @@ export class PlansService implements OnApplicationBootstrap {
         this.logger.error('No default plan configured: new sign-ups will fail until one is set');
       }
     }
+  }
+
+  /**
+   * One-off for features added after plans were created (`npm run db:backfill-premium-sounds`):
+   * sets `entitlements.features.<feature>` ONLY where the key is absent — true on the plans whose
+   * `code` is in `enabledCodes`, false elsewhere. Idempotent and never overrides an admin edit.
+   * Returns how many plans changed.
+   */
+  async backfillFeature(feature: FeatureKey, enabledCodes: string[]): Promise<number> {
+    const path = `entitlements.features.${feature}`;
+    const result = await this.plans.collection.updateMany({ [path]: { $exists: false } }, [
+      { $set: { [path]: { $in: ['$code', enabledCodes] } } },
+    ]);
+    return result.modifiedCount;
   }
 
   // --- Queries ---

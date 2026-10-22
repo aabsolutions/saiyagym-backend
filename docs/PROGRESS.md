@@ -1,5 +1,25 @@
 # Progress — gymapp-api
 
+## 2026-10-22 — Sonidos de alarma de descanso (backend)
+
+### Hecho
+- Biblioteca administrada `rest_sounds` (`src/modules/sounds`): CRUD `/admin/sounds` (solo admin, borrado lógico, slug reservado → `SOUND_SLUG_TAKEN`) y `GET /sounds` (orden por `sortOrder`, nombre localizado, `locked` + URLs `null` para premium sin `premiumSounds`).
+- Subida: firma `rest_sound` (solo admin, `video/upload`, carpeta `sounds`). La API verifica el asset con la Admin API de Cloudinary (carpeta, audio, `bytes <= MEDIA_MAX_SOUND_BYTES`, `duration < 30 s`); si no cumple lo destruye y responde `400 INVALID_SOUND_ASSET {reason}`. Un `publicId` fuera de la carpeta se rechaza SIN destruir (no se puede probar que lo subimos nosotros).
+- URLs de entrega (`sound-urls.ts`): `wavUrl` (`af_22050`, iOS) y `mp3Url` (Android).
+- Preferencia `preferences.restSoundId` en `PATCH /users/me` (`null` = sonido por defecto; 404 `SOUND_NOT_FOUND`; 403 `PLAN_FEATURE_REQUIRED` si es premium sin `premiumSounds`). `/users/me` devuelve el id EFECTIVO (null si el sonido se borró o el plan ya no lo permite; el valor guardado no cambia, así que al volver a Premium se recupera).
+- `RestSoundRegistry` (UsersModule) evita el ciclo users↔sounds: `SoundsModule` registra el lookup; sin registrar → null (falla cerrado).
+- Feature `premiumSounds` en planes (seed premium=true) + `npm run db:backfill-premium-sounds` (idempotente, solo donde falta la clave). Ver `docs/DEPLOYMENT.md`.
+- `createWithFreeSlug` acepta el código de error del slug duplicado (nutrición sigue igual).
+
+### Verificación
+- Pendiente: no se ejecutaron lint, tests ni build en esta tanda. Tests escritos: `sound-urls`, `rest-sound.registry`, `users.service`, `media.service`, `default-plans` (unit); `sounds`, `isolation`, `backfill-premium-sounds` (e2e); `indexes` cubre las filas nuevas de `docs/INDEXES.md`.
+- Pendiente: `npm run openapi` para regenerar `openapi.json` (CI falla por drift hasta entonces).
+
+### Decisiones y gotchas
+- El DTO usa `@IsOptional() @IsUUID('4')` para `restSoundId`: `IsOptional` deja pasar `null` (reset) sin `IsOptionalNonNull`.
+- Reemplazar el audio (`PATCH publicId`) NO borra el asset anterior (clientes con caché); borrar un sonido tampoco borra su asset.
+- `.env.example` no documenta `MEDIA_MAX_SOUND_BYTES` (regla de denegación): está en `docs/DEPLOYMENT.md`.
+
 ## 2026-10-18 — Cloudinary: carpeta en la Media Library
 
 ### Hecho

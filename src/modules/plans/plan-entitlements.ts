@@ -9,6 +9,7 @@ export const FEATURE_KEYS = [
   'fullStats',
   'fullNutrition',
   'dataExport',
+  'premiumSounds',
 ] as const;
 export type FeatureKey = (typeof FEATURE_KEYS)[number];
 

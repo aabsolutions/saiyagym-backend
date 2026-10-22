@@ -11,18 +11,19 @@ import { AppException } from '../../common/exceptions/app.exception';
 export async function createWithFreeSlug<T extends { slug: string }, D extends { slug: string }>(
   model: Model<T>,
   doc: D,
+  code: ErrorCode = ErrorCode.NUTRITION_SLUG_TAKEN,
 ): Promise<T> {
-  if (await model.exists({ slug: doc.slug } as never)) throw slugTaken();
+  if (await model.exists({ slug: doc.slug } as never)) throw slugTaken(code);
   try {
     return await model.create(doc as object);
   } catch (error) {
-    if ((error as { code?: unknown }).code === 11000) throw slugTaken();
+    if ((error as { code?: unknown }).code === 11000) throw slugTaken(code);
     throw error;
   }
 }
 
-function slugTaken(): AppException {
-  return new AppException(ErrorCode.NUTRITION_SLUG_TAKEN, HttpStatus.CONFLICT);
+function slugTaken(code: ErrorCode): AppException {
+  return new AppException(code, HttpStatus.CONFLICT);
 }
 
 /** Collation locale for sorting by a localized name: the language's base code, else `es`. */

@@ -31,6 +31,7 @@ import { ExportModule } from './modules/export/export.module';
 import { ProgressPhotosModule } from './modules/progress-photos/progress-photos.module';
 import { RecordsModule } from './modules/records/records.module';
 import { StatsModule } from './modules/stats/stats.module';
+import { SoundsModule } from './modules/sounds/sounds.module';
 
 @Module({
   imports: [
@@ -100,6 +101,7 @@ import { StatsModule } from './modules/stats/stats.module';
     ProgressPhotosModule,
     ExportModule,
     NutritionModule,
+    SoundsModule,
     HealthModule,
   ],
   providers: [

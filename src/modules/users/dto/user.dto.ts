@@ -6,6 +6,7 @@ import {
   IsInt,
   IsOptional,
   IsString,
+  IsUUID,
   Matches,
   Max,
   MaxDate,
@@ -73,7 +74,7 @@ export class UpdateProfileDto {
   goal?: Goal | null;
 }
 
-/** Every field is optional but none can be `null`. */
+/** Every field is optional and none can be `null`, except `restSoundId` (null = default sound). */
 export class UpdatePreferencesDto {
   @IsOptionalNonNull()
   @IsIn(UNIT_SYSTEMS)
@@ -99,6 +100,12 @@ export class UpdatePreferencesDto {
   @Min(1)
   @Max(7)
   firstDayOfWeek?: number;
+
+  /** Rest-alarm sound id; `null` goes back to the default sound. */
+  @ApiProperty({ type: String, format: 'uuid', required: false, nullable: true })
+  @IsOptional()
+  @IsUUID('4')
+  restSoundId?: string | null;
 }
 
 export class UpdateMeDto {
@@ -130,6 +137,8 @@ export class PreferencesDto {
   @ApiProperty({ enum: THEMES }) theme!: Theme;
   defaultRestSeconds!: number;
   firstDayOfWeek!: number;
+  /** Effective sound: null when none is chosen, it was deleted, or the plan no longer allows it. */
+  @ApiProperty({ type: String, nullable: true }) restSoundId!: string | null;
 }
 
 export class SubscriptionDto {

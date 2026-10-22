@@ -45,6 +45,7 @@ export class PlanFeaturesDto implements Record<FeatureKey, boolean> {
   @IsBoolean() fullStats!: boolean;
   @IsBoolean() fullNutrition!: boolean;
   @IsBoolean() dataExport!: boolean;
+  @IsBoolean() premiumSounds!: boolean;
 }
 
 export class PlanEntitlementsDto implements Entitlements {

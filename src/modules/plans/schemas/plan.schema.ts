@@ -18,6 +18,7 @@ export class PlanFeatures {
   @Prop({ default: false }) fullStats!: boolean;
   @Prop({ default: false }) fullNutrition!: boolean;
   @Prop({ default: false }) dataExport!: boolean;
+  @Prop({ default: false }) premiumSounds!: boolean;
 }
 
 @Schema({ _id: false })
