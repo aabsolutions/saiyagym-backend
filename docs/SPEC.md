@@ -92,8 +92,10 @@ hipertrofia y powerlifting. Monetizable con planes Free y Premium.
     candado + invitación a Premium.
   - Entreno libre (sin rutina): `POST /guides/resolve` desbloquea además los primeros N con guía
     de la sesión, en el orden en que se agregaron (requiere red; sin red, lo ya descargado).
-  - El móvil descarga las guías desbloqueadas para verlas offline en la sesión en vivo y en el
-    catálogo. Bajar de plan no borra lo ya descargado.
+  - El móvil descarga las guías de los ejercicios de sus rutinas para verlas offline en la sesión
+    en vivo; las demás desbloqueadas se descargan al abrirlas (con red). Lo que deja de estar
+    desbloqueado (cambio del admin o de plan) se borra del dispositivo en la siguiente
+    actualización; cerrar sesión borra todas.
 - Cada usuario puede poner su propio tier personal POR OBJETIVO (hipertrofia/powerlifting, como el
   global; vacío = usa el global) y marcar favoritos (colección aparte).
 - Etiquetas libres administrables (p. ej. "básico", "unilateral", "lumbar-friendly").
