@@ -16,6 +16,7 @@ function serviceWith(overrides: Partial<Record<keyof Env, unknown>> = {}): Media
     NODE_ENV: 'test',
     MEDIA_MAX_IMAGE_BYTES: 5_000_000,
     MEDIA_MAX_SOUND_BYTES: 1_048_576,
+    MEDIA_MAX_GUIDE_BYTES: 4_194_304,
     ...overrides,
   };
   return new MediaService({ get: (key: keyof Env) => values[key] } as ConfigService<Env, true>);
@@ -208,6 +209,102 @@ describe('MediaService', () => {
       destroySpy.mockResolvedValueOnce({ result: 'error' });
       expect((await errorOf(serviceWith().destroySound(SOUND_ID)))?.code).toBe(
         'MEDIA_DELETE_FAILED',
+      );
+    });
+  });
+
+  describe('exercise_guide', () => {
+    const GUIDE_ID = `gymapp/test/exercises/guides/${UUID}`;
+    const asset = (overrides: Record<string, unknown> = {}) => ({
+      public_id: GUIDE_ID,
+      bytes: 900_000,
+      format: 'gif',
+      width: 480,
+      height: 360,
+      pages: 24,
+      ...overrides,
+    });
+    let resourceSpy: jest.SpyInstance;
+    let destroySpy: jest.SpyInstance;
+
+    beforeEach(() => {
+      resourceSpy = jest.spyOn(cloudinary.api, 'resource').mockResolvedValue(asset());
+      destroySpy = jest.spyOn(cloudinary.uploader, 'destroy').mockResolvedValue({ result: 'ok' });
+    });
+    afterEach(() => {
+      jest.restoreAllMocks();
+    });
+
+    const errorOf = (promise: Promise<unknown>) =>
+      promise.then(
+        () => null,
+        (error: unknown) => error as AppException,
+      );
+
+    it('is admin-only', () => {
+      expect(codeOf(() => serviceWith().createUploadSignature('exercise_guide', user))).toBe(
+        'FORBIDDEN',
+      );
+    });
+
+    it('signs an image upload into the guides folder, GIF allowed, with the guide size cap', () => {
+      const result = serviceWith().createUploadSignature('exercise_guide', admin);
+      expect(result.uploadUrl).toBe('https://api.cloudinary.com/v1_1/demo-cloud/image/upload');
+      expect(result.params.public_id).toMatch(/^gymapp\/test\/exercises\/guides\/[0-9a-f-]{36}$/);
+      expect(result.params.asset_folder).toBe('gymapp/test/exercises/guides');
+      expect(result.params.allowed_formats.split(',')).toContain('gif');
+      expect(result.params.transformation).toBe('c_limit,w_1080,h_1080');
+      expect(result.maxFileSizeBytes).toBe(4_194_304);
+      expect(result.signature).toBe(cloudinary.utils.api_sign_request(result.params, SECRET));
+    });
+
+    it('verifyGuideAsset reads kind/format/size from Cloudinary (pages > 1 = animation)', async () => {
+      await expect(serviceWith().verifyGuideAsset(GUIDE_ID)).resolves.toEqual({
+        kind: 'animation',
+        format: 'gif',
+        width: 480,
+        height: 360,
+        bytes: 900_000,
+      });
+      expect(resourceSpy).toHaveBeenCalledWith(GUIDE_ID, { resource_type: 'image', pages: true });
+
+      resourceSpy.mockResolvedValue(asset({ format: 'png', pages: 1 }));
+      expect((await serviceWith().verifyGuideAsset(GUIDE_ID)).kind).toBe('image');
+      expect(destroySpy).not.toHaveBeenCalled();
+    });
+
+    it.each([
+      ['format', { format: 'pdf' }],
+      ['size', { bytes: 4_194_305 }],
+    ])('destroys and rejects an asset with a bad %s', async (reason, override) => {
+      resourceSpy.mockResolvedValue(asset(override));
+      const error = await errorOf(serviceWith().verifyGuideAsset(GUIDE_ID));
+      expect(error?.code).toBe('INVALID_GUIDE_ASSET');
+      expect(error?.details).toEqual({ reason });
+      expect(destroySpy).toHaveBeenCalledWith(GUIDE_ID, {
+        resource_type: 'image',
+        invalidate: true,
+      });
+    });
+
+    it('rejects a public id outside the guides folder without calling Cloudinary', async () => {
+      for (const id of [`gymapp/test/exercises/${UUID}`, `gymapp/test/sounds/${UUID}`]) {
+        const error = await errorOf(serviceWith().verifyGuideAsset(id));
+        expect(error?.details).toEqual({ reason: 'folder' });
+      }
+      expect(resourceSpy).not.toHaveBeenCalled();
+      expect(destroySpy).not.toHaveBeenCalled();
+    });
+
+    it('rejects an asset that was never uploaded', async () => {
+      resourceSpy.mockRejectedValue({ error: { http_code: 404, message: 'Resource not found' } });
+      const error = await errorOf(serviceWith().verifyGuideAsset(GUIDE_ID));
+      expect(error?.details).toEqual({ reason: 'not_found' });
+    });
+
+    it('guideUrl delivers the stored format with q_auto', () => {
+      expect(serviceWith().guideUrl(GUIDE_ID, 'gif')).toBe(
+        `https://res.cloudinary.com/demo-cloud/image/upload/q_auto/${GUIDE_ID}.gif`,
       );
     });
   });

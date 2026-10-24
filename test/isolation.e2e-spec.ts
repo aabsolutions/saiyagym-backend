@@ -298,6 +298,45 @@ describe('Per-user data isolation (e2e)', () => {
       const res = await call(alice, 'get', '/users/me').expect(200);
       for (const trace of bobTraces()) expect(res.text).not.toContain(trace);
     });
+
+    it("GET /guides: another user's routines never unlock guides", async () => {
+      // Premium sees every guide, so this needs Free users (unlocks come from own routines).
+      const guide = {
+        id: randomUUID(),
+        kind: 'image',
+        publicId: `gymapp/test/exercises/guides/${randomUUID()}`,
+        format: 'png',
+        width: 1,
+        height: 1,
+        bytes: 1,
+        caption: {},
+      };
+      await db
+        .collection('exercises')
+        .updateOne({ _id: bench as never }, { $set: { guides: [guide] } });
+      try {
+        const freeBob = (await createTestUser(app)).token;
+        const freeAlice = (await createTestUser(app)).token;
+        await call(freeBob, 'post', '/routines')
+          .send({
+            name: `${MARKER} guides`,
+            exercises: [{ exerciseId: bench, sets: [{ type: 'normal', repsMin: 5, repsMax: 5 }] }],
+          })
+          .expect(201);
+        const guides = async (token: string) =>
+          (await call(token, 'get', '/guides').expect(200)).body as {
+            items: { exerciseId: string }[];
+            lockedExerciseIds: string[];
+          };
+
+        expect((await guides(freeBob)).items.map((i) => i.exerciseId)).toEqual([bench]);
+        expect(await guides(freeAlice)).toMatchObject({ items: [], lockedExerciseIds: [bench] });
+      } finally {
+        await db
+          .collection('exercises')
+          .updateOne({ _id: bench as never }, { $set: { guides: [] } });
+      }
+    });
   });
 
   describe("another user's documents are 404 by id (403 would reveal they exist)", () => {

@@ -61,6 +61,8 @@ export const envSchema = z
     MEDIA_MAX_IMAGE_BYTES: positiveInt.default(5 * 1024 * 1024),
     /** Hard cap for rest-alarm sounds, verified by the API after upload (Admin API). */
     MEDIA_MAX_SOUND_BYTES: positiveInt.default(1024 * 1024),
+    /** Hard cap for exercise guide images/GIFs, verified by the API after upload (Admin API). */
+    MEDIA_MAX_GUIDE_BYTES: positiveInt.default(4 * 1024 * 1024),
 
     // --- Seed (only read by `npm run seed`) ---
     ADMIN_EMAIL: z.email().optional(),

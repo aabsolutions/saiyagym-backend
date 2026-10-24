@@ -6,6 +6,7 @@ import {
   AdminExerciseTagsController,
   ExerciseTagsController,
 } from './admin-exercises.controller';
+import { ExerciseGuidesService } from './exercise-guides.service';
 import { ExercisePrefsService } from './exercise-prefs.service';
 import { ExerciseTagsService } from './exercise-tags.service';
 import { ExercisesController } from './exercises.controller';
@@ -30,7 +31,13 @@ import { UserExercisePref, UserExercisePrefSchema } from './schemas/user-exercis
     AdminExercisesController,
     AdminExerciseTagsController,
   ],
-  providers: [ExercisesService, ExerciseTagsService, ExercisePrefsService, ExercisesSeeder],
-  exports: [ExercisesService, ExercisesSeeder],
+  providers: [
+    ExercisesService,
+    ExerciseTagsService,
+    ExercisePrefsService,
+    ExerciseGuidesService,
+    ExercisesSeeder,
+  ],
+  exports: [ExercisesService, ExerciseGuidesService, ExercisesSeeder],
 })
 export class ExercisesModule {}

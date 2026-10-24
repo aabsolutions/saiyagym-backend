@@ -6,12 +6,14 @@ import { syncTrackingPlugin } from '../../../database/sync-tracking.plugin';
 import {
   CATEGORIES,
   EQUIPMENT,
+  GUIDE_KINDS,
   MECHANICS,
   MUSCLES,
   TIERS,
   TRACKING_TYPES,
   type Category,
   type Equipment,
+  type GuideKind,
   type Mechanic,
   type Muscle,
   type Tier,
@@ -23,6 +25,22 @@ import {
 export class ExerciseTiers implements Tiers {
   @Prop({ type: String, enum: [...TIERS, null], default: null }) hypertrophy!: Tier | null;
   @Prop({ type: String, enum: [...TIERS, null], default: null }) powerlifting!: Tier | null;
+}
+
+/**
+ * One execution guide file (image or animated GIF) of a global exercise. Metadata comes from
+ * Cloudinary's Admin API, never from the client. The array order is the display order.
+ */
+@Schema({ _id: false })
+export class ExerciseGuide {
+  @Prop({ required: true }) id!: string;
+  @Prop({ type: String, enum: GUIDE_KINDS, required: true }) kind!: GuideKind;
+  @Prop({ required: true }) publicId!: string;
+  @Prop({ required: true }) format!: string;
+  @Prop({ required: true }) width!: number;
+  @Prop({ required: true }) height!: number;
+  @Prop({ required: true }) bytes!: number;
+  @Prop({ type: Object, default: () => ({}) }) caption!: Translatable;
 }
 
 /**
@@ -47,6 +65,13 @@ export class Exercise extends BaseSchema {
   @Prop({ type: String, enum: TRACKING_TYPES, default: 'weight_reps' }) trackingType!: TrackingType;
 
   @Prop({ type: String, default: null }) imageUrl!: string | null;
+
+  /**
+   * Execution guides (globals only, admin-managed). NEVER returned raw to users: plan rules
+   * decide who gets the URLs (`GET /guides`); catalog responses only expose `hasGuide`.
+   */
+  @Prop({ type: [SchemaFactory.createForClass(ExerciseGuide)], default: [] })
+  guides!: ExerciseGuide[];
 
   /** Tag slugs (see exercise_tags). */
   @Prop({ type: [String], default: [], index: true }) tags!: string[];

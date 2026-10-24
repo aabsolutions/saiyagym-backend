@@ -9,6 +9,7 @@ import {
   ParseUUIDPipe,
   Patch,
   Post,
+  Put,
   Query,
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
@@ -16,6 +17,7 @@ import { I18nLang } from 'nestjs-i18n';
 import { Role } from '../../common/constants/role';
 import { Public } from '../../common/decorators/public.decorator';
 import { Roles } from '../../common/decorators/roles.decorator';
+import { ReplaceGuidesDto } from './dto/exercise-guide.dto';
 import { ExerciseQueryDto } from './dto/exercise-query.dto';
 import {
   AdminExerciseTagDto,
@@ -31,6 +33,7 @@ import {
   CreateGlobalExerciseDto,
   UpdateGlobalExerciseDto,
 } from './dto/exercise.dto';
+import { ExerciseGuidesService } from './exercise-guides.service';
 import { ExerciseTagsService } from './exercise-tags.service';
 import { ExercisesService } from './exercises.service';
 
@@ -41,7 +44,10 @@ const UUID = new ParseUUIDPipe({ version: '4' });
 @Roles(Role.ADMIN)
 @Controller('admin/exercises')
 export class AdminExercisesController {
-  constructor(private readonly exercises: ExercisesService) {}
+  constructor(
+    private readonly exercises: ExercisesService,
+    private readonly guides: ExerciseGuidesService,
+  ) {}
 
   @Get()
   @ApiOperation({
@@ -74,6 +80,22 @@ export class AdminExercisesController {
     @Body() dto: UpdateGlobalExerciseDto,
   ): Promise<AdminExerciseDto> {
     return this.exercises.updateGlobal(id, dto);
+  }
+
+  @Put(':id/guides')
+  @ApiOperation({
+    summary: 'Replace the execution guides (images / GIFs) of a global exercise',
+    description:
+      'Upload each file with an `exercise_guide` signature first, then send its `public_id`. ' +
+      'Array order = display order; `[]` removes all. New files are verified with Cloudinary ' +
+      '(400 INVALID_GUIDE_ASSET destroys them); removed files are destroyed after saving.',
+  })
+  async replaceGuides(
+    @Param('id', UUID) id: string,
+    @Body() dto: ReplaceGuidesDto,
+  ): Promise<AdminExerciseDto> {
+    await this.guides.replace(id, dto);
+    return this.exercises.findGlobal(id);
   }
 
   @Delete(':id')

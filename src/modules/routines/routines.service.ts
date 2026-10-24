@@ -126,6 +126,17 @@ export class RoutinesService implements OnModuleInit {
     return new Map(docs.map((r) => [r._id, r]));
   }
 
+  /**
+   * Exercise ids of every non-deleted routine (archived included: programs may use them), in
+   * routine order — for execution-guide unlocking.
+   */
+  async exerciseOrders(userId: string): Promise<string[][]> {
+    const docs = await this.routines
+      .find(notDeleted<Routine>({ userId }), { 'exercises.exerciseId': 1 })
+      .lean<Pick<Routine, 'exercises'>[]>();
+    return docs.map((r) => r.exercises.map((e) => e.exerciseId));
+  }
+
   // ----- mutations -----
 
   async create(userId: string, dto: CreateRoutineDto, lang: string): Promise<RoutineDetailDto> {

@@ -72,6 +72,9 @@ export const ErrorCode = {
   SOUND_NOT_FOUND: 'SOUND_NOT_FOUND',
   INVALID_SOUND_ASSET: 'INVALID_SOUND_ASSET',
   SOUND_SLUG_TAKEN: 'SOUND_SLUG_TAKEN',
+
+  // --- Exercise guides ---
+  INVALID_GUIDE_ASSET: 'INVALID_GUIDE_ASSET',
 } as const;
 
 export type ErrorCode = (typeof ErrorCode)[keyof typeof ErrorCode];

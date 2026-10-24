@@ -1722,6 +1722,53 @@
         ]
       }
     },
+    "/api/v1/admin/exercises/{id}/guides": {
+      "put": {
+        "description": "Upload each file with an `exercise_guide` signature first, then send its `public_id`. Array order = display order; `[]` removes all. New files are verified with Cloudinary (400 INVALID_GUIDE_ASSET destroys them); removed files are destroyed after saving.",
+        "operationId": "AdminExercisesController_replaceGuides",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReplaceGuidesDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminExerciseDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Replace the execution guides (images / GIFs) of a global exercise",
+        "tags": [
+          "admin / exercises"
+        ]
+      }
+    },
     "/api/v1/admin/exercise-tags": {
       "get": {
         "operationId": "AdminExerciseTagsController_list",
@@ -5346,6 +5393,72 @@
         ]
       }
     },
+    "/api/v1/guides": {
+      "get": {
+        "description": "Premium: every guide. Otherwise the first `guidesPerRoutine` exercises with guides of each routine (routine order). `lockedExerciseIds` = exercises with guides not unlocked.",
+        "operationId": "GuidesController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidesDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Execution guides the caller may see",
+        "tags": [
+          "guides"
+        ]
+      }
+    },
+    "/api/v1/guides/resolve": {
+      "post": {
+        "description": "Same as GET /guides restricted to `exerciseIds`, also unlocking the first `guidesPerRoutine` of them that have guides (in the order sent).",
+        "operationId": "GuidesController_resolve",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveGuidesDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidesDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Guides for a session without a routine",
+        "tags": [
+          "guides"
+        ]
+      }
+    },
     "/api/v1/health": {
       "get": {
         "operationId": "HealthController_check",
@@ -5858,6 +5971,13 @@
             "minimum": 1,
             "maximum": 36500,
             "description": "null = full history"
+          },
+          "guidesPerRoutine": {
+            "type": "number",
+            "nullable": true,
+            "description": "Exercises per routine with visible guides. null = unlimited",
+            "minimum": 0,
+            "maximum": 100
           },
           "limits": {
             "$ref": "#/components/schemas/PlanLimitsDto"
@@ -6828,6 +6948,10 @@
                 "$ref": "#/components/schemas/TiersDto"
               }
             ]
+          },
+          "hasGuide": {
+            "type": "boolean",
+            "description": "The exercise has execution guides. Whether the caller may see them: `GET /guides`."
           }
         },
         "required": [
@@ -6846,7 +6970,8 @@
           "isGlobal",
           "isCustom",
           "isFavorite",
-          "personalTiers"
+          "personalTiers",
+          "hasGuide"
         ]
       },
       "ExercisePageDto": {
@@ -7068,6 +7193,10 @@
               }
             ]
           },
+          "hasGuide": {
+            "type": "boolean",
+            "description": "The exercise has execution guides. Whether the caller may see them: `GET /guides`."
+          },
           "description": {
             "type": "string"
           },
@@ -7092,6 +7221,7 @@
           "isCustom",
           "isFavorite",
           "personalTiers",
+          "hasGuide",
           "description",
           "instructions"
         ]
@@ -7414,6 +7544,56 @@
           "name"
         ]
       },
+      "AdminExerciseGuideDto": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "enum": [
+              "image",
+              "animation"
+            ],
+            "type": "string"
+          },
+          "caption": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "publicId": {
+            "type": "string"
+          },
+          "format": {
+            "type": "string"
+          },
+          "width": {
+            "type": "number"
+          },
+          "height": {
+            "type": "number"
+          },
+          "bytes": {
+            "type": "number"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "caption",
+          "id",
+          "publicId",
+          "format",
+          "width",
+          "height",
+          "bytes",
+          "url"
+        ]
+      },
       "AdminExerciseDto": {
         "type": "object",
         "properties": {
@@ -7529,6 +7709,12 @@
             "type": "string",
             "nullable": true
           },
+          "guides": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminExerciseGuideDto"
+            }
+          },
           "id": {
             "type": "string"
           },
@@ -7562,6 +7748,7 @@
           "category",
           "trackingType",
           "imageUrl",
+          "guides",
           "id",
           "tags",
           "tiers",
@@ -7922,6 +8109,43 @@
           }
         }
       },
+      "GuideItemDto": {
+        "type": "object",
+        "properties": {
+          "caption": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "example": {
+              "es": "Baja controlado",
+              "en": "..."
+            }
+          },
+          "publicId": {
+            "type": "string",
+            "description": "`public_id` returned by Cloudinary for an `exercise_guide` upload. New ids are verified with\nthe Admin API (folder, format, size); ids already in the exercise keep their metadata.",
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "publicId"
+        ]
+      },
+      "ReplaceGuidesDto": {
+        "type": "object",
+        "properties": {
+          "guides": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GuideItemDto"
+            }
+          }
+        },
+        "required": [
+          "guides"
+        ]
+      },
       "AdminExerciseTagDto": {
         "type": "object",
         "properties": {
@@ -7990,7 +8214,8 @@
               "exercise_image",
               "custom_exercise_image",
               "progress_photo",
-              "rest_sound"
+              "rest_sound",
+              "exercise_guide"
             ],
             "type": "string"
           }
@@ -8052,7 +8277,7 @@
           },
           "maxFileSizeBytes": {
             "type": "number",
-            "description": "Client-side check only; the hard cap lives in the Cloudinary upload preset/account."
+            "description": "Client-side check only. Images: the hard cap lives in the Cloudinary upload preset/account;\nsounds and exercise guides are re-checked by the API after the upload."
           },
           "expiresAt": {
             "format": "date-time",
@@ -12520,6 +12745,107 @@
             "type": "number"
           }
         }
+      },
+      "ExerciseGuideDto": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "enum": [
+              "image",
+              "animation"
+            ],
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "width": {
+            "type": "number"
+          },
+          "height": {
+            "type": "number"
+          },
+          "caption": {
+            "type": "string",
+            "description": "Localized; '' when the admin wrote none."
+          }
+        },
+        "required": [
+          "kind",
+          "id",
+          "url",
+          "width",
+          "height",
+          "caption"
+        ]
+      },
+      "ExerciseGuideSetDto": {
+        "type": "object",
+        "properties": {
+          "guides": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExerciseGuideDto"
+            }
+          },
+          "exerciseId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "guides",
+          "exerciseId"
+        ]
+      },
+      "GuidesDto": {
+        "type": "object",
+        "properties": {
+          "guidesPerRoutine": {
+            "type": "number",
+            "nullable": true,
+            "description": "The caller's plan value. `null` = every guide is unlocked."
+          },
+          "items": {
+            "description": "Unlocked exercises with their guides.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExerciseGuideSetDto"
+            }
+          },
+          "lockedExerciseIds": {
+            "description": "Exercises that have guides the plan does not unlock (show a lock + upgrade).",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "guidesPerRoutine",
+          "items",
+          "lockedExerciseIds"
+        ]
+      },
+      "ResolveGuidesDto": {
+        "type": "object",
+        "properties": {
+          "exerciseIds": {
+            "description": "Exercises of a session without a routine, in the order they were added. Besides what the\nroutines unlock, the first `guidesPerRoutine` guided ones are unlocked.",
+            "minItems": 1,
+            "maxItems": 50,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        },
+        "required": [
+          "exerciseIds"
+        ]
       }
     }
   }

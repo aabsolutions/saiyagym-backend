@@ -61,6 +61,22 @@ export class PlanEntitlementsDto implements Entitlements {
   @Max(36500)
   statsHistoryDays!: number | null;
 
+  /**
+   * Optional on input so clients that predate it keep working: on update, omitted = unchanged;
+   * on create, omitted = 0 (no guides). `null` = unlimited.
+   */
+  @ApiProperty({
+    type: Number,
+    nullable: true,
+    required: false,
+    description: 'Exercises per routine with visible guides. null = unlimited',
+  })
+  @IsOptional()
+  @IsInt()
+  @Min(0)
+  @Max(100)
+  guidesPerRoutine!: number | null;
+
   @IsDefined()
   @ValidateNested()
   @Type(() => PlanFeaturesDto)

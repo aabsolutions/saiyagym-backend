@@ -21,9 +21,10 @@ hipertrofia y powerlifting. Monetizable con planes Free y Premium.
 - Colección `plans` editable por admin, con `entitlements` (límites y features).
 - Free (valores iniciales, configurables): máx. 3 rutinas propias, 1 programa activo,
   10 ejercicios personalizados, estadísticas de los últimos 90 días, sin fotos de progreso,
-  sin progresión automática.
+  sin progresión automática, guías de ejecución de 5 ejercicios por rutina.
 - Premium: sin límites, estadísticas completas, progresión automática, fotos de progreso,
-  sugerencias nutricionales completas, exportación CSV/JSON, sonidos de descanso premium.
+  sugerencias nutricionales completas, exportación CSV/JSON, sonidos de descanso premium,
+  todas las guías de ejecución.
 - La API decide siempre los permisos (guard de entitlements); los clientes solo ocultan UI.
 - El usuario tiene `subscription { planId, status, currentPeriodEnd, provider }`.
   En esta versión NO se integra pasarela de pago: el admin asigna planes manualmente.
@@ -78,6 +79,21 @@ hipertrofia y powerlifting. Monetizable con planes Free y Premium.
 - Tier S/A/B/C POR OBJETIVO: `tiers: { hypertrophy: "S"|"A"|"B"|"C", powerlifting: ... }`,
   asignado por admin. Ejemplo: sentadilla trasera = S en powerlifting y S en hipertrofia;
   curl de concentración = C en powerlifting y B en hipertrofia.
+- Guías de ejecución (solo ejercicios globales): el admin sube hasta 6 imágenes o GIF animados
+  por ejercicio (jpg/png/webp/gif, ≤ `MEDIA_MAX_GUIDE_BYTES`, 4 MiB por defecto), con un texto
+  traducible opcional y orden propio. La API verifica cada archivo con Cloudinary (si no cumple
+  lo destruye y responde `INVALID_GUIDE_ASSET`); quitar un archivo lo destruye después de guardar.
+  - El catálogo y la sincronización solo exponen `hasGuide`; las URLs salen únicamente de
+    `GET /guides`, que aplica el plan (`entitlements.guidesPerRoutine`, `null` = todas).
+  - Free: se desbloquean los primeros N ejercicios con guía de CADA rutina, en el orden de la
+    rutina (los que no tienen guía no consumen cupo; las rutinas archivadas cuentan porque los
+    programas las usan; las borradas no). Los programas usan esas mismas rutinas.
+  - Catálogo: el usuario ve la guía si está desbloqueada en alguna de sus rutinas; si no,
+    candado + invitación a Premium.
+  - Entreno libre (sin rutina): `POST /guides/resolve` desbloquea además los primeros N con guía
+    de la sesión, en el orden en que se agregaron (requiere red; sin red, lo ya descargado).
+  - El móvil descarga las guías desbloqueadas para verlas offline en la sesión en vivo y en el
+    catálogo. Bajar de plan no borra lo ya descargado.
 - Cada usuario puede poner su propio tier personal POR OBJETIVO (hipertrofia/powerlifting, como el
   global; vacío = usa el global) y marcar favoritos (colección aparte).
 - Etiquetas libres administrables (p. ej. "básico", "unilateral", "lumbar-friendly").

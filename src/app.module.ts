@@ -32,6 +32,7 @@ import { ProgressPhotosModule } from './modules/progress-photos/progress-photos.
 import { RecordsModule } from './modules/records/records.module';
 import { StatsModule } from './modules/stats/stats.module';
 import { SoundsModule } from './modules/sounds/sounds.module';
+import { GuidesModule } from './modules/guides/guides.module';
 
 @Module({
   imports: [
@@ -102,6 +103,7 @@ import { SoundsModule } from './modules/sounds/sounds.module';
     ExportModule,
     NutritionModule,
     SoundsModule,
+    GuidesModule,
     HealthModule,
   ],
   providers: [

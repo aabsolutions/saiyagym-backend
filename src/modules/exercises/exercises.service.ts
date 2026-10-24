@@ -34,6 +34,7 @@ import {
   personalTiersOf,
   type PrefView,
 } from './exercise-prefs.service';
+import { ExerciseGuidesService } from './exercise-guides.service';
 import { ExerciseTagsService } from './exercise-tags.service';
 import type { Tiers } from './exercise.constants';
 import { Exercise, ExerciseDocument } from './schemas/exercise.schema';
@@ -56,6 +57,7 @@ export class ExercisesService implements OnModuleInit {
     private readonly counters: UsageCountersRegistry,
     @InjectModel(UserExercisePref.name) private readonly prefModel: Model<UserExercisePref>,
     private readonly sync: SyncRegistry,
+    private readonly guides: ExerciseGuidesService,
   ) {}
 
   onModuleInit(): void {
@@ -457,6 +459,8 @@ export class ExercisesService implements OnModuleInit {
       isCustom: !e.isGlobal && e.ownerId === userId,
       isFavorite: pref.isFavorite,
       personalTiers: pref.personalTiers,
+      // Legacy documents (before guides existed) have no `guides` field.
+      hasGuide: (e.guides?.length ?? 0) > 0,
     };
   }
 
@@ -476,6 +480,7 @@ export class ExercisesService implements OnModuleInit {
       imageUrl: e.imageUrl,
       tags: e.tags,
       tiers: { hypertrophy: e.tiers.hypertrophy, powerlifting: e.tiers.powerlifting },
+      guides: (e.guides ?? []).map((g) => this.guides.toAdmin(g)),
       createdAt: e.createdAt,
       updatedAt: e.updatedAt,
     };

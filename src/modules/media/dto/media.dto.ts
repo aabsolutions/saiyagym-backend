@@ -10,6 +10,8 @@ export const UPLOAD_PURPOSES = [
   'progress_photo',
   /** Rest-alarm sound (audio, Cloudinary `video` resource). Admin only. */
   'rest_sound',
+  /** Execution guide of a global exercise (image or animated GIF). Admin only. */
+  'exercise_guide',
 ] as const;
 export type UploadPurpose = (typeof UPLOAD_PURPOSES)[number];
 
@@ -38,7 +40,10 @@ export class UploadSignatureDto {
   apiKey!: string;
   signature!: string;
   params!: SignedUploadParamsDto;
-  /** Client-side check only; the hard cap lives in the Cloudinary upload preset/account. */
+  /**
+   * Client-side check only. Images: the hard cap lives in the Cloudinary upload preset/account;
+   * sounds and exercise guides are re-checked by the API after the upload.
+   */
   maxFileSizeBytes!: number;
   /** Cloudinary rejects signatures older than 1 hour. */
   expiresAt!: Date;

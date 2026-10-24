@@ -27,6 +27,7 @@ export const DEFAULT_PLANS: PlanSeed[] = [
     entitlements: {
       limits: { routines: 3, activePrograms: 1, customExercises: 10 },
       statsHistoryDays: 90,
+      guidesPerRoutine: 5,
       features: {
         progressPhotos: false,
         autoProgression: false,
@@ -49,6 +50,7 @@ export const DEFAULT_PLANS: PlanSeed[] = [
     entitlements: {
       limits: { routines: null, activePrograms: null, customExercises: null },
       statsHistoryDays: null,
+      guidesPerRoutine: null,
       features: {
         progressPhotos: true,
         autoProgression: true,

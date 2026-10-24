@@ -21,5 +21,10 @@ export interface Entitlements {
   limits: Record<LimitKey, number | null>;
   /** How far back statistics go. `null` = full history. */
   statsHistoryDays: number | null;
+  /**
+   * Exercises per routine (in routine order) whose execution guides the plan unlocks.
+   * `null` = every guide. Not a LIMIT_KEY: nothing is created, so there's no usage counter.
+   */
+  guidesPerRoutine: number | null;
   features: Record<FeatureKey, boolean>;
 }

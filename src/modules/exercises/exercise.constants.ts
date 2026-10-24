@@ -45,6 +45,12 @@ export type Category = (typeof CATEGORIES)[number];
 export const TRACKING_TYPES = ['weight_reps'] as const;
 export type TrackingType = (typeof TRACKING_TYPES)[number];
 
+/** Execution guide media. `animation` = animated GIF/WebP (Cloudinary reports more than 1 page). */
+export const GUIDE_KINDS = ['image', 'animation'] as const;
+export type GuideKind = (typeof GUIDE_KINDS)[number];
+/** Max guide files per exercise. */
+export const MAX_GUIDES = 6;
+
 /** Best → worst. Order matters: it's the tier-list column order. */
 export const TIERS = ['S', 'A', 'B', 'C'] as const;
 export type Tier = (typeof TIERS)[number];

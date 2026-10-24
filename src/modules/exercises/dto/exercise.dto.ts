@@ -36,6 +36,7 @@ import {
   type Tiers,
   type TrackingType,
 } from '../exercise.constants';
+import { AdminExerciseGuideDto } from './exercise-guide.dto';
 import { SLUG_PATTERN } from './exercise-query.dto';
 
 /** Nullable but required key: `null` = not ranked for that goal. */
@@ -310,6 +311,8 @@ export class ExerciseSummaryDto {
   isFavorite!: boolean;
   /** The caller's own tier per goal; `null` = none (the global tier applies). */
   personalTiers!: TiersDto;
+  /** The exercise has execution guides. Whether the caller may see them: `GET /guides`. */
+  hasGuide!: boolean;
 }
 
 export class ExerciseDetailDto extends ExerciseSummaryDto {
@@ -357,6 +360,7 @@ export class AdminExerciseDto {
   @ApiProperty({ type: String, nullable: true }) imageUrl!: string | null;
   tags!: string[];
   tiers!: TiersDto;
+  @ApiProperty({ type: [AdminExerciseGuideDto] }) guides!: AdminExerciseGuideDto[];
   createdAt!: Date;
   updatedAt!: Date;
 }

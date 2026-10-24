@@ -1,5 +1,27 @@
 # Progress — gymapp-api
 
+## 2026-10-23 — Guías de ejecución de ejercicios (backend)
+
+### Hecho
+- `exercises.guides[]` (solo globales): `{ id, kind: image|animation, publicId, format, width, height, bytes, caption }`, máximo 6, el orden del array es el de visualización. Metadatos leídos de Cloudinary, nunca del cliente.
+- Subida: propósito `exercise_guide` (solo admin, `image/upload`, carpeta `exercises/guides`, jpg/png/webp/gif, `c_limit,w_1080,h_1080`). `MediaService.verifyGuideAsset` consulta la Admin API (`pages > 1` = animación) y destruye + rechaza (`400 INVALID_GUIDE_ASSET {reason}`) si el formato o el tamaño (`MEDIA_MAX_GUIDE_BYTES`, 4 MiB) no cumplen; un `publicId` fuera de la carpeta se rechaza sin destruir.
+- Admin: `PUT /admin/exercises/:id/guides` reemplaza la lista y devuelve el `AdminExerciseDto` (ahora con `guides[]` y `url`). Los archivos conservados mantienen id y metadatos; los quitados se destruyen DESPUÉS de escribir en la DB (best-effort, no si otro ejercicio —aunque esté borrado— los usa).
+- Plan: `entitlements.guidesPerRoutine` (Free 5, Premium `null`). Fuera de `LIMIT_KEYS` a propósito (no crea nada → no hay contador de uso).
+- Lectura con permisos (módulo `guides`): `GET /guides` → `{ guidesPerRoutine, items[{ exerciseId, guides[{ id, kind, url, width, height, caption }] }], lockedExerciseIds }`; `POST /guides/resolve { exerciseIds }` para entreno libre. Lógica pura en `guides/guide-access.ts`. El catálogo (`GET /exercises*`) solo expone `hasGuide`.
+- `RoutinesService.exerciseOrders(userId)`: ids de ejercicios por rutina no borrada (archivadas incluidas), usa el índice `(userId, deletedAt, archivedAt)`.
+
+### Verificación
+- `npm run lint` ✅ · unit 245/245 ✅ · e2e 263/263 ✅ (nuevo `guides.e2e-spec.ts`; caso Free en `isolation`) · `npm run openapi` ✅ (regenerado).
+
+### Decisiones y gotchas
+- **Las URLs no viajan en el doc del ejercicio**: si estuvieran ahí, un Free las recibiría todas y el bloqueo quedaría solo en la UI.
+- **Falla cerrado + backfill automático**: el schema pone `guidesPerRoutine` en 0 por defecto (planes viejos = sin guías). `PlansService.onApplicationBootstrap` completa la clave donde falta (`premium` → `null`, el resto → 5); es idempotente y nunca pisa una edición del admin. Es automático y no un script manual porque, si el admin editaba un plan antes de correr el script, ese 0 quedaba guardado.
+- `PlanEntitlementsDto.guidesPerRoutine` es opcional en la entrada: la web actual no lo manda; en un update se conserva el valor guardado; en un create queda 0.
+- La URL de la guía se arma a mano (`…/image/upload/q_auto/<publicId>.<format>`): el SDK agrega `v1` y un `?_a=` de analytics que cambia entre versiones, y el móvil cachea por URL.
+- La regla Free es "blanda" por diseño: un usuario puede armar una rutina con cualquier ejercicio para ver su guía.
+- Sin índices nuevos: `guides.0` usa el prefijo de `(isGlobal, deletedAt, primaryMuscle)`; `guides.publicId` (solo al borrar archivos, admin) recorre una colección curada de cientos de documentos.
+- Desplegar el backend ANTES que la web y el móvil (todo lo nuevo es aditivo).
+
 ## 2026-10-22 — Sonidos de recordatorios + limpieza de assets (backend)
 
 ### Hecho

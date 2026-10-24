@@ -8,6 +8,7 @@ import { UsageCountersRegistry } from './usage-counters.registry';
 const FREE: Entitlements = {
   limits: { routines: 3, activePrograms: 1, customExercises: null },
   statsHistoryDays: 90,
+  guidesPerRoutine: 5,
   features: {
     progressPhotos: false,
     autoProgression: false,

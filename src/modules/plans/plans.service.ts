@@ -11,6 +11,9 @@ import type { FeatureKey } from './plan-entitlements';
 import { CreatePlanDto, PlanResponseDto, PublicPlanDto, UpdatePlanDto } from './dto/plan.dto';
 import { Plan, PlanDocument } from './schemas/plan.schema';
 
+/** Free's seed value (DEFAULT_PLANS), also applied to custom plans saved before the field existed. */
+const GUIDES_PER_ROUTINE_FALLBACK = 5;
+
 /** Minimal view of `user.subscription` needed to resolve the effective plan. */
 export interface SubscriptionRef {
   planId: string | null;
@@ -27,6 +30,13 @@ export class PlansService implements OnApplicationBootstrap {
   /** Guarantees Free/Premium exist on every boot (fresh DBs, e2e) without touching admin edits. */
   async onApplicationBootstrap(): Promise<void> {
     await this.ensureDefaultPlans();
+    // Automatic (not a manual script): until it runs, plans saved before the field existed
+    // show no guides at all, and an admin edit in between would persist that 0. One updateMany
+    // over a handful of plans; it matches nothing after the first boot.
+    const backfilled = await this.backfillGuidesPerRoutine(GUIDES_PER_ROUTINE_FALLBACK, [
+      'premium',
+    ]);
+    if (backfilled) this.logger.log(`Backfilled guidesPerRoutine on ${backfilled} plans`);
   }
 
   /**
@@ -76,6 +86,19 @@ export class PlansService implements OnApplicationBootstrap {
     const path = `entitlements.features.${feature}`;
     const result = await this.plans.collection.updateMany({ [path]: { $exists: false } }, [
       { $set: { [path]: { $in: ['$code', enabledCodes] } } },
+    ]);
+    return result.modifiedCount;
+  }
+
+  /**
+   * For `entitlements.guidesPerRoutine` (runs on every boot): sets it ONLY
+   * where the key is absent — `null` (unlimited) on the plans whose `code` is in `unlimitedCodes`,
+   * `limit` elsewhere. Idempotent and never overrides an admin edit. Returns how many changed.
+   */
+  async backfillGuidesPerRoutine(limit: number, unlimitedCodes: string[]): Promise<number> {
+    const path = 'entitlements.guidesPerRoutine';
+    const result = await this.plans.collection.updateMany({ [path]: { $exists: false } }, [
+      { $set: { [path]: { $cond: [{ $in: ['$code', unlimitedCodes] }, null, limit] } } },
     ]);
     return result.modifiedCount;
   }
@@ -154,6 +177,11 @@ export class PlansService implements OnApplicationBootstrap {
     }
 
     const { isDefault, ...changes } = dto;
+    // `entitlements` replaces the whole object; a client that predates `guidesPerRoutine`
+    // doesn't send it, and that must not reset it.
+    if (changes.entitlements && changes.entitlements.guidesPerRoutine === undefined) {
+      changes.entitlements.guidesPerRoutine = plan.entitlements.guidesPerRoutine;
+    }
     plan.set(changes);
     await plan.save();
     if (isDefault && !plan.isDefault) await this.makeDefault(plan);

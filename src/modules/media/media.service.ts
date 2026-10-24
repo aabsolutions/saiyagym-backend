@@ -16,6 +16,9 @@ const SIGNATURE_TTL_SECONDS = 3600;
 const SOUND_FORMATS = ['mp3', 'wav', 'm4a', 'ogg', 'aac'];
 /** iOS plays the default sound for notification sounds of 30 s or longer, so the cap is exclusive. */
 const SOUND_MAX_DURATION_SECONDS = 30;
+const GUIDE_FORMATS = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+/** Guides are shown on phones: smaller cap than catalog images (keeps GIFs light). */
+const GUIDE_MAX_DIMENSION_TRANSFORMATION = 'c_limit,w_1080,h_1080';
 
 /**
  * Where an image is allowed to live: global catalog images, a user's custom-exercise images
@@ -31,6 +34,15 @@ export interface VerifiedSound {
   bytes: number;
   durationSec: number;
   format: string;
+}
+
+/** What Cloudinary itself reports about a verified exercise guide (never client-provided). */
+export interface VerifiedGuide {
+  kind: 'image' | 'animation';
+  format: string;
+  width: number;
+  height: number;
+  bytes: number;
 }
 
 interface CloudinaryCredentials {
@@ -56,6 +68,7 @@ export class MediaService {
   private readonly rootFolder: string;
   private readonly maxFileSizeBytes: number;
   private readonly maxSoundBytes: number;
+  private readonly maxGuideBytes: number;
 
   constructor(config: ConfigService<Env, true>) {
     const cloudName = config.get('CLOUDINARY_CLOUD_NAME', { infer: true });
@@ -74,14 +87,16 @@ export class MediaService {
     this.rootFolder = `${config.get('CLOUDINARY_FOLDER', { infer: true })}/${config.get('NODE_ENV', { infer: true })}`;
     this.maxFileSizeBytes = config.get('MEDIA_MAX_IMAGE_BYTES', { infer: true });
     this.maxSoundBytes = config.get('MEDIA_MAX_SOUND_BYTES', { infer: true });
+    this.maxGuideBytes = config.get('MEDIA_MAX_GUIDE_BYTES', { infer: true });
   }
 
   createUploadSignature(purpose: UploadPurpose, user: AuthenticatedUser): UploadSignatureDto {
     const credentials = this.requireCredentials();
-    if ((purpose === 'exercise_image' || purpose === 'rest_sound') && user.role !== Role.ADMIN) {
+    if (ADMIN_PURPOSES.includes(purpose) && user.role !== Role.ADMIN) {
       throw new AppException(ErrorCode.FORBIDDEN, HttpStatus.FORBIDDEN);
     }
     if (purpose === 'rest_sound') return this.createSoundSignature(credentials);
+    if (purpose === 'exercise_guide') return this.createGuideSignature(credentials);
 
     // Premium for progress photos is checked by the caller (MediaController) — no plan logic here.
     const scope: ImageScope =
@@ -137,6 +152,30 @@ export class MediaService {
   }
 
   /**
+   * Exercise guides: images or animated GIFs (the incoming transformation keeps the animation).
+   * The size cap is NOT enforceable in the signature, so `verifyGuideAsset` checks it afterwards.
+   */
+  private createGuideSignature(credentials: CloudinaryCredentials): UploadSignatureDto {
+    const timestamp = Math.floor(Date.now() / 1000);
+    const folder = this.guideFolder();
+    const params = {
+      timestamp,
+      public_id: `${folder}/${randomUUID()}`,
+      asset_folder: folder,
+      allowed_formats: GUIDE_FORMATS.join(','),
+      transformation: GUIDE_MAX_DIMENSION_TRANSFORMATION,
+    };
+    return {
+      uploadUrl: `https://api.cloudinary.com/v1_1/${credentials.cloudName}/image/upload`,
+      apiKey: credentials.apiKey,
+      signature: cloudinary.utils.api_sign_request(params, credentials.apiSecret),
+      params,
+      maxFileSizeBytes: this.maxGuideBytes,
+      expiresAt: new Date((timestamp + SIGNATURE_TTL_SECONDS) * 1000),
+    };
+  }
+
+  /**
    * The API trusts nothing the client says about a sound: it asks Cloudinary's Admin API for the
    * asset and checks folder, audio-ness, size and duration. A bad asset is destroyed (it was just
    * uploaded with our signature, so nobody references it) and rejected. A public id outside the
@@ -179,16 +218,69 @@ export class MediaService {
 
   /** Deletes a sound asset (and purges CDN caches). "not found" counts as done. */
   async destroySound(publicId: string): Promise<void> {
+    await this.destroy(publicId, { resource_type: 'video' });
+  }
+
+  /**
+   * Same rules as `verifySoundAsset`: folder, format and size are read from Cloudinary's Admin
+   * API. More than one page = animated (GIF/WebP). A bad asset is destroyed and rejected; a public
+   * id outside the guides folder is rejected without destroying anything.
+   */
+  async verifyGuideAsset(publicId: string): Promise<VerifiedGuide> {
     this.requireCredentials();
-    const result = (await cloudinary.uploader.destroy(publicId, {
-      resource_type: 'video',
-      invalidate: true,
-    })) as { result?: string };
-    if (result.result !== 'ok' && result.result !== 'not found') {
-      throw new AppException(ErrorCode.MEDIA_DELETE_FAILED, HttpStatus.BAD_GATEWAY, {
-        details: { result: result.result },
-      });
+    const pattern = new RegExp(`^${escapeRegex(this.guideFolder())}/[0-9a-f-]{36}$`);
+    if (!pattern.test(publicId)) throw invalidGuide('folder');
+
+    let resource: {
+      bytes?: number;
+      format?: string;
+      width?: number;
+      height?: number;
+      pages?: number;
+    };
+    try {
+      // `pages` (frame count of a GIF/WebP) is only returned when asked for.
+      resource = (await cloudinary.api.resource(publicId, {
+        resource_type: 'image',
+        pages: true,
+      })) as typeof resource;
+    } catch (error) {
+      if (isCloudinaryNotFound(error)) throw invalidGuide('not_found');
+      throw error;
     }
+
+    const reason =
+      !resource.format || !GUIDE_FORMATS.includes(resource.format)
+        ? 'format'
+        : typeof resource.bytes !== 'number' || resource.bytes > this.maxGuideBytes
+          ? 'size'
+          : null;
+    if (reason) {
+      await this.destroyGuide(publicId);
+      throw invalidGuide(reason);
+    }
+    return {
+      kind: (resource.pages ?? 1) > 1 ? 'animation' : 'image',
+      format: resource.format!,
+      width: resource.width ?? 0,
+      height: resource.height ?? 0,
+      bytes: resource.bytes!,
+    };
+  }
+
+  /** Deletes an exercise guide asset (and purges CDN caches). "not found" counts as done. */
+  async destroyGuide(publicId: string): Promise<void> {
+    await this.destroy(publicId, { resource_type: 'image' });
+  }
+
+  /**
+   * Public delivery URL of a guide. `q_auto` recompresses (GIFs too) without changing the
+   * format, so the app can cache the file as-is. Built by hand (like sound URLs): the SDK adds a
+   * version and an analytics query that change between SDK releases — the app caches by URL.
+   */
+  guideUrl(publicId: string, format: string): string {
+    const { cloudName } = this.requireCredentials();
+    return `https://res.cloudinary.com/${cloudName}/image/upload/q_auto/${publicId}.${format}`;
   }
 
   /**
@@ -233,17 +325,7 @@ export class MediaService {
 
   /** Deletes the asset (and purges CDN caches). "not found" counts as done: deletion is idempotent. */
   async destroyPrivateImage(publicId: string): Promise<void> {
-    this.requireCredentials();
-    const result = (await cloudinary.uploader.destroy(publicId, {
-      type: PRIVATE_TYPE,
-      resource_type: 'image',
-      invalidate: true,
-    })) as { result?: string };
-    if (result.result !== 'ok' && result.result !== 'not found') {
-      throw new AppException(ErrorCode.MEDIA_DELETE_FAILED, HttpStatus.BAD_GATEWAY, {
-        details: { result: result.result },
-      });
-    }
+    await this.destroy(publicId, { type: PRIVATE_TYPE, resource_type: 'image' });
   }
 
   private folderFor(scope: ImageScope): string {
@@ -261,6 +343,26 @@ export class MediaService {
     return `${this.rootFolder}/sounds`;
   }
 
+  private guideFolder(): string {
+    return `${this.rootFolder}/exercises/guides`;
+  }
+
+  private async destroy(
+    publicId: string,
+    options: { resource_type: 'image' | 'video'; type?: string },
+  ): Promise<void> {
+    this.requireCredentials();
+    const result = (await cloudinary.uploader.destroy(publicId, {
+      ...options,
+      invalidate: true,
+    })) as { result?: string };
+    if (result.result !== 'ok' && result.result !== 'not found') {
+      throw new AppException(ErrorCode.MEDIA_DELETE_FAILED, HttpStatus.BAD_GATEWAY, {
+        details: { result: result.result },
+      });
+    }
+  }
+
   private requireCredentials(): CloudinaryCredentials {
     if (!this.credentials) {
       throw new AppException(ErrorCode.MEDIA_NOT_CONFIGURED, HttpStatus.SERVICE_UNAVAILABLE);
@@ -269,10 +371,19 @@ export class MediaService {
   }
 }
 
+const ADMIN_PURPOSES: readonly UploadPurpose[] = ['exercise_image', 'rest_sound', 'exercise_guide'];
+
 type SoundRejection = 'folder' | 'not_found' | 'format' | 'size' | 'duration';
+type GuideRejection = 'folder' | 'not_found' | 'format' | 'size';
 
 function invalidSound(reason: SoundRejection): AppException {
   return new AppException(ErrorCode.INVALID_SOUND_ASSET, HttpStatus.BAD_REQUEST, {
+    details: { reason },
+  });
+}
+
+function invalidGuide(reason: GuideRejection): AppException {
+  return new AppException(ErrorCode.INVALID_GUIDE_ASSET, HttpStatus.BAD_REQUEST, {
     details: { reason },
   });
 }

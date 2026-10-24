@@ -29,6 +29,13 @@ export class PlanEntitlements implements Entitlements {
   @Prop({ type: Number, default: null, min: 1 })
   statsHistoryDays!: number | null;
 
+  /**
+   * Default 0 (no guides) on purpose: plans saved before the field existed fail CLOSED until
+   * `npm run db:backfill-guides-limit` sets them.
+   */
+  @Prop({ type: Number, default: 0, min: 0 })
+  guidesPerRoutine!: number | null;
+
   @Prop({ type: SchemaFactory.createForClass(PlanFeatures), default: () => ({}) })
   features!: PlanFeatures;
 }
