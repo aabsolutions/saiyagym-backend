@@ -24,6 +24,7 @@ import {
   type DeloadMode,
   type SetType,
 } from '../../../common/constants/training';
+import { RoundDecimals } from '../../../common/decorators/round-decimals.decorator';
 import { PROGRAM_STATUSES, type ProgramStatus } from '../schemas/program.schema';
 
 export const LOCAL_DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
@@ -75,6 +76,7 @@ export class TrainingMaxDto {
   @IsUUID('4')
   exerciseId!: string;
 
+  @RoundDecimals(2)
   @IsNumber({ maxDecimalPlaces: 2 })
   @Min(1)
   @Max(1000)

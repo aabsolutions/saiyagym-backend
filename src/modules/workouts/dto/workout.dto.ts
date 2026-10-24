@@ -17,6 +17,7 @@ import {
   Min,
   ValidateNested,
 } from 'class-validator';
+import { RoundDecimals } from '../../../common/decorators/round-decimals.decorator';
 import { PageMetaDto, PaginationQueryDto } from '../../../common/dto/pagination.dto';
 import { SET_TYPES, type SetType } from '../../../common/constants/training';
 
@@ -30,6 +31,7 @@ export class WorkoutSetDto {
 
   /** kg (SPEC: always stored in kg). `null` for bodyweight / not entered. */
   @IsOptional()
+  @RoundDecimals(3)
   @IsNumber({ maxDecimalPlaces: 3 })
   @Min(0)
   @Max(1000)

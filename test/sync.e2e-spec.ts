@@ -99,6 +99,31 @@ describe('Sync (e2e)', () => {
       expect(eventNames).toEqual(['workout.finished']); // emitted once
     });
 
+    it('rounds weights converted from lb instead of rejecting the document', async () => {
+      const id = randomUUID();
+      const doc = workoutDoc(id, iso(HOUR), 'imperial');
+      doc.exercises[0].sets[0].weightKg = 225 * 0.45359237; // 102.05828325
+      const metricId = randomUUID();
+
+      const res = await push(ana, [
+        { collection: 'workouts', op: 'upsert', doc },
+        {
+          collection: 'body_metrics',
+          op: 'upsert',
+          doc: { id: metricId, updatedAt: iso(HOUR), measuredAt: iso(HOUR), weightKg: 72.5747792 },
+        },
+      ]);
+
+      expect(res.body.results.map((r: { status: string }) => r.status)).toEqual([
+        'applied',
+        'applied',
+      ]);
+      const stored = await db.collection('workouts').findOne({ _id: id as never });
+      expect(stored!.exercises[0].sets[0].weightKg).toBe(102.058);
+      const metric = await db.collection('body_metrics').findOne({ _id: metricId as never });
+      expect(metric!.weightKg).toBe(72.575);
+    });
+
     it('last write wins: an older version is ignored, a newer one applied', async () => {
       const id = randomUUID();
       await push(ana, [

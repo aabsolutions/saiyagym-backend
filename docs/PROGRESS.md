@@ -1,5 +1,15 @@
 # Progress — gymapp-api
 
+## 2026-10-24 — Fix: pesos/medidas convertidos de lb/in rechazados en sync
+
+### Hecho
+- **Bug**: el móvil en imperial mandaba `225 lb` como `102.05828325` kg; `maxDecimalPlaces` (3 en sets, 2 en medidas) rechazaba el documento ENTERO con `VALIDATION_ERROR` → toda edición posterior de ese workout/rutina fallaba al sincronizar.
+- `@RoundDecimals(n)` (`src/common/decorators/round-decimals.decorator.ts`): `@Transform` que redondea antes de validar (REST con `transform: true` y sync push vía `plainToInstance`). Aplicado a `weightKg` de sets de workout y rutina (3), medidas corporales (2) y `TrainingMaxDto.kg` (2).
+- `body_metrics.weightKg` pasa a **3 decimales** (antes 2): con 2 no hay ida y vuelta en lb (160 lb → 72.57 kg → 159.99 lb). Más permisivo → no rompe clientes.
+
+### Verificación
+- unit `round-decimals.decorator.spec.ts` ✅ · e2e sync 14/14 ✅ (nuevo: push con pesos convertidos se aplica y se guarda redondeado), workouts + programs 32/32 ✅ · lint ✅.
+
 ## 2026-10-24 — Instrucciones de ejecución
 
 ### Hecho

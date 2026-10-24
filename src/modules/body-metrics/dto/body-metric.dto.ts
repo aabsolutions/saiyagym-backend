@@ -12,12 +12,22 @@ import {
   MaxLength,
   Min,
 } from 'class-validator';
+import { RoundDecimals } from '../../../common/decorators/round-decimals.decorator';
 import { PageMetaDto, PaginationQueryDto } from '../../../common/dto/pagination.dto';
 import { MEASUREMENT_FIELDS, type MeasurementField } from '../schemas/body-metric.schema';
 
-/** Optional measurement; `null` clears it on PATCH. */
-const Measurement = (min: number, max: number) =>
-  applyDecorators(IsOptional(), IsNumber({ maxDecimalPlaces: 2 }), Min(min), Max(max));
+/**
+ * Optional measurement; `null` clears it on PATCH. Weight keeps 3 decimals like workout sets:
+ * 2 can't round-trip lb (160 lb → 72.57 kg → 159.99 lb).
+ */
+const Measurement = (min: number, max: number, decimals = 2) =>
+  applyDecorators(
+    IsOptional(),
+    RoundDecimals(decimals),
+    IsNumber({ maxDecimalPlaces: decimals }),
+    Min(min),
+    Max(max),
+  );
 
 /** Body of a measurement entry (REST and sync). At least one measurement is required. */
 export class BodyMetricBodyDto {
@@ -25,7 +35,7 @@ export class BodyMetricBodyDto {
   @IsDate()
   measuredAt!: Date;
 
-  @Measurement(20, 400) weightKg?: number | null;
+  @Measurement(20, 400, 3) weightKg?: number | null;
   @Measurement(2, 75) bodyFatPercent?: number | null;
   @Measurement(30, 250) waistCm?: number | null;
   @Measurement(40, 250) chestCm?: number | null;
@@ -51,7 +61,7 @@ export class CreateBodyMetricDto extends BodyMetricBodyDto {
 /** Omitted = unchanged; `null` clears a measurement (at least one must remain). */
 export class UpdateBodyMetricDto {
   @IsOptional() @Type(() => Date) @IsDate() measuredAt?: Date;
-  @Measurement(20, 400) weightKg?: number | null;
+  @Measurement(20, 400, 3) weightKg?: number | null;
   @Measurement(2, 75) bodyFatPercent?: number | null;
   @Measurement(30, 250) waistCm?: number | null;
   @Measurement(40, 250) chestCm?: number | null;
