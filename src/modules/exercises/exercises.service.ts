@@ -138,7 +138,10 @@ export class ExercisesService implements OnModuleInit {
       items.map((e) => e._id),
     );
     return {
-      items: items.map((e) => this.toSummary(e, lang, userId, prefs.get(e._id))),
+      items: items.map((e) => ({
+        ...this.toSummary(e, lang, userId, prefs.get(e._id)),
+        ...(query.withText && this.textOf(e, lang)),
+      })),
       meta,
     };
   }
@@ -170,8 +173,14 @@ export class ExercisesService implements OnModuleInit {
     const prefs = await this.prefs.mapFor(userId, [id]);
     return {
       ...this.toSummary(exercise, lang, userId, prefs.get(id)),
-      description: localize(exercise.description, lang),
-      instructions: localize(exercise.instructions, lang),
+      ...this.textOf(exercise, lang),
+    };
+  }
+
+  private textOf(e: Exercise, lang: string): { description: string; instructions: string } {
+    return {
+      description: localize(e.description, lang),
+      instructions: localize(e.instructions, lang),
     };
   }
 

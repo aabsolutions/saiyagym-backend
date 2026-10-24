@@ -966,6 +966,15 @@
             }
           },
           {
+            "name": "withText",
+            "required": false,
+            "in": "query",
+            "description": "Also return the localized `description` and `instructions` of each item (the mobile app\ndownloads the whole catalog with them to work offline). Ignored by the admin listing.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "sort",
             "required": true,
             "in": "query",
@@ -1480,6 +1489,15 @@
             "required": false,
             "in": "query",
             "description": "Only the caller's custom exercises.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "withText",
+            "required": false,
+            "in": "query",
+            "description": "Also return the localized `description` and `instructions` of each item (the mobile app\ndownloads the whole catalog with them to work offline). Ignored by the admin listing.",
             "schema": {
               "type": "boolean"
             }
@@ -6819,6 +6837,186 @@
           "powerlifting"
         ]
       },
+      "ExerciseListItemDto": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "nullable": true
+          },
+          "primaryMuscle": {
+            "enum": [
+              "chest",
+              "lats",
+              "upper_back",
+              "traps",
+              "front_delts",
+              "side_delts",
+              "rear_delts",
+              "biceps",
+              "triceps",
+              "forearms",
+              "abs",
+              "obliques",
+              "lower_back",
+              "glutes",
+              "quads",
+              "hamstrings",
+              "adductors",
+              "abductors",
+              "calves"
+            ],
+            "type": "string"
+          },
+          "secondaryMuscles": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "chest",
+                "lats",
+                "upper_back",
+                "traps",
+                "front_delts",
+                "side_delts",
+                "rear_delts",
+                "biceps",
+                "triceps",
+                "forearms",
+                "abs",
+                "obliques",
+                "lower_back",
+                "glutes",
+                "quads",
+                "hamstrings",
+                "adductors",
+                "abductors",
+                "calves"
+              ]
+            }
+          },
+          "equipment": {
+            "enum": [
+              "barbell",
+              "dumbbell",
+              "machine",
+              "cable",
+              "bodyweight",
+              "kettlebell",
+              "band",
+              "smith",
+              "other"
+            ],
+            "type": "string"
+          },
+          "mechanic": {
+            "enum": [
+              "compound",
+              "isolation"
+            ],
+            "type": "string"
+          },
+          "category": {
+            "enum": [
+              "strength",
+              "powerlifting_main",
+              "accessory"
+            ],
+            "type": "string"
+          },
+          "trackingType": {
+            "enum": [
+              "weight_reps"
+            ],
+            "type": "string"
+          },
+          "imageUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string"
+          },
+          "instructions": {
+            "type": "string",
+            "description": "Execution steps, one per line."
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tiers": {
+            "$ref": "#/components/schemas/TiersDto"
+          },
+          "isGlobal": {
+            "type": "boolean"
+          },
+          "isCustom": {
+            "type": "boolean",
+            "description": "Created by the caller."
+          },
+          "isFavorite": {
+            "type": "boolean"
+          },
+          "personalTiers": {
+            "description": "The caller's own tier per goal; `null` = none (the global tier applies).",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TiersDto"
+              }
+            ]
+          },
+          "hasGuide": {
+            "type": "boolean",
+            "description": "The exercise has execution guides. Whether the caller may see them: `GET /guides`."
+          }
+        },
+        "required": [
+          "slug",
+          "primaryMuscle",
+          "secondaryMuscles",
+          "equipment",
+          "mechanic",
+          "category",
+          "trackingType",
+          "imageUrl",
+          "id",
+          "name",
+          "tags",
+          "tiers",
+          "isGlobal",
+          "isCustom",
+          "isFavorite",
+          "personalTiers",
+          "hasGuide"
+        ]
+      },
+      "ExercisePageDto": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExerciseListItemDto"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/PageMetaDto"
+          }
+        },
+        "required": [
+          "items",
+          "meta"
+        ]
+      },
       "ExerciseSummaryDto": {
         "type": "object",
         "properties": {
@@ -6972,24 +7170,6 @@
           "isFavorite",
           "personalTiers",
           "hasGuide"
-        ]
-      },
-      "ExercisePageDto": {
-        "type": "object",
-        "properties": {
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ExerciseSummaryDto"
-            }
-          },
-          "meta": {
-            "$ref": "#/components/schemas/PageMetaDto"
-          }
-        },
-        "required": [
-          "items",
-          "meta"
         ]
       },
       "TierListDto": {
@@ -7201,7 +7381,8 @@
             "type": "string"
           },
           "instructions": {
-            "type": "string"
+            "type": "string",
+            "description": "Execution steps, one per line ('' when there are none)."
           }
         },
         "required": [

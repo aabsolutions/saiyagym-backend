@@ -27,6 +27,10 @@
         "es": "Press horizontal tumbado en banco plano; levantamiento de competición.",
         "en": "Horizontal press lying on a flat bench; competition lift."
       },
+      "instructions": {
+        "es": "Túmbate con los ojos bajo la barra, pies firmes en el suelo y escápulas juntas y hacia abajo.\nAgarra la barra algo más ancho que los hombros, sácala con los brazos extendidos y colócala sobre los hombros.\nBaja controlado hasta tocar la parte baja del pecho, con los codos a unos 45–70° del torso.\nEmpuja la barra hacia arriba y ligeramente hacia la cara hasta extender los brazos, sin despegar glúteos ni hombros del banco.",
+        "en": "Lie with your eyes under the bar, feet planted and shoulder blades pinched back and down.\nGrip the bar slightly wider than shoulder width, unrack it with straight arms and bring it over your shoulders.\nLower it under control to your lower chest, elbows about 45–70° from your torso.\nPress up and slightly back toward your face to lockout, keeping glutes and shoulders on the bench."
+      },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["triceps", "front_delts"],
       "equipment": "barbell",
@@ -41,6 +45,10 @@
       "description": {
         "es": "Press de banca con pausa completa en el pecho, como exige la competición.",
         "en": "Bench press with a full pause on the chest, as required in competition."
+      },
+      "instructions": {
+        "es": "Prepárate igual que en el press de banca: escápulas retraídas, arco natural y pies firmes.\nBaja la barra controlada hasta el pecho.\nMantén la barra quieta sobre el pecho 1–2 segundos sin rebotar ni perder tensión.\nEmpuja con fuerza hasta extender los brazos y repite.",
+        "en": "Set up as for a bench press: shoulder blades retracted, natural arch, feet planted.\nLower the bar under control to your chest.\nHold it motionless on your chest for 1–2 seconds without bouncing or losing tightness.\nDrive it up hard to lockout and repeat."
       },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["triceps", "front_delts"],
@@ -57,6 +65,10 @@
         "es": "Press de banca con agarre al ancho de hombros; más tríceps y bloqueo.",
         "en": "Shoulder-width grip bench press; more triceps and lockout work."
       },
+      "instructions": {
+        "es": "Túmbate en el banco y agarra la barra a la anchura de los hombros (no más estrecho).\nSaca la barra y mantén las muñecas rectas sobre los codos.\nBaja hacia la parte baja del pecho con los codos pegados al cuerpo.\nEmpuja hasta extender los brazos, enfocando el esfuerzo en los tríceps.",
+        "en": "Lie on the bench and grip the bar at shoulder width (no narrower).\nUnrack and keep your wrists stacked over your elbows.\nLower to your lower chest with elbows tucked close to your body.\nPress to lockout, focusing the effort on your triceps."
+      },
       "primaryMuscle": "triceps",
       "secondaryMuscles": ["chest", "front_delts"],
       "equipment": "barbell",
@@ -71,6 +83,10 @@
       "description": {
         "es": "Press de banca con las piernas extendidas y sin empuje de piernas; exige estabilidad del torso.",
         "en": "Bench press with legs extended and no leg drive; demands upper-body stability."
+      },
+      "instructions": {
+        "es": "Túmbate en el banco con las piernas extendidas y elevadas o apoyadas sin empujar con ellas.\nRetrae las escápulas y saca la barra con un agarre de press de banca.\nBaja controlado al pecho manteniendo el equilibrio sin ayuda de las piernas.\nEmpuja hasta extender los brazos sin arquear la espalda en exceso.",
+        "en": "Lie on the bench with legs straight and raised, or resting without driving through them.\nRetract your shoulder blades and unrack with your bench press grip.\nLower under control to your chest, staying balanced without leg drive.\nPress to lockout without over-arching your back."
       },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["triceps", "front_delts"],
@@ -87,6 +103,10 @@
         "es": "Press de banca partiendo desde pines a media altura; refuerza el punto débil.",
         "en": "Bench press starting from pins at mid-range; strengthens the sticking point."
       },
+      "instructions": {
+        "es": "Coloca los pines del rack a la altura donde se te atasca el press (normalmente 3–8 cm sobre el pecho).\nTúmbate bajo la barra apoyada en los pines con tu posición de press de banca.\nEmpuja la barra desde parado, sin impulso, hasta extender los brazos.\nBájala controlada hasta apoyarla de nuevo en los pines y haz una pausa breve.",
+        "en": "Set the rack pins at your sticking point (usually 3–8 cm above your chest).\nLie under the bar resting on the pins in your bench press position.\nPress the bar from a dead stop, without momentum, to lockout.\nLower it under control back onto the pins and pause briefly."
+      },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["triceps", "front_delts"],
       "equipment": "barbell",
@@ -101,6 +121,10 @@
       "description": {
         "es": "Press de banca con pausa a unos centímetros del pecho, sin tocarlo.",
         "en": "Bench press paused an inch above the chest without touching it."
+      },
+      "instructions": {
+        "es": "Prepárate como en el press de banca con escápulas retraídas.\nBaja la barra controlada y detenla 2–3 cm por encima del pecho sin tocarlo.\nMantén la posición 1 segundo con tensión en todo el cuerpo.\nEmpuja hasta extender los brazos.",
+        "en": "Set up as for a bench press with shoulder blades retracted.\nLower the bar under control and stop it 2–3 cm above your chest without touching.\nHold for 1 second with full-body tension.\nPress to lockout."
       },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["triceps", "front_delts"],
@@ -117,6 +141,10 @@
         "es": "Press tumbado en el suelo; recorrido corto con énfasis en el bloqueo.",
         "en": "Press lying on the floor; short range with lockout emphasis."
       },
+      "instructions": {
+        "es": "Túmbate en el suelo dentro del rack con la barra a la altura de los brazos extendidos; rodillas flexionadas o piernas rectas.\nSaca la barra y colócala sobre los hombros.\nBaja hasta que la parte trasera de los brazos toque el suelo, sin rebotar.\nPausa un instante y empuja hasta extender los brazos.",
+        "en": "Lie on the floor inside a rack with the bar at arm's length; knees bent or legs straight.\nUnrack and bring the bar over your shoulders.\nLower until the backs of your upper arms touch the floor, without bouncing.\nPause briefly and press to lockout."
+      },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["triceps"],
       "equipment": "barbell",
@@ -131,6 +159,10 @@
       "description": {
         "es": "Press en banco inclinado a 30-45°; mayor énfasis en la parte superior del pecho.",
         "en": "Press on a 30-45° incline bench; more upper-chest emphasis."
+      },
+      "instructions": {
+        "es": "Ajusta el banco a 30–45° y túmbate con los ojos bajo la barra y escápulas retraídas.\nAgarra la barra algo más ancho que los hombros y sácala.\nBaja controlado hasta la parte alta del pecho, bajo las clavículas.\nEmpuja hacia arriba hasta extender los brazos.",
+        "en": "Set the bench to 30–45° and lie with your eyes under the bar, shoulder blades retracted.\nGrip slightly wider than your shoulders and unrack.\nLower under control to your upper chest, just below the collarbones.\nPress up to lockout."
       },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["front_delts", "triceps"],
@@ -147,6 +179,10 @@
         "es": "Press en banco plano con mancuernas; mayor recorrido que con barra.",
         "en": "Flat bench press with dumbbells; longer range of motion than the barbell."
       },
+      "instructions": {
+        "es": "Siéntate con las mancuernas en los muslos y túmbate llevándolas al pecho.\nCon escápulas retraídas, empuja las mancuernas sobre el pecho con las palmas hacia los pies.\nBaja controlado hasta sentir estiramiento en el pecho, codos a unos 45° del torso.\nEmpuja hacia arriba juntándolas ligeramente sin chocarlas.",
+        "en": "Sit with the dumbbells on your thighs and lie back bringing them to your chest.\nWith shoulder blades retracted, press them over your chest, palms facing your feet.\nLower under control until you feel a chest stretch, elbows about 45° from your torso.\nPress up, bringing them slightly together without clanking."
+      },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["triceps", "front_delts"],
       "equipment": "dumbbell",
@@ -161,6 +197,10 @@
       "description": {
         "es": "Press inclinado con mancuernas; gran estiramiento del pecho superior.",
         "en": "Incline press with dumbbells; deep upper-chest stretch."
+      },
+      "instructions": {
+        "es": "Ajusta el banco a 30–45° y lleva las mancuernas a los hombros al recostarte.\nEmpuja las mancuernas sobre la parte alta del pecho con las escápulas retraídas.\nBaja controlado hasta la altura del pecho con los codos algo por debajo de los hombros.\nEmpuja hacia arriba hasta casi extender los brazos.",
+        "en": "Set the bench to 30–45° and bring the dumbbells to your shoulders as you lie back.\nPress them over your upper chest with shoulder blades retracted.\nLower under control to chest level, elbows slightly below your shoulders.\nPress up until your arms are almost straight."
       },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["front_delts", "triceps"],
@@ -177,6 +217,10 @@
         "es": "Press en banco declinado; recorrido más corto con énfasis en el pecho inferior.",
         "en": "Press on a decline bench; shorter range with lower-chest emphasis."
       },
+      "instructions": {
+        "es": "Engancha las piernas en el banco declinado y túmbate con los ojos bajo la barra.\nSaca la barra con un agarre algo más ancho que los hombros.\nBaja controlado hasta la parte baja del pecho.\nEmpuja hasta extender los brazos sin despegar la espalda del banco.",
+        "en": "Hook your legs on the decline bench and lie with your eyes under the bar.\nUnrack with a grip slightly wider than shoulder width.\nLower under control to your lower chest.\nPress to lockout, keeping your back on the bench."
+      },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["triceps"],
       "equipment": "barbell",
@@ -191,6 +235,10 @@
       "description": {
         "es": "Press horizontal guiado; muy estable, ideal para llegar cerca del fallo.",
         "en": "Guided horizontal press; very stable, great for training close to failure."
+      },
+      "instructions": {
+        "es": "Ajusta el asiento para que las asas queden a la altura de la mitad del pecho.\nSiéntate con la espalda apoyada y las escápulas juntas.\nEmpuja las asas hasta casi extender los brazos sin bloquear los codos.\nVuelve controlado hasta sentir estiramiento en el pecho.",
+        "en": "Adjust the seat so the handles line up with your mid-chest.\nSit with your back against the pad and shoulder blades together.\nPush the handles until your arms are almost straight without locking the elbows.\nReturn under control until you feel a chest stretch."
       },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["triceps", "front_delts"],
@@ -207,6 +255,10 @@
         "es": "Press inclinado con barra guiada; estable y fácil de progresar.",
         "en": "Incline press on a guided bar; stable and easy to progress."
       },
+      "instructions": {
+        "es": "Coloca un banco a 30–45° bajo la barra de la Smith para que baje a la parte alta del pecho.\nDesbloquea la barra con un agarre algo más ancho que los hombros.\nBaja controlado hasta rozar la parte alta del pecho.\nEmpuja hasta extender los brazos y bloquea la barra al terminar.",
+        "en": "Place a 30–45° bench under the Smith bar so it lowers to your upper chest.\nUnhook the bar with a grip slightly wider than your shoulders.\nLower under control until it lightly touches your upper chest.\nPress to lockout and re-hook the bar when done."
+      },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["front_delts", "triceps"],
       "equipment": "smith",
@@ -221,6 +273,10 @@
       "description": {
         "es": "Aperturas con poleas; tensión constante en todo el recorrido.",
         "en": "Fly with cables; constant tension through the whole range."
+      },
+      "instructions": {
+        "es": "Coloca las poleas a la altura de los hombros y da un paso al frente con un pie adelantado.\nCon los brazos abiertos y los codos levemente flexionados, inclina un poco el torso.\nJunta las manos delante del pecho en un arco amplio, apretando el pecho.\nVuelve controlado hasta sentir estiramiento sin cambiar el ángulo de los codos.",
+        "en": "Set the pulleys at shoulder height and step forward into a staggered stance.\nWith arms open and elbows slightly bent, lean your torso a little forward.\nBring your hands together in front of your chest in a wide arc, squeezing your chest.\nReturn under control to a stretch without changing your elbow angle."
       },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["front_delts"],
@@ -237,6 +293,10 @@
         "es": "Aperturas en banco con mancuernas; gran estiramiento, poca tensión arriba.",
         "en": "Bench fly with dumbbells; big stretch, little tension at the top."
       },
+      "instructions": {
+        "es": "Túmbate con las mancuernas sobre el pecho, palmas enfrentadas y codos levemente flexionados.\nAbre los brazos en arco hasta sentir estiramiento en el pecho.\nNo bajes las manos por debajo del nivel del banco.\nVuelve a juntar las mancuernas sobre el pecho con el mismo arco.",
+        "en": "Lie with the dumbbells over your chest, palms facing and elbows slightly bent.\nOpen your arms in an arc until you feel a chest stretch.\nDon't let your hands drop below bench level.\nBring the dumbbells back together over your chest along the same arc."
+      },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["front_delts"],
       "equipment": "dumbbell",
@@ -251,6 +311,10 @@
       "description": {
         "es": "Aperturas en máquina; aislamiento estable del pecho.",
         "en": "Machine fly; stable chest isolation."
+      },
+      "instructions": {
+        "es": "Ajusta el asiento para que las asas queden a la altura del pecho.\nSiéntate con la espalda apoyada y los codos levemente flexionados.\nJunta las asas delante del pecho apretando el pecho 1 segundo.\nAbre controlado hasta sentir estiramiento sin adelantar los hombros.",
+        "en": "Adjust the seat so the handles are at chest height.\nSit with your back against the pad and elbows slightly bent.\nBring the handles together in front of your chest and squeeze for a second.\nOpen under control to a stretch without rolling your shoulders forward."
       },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["front_delts"],
@@ -267,6 +331,10 @@
         "es": "Empuje horizontal con el peso corporal; se puede lastrar.",
         "en": "Bodyweight horizontal push; can be weighted."
       },
+      "instructions": {
+        "es": "Apoya las manos algo más anchas que los hombros y extiende las piernas, cuerpo recto de cabeza a talones.\nContrae abdomen y glúteos para no hundir la cadera.\nBaja el pecho hacia el suelo con los codos a unos 45° del torso.\nEmpuja el suelo hasta extender los brazos.",
+        "en": "Place your hands slightly wider than your shoulders, legs straight, body in a line from head to heels.\nBrace your abs and glutes so your hips don't sag.\nLower your chest toward the floor with elbows about 45° from your torso.\nPush the floor away until your arms are straight."
+      },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["triceps", "front_delts", "abs"],
       "equipment": "bodyweight",
@@ -282,6 +350,10 @@
         "es": "Fondos en paralelas con el torso inclinado hacia delante.",
         "en": "Parallel-bar dips with the torso leaning forward."
       },
+      "instructions": {
+        "es": "Sujétate en las paralelas con los brazos extendidos.\nInclina el torso hacia delante y deja los codos algo abiertos.\nBaja hasta que los hombros queden a la altura de los codos o sientas estiramiento en el pecho.\nEmpuja hasta extender los brazos manteniendo la inclinación.",
+        "en": "Support yourself on the parallel bars with straight arms.\nLean your torso forward and let your elbows flare slightly.\nLower until your shoulders reach elbow level or you feel a chest stretch.\nPress back up to straight arms, keeping the forward lean."
+      },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["triceps", "front_delts"],
       "equipment": "bodyweight",
@@ -290,13 +362,16 @@
       "tiers": { "hypertrophy": "A", "powerlifting": "B" },
       "tags": ["stretch-focused"]
     },
-
     {
       "slug": "pull-up",
       "name": { "es": "Dominadas", "en": "Pull-up" },
       "description": {
         "es": "Tracción vertical con agarre prono; se puede lastrar.",
         "en": "Vertical pull with an overhand grip; can be weighted."
+      },
+      "instructions": {
+        "es": "Cuélgate de la barra con agarre prono algo más ancho que los hombros.\nBaja los hombros y junta las escápulas antes de tirar.\nTira llevando el pecho hacia la barra hasta que la barbilla la supere.\nBaja controlado hasta extender los brazos por completo.",
+        "en": "Hang from the bar with an overhand grip slightly wider than your shoulders.\nPull your shoulders down and back before you pull.\nPull your chest toward the bar until your chin clears it.\nLower under control to fully straight arms."
       },
       "primaryMuscle": "lats",
       "secondaryMuscles": ["biceps", "upper_back", "rear_delts"],
@@ -313,6 +388,10 @@
         "es": "Tracción vertical con agarre supino; más implicación de bíceps.",
         "en": "Vertical pull with an underhand grip; more biceps involvement."
       },
+      "instructions": {
+        "es": "Cuélgate con agarre supino (palmas hacia ti) a la anchura de los hombros.\nBaja los hombros y activa la espalda.\nTira hasta que la barbilla supere la barra, llevando los codos hacia las costillas.\nBaja controlado hasta extender los brazos.",
+        "en": "Hang with an underhand grip (palms facing you) at shoulder width.\nPull your shoulders down and engage your back.\nPull until your chin clears the bar, driving your elbows toward your ribs.\nLower under control to straight arms."
+      },
       "primaryMuscle": "lats",
       "secondaryMuscles": ["biceps", "upper_back"],
       "equipment": "bodyweight",
@@ -327,6 +406,10 @@
       "description": {
         "es": "Tracción vertical en polea; fácil de ajustar la carga.",
         "en": "Vertical pull on a cable stack; easy to adjust the load."
+      },
+      "instructions": {
+        "es": "Ajusta el rodillo para fijar los muslos y agarra la barra algo más ancho que los hombros.\nInclina el torso ligeramente atrás con el pecho alto.\nTira de la barra hacia la parte alta del pecho llevando los codos hacia abajo y atrás.\nSube controlado hasta extender los brazos sin encoger los hombros.",
+        "en": "Set the thigh pad snug and grip the bar slightly wider than your shoulders.\nLean back slightly with your chest up.\nPull the bar to your upper chest, driving your elbows down and back.\nReturn under control to straight arms without shrugging."
       },
       "primaryMuscle": "lats",
       "secondaryMuscles": ["biceps", "upper_back"],
@@ -343,6 +426,10 @@
         "es": "Jalón con agarre neutro estrecho; buen recorrido para el dorsal.",
         "en": "Pulldown with a close neutral grip; good lat range of motion."
       },
+      "instructions": {
+        "es": "Coloca el agarre de palmas enfrentadas y fija los muslos bajo el rodillo.\nSiéntate con el pecho alto y una ligera inclinación atrás.\nTira del agarre hacia la parte alta del pecho con los codos pegados al cuerpo.\nSube controlado hasta sentir estiramiento en los dorsales.",
+        "en": "Attach a neutral (palms-facing) handle and lock your thighs under the pad.\nSit with your chest up and a slight backward lean.\nPull the handle to your upper chest with elbows close to your body.\nReturn under control until you feel a lat stretch."
+      },
       "primaryMuscle": "lats",
       "secondaryMuscles": ["biceps", "upper_back"],
       "equipment": "cable",
@@ -357,6 +444,10 @@
       "description": {
         "es": "Jalón unilateral; permite mayor estiramiento y foco en el dorsal.",
         "en": "Unilateral pulldown; allows a deeper stretch and lat focus."
+      },
+      "instructions": {
+        "es": "Coloca un agarre individual en la polea alta y siéntate o arrodíllate de frente.\nEstira el brazo arriba dejando que el dorsal se estire.\nTira llevando el codo hacia la cadera sin girar el torso.\nVuelve controlado y completa las repeticiones antes de cambiar de lado.",
+        "en": "Attach a single handle to the high pulley and sit or kneel facing it.\nReach up and let your lat stretch.\nPull your elbow down toward your hip without twisting your torso.\nReturn under control and finish all reps before switching sides."
       },
       "primaryMuscle": "lats",
       "secondaryMuscles": ["biceps"],
@@ -373,6 +464,10 @@
         "es": "Remo inclinado con barra; tracción horizontal pesada.",
         "en": "Bent-over row with a barbell; heavy horizontal pull."
       },
+      "instructions": {
+        "es": "De pie con la barra, flexiona cadera y rodillas hasta que el torso quede a 30–45° del suelo, espalda neutra.\nAgarra la barra algo más ancho que los hombros con los brazos extendidos.\nTira de la barra hacia el abdomen llevando los codos atrás.\nBaja controlado sin cambiar el ángulo del torso.",
+        "en": "Stand with the bar, hinge at hips and knees until your torso is 30–45° to the floor, neutral back.\nGrip the bar slightly wider than your shoulders with straight arms.\nRow the bar to your stomach, driving your elbows back.\nLower under control without changing your torso angle."
+      },
       "primaryMuscle": "upper_back",
       "secondaryMuscles": ["lats", "rear_delts", "biceps", "lower_back"],
       "equipment": "barbell",
@@ -388,6 +483,10 @@
         "es": "Remo con barra desde el suelo en cada repetición, torso paralelo.",
         "en": "Barbell row from the floor every rep with a parallel torso."
       },
+      "instructions": {
+        "es": "Inclina el torso casi paralelo al suelo con la barra apoyada en el suelo y espalda neutra.\nAgarra la barra algo más ancho que los hombros.\nTira explosivo desde el suelo hasta el abdomen sin levantar el torso.\nDevuelve la barra al suelo, reajusta y repite desde parado.",
+        "en": "Bend over until your torso is nearly parallel to the floor, bar on the floor, neutral back.\nGrip slightly wider than shoulder width.\nPull explosively from the floor to your stomach without raising your torso.\nReturn the bar to the floor, reset and repeat from a dead stop."
+      },
       "primaryMuscle": "upper_back",
       "secondaryMuscles": ["lats", "rear_delts", "lower_back"],
       "equipment": "barbell",
@@ -402,6 +501,10 @@
       "description": {
         "es": "Remo tumbado boca abajo en banco alto; sin carga lumbar.",
         "en": "Row lying face down on a high bench; no lower-back load."
+      },
+      "instructions": {
+        "es": "Túmbate boca abajo en un banco alto con la barra debajo al alcance de los brazos.\nAgarra la barra con los brazos extendidos y el pecho apoyado.\nTira de la barra hacia el banco llevando los codos atrás sin despegar el pecho.\nBaja controlado hasta extender los brazos.",
+        "en": "Lie face down on a high bench with the bar underneath within arm's reach.\nGrip the bar with straight arms and your chest on the pad.\nRow the bar up toward the bench, driving your elbows back without lifting your chest.\nLower under control to straight arms."
       },
       "primaryMuscle": "upper_back",
       "secondaryMuscles": ["lats", "rear_delts", "biceps"],
@@ -421,6 +524,10 @@
         "es": "Remo en banco inclinado con apoyo de pecho; aísla la espalda.",
         "en": "Row on an incline bench with chest support; isolates the back."
       },
+      "instructions": {
+        "es": "Apoya el pecho en un banco inclinado a 30–45° con una mancuerna en cada mano.\nDeja los brazos colgando con las palmas enfrentadas.\nRema llevando los codos hacia atrás y juntando las escápulas.\nBaja controlado hasta extender los brazos.",
+        "en": "Lie chest-down on a 30–45° incline bench with a dumbbell in each hand.\nLet your arms hang with palms facing each other.\nRow by driving your elbows back and squeezing your shoulder blades.\nLower under control to straight arms."
+      },
       "primaryMuscle": "upper_back",
       "secondaryMuscles": ["lats", "rear_delts", "biceps"],
       "equipment": "dumbbell",
@@ -435,6 +542,10 @@
       "description": {
         "es": "Remo unilateral apoyado en banco; buen recorrido del dorsal.",
         "en": "Unilateral row braced on a bench; good lat range of motion."
+      },
+      "instructions": {
+        "es": "Apoya una mano y la rodilla del mismo lado en un banco, espalda plana.\nSujeta la mancuerna con el otro brazo extendido.\nRema llevando el codo hacia la cadera.\nBaja controlado hasta estirar el dorsal y completa la serie antes de cambiar de lado.",
+        "en": "Place one hand and the same-side knee on a bench, back flat.\nHold the dumbbell with your other arm straight.\nRow by pulling your elbow toward your hip.\nLower under control to a lat stretch and finish the set before switching sides."
       },
       "primaryMuscle": "lats",
       "secondaryMuscles": ["upper_back", "rear_delts", "biceps"],
@@ -451,6 +562,10 @@
         "es": "Remo horizontal en polea baja; tensión constante.",
         "en": "Horizontal row on a low cable; constant tension."
       },
+      "instructions": {
+        "es": "Siéntate con los pies en la plataforma, rodillas levemente flexionadas y agarra el maneral.\nMantén el torso erguido y el pecho alto.\nTira del maneral hacia el abdomen juntando las escápulas.\nExtiende los brazos controlado sin redondear la espalda.",
+        "en": "Sit with feet on the platform, knees slightly bent, and grab the handle.\nKeep your torso upright and chest up.\nPull the handle to your stomach, squeezing your shoulder blades together.\nExtend your arms under control without rounding your back."
+      },
       "primaryMuscle": "upper_back",
       "secondaryMuscles": ["lats", "rear_delts", "biceps"],
       "equipment": "cable",
@@ -465,6 +580,10 @@
       "description": {
         "es": "Remo con barra anclada; permite mucha carga con agarre neutro.",
         "en": "Row with a landmine bar; allows heavy loading with a neutral grip."
+      },
+      "instructions": {
+        "es": "Colócate a horcajadas sobre la barra en T, flexiona la cadera y mantén la espalda neutra.\nAgarra el maneral con los brazos extendidos.\nTira hacia el pecho llevando los codos atrás.\nBaja controlado sin perder la posición del torso.",
+        "en": "Straddle the T-bar, hinge at the hips and keep a neutral back.\nGrab the handle with straight arms.\nRow it toward your chest, driving your elbows back.\nLower under control without losing your torso position."
       },
       "primaryMuscle": "upper_back",
       "secondaryMuscles": ["lats", "rear_delts", "biceps", "lower_back"],
@@ -481,6 +600,10 @@
         "es": "Remo guiado con apoyo de pecho; estable y seguro cerca del fallo.",
         "en": "Guided chest-supported row; stable and safe close to failure."
       },
+      "instructions": {
+        "es": "Ajusta el asiento para que las asas queden a la altura de la mitad del pecho y apoya el pecho en el soporte.\nAgarra las asas con los brazos extendidos.\nTira llevando los codos atrás y juntando las escápulas.\nVuelve controlado hasta estirar la espalda.",
+        "en": "Adjust the seat so the handles are at mid-chest height and rest your chest on the pad.\nGrab the handles with straight arms.\nPull by driving your elbows back and squeezing your shoulder blades.\nReturn under control to a stretch."
+      },
       "primaryMuscle": "upper_back",
       "secondaryMuscles": ["lats", "rear_delts", "biceps"],
       "equipment": "machine",
@@ -495,6 +618,10 @@
       "description": {
         "es": "Remo unilateral con barra anclada agarrando el extremo.",
         "en": "Unilateral landmine row gripping the end of the bar."
+      },
+      "instructions": {
+        "es": "Coloca la barra en una landmine y ponte perpendicular a ella con el pie adelantado del lado contrario.\nInclínate apoyando el antebrazo libre en el muslo y agarra el extremo de la barra.\nRema llevando el codo alto y hacia atrás.\nBaja controlado hasta estirar el dorsal.",
+        "en": "Set a bar in a landmine and stand perpendicular to it, opposite foot forward.\nLean over, rest your free forearm on your thigh and grip the end of the bar.\nRow, driving your elbow high and back.\nLower under control to a lat stretch."
       },
       "primaryMuscle": "upper_back",
       "secondaryMuscles": ["lats", "rear_delts"],
@@ -511,6 +638,10 @@
         "es": "Remo con el peso corporal bajo una barra o anillas.",
         "en": "Bodyweight row under a bar or rings."
       },
+      "instructions": {
+        "es": "Coloca una barra a la altura de la cadera y cuélgate debajo con el cuerpo recto y los talones en el suelo.\nAgarra la barra algo más ancho que los hombros.\nTira del pecho hacia la barra juntando las escápulas.\nBaja controlado hasta extender los brazos sin hundir la cadera.",
+        "en": "Set a bar at hip height and hang underneath with a straight body, heels on the floor.\nGrip slightly wider than your shoulders.\nPull your chest to the bar, squeezing your shoulder blades.\nLower under control to straight arms without letting your hips sag."
+      },
       "primaryMuscle": "upper_back",
       "secondaryMuscles": ["lats", "biceps", "rear_delts"],
       "equipment": "bodyweight",
@@ -525,6 +656,10 @@
       "description": {
         "es": "Extensión de hombro en polea con brazos rectos; aísla el dorsal.",
         "en": "Shoulder extension on a cable with straight arms; isolates the lats."
+      },
+      "instructions": {
+        "es": "Colócate frente a la polea alta con una barra o cuerda e inclina el torso hacia delante.\nSujeta con los brazos casi rectos a la altura de la cabeza.\nLleva la barra hacia los muslos en arco usando los dorsales, sin doblar los codos.\nVuelve controlado hasta sentir estiramiento.",
+        "en": "Face the high pulley with a bar or rope and hinge slightly forward.\nHold it with nearly straight arms at head height.\nSweep the bar to your thighs in an arc using your lats, without bending your elbows.\nReturn under control to a stretch."
       },
       "primaryMuscle": "lats",
       "secondaryMuscles": ["triceps"],
@@ -541,6 +676,10 @@
         "es": "Pullover tumbado en banco; estiramiento de dorsal y pecho.",
         "en": "Pullover lying on a bench; stretches lats and chest."
       },
+      "instructions": {
+        "es": "Túmbate en un banco y sujeta una mancuerna con ambas manos sobre el pecho.\nCon los codos levemente flexionados, baja la mancuerna por detrás de la cabeza en arco.\nDetente al sentir estiramiento en dorsales y pecho.\nVuelve a llevarla sobre el pecho con el mismo arco.",
+        "en": "Lie on a bench holding one dumbbell with both hands over your chest.\nWith elbows slightly bent, lower it behind your head in an arc.\nStop when you feel a stretch in your lats and chest.\nBring it back over your chest along the same arc."
+      },
       "primaryMuscle": "lats",
       "secondaryMuscles": ["chest", "triceps"],
       "equipment": "dumbbell",
@@ -549,13 +688,16 @@
       "tiers": { "hypertrophy": "B", "powerlifting": "C" },
       "tags": ["stretch-focused"]
     },
-
     {
       "slug": "barbell-shrug",
       "name": { "es": "Encogimientos con barra", "en": "Barbell shrug" },
       "description": {
         "es": "Elevación de hombros con barra para el trapecio superior.",
         "en": "Shoulder elevation with a barbell for the upper traps."
+      },
+      "instructions": {
+        "es": "De pie, sujeta la barra delante de los muslos con los brazos extendidos.\nMantén el pecho alto y la mirada al frente.\nEleva los hombros hacia las orejas lo más alto posible, sin doblar los codos.\nMantén 1 segundo arriba y baja controlado.",
+        "en": "Stand holding the bar in front of your thighs with straight arms.\nKeep your chest up and eyes forward.\nShrug your shoulders up toward your ears as high as possible, without bending your elbows.\nHold for a second at the top and lower under control."
       },
       "primaryMuscle": "traps",
       "secondaryMuscles": ["forearms"],
@@ -572,6 +714,10 @@
         "es": "Elevación de hombros con mancuernas; recorrido libre.",
         "en": "Shoulder elevation with dumbbells; free range of motion."
       },
+      "instructions": {
+        "es": "De pie con una mancuerna a cada lado y los brazos extendidos.\nMantén el torso erguido.\nEleva los hombros hacia las orejas sin rotarlos.\nMantén 1 segundo arriba y baja controlado.",
+        "en": "Stand with a dumbbell at each side, arms straight.\nKeep your torso upright.\nShrug your shoulders up toward your ears without rolling them.\nHold for a second at the top and lower under control."
+      },
       "primaryMuscle": "traps",
       "secondaryMuscles": ["forearms"],
       "equipment": "dumbbell",
@@ -587,6 +733,10 @@
         "es": "Caminar con carga pesada en cada mano; agarre y estabilidad del tronco.",
         "en": "Walking with a heavy load in each hand; grip and trunk stability."
       },
+      "instructions": {
+        "es": "Levanta una mancuerna pesada en cada mano como en un peso muerto, con la espalda neutra.\nPonte erguido con los hombros atrás y el abdomen firme.\nCamina con pasos cortos y controlados durante la distancia o el tiempo marcados.\nDetente y deja las mancuernas en el suelo flexionando cadera y rodillas.",
+        "en": "Pick up a heavy dumbbell in each hand like a deadlift, back neutral.\nStand tall with shoulders back and abs braced.\nWalk with short, controlled steps for the set distance or time.\nStop and set the dumbbells down by bending your hips and knees."
+      },
       "primaryMuscle": "forearms",
       "secondaryMuscles": ["traps", "abs", "obliques"],
       "equipment": "dumbbell",
@@ -595,13 +745,16 @@
       "tiers": { "hypertrophy": "C", "powerlifting": "B" },
       "tags": []
     },
-
     {
       "slug": "back-extension",
       "name": { "es": "Hiperextensiones", "en": "Back extension" },
       "description": {
         "es": "Extensión de cadera y espalda en banco de 45°; se puede lastrar.",
         "en": "Hip and back extension on a 45° bench; can be weighted."
+      },
+      "instructions": {
+        "es": "Ajusta el banco de hiperextensiones para que la almohadilla quede bajo la cadera.\nCruza los brazos sobre el pecho y baja el torso flexionando la cadera con la espalda neutra.\nSube contrayendo glúteos y lumbares hasta alinear el cuerpo, sin hiperextender.\nBaja controlado.",
+        "en": "Adjust the back extension bench so the pad sits just below your hips.\nCross your arms over your chest and lower your torso by hinging at the hips, back neutral.\nRise by squeezing glutes and lower back until your body is straight, without overextending.\nLower under control."
       },
       "primaryMuscle": "lower_back",
       "secondaryMuscles": ["glutes", "hamstrings"],
@@ -618,6 +771,10 @@
         "es": "Extensión de cadera con el torso apoyado; descomprime la zona lumbar.",
         "en": "Hip extension with the torso supported; decompresses the lower back."
       },
+      "instructions": {
+        "es": "Túmbate boca abajo en la máquina con la cadera en el borde y sujétate de las asas.\nEngancha los tobillos en el rodillo con las piernas colgando.\nEleva las piernas hasta alinearlas con el torso contrayendo los glúteos.\nBaja controlado sin dejar que el rodillo te arrastre.",
+        "en": "Lie face down on the machine with your hips at the edge and hold the handles.\nHook your ankles under the roller with your legs hanging.\nRaise your legs until they line up with your torso, squeezing your glutes.\nLower under control without letting the roller swing you."
+      },
       "primaryMuscle": "lower_back",
       "secondaryMuscles": ["glutes", "hamstrings"],
       "equipment": "machine",
@@ -633,6 +790,10 @@
         "es": "Bisagra de cadera con barra en la espalda; cadena posterior.",
         "en": "Hip hinge with the bar on the back; posterior chain."
       },
+      "instructions": {
+        "es": "Coloca la barra sobre la parte alta de la espalda como en la sentadilla, pies a la anchura de la cadera.\nCon las rodillas levemente flexionadas, lleva la cadera atrás inclinando el torso con la espalda neutra.\nBaja hasta sentir estiramiento en los isquiotibiales (torso cerca de paralelo).\nVuelve a la posición erguida empujando la cadera hacia delante.",
+        "en": "Place the bar on your upper back as for a squat, feet hip-width apart.\nWith knees slightly bent, push your hips back and lean forward with a neutral back.\nLower until you feel a hamstring stretch (torso near parallel).\nReturn upright by driving your hips forward."
+      },
       "primaryMuscle": "hamstrings",
       "secondaryMuscles": ["lower_back", "glutes"],
       "equipment": "barbell",
@@ -641,13 +802,16 @@
       "tiers": { "hypertrophy": "B", "powerlifting": "A" },
       "tags": ["stretch-focused"]
     },
-
     {
       "slug": "overhead-press",
       "name": { "es": "Press militar con barra", "en": "Overhead press" },
       "description": {
         "es": "Press vertical de pie con barra.",
         "en": "Standing vertical press with a barbell."
+      },
+      "instructions": {
+        "es": "De pie, saca la barra a la altura de las clavículas con un agarre algo más ancho que los hombros.\nAprieta glúteos y abdomen y lleva la cabeza levemente atrás.\nEmpuja la barra en línea recta sobre la cabeza hasta extender los brazos, metiendo la cabeza bajo la barra.\nBaja controlado a las clavículas.",
+        "en": "Standing, unrack the bar at collarbone height with a grip slightly wider than your shoulders.\nSqueeze glutes and abs and tilt your head slightly back.\nPress the bar straight overhead to lockout, bringing your head through under the bar.\nLower under control to your collarbones."
       },
       "primaryMuscle": "front_delts",
       "secondaryMuscles": ["side_delts", "triceps", "upper_back"],
@@ -667,6 +831,10 @@
         "es": "Press vertical sentado con mancuernas y respaldo.",
         "en": "Seated vertical press with dumbbells and back support."
       },
+      "instructions": {
+        "es": "Siéntate en un banco con respaldo vertical y las mancuernas a la altura de los hombros.\nApoya la espalda y coloca las palmas hacia delante.\nEmpuja las mancuernas sobre la cabeza hasta casi extender los brazos.\nBaja controlado hasta la altura de las orejas.",
+        "en": "Sit on an upright bench with the dumbbells at shoulder height.\nKeep your back against the pad, palms facing forward.\nPress the dumbbells overhead until your arms are almost straight.\nLower under control to ear level."
+      },
       "primaryMuscle": "front_delts",
       "secondaryMuscles": ["side_delts", "triceps"],
       "equipment": "dumbbell",
@@ -681,6 +849,10 @@
       "description": {
         "es": "Press vertical guiado; estable para trabajar cerca del fallo.",
         "en": "Guided vertical press; stable for training close to failure."
+      },
+      "instructions": {
+        "es": "Ajusta el asiento para que las asas queden a la altura de los hombros.\nSiéntate con la espalda apoyada.\nEmpuja las asas hacia arriba hasta casi extender los brazos.\nBaja controlado hasta la altura de los hombros.",
+        "en": "Adjust the seat so the handles are at shoulder height.\nSit with your back against the pad.\nPress the handles up until your arms are almost straight.\nLower under control to shoulder height."
       },
       "primaryMuscle": "front_delts",
       "secondaryMuscles": ["side_delts", "triceps"],
@@ -697,6 +869,10 @@
         "es": "Press vertical con impulso de piernas; permite más carga.",
         "en": "Vertical press with leg drive; allows heavier loads."
       },
+      "instructions": {
+        "es": "De pie con la barra sobre las clavículas y agarre algo más ancho que los hombros.\nHaz una flexión corta de rodillas (dip) con el torso erguido.\nExtiende piernas y cadera con fuerza y aprovecha el impulso para empujar la barra sobre la cabeza.\nBloquea arriba y baja la barra controlada a las clavículas.",
+        "en": "Stand with the bar on your collarbones, grip slightly wider than your shoulders.\nMake a short knee dip with your torso upright.\nDrive hard through legs and hips and use the momentum to press the bar overhead.\nLock out and lower the bar under control to your collarbones."
+      },
       "primaryMuscle": "front_delts",
       "secondaryMuscles": ["triceps", "quads", "side_delts"],
       "equipment": "barbell",
@@ -711,6 +887,10 @@
       "description": {
         "es": "Press con mancuernas rotando de supino a prono.",
         "en": "Dumbbell press rotating from supinated to pronated."
+      },
+      "instructions": {
+        "es": "Siéntate con las mancuernas delante de los hombros y las palmas hacia ti.\nAl empujar hacia arriba, rota las muñecas para que las palmas terminen hacia delante.\nExtiende casi por completo los brazos sobre la cabeza.\nBaja deshaciendo la rotación hasta la posición inicial.",
+        "en": "Sit with the dumbbells in front of your shoulders, palms facing you.\nAs you press up, rotate your wrists so your palms end facing forward.\nExtend your arms almost fully overhead.\nLower while reversing the rotation to the start position."
       },
       "primaryMuscle": "front_delts",
       "secondaryMuscles": ["side_delts", "triceps"],
@@ -727,6 +907,10 @@
         "es": "Press en diagonal con barra anclada; trayectoria cómoda para el hombro.",
         "en": "Angled press with an anchored bar; shoulder-friendly path."
       },
+      "instructions": {
+        "es": "Coloca la barra en una landmine y sujeta el extremo a la altura del hombro.\nPonte de pie o de rodillas con el abdomen firme.\nEmpuja la barra hacia arriba y adelante hasta extender el brazo.\nBaja controlado al hombro.",
+        "en": "Set a bar in a landmine and hold the end at shoulder height.\nStand or kneel with your abs braced.\nPress the bar up and forward until your arm is straight.\nLower under control to your shoulder."
+      },
       "primaryMuscle": "front_delts",
       "secondaryMuscles": ["chest", "triceps"],
       "equipment": "barbell",
@@ -741,6 +925,10 @@
       "description": {
         "es": "Abducción de hombro con mancuernas para el deltoides lateral.",
         "en": "Shoulder abduction with dumbbells for the side delts."
+      },
+      "instructions": {
+        "es": "De pie con una mancuerna a cada lado y los codos levemente flexionados.\nInclina un poco el torso hacia delante.\nEleva los brazos hacia los lados hasta la altura de los hombros, guiando con los codos.\nBaja controlado sin balancear el cuerpo.",
+        "en": "Stand with a dumbbell at each side, elbows slightly bent.\nLean your torso slightly forward.\nRaise your arms out to the sides to shoulder height, leading with your elbows.\nLower under control without swinging your body."
       },
       "primaryMuscle": "side_delts",
       "secondaryMuscles": ["traps"],
@@ -757,6 +945,10 @@
         "es": "Elevación lateral en polea baja; tensión también en la parte baja.",
         "en": "Lateral raise on a low cable; tension at the bottom too."
       },
+      "instructions": {
+        "es": "Coloca la polea baja y ponte de lado, sujetando el agarre con la mano más alejada.\nDeja que el cable cruce por delante del cuerpo con el codo levemente flexionado.\nEleva el brazo hacia el lado hasta la altura del hombro.\nBaja controlado y completa la serie antes de cambiar de lado.",
+        "en": "Set the pulley low and stand side-on, holding the handle with your far hand.\nLet the cable cross in front of your body, elbow slightly bent.\nRaise your arm out to the side to shoulder height.\nLower under control and finish the set before switching sides."
+      },
       "primaryMuscle": "side_delts",
       "secondaryMuscles": ["traps"],
       "equipment": "cable",
@@ -771,6 +963,10 @@
       "description": {
         "es": "Elevación lateral guiada; fácil de llevar al fallo.",
         "en": "Guided lateral raise; easy to take to failure."
+      },
+      "instructions": {
+        "es": "Ajusta el asiento para que los hombros queden alineados con el eje de la máquina.\nApoya los antebrazos o sujeta las asas.\nEleva los brazos hacia los lados hasta la altura de los hombros.\nBaja controlado sin dejar que el peso descanse.",
+        "en": "Adjust the seat so your shoulders line up with the machine's pivot.\nRest your forearms on the pads or hold the handles.\nRaise your arms out to the sides to shoulder height.\nLower under control without letting the weight rest."
       },
       "primaryMuscle": "side_delts",
       "secondaryMuscles": [],
@@ -787,6 +983,10 @@
         "es": "Tracción vertical cerca del cuerpo; mejor con agarre ancho.",
         "en": "Vertical pull close to the body; better with a wide grip."
       },
+      "instructions": {
+        "es": "De pie, sujeta la barra delante de los muslos con un agarre a la anchura de los hombros.\nMantén el torso erguido.\nTira de la barra hacia el pecho llevando los codos hacia los lados y arriba, hasta la altura de los hombros.\nBaja controlado; si molesta el hombro, reduce el recorrido o abre el agarre.",
+        "en": "Stand holding the bar in front of your thighs with a shoulder-width grip.\nKeep your torso upright.\nPull the bar toward your chest, leading with your elbows out and up to shoulder height.\nLower under control; if your shoulders complain, shorten the range or widen the grip."
+      },
       "primaryMuscle": "side_delts",
       "secondaryMuscles": ["traps", "front_delts"],
       "equipment": "barbell",
@@ -801,6 +1001,10 @@
       "description": {
         "es": "Aperturas inversas en máquina para el deltoides posterior.",
         "en": "Reverse fly on a machine for the rear delts."
+      },
+      "instructions": {
+        "es": "Siéntate mirando hacia el respaldo de la máquina con las asas a la altura de los hombros.\nSujeta las asas con los brazos casi extendidos.\nAbre los brazos hacia atrás en arco hasta la línea del cuerpo, usando los deltoides posteriores.\nVuelve controlado.",
+        "en": "Sit facing the machine's pad with the handles at shoulder height.\nHold the handles with nearly straight arms.\nSweep your arms back in an arc to your body line using your rear delts.\nReturn under control."
       },
       "primaryMuscle": "rear_delts",
       "secondaryMuscles": ["upper_back"],
@@ -817,6 +1021,10 @@
         "es": "Aperturas inversas inclinado con mancuernas.",
         "en": "Bent-over reverse fly with dumbbells."
       },
+      "instructions": {
+        "es": "Inclina el torso casi paralelo al suelo con una mancuerna en cada mano y espalda neutra.\nDeja los brazos colgando con los codos levemente flexionados.\nAbre los brazos hacia los lados hasta la altura de los hombros.\nBaja controlado sin impulso.",
+        "en": "Bend over until your torso is nearly parallel to the floor, a dumbbell in each hand, back neutral.\nLet your arms hang with elbows slightly bent.\nRaise your arms out to the sides to shoulder height.\nLower under control without momentum."
+      },
       "primaryMuscle": "rear_delts",
       "secondaryMuscles": ["upper_back"],
       "equipment": "dumbbell",
@@ -831,6 +1039,10 @@
       "description": {
         "es": "Tracción en polea alta hacia la cara con rotación externa.",
         "en": "High-cable pull to the face with external rotation."
+      },
+      "instructions": {
+        "es": "Coloca una cuerda en la polea a la altura de la cara y sujétala con las palmas hacia abajo.\nDa un paso atrás con los brazos extendidos.\nTira de la cuerda hacia la cara separando las manos y llevando los codos altos y atrás.\nVuelve controlado.",
+        "en": "Attach a rope to the pulley at face height and hold it palms down.\nStep back with your arms straight.\nPull the rope toward your face, spreading your hands and driving your elbows high and back.\nReturn under control."
       },
       "primaryMuscle": "rear_delts",
       "secondaryMuscles": ["upper_back", "traps"],
@@ -847,6 +1059,10 @@
         "es": "Flexión de hombro con mancuernas; el deltoides frontal ya trabaja en los press.",
         "en": "Shoulder flexion with dumbbells; front delts already work in presses."
       },
+      "instructions": {
+        "es": "De pie con las mancuernas delante de los muslos.\nMantén el torso firme y los codos levemente flexionados.\nEleva los brazos al frente hasta la altura de los hombros.\nBaja controlado sin balancear el cuerpo.",
+        "en": "Stand with the dumbbells in front of your thighs.\nKeep your torso tight and elbows slightly bent.\nRaise your arms in front of you to shoulder height.\nLower under control without swinging."
+      },
       "primaryMuscle": "front_delts",
       "secondaryMuscles": [],
       "equipment": "dumbbell",
@@ -855,13 +1071,16 @@
       "tiers": { "hypertrophy": "C", "powerlifting": "C" },
       "tags": []
     },
-
     {
       "slug": "barbell-curl",
       "name": { "es": "Curl con barra", "en": "Barbell curl" },
       "description": {
         "es": "Flexión de codo con barra recta.",
         "en": "Elbow flexion with a straight bar."
+      },
+      "instructions": {
+        "es": "De pie, agarra la barra con las palmas hacia delante a la anchura de los hombros.\nPega los codos a los costados.\nFlexiona los codos subiendo la barra hacia los hombros sin balancear el torso.\nBaja controlado hasta extender los brazos.",
+        "en": "Stand holding the bar palms forward at shoulder width.\nKeep your elbows pinned to your sides.\nCurl the bar toward your shoulders without swinging your torso.\nLower under control to straight arms."
       },
       "primaryMuscle": "biceps",
       "secondaryMuscles": ["forearms"],
@@ -878,6 +1097,10 @@
         "es": "Curl con barra Z; más cómodo para las muñecas.",
         "en": "Curl with an EZ bar; easier on the wrists."
       },
+      "instructions": {
+        "es": "Sujeta la barra Z en los agarres inclinados con las palmas hacia delante.\nMantén los codos pegados a los costados.\nFlexiona los codos hasta llevar la barra cerca de los hombros.\nBaja controlado hasta extender los brazos.",
+        "en": "Hold the EZ bar on the angled grips, palms forward.\nKeep your elbows pinned to your sides.\nCurl the bar up close to your shoulders.\nLower under control to straight arms."
+      },
       "primaryMuscle": "biceps",
       "secondaryMuscles": ["forearms"],
       "equipment": "barbell",
@@ -892,6 +1115,10 @@
       "description": {
         "es": "Curl de pie con mancuernas, alterno o simultáneo.",
         "en": "Standing curl with dumbbells, alternating or together."
+      },
+      "instructions": {
+        "es": "De pie con una mancuerna en cada mano y las palmas hacia delante.\nMantén los codos pegados al cuerpo.\nFlexiona los codos subiendo las mancuernas hacia los hombros.\nBaja controlado hasta extender los brazos.",
+        "en": "Stand with a dumbbell in each hand, palms forward.\nKeep your elbows close to your body.\nCurl the dumbbells up toward your shoulders.\nLower under control to straight arms."
       },
       "primaryMuscle": "biceps",
       "secondaryMuscles": ["forearms"],
@@ -908,6 +1135,10 @@
         "es": "Curl sentado en banco inclinado; bíceps en posición estirada.",
         "en": "Curl seated on an incline bench; biceps in a stretched position."
       },
+      "instructions": {
+        "es": "Siéntate en un banco inclinado a 45–60° con los brazos colgando detrás del torso.\nGira las palmas hacia delante.\nFlexiona los codos sin adelantarlos, subiendo las mancuernas hacia los hombros.\nBaja controlado hasta estirar por completo el bíceps.",
+        "en": "Sit on a 45–60° incline bench with your arms hanging behind your torso.\nTurn your palms forward.\nCurl without moving your elbows forward, bringing the dumbbells toward your shoulders.\nLower under control to a full biceps stretch."
+      },
       "primaryMuscle": "biceps",
       "secondaryMuscles": ["forearms"],
       "equipment": "dumbbell",
@@ -922,6 +1153,10 @@
       "description": {
         "es": "Curl con agarre neutro; braquial y braquiorradial.",
         "en": "Neutral-grip curl; brachialis and brachioradialis."
+      },
+      "instructions": {
+        "es": "De pie con las mancuernas a los lados y las palmas enfrentadas.\nMantén los codos pegados al cuerpo.\nFlexiona los codos sin girar las muñecas.\nBaja controlado hasta extender los brazos.",
+        "en": "Stand with the dumbbells at your sides, palms facing each other.\nKeep your elbows close to your body.\nCurl up without rotating your wrists.\nLower under control to straight arms."
       },
       "primaryMuscle": "biceps",
       "secondaryMuscles": ["forearms"],
@@ -938,6 +1173,10 @@
         "es": "Curl con los brazos apoyados en banco Scott; sin impulso.",
         "en": "Curl with arms braced on a preacher bench; no momentum."
       },
+      "instructions": {
+        "es": "Siéntate en el banco Scott con la parte trasera de los brazos apoyada en el pupitre.\nAgarra la barra con las palmas hacia arriba y los brazos casi extendidos.\nFlexiona los codos hasta llevar la barra cerca de los hombros.\nBaja controlado hasta casi extender, sin rebotar abajo.",
+        "en": "Sit at the preacher bench with the backs of your arms on the pad.\nGrip the bar palms up with your arms nearly straight.\nCurl the bar up close to your shoulders.\nLower under control to almost straight, without bouncing at the bottom."
+      },
       "primaryMuscle": "biceps",
       "secondaryMuscles": [],
       "equipment": "barbell",
@@ -952,6 +1191,10 @@
       "description": {
         "es": "Curl predicador guiado; resistencia uniforme.",
         "en": "Guided preacher curl; even resistance."
+      },
+      "instructions": {
+        "es": "Ajusta el asiento para que las axilas queden sobre el borde del pupitre.\nAgarra las asas con las palmas hacia arriba.\nFlexiona los codos hasta la contracción completa.\nBaja controlado hasta casi extender los brazos.",
+        "en": "Adjust the seat so your armpits rest on the top of the pad.\nGrab the handles palms up.\nCurl up to a full contraction.\nLower under control until your arms are almost straight."
       },
       "primaryMuscle": "biceps",
       "secondaryMuscles": [],
@@ -968,6 +1211,10 @@
         "es": "Curl en polea baja; tensión constante.",
         "en": "Curl on a low cable; constant tension."
       },
+      "instructions": {
+        "es": "Colócate frente a la polea baja con una barra o cuerda.\nPega los codos a los costados.\nFlexiona los codos llevando el agarre hacia los hombros.\nBaja controlado manteniendo la tensión del cable.",
+        "en": "Stand facing the low pulley with a bar or rope.\nPin your elbows to your sides.\nCurl the handle toward your shoulders.\nLower under control, keeping tension on the cable."
+      },
       "primaryMuscle": "biceps",
       "secondaryMuscles": ["forearms"],
       "equipment": "cable",
@@ -982,6 +1229,10 @@
       "description": {
         "es": "Curl a una mano de espaldas a la polea; máxima tensión en estiramiento.",
         "en": "One-arm curl facing away from the cable; max tension when stretched."
+      },
+      "instructions": {
+        "es": "Coloca la polea baja, sujeta el agarre y da unos pasos alejándote de ella.\nDeja que el brazo quede por detrás del torso, estirando el bíceps.\nFlexiona el codo sin adelantarlo.\nVuelve controlado al estiramiento y completa la serie antes de cambiar de brazo.",
+        "en": "Set the pulley low, grab the handle and step away from the stack.\nLet your arm trail behind your torso, stretching the biceps.\nCurl without moving your elbow forward.\nReturn under control to the stretch and finish the set before switching arms."
       },
       "primaryMuscle": "biceps",
       "secondaryMuscles": [],
@@ -998,6 +1249,10 @@
         "es": "Curl unilateral sentado con el codo apoyado en el muslo.",
         "en": "Seated unilateral curl with the elbow braced on the thigh."
       },
+      "instructions": {
+        "es": "Siéntate en un banco y apoya la parte trasera del brazo en la cara interna del muslo.\nSujeta la mancuerna con el brazo extendido.\nFlexiona el codo hasta la contracción completa.\nBaja controlado y completa la serie antes de cambiar de brazo.",
+        "en": "Sit on a bench and rest the back of your upper arm on your inner thigh.\nHold the dumbbell with your arm straight.\nCurl up to a full contraction.\nLower under control and finish the set before switching arms."
+      },
       "primaryMuscle": "biceps",
       "secondaryMuscles": [],
       "equipment": "dumbbell",
@@ -1012,6 +1267,10 @@
       "description": {
         "es": "Curl con agarre prono; braquiorradial y extensores.",
         "en": "Overhand-grip curl; brachioradialis and extensors."
+      },
+      "instructions": {
+        "es": "De pie, agarra la barra con las palmas hacia abajo a la anchura de los hombros.\nPega los codos a los costados.\nFlexiona los codos manteniendo las muñecas rectas.\nBaja controlado.",
+        "en": "Stand holding the bar palms down at shoulder width.\nPin your elbows to your sides.\nCurl up, keeping your wrists straight.\nLower under control."
       },
       "primaryMuscle": "forearms",
       "secondaryMuscles": ["biceps"],
@@ -1028,6 +1287,10 @@
         "es": "Flexión de muñeca con barra o mancuernas.",
         "en": "Wrist flexion with a barbell or dumbbells."
       },
+      "instructions": {
+        "es": "Siéntate y apoya los antebrazos en los muslos o en un banco con las muñecas por fuera.\nSujeta la barra con las palmas hacia arriba.\nFlexiona las muñecas subiendo la barra lo más posible.\nBaja controlado dejando que la barra ruede hacia los dedos.",
+        "en": "Sit and rest your forearms on your thighs or a bench with your wrists hanging off.\nHold the bar palms up.\nCurl your wrists up as far as possible.\nLower under control, letting the bar roll toward your fingers."
+      },
       "primaryMuscle": "forearms",
       "secondaryMuscles": [],
       "equipment": "barbell",
@@ -1036,13 +1299,16 @@
       "tiers": { "hypertrophy": "B", "powerlifting": "C" },
       "tags": []
     },
-
     {
       "slug": "triceps-pushdown",
       "name": { "es": "Extensión de tríceps en polea (pushdown)", "en": "Triceps pushdown" },
       "description": {
         "es": "Extensión de codo en polea alta con barra o cuerda.",
         "en": "Elbow extension on a high cable with a bar or rope."
+      },
+      "instructions": {
+        "es": "Colócate frente a la polea alta con una barra o cuerda.\nPega los codos a los costados con los antebrazos paralelos al suelo.\nExtiende los codos empujando hacia abajo hasta estirar los brazos.\nVuelve controlado sin despegar los codos.",
+        "en": "Face the high pulley with a bar or rope.\nPin your elbows to your sides, forearms parallel to the floor.\nExtend your elbows, pushing down until your arms are straight.\nReturn under control without moving your elbows."
       },
       "primaryMuscle": "triceps",
       "secondaryMuscles": [],
@@ -1062,6 +1328,10 @@
         "es": "Extensión con los brazos por encima de la cabeza; cabeza larga estirada.",
         "en": "Extension with arms overhead; long head in a stretched position."
       },
+      "instructions": {
+        "es": "De espaldas a la polea, sujeta la cuerda detrás de la cabeza con los codos apuntando arriba.\nDa un paso al frente con el torso levemente inclinado.\nExtiende los codos llevando la cuerda arriba y adelante.\nVuelve controlado hasta estirar el tríceps.",
+        "en": "With your back to the pulley, hold the rope behind your head, elbows pointing up.\nStep forward with your torso slightly inclined.\nExtend your elbows, moving the rope up and forward.\nReturn under control to a triceps stretch."
+      },
       "primaryMuscle": "triceps",
       "secondaryMuscles": [],
       "equipment": "cable",
@@ -1080,6 +1350,10 @@
         "es": "Extensión por encima de la cabeza con una mancuerna, sentado o de pie.",
         "en": "Overhead extension with one dumbbell, seated or standing."
       },
+      "instructions": {
+        "es": "Sentado o de pie, sujeta una mancuerna con ambas manos sobre la cabeza.\nMantén los codos cerca de la cabeza y apuntando arriba.\nBaja la mancuerna por detrás de la cabeza flexionando los codos.\nExtiende los codos hasta volver arriba.",
+        "en": "Seated or standing, hold one dumbbell overhead with both hands.\nKeep your elbows close to your head and pointing up.\nLower the dumbbell behind your head by bending your elbows.\nExtend your elbows back to the top."
+      },
       "primaryMuscle": "triceps",
       "secondaryMuscles": [],
       "equipment": "dumbbell",
@@ -1094,6 +1368,10 @@
       "description": {
         "es": "Extensión de tríceps tumbado con barra Z hacia la frente o detrás de la cabeza.",
         "en": "Lying triceps extension with an EZ bar to the forehead or behind the head."
+      },
+      "instructions": {
+        "es": "Túmbate con la barra (o barra Z) sobre el pecho y los brazos extendidos.\nInclina un poco los brazos hacia la cabeza.\nFlexiona los codos bajando la barra hacia la frente o detrás de la cabeza, sin mover los codos.\nExtiende los codos hasta volver a la posición inicial.",
+        "en": "Lie down holding the bar (or EZ bar) over your chest with straight arms.\nTilt your arms slightly back toward your head.\nBend your elbows, lowering the bar toward your forehead or behind your head, elbows still.\nExtend your elbows back to the start."
       },
       "primaryMuscle": "triceps",
       "secondaryMuscles": [],
@@ -1110,6 +1388,10 @@
         "es": "Híbrido entre press cerrado y press francés; muy específico para el bloqueo.",
         "en": "Hybrid of close-grip press and skull crusher; very specific for lockout."
       },
+      "instructions": {
+        "es": "Túmbate con la barra sobre el pecho y un agarre a la anchura de los hombros.\nBaja la barra hacia la barbilla flexionando los codos y llevándolos hacia delante.\nDetente cuando los antebrazos queden cerca de los bíceps.\nExtiende los codos para volver a la posición inicial.",
+        "en": "Lie with the bar over your chest, shoulder-width grip.\nLower the bar toward your chin by bending your elbows and letting them travel forward.\nStop when your forearms come close to your biceps.\nExtend your elbows back to the start."
+      },
       "primaryMuscle": "triceps",
       "secondaryMuscles": ["chest"],
       "equipment": "barbell",
@@ -1124,6 +1406,10 @@
       "description": {
         "es": "Fondos en paralelas con el torso vertical.",
         "en": "Parallel-bar dips with an upright torso."
+      },
+      "instructions": {
+        "es": "Sujétate en las paralelas con los brazos extendidos y el torso vertical.\nMantén los codos apuntando hacia atrás.\nBaja hasta que los codos formen unos 90°.\nEmpuja hasta extender los brazos.",
+        "en": "Support yourself on the parallel bars with straight arms and an upright torso.\nKeep your elbows pointing back.\nLower until your elbows reach about 90°.\nPress back up to straight arms."
       },
       "primaryMuscle": "triceps",
       "secondaryMuscles": ["chest", "front_delts"],
@@ -1140,6 +1426,10 @@
         "es": "Extensión de codo unilateral inclinado con polea.",
         "en": "Bent-over unilateral elbow extension with a cable."
       },
+      "instructions": {
+        "es": "Coloca la polea baja e inclina el torso con el brazo pegado al costado.\nSujeta el cable con el codo flexionado a 90°.\nExtiende el codo hacia atrás hasta estirar el brazo.\nVuelve controlado y completa la serie antes de cambiar de brazo.",
+        "en": "Set the pulley low, hinge forward and keep your upper arm against your side.\nHold the cable with your elbow bent to 90°.\nExtend your elbow back until your arm is straight.\nReturn under control and finish the set before switching arms."
+      },
       "primaryMuscle": "triceps",
       "secondaryMuscles": [],
       "equipment": "cable",
@@ -1148,13 +1438,16 @@
       "tiers": { "hypertrophy": "B", "powerlifting": "C" },
       "tags": ["unilateral"]
     },
-
     {
       "slug": "cable-crunch",
       "name": { "es": "Crunch en polea", "en": "Cable crunch" },
       "description": {
         "es": "Flexión de tronco de rodillas con polea alta; fácil de progresar.",
         "en": "Kneeling trunk flexion with a high cable; easy to progress."
+      },
+      "instructions": {
+        "es": "Arrodíllate frente a la polea alta y sujeta la cuerda junto a la cabeza.\nMantén la cadera quieta.\nFlexiona el tronco llevando los codos hacia los muslos, redondeando la columna.\nVuelve controlado sin dejar que el peso te levante.",
+        "en": "Kneel facing the high pulley and hold the rope beside your head.\nKeep your hips still.\nCrunch down, bringing your elbows toward your thighs and rounding your spine.\nReturn under control without letting the weight pull you up."
       },
       "primaryMuscle": "abs",
       "secondaryMuscles": [],
@@ -1171,6 +1464,10 @@
         "es": "Flexión de tronco guiada con carga regulable.",
         "en": "Guided trunk flexion with adjustable load."
       },
+      "instructions": {
+        "es": "Ajusta el asiento y sujeta las asas o apoya el pecho en la almohadilla.\nSiéntate con la espalda apoyada.\nFlexiona el tronco contrayendo el abdomen.\nVuelve controlado.",
+        "en": "Adjust the seat and hold the handles or rest your chest on the pad.\nSit with your back against the pad.\nCrunch forward by contracting your abs.\nReturn under control."
+      },
       "primaryMuscle": "abs",
       "secondaryMuscles": [],
       "equipment": "machine",
@@ -1185,6 +1482,10 @@
       "description": {
         "es": "Crunch en banco declinado; se puede lastrar.",
         "en": "Crunch on a decline bench; can be weighted."
+      },
+      "instructions": {
+        "es": "Engancha los pies en un banco declinado y túmbate con las manos junto a la cabeza.\nDespega la espalda flexionando el tronco.\nSube hasta acercar el pecho a los muslos sin tirar del cuello.\nBaja controlado.",
+        "en": "Hook your feet on a decline bench and lie back with your hands by your head.\nCurl your torso up off the bench.\nRise until your chest approaches your thighs without pulling on your neck.\nLower under control."
       },
       "primaryMuscle": "abs",
       "secondaryMuscles": [],
@@ -1201,6 +1502,10 @@
         "es": "Elevación de piernas colgado de una barra con retroversión pélvica.",
         "en": "Leg raise hanging from a bar with posterior pelvic tilt."
       },
+      "instructions": {
+        "es": "Cuélgate de la barra con los brazos extendidos y el cuerpo quieto.\nContrae el abdomen e inclina la pelvis hacia atrás.\nEleva las piernas (rectas o flexionadas) hasta al menos la altura de la cadera.\nBaja controlado sin balancearte.",
+        "en": "Hang from the bar with straight arms and a still body.\nBrace your abs and tilt your pelvis back.\nRaise your legs (straight or bent) to at least hip height.\nLower under control without swinging."
+      },
       "primaryMuscle": "abs",
       "secondaryMuscles": ["obliques"],
       "equipment": "bodyweight",
@@ -1215,6 +1520,10 @@
       "description": {
         "es": "Antiextensión con rueda; muy exigente para el core.",
         "en": "Anti-extension with an ab wheel; very demanding for the core."
+      },
+      "instructions": {
+        "es": "Arrodíllate y sujeta la rueda bajo los hombros.\nContrae abdomen y glúteos con la espalda neutra.\nRueda hacia delante extendiendo el cuerpo hasta donde puedas sin arquear la zona lumbar.\nVuelve tirando con el abdomen.",
+        "en": "Kneel and hold the wheel under your shoulders.\nBrace your abs and glutes with a neutral back.\nRoll forward, extending your body as far as you can without arching your lower back.\nPull back using your abs."
       },
       "primaryMuscle": "abs",
       "secondaryMuscles": ["obliques", "lats"],
@@ -1231,6 +1540,10 @@
         "es": "Antirrotación con polea; estabilidad del tronco.",
         "en": "Anti-rotation with a cable; trunk stability."
       },
+      "instructions": {
+        "es": "Coloca la polea a la altura del pecho y ponte de lado a ella con el agarre en el pecho.\nSepara los pies a la anchura de los hombros y contrae el abdomen.\nEmpuja el agarre al frente hasta extender los brazos sin dejar que el torso gire.\nMantén 1–2 segundos y vuelve al pecho; completa la serie antes de cambiar de lado.",
+        "en": "Set the pulley at chest height and stand side-on with the handle at your chest.\nStand feet shoulder-width apart and brace your abs.\nPress the handle straight out until your arms are straight, resisting rotation.\nHold 1–2 seconds and bring it back; finish the set before switching sides."
+      },
       "primaryMuscle": "obliques",
       "secondaryMuscles": ["abs"],
       "equipment": "cable",
@@ -1246,6 +1559,10 @@
         "es": "Inclinación lateral de tronco con mancuerna.",
         "en": "Lateral trunk bend holding a dumbbell."
       },
+      "instructions": {
+        "es": "De pie con una mancuerna en una mano y la otra en la cintura.\nMantén la cadera quieta.\nInclina el torso hacia el lado de la mancuerna.\nVuelve a la posición erguida usando los oblicuos del lado contrario.",
+        "en": "Stand with a dumbbell in one hand and the other on your waist.\nKeep your hips still.\nBend your torso toward the dumbbell side.\nReturn upright using the obliques on the opposite side."
+      },
       "primaryMuscle": "obliques",
       "secondaryMuscles": [],
       "equipment": "dumbbell",
@@ -1254,13 +1571,16 @@
       "tiers": { "hypertrophy": "B", "powerlifting": "C" },
       "tags": ["home-friendly"]
     },
-
     {
       "slug": "barbell-back-squat",
       "name": { "es": "Sentadilla trasera con barra", "en": "Barbell back squat" },
       "description": {
         "es": "Sentadilla con la barra en la espalda; levantamiento de competición.",
         "en": "Squat with the bar on the back; competition lift."
+      },
+      "instructions": {
+        "es": "Coloca la barra sobre los trapecios, sácala del rack y separa los pies a la anchura de los hombros.\nToma aire, contrae el abdomen y mantén el pecho alto.\nBaja llevando la cadera atrás y abajo hasta romper el paralelo, rodillas en línea con los pies.\nSube empujando el suelo con todo el pie hasta extender cadera y rodillas.",
+        "en": "Place the bar on your upper traps, unrack it and set your feet shoulder-width apart.\nTake a breath, brace your abs and keep your chest up.\nSit down and back until you break parallel, knees tracking over your feet.\nDrive up through your whole foot until your hips and knees are straight."
       },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "adductors", "lower_back"],
@@ -1277,6 +1597,10 @@
         "es": "Sentadilla con la barra baja en la espalda; más cadera y más carga.",
         "en": "Squat with the bar low on the back; more hips and heavier loads."
       },
+      "instructions": {
+        "es": "Coloca la barra baja sobre los deltoides posteriores, bajo la espina de la escápula.\nSepara los pies algo más que los hombros con las puntas hacia fuera.\nInclina el torso y lleva la cadera atrás al bajar hasta romper el paralelo.\nSube empujando con la cadera manteniendo la espalda neutra.",
+        "en": "Place the bar low on your rear delts, below the spine of the shoulder blade.\nStand slightly wider than shoulder width with toes out.\nLean your torso and push your hips back as you descend below parallel.\nDrive up with your hips, keeping a neutral back."
+      },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "adductors", "hamstrings", "lower_back"],
       "equipment": "barbell",
@@ -1291,6 +1615,10 @@
       "description": {
         "es": "Sentadilla con pausa de 2-3 s en el fondo; posición y salida del hoyo.",
         "en": "Squat with a 2-3 s pause at the bottom; position and out-of-the-hole strength."
+      },
+      "instructions": {
+        "es": "Prepárate como en la sentadilla trasera.\nBaja controlado hasta la profundidad completa.\nMantén la posición abajo 2 segundos sin rebotar ni perder tensión.\nSube con fuerza hasta extender cadera y rodillas.",
+        "en": "Set up as for a back squat.\nDescend under control to full depth.\nHold the bottom position for 2 seconds without bouncing or losing tightness.\nDrive up hard until your hips and knees are straight."
       },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "adductors", "lower_back"],
@@ -1307,6 +1635,10 @@
         "es": "Sentadilla con la barra delante; torso erguido y más cuádriceps.",
         "en": "Squat with the bar in front; upright torso and more quads."
       },
+      "instructions": {
+        "es": "Apoya la barra sobre los deltoides delanteros con los codos altos.\nSepara los pies a la anchura de los hombros y contrae el abdomen.\nBaja con el torso erguido hasta romper el paralelo.\nSube manteniendo los codos altos.",
+        "en": "Rest the bar on your front delts with your elbows high.\nStand shoulder-width apart and brace your abs.\nSquat down with an upright torso to below parallel.\nDrive up while keeping your elbows high."
+      },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "upper_back", "abs"],
       "equipment": "barbell",
@@ -1321,6 +1653,10 @@
       "description": {
         "es": "Sentadilla iniciada desde pines sin rebote; fuerza desde parado.",
         "en": "Squat started from pins with no rebound; strength from a dead stop."
+      },
+      "instructions": {
+        "es": "Coloca los pines del rack a la altura de tu punto débil y la barra apoyada en ellos.\nMétete bajo la barra en posición de sentadilla y colócala sobre los trapecios.\nContrae el abdomen y empuja desde parado hasta ponerte de pie.\nBaja controlado hasta apoyar de nuevo la barra en los pines.",
+        "en": "Set the rack pins at your sticking point with the bar resting on them.\nGet under the bar in your squat position and set it on your traps.\nBrace and drive up from a dead stop until you're standing.\nLower under control until the bar rests on the pins again."
       },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "lower_back"],
@@ -1337,6 +1673,10 @@
         "es": "Sentadilla sentándose en un cajón; controla profundidad y técnica.",
         "en": "Squat sitting back onto a box; controls depth and technique."
       },
+      "instructions": {
+        "es": "Coloca un cajón detrás de ti a la altura deseada (normalmente paralelo).\nCon la barra en la espalda, lleva la cadera atrás y baja hasta sentarte en el cajón.\nHaz una pausa breve sin relajar el abdomen.\nSube empujando con la cadera y las piernas.",
+        "en": "Place a box behind you at the target height (usually parallel).\nWith the bar on your back, push your hips back and sit down onto the box.\nPause briefly without relaxing your brace.\nDrive up through your hips and legs."
+      },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "hamstrings"],
       "equipment": "barbell",
@@ -1351,6 +1691,10 @@
       "description": {
         "es": "Sentadilla con barra SSB; menos estrés en hombros y más espalda alta.",
         "en": "Squat with a safety squat bar; less shoulder stress, more upper back."
+      },
+      "instructions": {
+        "es": "Coloca la barra de seguridad sobre los trapecios y sujeta las asas frontales.\nSepara los pies a la anchura de los hombros y contrae el abdomen.\nBaja con el torso erguido hasta romper el paralelo, resistiendo que la barra te incline.\nSube empujando el suelo.",
+        "en": "Place the safety squat bar on your traps and hold the front handles.\nStand shoulder-width apart and brace your abs.\nSquat to below parallel with an upright torso, resisting the bar pulling you forward.\nDrive up through the floor."
       },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "upper_back", "lower_back"],
@@ -1367,6 +1711,10 @@
         "es": "Sentadilla con la carga en la cadera; sin compresión de columna.",
         "en": "Squat with the load on the hips; no spinal compression."
       },
+      "instructions": {
+        "es": "Colócate el cinturón en la cadera y súbete a la plataforma con los pies a la anchura de los hombros.\nSujeta las asas para estabilizarte.\nBaja flexionando cadera y rodillas hasta la profundidad completa.\nSube empujando con las piernas.",
+        "en": "Attach the belt around your hips and stand on the platform, feet shoulder-width apart.\nHold the handles for balance.\nSquat down to full depth by bending hips and knees.\nDrive up with your legs."
+      },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "adductors"],
       "equipment": "machine",
@@ -1381,6 +1729,10 @@
       "description": {
         "es": "Sentadilla en máquina inclinada; gran recorrido de cuádriceps con estabilidad.",
         "en": "Squat on an angled machine; deep quad range with stability."
+      },
+      "instructions": {
+        "es": "Apoya la espalda y los hombros en la máquina con los pies a la anchura de los hombros en la plataforma.\nQuita los seguros.\nBaja controlado flexionando las rodillas hasta al menos 90°.\nEmpuja la plataforma hasta casi extender las piernas.",
+        "en": "Put your back and shoulders against the pads, feet shoulder-width on the platform.\nRelease the safety handles.\nLower under control until your knees reach at least 90°.\nPush the platform until your legs are almost straight."
       },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "adductors"],
@@ -1397,6 +1749,10 @@
         "es": "Sentadilla en máquina de péndulo; mucha profundidad con la espalda apoyada.",
         "en": "Squat on a pendulum machine; very deep with the back supported."
       },
+      "instructions": {
+        "es": "Colócate en la máquina con los hombros bajo las almohadillas y los pies en la plataforma.\nQuita el seguro.\nBaja controlado hasta la profundidad completa.\nEmpuja hasta casi extender las piernas.",
+        "en": "Step into the machine with your shoulders under the pads and feet on the platform.\nRelease the safety.\nDescend under control to full depth.\nPush until your legs are almost straight."
+      },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes"],
       "equipment": "machine",
@@ -1411,6 +1767,10 @@
       "description": {
         "es": "Empuje de piernas en máquina; mucha carga sin cargar la columna.",
         "en": "Machine leg push; heavy loading without loading the spine."
+      },
+      "instructions": {
+        "es": "Siéntate con la espalda apoyada y los pies a la anchura de los hombros en la plataforma.\nQuita los seguros con las piernas casi extendidas.\nBaja la plataforma hasta que las rodillas formen unos 90° sin despegar la zona lumbar.\nEmpuja hasta casi extender las piernas, sin bloquear las rodillas.",
+        "en": "Sit with your back against the pad, feet shoulder-width on the platform.\nRelease the safeties with your legs almost straight.\nLower the platform until your knees reach about 90° without your lower back lifting.\nPress until your legs are almost straight, without locking your knees."
       },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "adductors"],
@@ -1427,6 +1787,10 @@
         "es": "Sentadilla con barra guiada; permite adelantar los pies para más cuádriceps.",
         "en": "Squat on a guided bar; feet can go forward for more quads."
       },
+      "instructions": {
+        "es": "Colócate bajo la barra de la Smith con la barra sobre los trapecios y los pies algo adelantados.\nDesbloquea la barra y contrae el abdomen.\nBaja hasta la profundidad completa con las rodillas en línea con los pies.\nSube hasta extender cadera y rodillas y bloquea la barra al terminar.",
+        "en": "Step under the Smith bar with it on your traps and your feet slightly forward.\nUnhook the bar and brace your abs.\nSquat to full depth with your knees tracking over your feet.\nStand up to full extension and re-hook the bar when done."
+      },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes"],
       "equipment": "smith",
@@ -1441,6 +1805,10 @@
       "description": {
         "es": "Sentadilla sujetando una mancuerna o kettlebell al pecho.",
         "en": "Squat holding a dumbbell or kettlebell at the chest."
+      },
+      "instructions": {
+        "es": "Sujeta una mancuerna vertical contra el pecho.\nSepara los pies a la anchura de los hombros con las puntas algo hacia fuera.\nBaja con el torso erguido hasta que los codos queden entre las rodillas.\nSube empujando el suelo.",
+        "en": "Hold one dumbbell vertically against your chest.\nStand shoulder-width apart with toes slightly out.\nSquat down with an upright torso until your elbows are between your knees.\nDrive up through the floor."
       },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "abs"],
@@ -1457,6 +1825,10 @@
         "es": "Sentadilla unilateral con el pie trasero elevado.",
         "en": "Unilateral squat with the rear foot elevated."
       },
+      "instructions": {
+        "es": "Apoya el empeine del pie trasero en un banco y adelanta el otro pie.\nSujeta una mancuerna en cada mano con el torso erguido.\nBaja la rodilla trasera hacia el suelo con la rodilla delantera en línea con el pie.\nSube empujando con la pierna delantera; completa la serie antes de cambiar.",
+        "en": "Rest the top of your back foot on a bench and step the other foot forward.\nHold a dumbbell in each hand with an upright torso.\nLower your back knee toward the floor, front knee tracking over your foot.\nDrive up through the front leg; finish the set before switching."
+      },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "adductors"],
       "equipment": "dumbbell",
@@ -1471,6 +1843,10 @@
       "description": {
         "es": "Zancadas alternas avanzando con mancuernas.",
         "en": "Alternating forward lunges with dumbbells."
+      },
+      "instructions": {
+        "es": "De pie con una mancuerna en cada mano.\nDa un paso largo al frente.\nBaja la rodilla trasera cerca del suelo con el torso erguido.\nEmpuja con la pierna delantera y avanza con la otra pierna al siguiente paso.",
+        "en": "Stand with a dumbbell in each hand.\nTake a long step forward.\nLower your back knee close to the floor with an upright torso.\nPush through the front leg and step the other leg forward into the next lunge."
       },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "adductors"],
@@ -1487,6 +1863,10 @@
         "es": "Subida unilateral a un cajón con mancuernas.",
         "en": "Unilateral step onto a box with dumbbells."
       },
+      "instructions": {
+        "es": "Colócate frente a un cajón estable con una mancuerna en cada mano.\nApoya todo un pie sobre el cajón.\nSube empujando con esa pierna sin impulsarte con la de abajo.\nBaja controlado y completa la serie antes de cambiar de pierna.",
+        "en": "Stand facing a sturdy box with a dumbbell in each hand.\nPlace one whole foot on the box.\nStep up by driving through that leg without pushing off the bottom one.\nStep down under control and finish the set before switching legs."
+      },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes"],
       "equipment": "dumbbell",
@@ -1501,6 +1881,10 @@
       "description": {
         "es": "Extensión de rodilla en máquina; aísla el cuádriceps, incluido el recto femoral.",
         "en": "Machine knee extension; isolates the quads, including the rectus femoris."
+      },
+      "instructions": {
+        "es": "Ajusta el respaldo para que las rodillas queden alineadas con el eje y el rodillo sobre los tobillos.\nSujeta las asas del asiento.\nExtiende las rodillas hasta estirar las piernas, apretando los cuádriceps.\nBaja controlado.",
+        "en": "Adjust the backrest so your knees line up with the pivot and the pad sits on your ankles.\nHold the seat handles.\nExtend your knees until your legs are straight, squeezing your quads.\nLower under control."
       },
       "primaryMuscle": "quads",
       "secondaryMuscles": [],
@@ -1517,6 +1901,10 @@
         "es": "Sentadilla inclinando el cuerpo hacia atrás sobre las rodillas; cuádriceps estirado.",
         "en": "Squat leaning back over the knees; quads in a stretched position."
       },
+      "instructions": {
+        "es": "Sujétate a un soporte con una mano y ponte de puntillas.\nInclina el torso atrás manteniendo cadera y torso alineados.\nLleva las rodillas hacia delante y baja hasta donde controles.\nVuelve extendiendo las rodillas.",
+        "en": "Hold a support with one hand and rise onto your toes.\nLean back, keeping your hips and torso in line.\nPush your knees forward and lower as far as you can control.\nReturn by extending your knees."
+      },
       "primaryMuscle": "quads",
       "secondaryMuscles": [],
       "equipment": "bodyweight",
@@ -1525,13 +1913,16 @@
       "tiers": { "hypertrophy": "B", "powerlifting": "C" },
       "tags": ["stretch-focused", "home-friendly"]
     },
-
     {
       "slug": "conventional-deadlift",
       "name": { "es": "Peso muerto convencional", "en": "Conventional deadlift" },
       "description": {
         "es": "Peso muerto con los pies al ancho de cadera y agarre por fuera; levantamiento de competición.",
         "en": "Deadlift with hip-width stance and grip outside the legs; competition lift."
+      },
+      "instructions": {
+        "es": "Colócate con la barra sobre la mitad del pie y los pies a la anchura de la cadera.\nAgarra la barra justo por fuera de las piernas, baja la cadera y deja la espalda neutra con el pecho alto.\nTensa los dorsales y empuja el suelo con las piernas, manteniendo la barra pegada al cuerpo.\nExtiende cadera y rodillas a la vez hasta quedar erguido; baja la barra por el mismo camino.",
+        "en": "Stand with the bar over your mid-foot, feet hip-width apart.\nGrip just outside your legs, drop your hips and set a neutral back with your chest up.\nTighten your lats and push the floor away, keeping the bar against your body.\nLock out hips and knees together; lower the bar along the same path."
       },
       "primaryMuscle": "hamstrings",
       "secondaryMuscles": ["glutes", "lower_back", "quads", "traps", "forearms"],
@@ -1548,6 +1939,10 @@
         "es": "Peso muerto con postura amplia y agarre por dentro; levantamiento de competición.",
         "en": "Deadlift with a wide stance and grip inside the legs; competition lift."
       },
+      "instructions": {
+        "es": "Separa mucho los pies con las puntas hacia fuera y la barra sobre la mitad del pie.\nAgarra la barra entre las piernas con los brazos verticales.\nBaja la cadera, abre las rodillas hacia fuera y lleva el pecho alto.\nEmpuja el suelo hacia los lados y extiende cadera y rodillas hasta quedar erguido.",
+        "en": "Take a wide stance with toes out and the bar over your mid-foot.\nGrip the bar between your legs with vertical arms.\nDrop your hips, push your knees out and lift your chest.\nPush the floor apart and extend hips and knees until you're standing tall."
+      },
       "primaryMuscle": "glutes",
       "secondaryMuscles": ["quads", "adductors", "hamstrings", "lower_back"],
       "equipment": "barbell",
@@ -1562,6 +1957,10 @@
       "description": {
         "es": "Peso muerto con pausa justo bajo la rodilla; posición y control.",
         "en": "Deadlift paused just below the knee; position and control."
+      },
+      "instructions": {
+        "es": "Prepárate como en el peso muerto.\nDespega la barra del suelo y detente justo debajo de las rodillas.\nMantén la posición 1–2 segundos con la espalda neutra.\nTermina el tirón hasta quedar erguido.",
+        "en": "Set up as for a deadlift.\nBreak the bar off the floor and stop just below your knees.\nHold for 1–2 seconds with a neutral back.\nFinish the pull to lockout."
       },
       "primaryMuscle": "hamstrings",
       "secondaryMuscles": ["glutes", "lower_back", "quads"],
@@ -1578,6 +1977,10 @@
         "es": "Peso muerto de pie sobre una plataforma; refuerza el despegue.",
         "en": "Deadlift standing on a platform; strengthens the pull off the floor."
       },
+      "instructions": {
+        "es": "Súbete a una plataforma de 2–8 cm con la barra sobre la mitad del pie.\nBaja la cadera más que en el peso muerto normal manteniendo la espalda neutra.\nEmpuja el suelo con las piernas y lleva la barra pegada al cuerpo.\nExtiende cadera y rodillas hasta quedar erguido.",
+        "en": "Stand on a 2–8 cm platform with the bar over your mid-foot.\nDrop your hips lower than in a regular deadlift while keeping a neutral back.\nPush the floor with your legs, keeping the bar against your body.\nLock out hips and knees."
+      },
       "primaryMuscle": "hamstrings",
       "secondaryMuscles": ["glutes", "lower_back", "quads"],
       "equipment": "barbell",
@@ -1592,6 +1995,10 @@
       "description": {
         "es": "Peso muerto desde bloques o pines; sobrecarga del bloqueo.",
         "en": "Deadlift from blocks or pins; overloads the lockout."
+      },
+      "instructions": {
+        "es": "Apoya la barra sobre bloques para que quede a la altura de las rodillas o justo debajo.\nAgarra la barra con la espalda neutra y los dorsales tensos.\nTira extendiendo la cadera hasta quedar erguido.\nBaja controlado a los bloques.",
+        "en": "Set the bar on blocks so it sits at or just below knee height.\nGrip it with a neutral back and tight lats.\nPull by extending your hips until you're standing tall.\nLower under control back to the blocks."
       },
       "primaryMuscle": "lower_back",
       "secondaryMuscles": ["glutes", "hamstrings", "traps", "forearms"],
@@ -1608,6 +2015,10 @@
         "es": "Peso muerto con agarre muy ancho; más recorrido y espalda alta.",
         "en": "Deadlift with a very wide grip; longer range and more upper back."
       },
+      "instructions": {
+        "es": "Agarra la barra muy abierta (como en la arrancada) con la barra sobre la mitad del pie.\nBaja la cadera más de lo habitual con la espalda neutra y el pecho alto.\nEmpuja el suelo con las piernas manteniendo la barra cerca.\nExtiende cadera y rodillas hasta quedar erguido.",
+        "en": "Grip the bar very wide (snatch grip) with the bar over your mid-foot.\nDrop your hips lower than usual with a neutral back and chest up.\nPush the floor with your legs, keeping the bar close.\nLock out hips and knees."
+      },
       "primaryMuscle": "hamstrings",
       "secondaryMuscles": ["upper_back", "traps", "glutes", "lower_back"],
       "equipment": "barbell",
@@ -1622,6 +2033,10 @@
       "description": {
         "es": "Peso muerto con barra hexagonal; carga centrada y técnica sencilla.",
         "en": "Deadlift with a hex bar; centered load and simple technique."
+      },
+      "instructions": {
+        "es": "Colócate dentro de la barra hexagonal con los pies a la anchura de la cadera.\nAgarra las asas, baja la cadera y deja la espalda neutra.\nEmpuja el suelo con las piernas hasta quedar erguido.\nBaja controlado flexionando cadera y rodillas.",
+        "en": "Stand inside the trap bar with feet hip-width apart.\nGrab the handles, drop your hips and set a neutral back.\nPush the floor away until you're standing tall.\nLower under control by bending hips and knees."
       },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "hamstrings", "lower_back", "traps"],
@@ -1638,6 +2053,10 @@
         "es": "Bisagra de cadera con rodillas semiflexionadas; isquios en estiramiento.",
         "en": "Hip hinge with soft knees; hamstrings in a stretched position."
       },
+      "instructions": {
+        "es": "De pie con la barra en las manos y las rodillas levemente flexionadas.\nLleva la cadera atrás bajando la barra pegada a los muslos con la espalda neutra.\nBaja hasta sentir un estiramiento fuerte en los isquiotibiales (normalmente a media tibia).\nVuelve empujando la cadera hacia delante y apretando los glúteos.",
+        "en": "Stand holding the bar with knees slightly bent.\nPush your hips back, sliding the bar down your thighs with a neutral back.\nLower until you feel a strong hamstring stretch (usually mid-shin).\nReturn by driving your hips forward and squeezing your glutes."
+      },
       "primaryMuscle": "hamstrings",
       "secondaryMuscles": ["glutes", "lower_back"],
       "equipment": "barbell",
@@ -1652,6 +2071,10 @@
       "description": {
         "es": "Peso muerto rumano con mancuernas; más fácil de aprender.",
         "en": "Romanian deadlift with dumbbells; easier to learn."
+      },
+      "instructions": {
+        "es": "De pie con una mancuerna en cada mano delante de los muslos.\nCon las rodillas levemente flexionadas, lleva la cadera atrás manteniendo la espalda neutra.\nBaja las mancuernas cerca de las piernas hasta sentir estiramiento en los isquiotibiales.\nVuelve empujando la cadera hacia delante.",
+        "en": "Stand with a dumbbell in each hand in front of your thighs.\nWith knees slightly bent, push your hips back keeping a neutral back.\nLower the dumbbells close to your legs until you feel a hamstring stretch.\nReturn by driving your hips forward."
       },
       "primaryMuscle": "hamstrings",
       "secondaryMuscles": ["glutes", "lower_back"],
@@ -1668,6 +2091,10 @@
         "es": "Peso muerto desde el suelo con rodillas casi extendidas.",
         "en": "Deadlift from the floor with nearly straight knees."
       },
+      "instructions": {
+        "es": "De pie con la barra y las piernas casi rectas.\nInclina el torso llevando la cadera atrás con la espalda neutra.\nBaja la barra hasta donde llegues sin redondear la espalda.\nVuelve a la posición erguida contrayendo isquiotibiales y glúteos.",
+        "en": "Stand holding the bar with nearly straight legs.\nHinge forward by pushing your hips back with a neutral back.\nLower the bar as far as you can without rounding your back.\nReturn upright by contracting your hamstrings and glutes."
+      },
       "primaryMuscle": "hamstrings",
       "secondaryMuscles": ["glutes", "lower_back"],
       "equipment": "barbell",
@@ -1682,6 +2109,10 @@
       "description": {
         "es": "Flexión de rodilla sentado; isquios trabajando en posición estirada.",
         "en": "Seated knee flexion; hamstrings working in a stretched position."
+      },
+      "instructions": {
+        "es": "Ajusta la máquina para que las rodillas queden alineadas con el eje y baja la almohadilla sobre los muslos.\nApoya el rodillo detrás de los tobillos.\nFlexiona las rodillas llevando los talones hacia abajo y atrás.\nVuelve controlado hasta casi extender las piernas.",
+        "en": "Adjust the machine so your knees line up with the pivot and lower the thigh pad.\nRest the roller behind your ankles.\nBend your knees, pulling your heels down and back.\nReturn under control until your legs are almost straight."
       },
       "primaryMuscle": "hamstrings",
       "secondaryMuscles": ["calves"],
@@ -1698,6 +2129,10 @@
         "es": "Flexión de rodilla tumbado boca abajo en máquina.",
         "en": "Knee flexion lying face down on a machine."
       },
+      "instructions": {
+        "es": "Túmbate boca abajo con las rodillas justo fuera del banco y el rodillo sobre los tobillos.\nSujeta las asas y mantén la cadera apoyada.\nFlexiona las rodillas llevando los talones hacia los glúteos.\nBaja controlado.",
+        "en": "Lie face down with your knees just off the bench and the roller on your ankles.\nHold the handles and keep your hips down.\nCurl your heels toward your glutes.\nLower under control."
+      },
       "primaryMuscle": "hamstrings",
       "secondaryMuscles": ["calves"],
       "equipment": "machine",
@@ -1712,6 +2147,10 @@
       "description": {
         "es": "Descenso excéntrico de rodillas con los pies fijados; muy exigente.",
         "en": "Eccentric lowering from the knees with feet anchored; very demanding."
+      },
+      "instructions": {
+        "es": "Arrodíllate con los tobillos fijados bajo un soporte o sujetados por un compañero.\nMantén el cuerpo recto de rodillas a cabeza.\nInclínate hacia delante lo más lento posible frenando con los isquiotibiales.\nAmortigua con las manos al llegar abajo y vuelve ayudándote lo justo.",
+        "en": "Kneel with your ankles anchored under a support or held by a partner.\nKeep your body straight from knees to head.\nLean forward as slowly as possible, braking with your hamstrings.\nCatch yourself with your hands at the bottom and return with as little help as needed."
       },
       "primaryMuscle": "hamstrings",
       "secondaryMuscles": [],
@@ -1728,6 +2167,10 @@
         "es": "Flexión de rodilla y extensión de cadera en banco GHR.",
         "en": "Knee flexion and hip extension on a GHR bench."
       },
+      "instructions": {
+        "es": "Ajusta la máquina con los pies contra la plataforma y los muslos sobre la almohadilla.\nEmpieza con el torso horizontal.\nFlexiona las rodillas tirando con los isquiotibiales hasta quedar vertical.\nBaja controlado.",
+        "en": "Set up with your feet against the plate and your thighs on the pad.\nStart with your torso horizontal.\nBend your knees, pulling with your hamstrings until you're upright.\nLower under control."
+      },
       "primaryMuscle": "hamstrings",
       "secondaryMuscles": ["glutes", "calves"],
       "equipment": "machine",
@@ -1742,6 +2185,10 @@
       "description": {
         "es": "Extensión de cadera con la espalda apoyada en banco y barra en la cadera.",
         "en": "Hip extension with the upper back on a bench and the bar on the hips."
+      },
+      "instructions": {
+        "es": "Apoya la parte alta de la espalda en un banco con la barra (con almohadilla) sobre la cadera.\nPies a la anchura de la cadera, apoyados de forma que las espinillas queden verticales arriba.\nEmpuja la cadera hacia arriba hasta alinear tronco y muslos, apretando los glúteos.\nBaja controlado sin apoyar del todo.",
+        "en": "Rest your upper back on a bench with the (padded) bar across your hips.\nPlant your feet hip-width apart so your shins are vertical at the top.\nDrive your hips up until your torso and thighs line up, squeezing your glutes.\nLower under control without fully resting."
       },
       "primaryMuscle": "glutes",
       "secondaryMuscles": ["hamstrings"],
@@ -1758,6 +2205,10 @@
         "es": "Bisagra de cadera con polea baja entre las piernas.",
         "en": "Hip hinge with a low cable between the legs."
       },
+      "instructions": {
+        "es": "De espaldas a la polea baja, sujeta la cuerda entre las piernas.\nDa unos pasos al frente y separa los pies.\nLleva la cadera atrás dejando que la cuerda pase entre las piernas, espalda neutra.\nVuelve empujando la cadera hacia delante y apretando los glúteos.",
+        "en": "With your back to the low pulley, hold the rope between your legs.\nWalk a few steps forward and set your feet apart.\nPush your hips back, letting the rope travel between your legs, back neutral.\nReturn by driving your hips forward and squeezing your glutes."
+      },
       "primaryMuscle": "glutes",
       "secondaryMuscles": ["hamstrings"],
       "equipment": "cable",
@@ -1772,6 +2223,10 @@
       "description": {
         "es": "Extensión explosiva de cadera con kettlebell.",
         "en": "Explosive hip extension with a kettlebell."
+      },
+      "instructions": {
+        "es": "De pie con los pies algo más anchos que los hombros y la pesa delante.\nLleva la cadera atrás, agarra la pesa y balancéala entre las piernas.\nExtiende la cadera con fuerza para proyectar la pesa hasta la altura del pecho.\nDeja que caiga y encadena el siguiente balanceo llevando la cadera atrás.",
+        "en": "Stand with feet slightly wider than your shoulders and the kettlebell in front.\nHinge back, grab the bell and hike it between your legs.\nSnap your hips forward to swing the bell to chest height.\nLet it fall and hinge back into the next swing."
       },
       "primaryMuscle": "glutes",
       "secondaryMuscles": ["hamstrings", "lower_back"],
@@ -1788,6 +2243,10 @@
         "es": "Separación de piernas sentado en máquina; glúteo medio.",
         "en": "Seated leg spreading on a machine; glute medius."
       },
+      "instructions": {
+        "es": "Siéntate en la máquina con las almohadillas por fuera de las rodillas.\nApoya la espalda y sujeta las asas.\nAbre las piernas hacia fuera lo más posible.\nVuelve controlado.",
+        "en": "Sit in the machine with the pads on the outside of your knees.\nKeep your back against the pad and hold the handles.\nPush your legs out as far as possible.\nReturn under control."
+      },
       "primaryMuscle": "abductors",
       "secondaryMuscles": ["glutes"],
       "equipment": "machine",
@@ -1803,6 +2262,10 @@
         "es": "Cierre de piernas sentado en máquina; aductores.",
         "en": "Seated leg closing on a machine; adductors."
       },
+      "instructions": {
+        "es": "Siéntate en la máquina con las almohadillas por dentro de las rodillas.\nAjusta la apertura hasta sentir estiramiento en los aductores.\nJunta las piernas.\nVuelve controlado.",
+        "en": "Sit in the machine with the pads on the inside of your knees.\nSet the starting width to a comfortable adductor stretch.\nSqueeze your legs together.\nReturn under control."
+      },
       "primaryMuscle": "adductors",
       "secondaryMuscles": [],
       "equipment": "machine",
@@ -1811,13 +2274,16 @@
       "tiers": { "hypertrophy": "A", "powerlifting": "C" },
       "tags": ["beginner-friendly"]
     },
-
     {
       "slug": "standing-calf-raise",
       "name": { "es": "Elevación de talones de pie", "en": "Standing calf raise" },
       "description": {
         "es": "Flexión plantar de pie con rodillas extendidas; gastrocnemio.",
         "en": "Standing plantar flexion with straight knees; gastrocnemius."
+      },
+      "instructions": {
+        "es": "Colócate bajo las almohadillas con la parte delantera de los pies en el borde.\nDeja bajar los talones hasta sentir estiramiento.\nSube de puntillas lo más alto posible.\nMantén 1 segundo arriba y baja controlado.",
+        "en": "Step under the pads with the balls of your feet on the edge.\nLet your heels drop to a stretch.\nRise onto your toes as high as possible.\nHold for a second at the top and lower under control."
       },
       "primaryMuscle": "calves",
       "secondaryMuscles": [],
@@ -1834,6 +2300,10 @@
         "es": "Flexión plantar sentado con rodillas flexionadas; sóleo.",
         "en": "Seated plantar flexion with bent knees; soleus."
       },
+      "instructions": {
+        "es": "Siéntate con la almohadilla sobre los muslos y la parte delantera de los pies en la plataforma.\nQuita el seguro y baja los talones hasta estirar.\nSube de puntillas lo más alto posible.\nBaja controlado.",
+        "en": "Sit with the pad on your thighs and the balls of your feet on the platform.\nRelease the safety and lower your heels to a stretch.\nRise onto your toes as high as possible.\nLower under control."
+      },
       "primaryMuscle": "calves",
       "secondaryMuscles": [],
       "equipment": "machine",
@@ -1848,6 +2318,10 @@
       "description": {
         "es": "Flexión plantar en la prensa de piernas; gran recorrido y carga.",
         "en": "Plantar flexion on the leg press; long range and heavy load."
+      },
+      "instructions": {
+        "es": "Siéntate en la prensa con la parte delantera de los pies en el borde inferior de la plataforma.\nMantén las piernas casi extendidas sin bloquear las rodillas.\nEmpuja con las puntas extendiendo los tobillos.\nVuelve controlado hasta estirar las pantorrillas.",
+        "en": "Sit in the leg press with the balls of your feet on the bottom edge of the platform.\nKeep your legs almost straight without locking your knees.\nPush with your toes, extending your ankles.\nReturn under control to a calf stretch."
       },
       "primaryMuscle": "calves",
       "secondaryMuscles": [],
@@ -1864,6 +2338,10 @@
         "es": "Elevación de talones de pie con barra guiada sobre un escalón.",
         "en": "Standing calf raise with a guided bar on a step."
       },
+      "instructions": {
+        "es": "Coloca un escalón bajo la barra de la Smith y la barra sobre los trapecios.\nApoya la parte delantera de los pies en el escalón.\nBaja los talones hasta estirar y sube de puntillas lo más alto posible.\nMantén 1 segundo arriba y baja controlado.",
+        "en": "Place a step under the Smith bar and set the bar on your traps.\nStand with the balls of your feet on the step.\nLower your heels to a stretch, then rise onto your toes as high as possible.\nHold for a second at the top and lower under control."
+      },
       "primaryMuscle": "calves",
       "secondaryMuscles": [],
       "equipment": "smith",
@@ -1879,6 +2357,10 @@
         "es": "Elevación de talón unilateral en escalón, con o sin mancuerna.",
         "en": "Unilateral calf raise on a step, with or without a dumbbell."
       },
+      "instructions": {
+        "es": "Apóyate en un escalón con la parte delantera de un pie y sujétate a una pared.\nBaja el talón hasta estirar la pantorrilla.\nSube de puntillas lo más alto posible.\nBaja controlado y completa la serie antes de cambiar de pierna.",
+        "en": "Stand on a step on the ball of one foot, holding a wall for balance.\nLower your heel to a calf stretch.\nRise onto your toes as high as possible.\nLower under control and finish the set before switching legs."
+      },
       "primaryMuscle": "calves",
       "secondaryMuscles": [],
       "equipment": "bodyweight",
@@ -1887,7 +2369,6 @@
       "tiers": { "hypertrophy": "B", "powerlifting": "C" },
       "tags": ["unilateral", "home-friendly", "stretch-focused"]
     },
-
     {
       "slug": "dumbbell-shoulder-press-standing",
       "name": {
@@ -1897,6 +2378,10 @@
       "description": {
         "es": "Press vertical de pie con mancuernas; más estabilidad del tronco.",
         "en": "Standing vertical press with dumbbells; more trunk stability."
+      },
+      "instructions": {
+        "es": "De pie con las mancuernas a la altura de los hombros y las palmas hacia delante.\nContrae abdomen y glúteos para no arquear la espalda.\nEmpuja las mancuernas sobre la cabeza hasta casi extender los brazos.\nBaja controlado a los hombros.",
+        "en": "Stand with the dumbbells at shoulder height, palms forward.\nBrace your abs and glutes so your back doesn't arch.\nPress the dumbbells overhead until your arms are almost straight.\nLower under control to your shoulders."
       },
       "primaryMuscle": "front_delts",
       "secondaryMuscles": ["side_delts", "triceps", "abs"],
@@ -1916,6 +2401,10 @@
         "es": "Elevación lateral a una mano inclinándose lejos de la polea.",
         "en": "One-arm lateral raise leaning away from the cable."
       },
+      "instructions": {
+        "es": "Sujétate a un soporte con una mano e inclina el cuerpo alejándote de él.\nSujeta el cable de la polea baja con la otra mano por delante del cuerpo.\nEleva el brazo hacia el lado hasta la altura del hombro.\nBaja controlado y completa la serie antes de cambiar de lado.",
+        "en": "Hold a support with one hand and lean your body away from it.\nHold the low cable with the other hand in front of your body.\nRaise your arm out to the side to shoulder height.\nLower under control and finish the set before switching sides."
+      },
       "primaryMuscle": "side_delts",
       "secondaryMuscles": [],
       "equipment": "cable",
@@ -1930,6 +2419,10 @@
       "description": {
         "es": "Aperturas inversas con poleas cruzadas para el deltoides posterior.",
         "en": "Reverse fly with crossed cables for the rear delts."
+      },
+      "instructions": {
+        "es": "Coloca las poleas a la altura de los hombros y cruza los cables: mano derecha al cable izquierdo y viceversa.\nDa un paso atrás con los brazos extendidos al frente.\nAbre los brazos hacia atrás en arco hasta la línea del cuerpo.\nVuelve controlado.",
+        "en": "Set the pulleys at shoulder height and cross the cables: right hand on the left cable and vice versa.\nStep back with your arms straight in front of you.\nSweep your arms back in an arc to your body line.\nReturn under control."
       },
       "primaryMuscle": "rear_delts",
       "secondaryMuscles": ["upper_back"],
@@ -1946,6 +2439,10 @@
         "es": "Aperturas en banco inclinado entre poleas; pecho superior.",
         "en": "Fly on an incline bench between cables; upper chest."
       },
+      "instructions": {
+        "es": "Coloca un banco inclinado entre las poleas bajas y túmbate con un agarre en cada mano.\nAbre los brazos con los codos levemente flexionados.\nJunta las manos sobre la parte alta del pecho en un arco amplio.\nVuelve controlado hasta sentir estiramiento.",
+        "en": "Place an incline bench between the low pulleys and lie back holding a handle in each hand.\nOpen your arms with elbows slightly bent.\nBring your hands together over your upper chest in a wide arc.\nReturn under control to a stretch."
+      },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["front_delts"],
       "equipment": "cable",
@@ -1960,6 +2457,10 @@
       "description": {
         "es": "Flexiones con las manos elevadas para bajar más allá de las manos.",
         "en": "Push-ups with hands elevated to sink below hand level."
+      },
+      "instructions": {
+        "es": "Apoya las manos sobre discos o agarres elevados y adopta la posición de flexión.\nMantén el cuerpo recto con abdomen y glúteos contraídos.\nBaja el pecho por debajo del nivel de las manos.\nEmpuja hasta extender los brazos.",
+        "en": "Place your hands on plates or raised handles and get into push-up position.\nKeep your body straight with abs and glutes braced.\nLower your chest below hand level.\nPush back up to straight arms."
       },
       "primaryMuscle": "chest",
       "secondaryMuscles": ["triceps", "front_delts"],
@@ -1976,6 +2477,10 @@
         "es": "Dominadas con lastre en cinturón o chaleco.",
         "en": "Pull-ups with added weight on a belt or vest."
       },
+      "instructions": {
+        "es": "Colócate un cinturón de lastre o sujeta una mancuerna entre los pies.\nCuélgate con agarre prono algo más ancho que los hombros.\nTira hasta que la barbilla supere la barra sin balancearte.\nBaja controlado hasta extender los brazos.",
+        "en": "Put on a dip belt with weight or hold a dumbbell between your feet.\nHang with an overhand grip slightly wider than your shoulders.\nPull until your chin clears the bar without swinging.\nLower under control to straight arms."
+      },
       "primaryMuscle": "lats",
       "secondaryMuscles": ["biceps", "upper_back"],
       "equipment": "bodyweight",
@@ -1990,6 +2495,10 @@
       "description": {
         "es": "Tracción vertical en máquina de palancas; muy estable.",
         "en": "Vertical pull on a plate-loaded machine; very stable."
+      },
+      "instructions": {
+        "es": "Ajusta el asiento y fija los muslos bajo las almohadillas.\nAgarra las asas con los brazos extendidos.\nTira hacia abajo llevando los codos hacia las costillas.\nSube controlado hasta estirar los dorsales.",
+        "en": "Adjust the seat and lock your thighs under the pads.\nGrab the handles with straight arms.\nPull down, driving your elbows toward your ribs.\nReturn under control to a lat stretch."
       },
       "primaryMuscle": "lats",
       "secondaryMuscles": ["biceps", "upper_back"],
@@ -2006,6 +2515,10 @@
         "es": "Remo a una mano pesado y a altas repeticiones con algo de impulso.",
         "en": "Heavy, high-rep one-arm row with some body English."
       },
+      "instructions": {
+        "es": "Apoya una mano en un banco o soporte con las piernas separadas y la espalda firme.\nSujeta una mancuerna pesada con el otro brazo extendido.\nRema con potencia llevando la mancuerna hacia la cadera; se permite algo de impulso.\nBaja hasta estirar por completo y haz series largas; completa antes de cambiar de lado.",
+        "en": "Brace one hand on a bench or support with a staggered stance and a firm back.\nHold a heavy dumbbell with your other arm straight.\nRow powerfully toward your hip; some body English is allowed.\nLower to a full stretch and do high reps; finish before switching sides."
+      },
       "primaryMuscle": "lats",
       "secondaryMuscles": ["upper_back", "biceps", "forearms"],
       "equipment": "dumbbell",
@@ -2020,6 +2533,10 @@
       "description": {
         "es": "Encogimientos con barra guiada; fácil de cargar.",
         "en": "Shrugs on a guided bar; easy to load."
+      },
+      "instructions": {
+        "es": "Colócate frente a la barra de la Smith a la altura de los muslos.\nDesbloquea la barra con los brazos extendidos.\nEleva los hombros hacia las orejas lo más alto posible.\nMantén 1 segundo y baja controlado; bloquea la barra al terminar.",
+        "en": "Stand facing the Smith bar set at thigh height.\nUnhook the bar with straight arms.\nShrug your shoulders toward your ears as high as possible.\nHold for a second and lower under control; re-hook the bar when done."
       },
       "primaryMuscle": "traps",
       "secondaryMuscles": [],
@@ -2036,6 +2553,10 @@
         "es": "Curl con los brazos en cruz entre poleas altas.",
         "en": "Curl with arms out to the sides between high cables."
       },
+      "instructions": {
+        "es": "Colócate entre dos poleas altas sujetando un agarre en cada mano con los brazos en cruz.\nMantén los brazos a la altura de los hombros.\nFlexiona los codos llevando las manos hacia la cabeza.\nVuelve controlado hasta extender los brazos.",
+        "en": "Stand between two high pulleys holding a handle in each hand, arms out to the sides.\nKeep your upper arms at shoulder height.\nCurl your hands toward your head.\nReturn under control to straight arms."
+      },
       "primaryMuscle": "biceps",
       "secondaryMuscles": [],
       "equipment": "cable",
@@ -2050,6 +2571,10 @@
       "description": {
         "es": "Curl boca abajo en banco inclinado; máxima tensión al final.",
         "en": "Curl lying face down on an incline bench; max tension at the top."
+      },
+      "instructions": {
+        "es": "Túmbate boca abajo en un banco inclinado con los brazos colgando en vertical.\nSujeta las mancuernas con las palmas hacia delante.\nFlexiona los codos sin moverlos hasta la contracción completa.\nBaja controlado.",
+        "en": "Lie face down on an incline bench with your arms hanging straight down.\nHold the dumbbells palms forward.\nCurl without moving your elbows to a full contraction.\nLower under control."
       },
       "primaryMuscle": "biceps",
       "secondaryMuscles": [],
@@ -2066,6 +2591,10 @@
         "es": "Flexiones con las manos juntas; énfasis en tríceps.",
         "en": "Push-ups with hands together; triceps emphasis."
       },
+      "instructions": {
+        "es": "Apoya las manos juntas bajo el pecho formando un rombo con pulgares e índices.\nMantén el cuerpo recto con el abdomen contraído.\nBaja el pecho hacia las manos con los codos pegados al cuerpo.\nEmpuja hasta extender los brazos.",
+        "en": "Place your hands together under your chest, thumbs and index fingers forming a diamond.\nKeep your body straight with your abs braced.\nLower your chest toward your hands with elbows tucked.\nPush back up to straight arms."
+      },
       "primaryMuscle": "triceps",
       "secondaryMuscles": ["chest", "front_delts"],
       "equipment": "bodyweight",
@@ -2080,6 +2609,10 @@
       "description": {
         "es": "Press de banca con tablas sobre el pecho; recorrido parcial y sobrecarga.",
         "en": "Bench press with boards on the chest; partial range and overload."
+      },
+      "instructions": {
+        "es": "Coloca una o varias tablas sobre el pecho (sujetas por un compañero o atadas).\nPrepárate como en el press de banca.\nBaja la barra hasta tocar las tablas y haz una pausa breve.\nEmpuja hasta extender los brazos.",
+        "en": "Place one or more boards on your chest (held by a partner or strapped on).\nSet up as for a bench press.\nLower the bar to the boards and pause briefly.\nPress to lockout."
       },
       "primaryMuscle": "triceps",
       "secondaryMuscles": ["chest", "front_delts"],
@@ -2096,6 +2629,10 @@
         "es": "Sentadilla con bajada lenta controlada (3-5 s); técnica y control.",
         "en": "Squat with a slow controlled descent (3-5 s); technique and control."
       },
+      "instructions": {
+        "es": "Prepárate como en la sentadilla trasera.\nBaja en 3–5 segundos contados, controlando todo el recorrido.\nLlega a la profundidad completa sin rebotar.\nSube a velocidad normal hasta extender cadera y rodillas.",
+        "en": "Set up as for a back squat.\nDescend over a counted 3–5 seconds, controlling the whole range.\nReach full depth without bouncing.\nStand up at normal speed to full extension."
+      },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "adductors"],
       "equipment": "barbell",
@@ -2110,6 +2647,10 @@
       "description": {
         "es": "Sentadilla con la barra en el pliegue de los codos.",
         "en": "Squat with the bar in the crook of the elbows."
+      },
+      "instructions": {
+        "es": "Sujeta la barra en el pliegue de los codos, pegada al cuerpo.\nSepara los pies a la anchura de los hombros y contrae el abdomen.\nBaja con el torso erguido hasta la profundidad completa.\nSube empujando el suelo sin dejar que la barra se separe del cuerpo.",
+        "en": "Hold the bar in the crook of your elbows, close to your body.\nStand shoulder-width apart and brace your abs.\nSquat to full depth with an upright torso.\nDrive up without letting the bar drift away from you."
       },
       "primaryMuscle": "quads",
       "secondaryMuscles": ["glutes", "upper_back", "abs"],
@@ -2126,6 +2667,10 @@
         "es": "Zancada dando el paso hacia atrás; más amable con la rodilla.",
         "en": "Lunge stepping backward; easier on the knees."
       },
+      "instructions": {
+        "es": "De pie con una mancuerna en cada mano.\nDa un paso largo hacia atrás.\nBaja la rodilla trasera cerca del suelo con el torso erguido.\nEmpuja con la pierna delantera para volver; alterna o completa un lado primero.",
+        "en": "Stand with a dumbbell in each hand.\nTake a long step backward.\nLower your back knee close to the floor with an upright torso.\nPush through the front leg to return; alternate or finish one side first."
+      },
       "primaryMuscle": "glutes",
       "secondaryMuscles": ["quads", "adductors"],
       "equipment": "dumbbell",
@@ -2141,6 +2686,10 @@
         "es": "Bisagra de cadera unilateral; isquios, glúteo y equilibrio.",
         "en": "Unilateral hip hinge; hamstrings, glutes and balance."
       },
+      "instructions": {
+        "es": "De pie sobre una pierna con una mancuerna en la mano contraria.\nInclina el torso llevando la cadera atrás mientras la pierna libre se eleva detrás, espalda neutra.\nBaja hasta sentir estiramiento en el isquiotibial de apoyo, con la cadera nivelada.\nVuelve a la posición erguida y completa la serie antes de cambiar de pierna.",
+        "en": "Stand on one leg holding a dumbbell in the opposite hand.\nHinge forward as your free leg rises behind you, back neutral.\nLower until you feel a stretch in the standing hamstring, hips level.\nReturn upright and finish the set before switching legs."
+      },
       "primaryMuscle": "hamstrings",
       "secondaryMuscles": ["glutes"],
       "equipment": "dumbbell",
@@ -2155,6 +2704,10 @@
       "description": {
         "es": "Elevaciones de cadera de lado con la pierna superior apoyada en un banco.",
         "en": "Side-lying hip raises with the top leg on a bench."
+      },
+      "instructions": {
+        "es": "Túmbate de lado apoyado en el antebrazo y coloca la pierna de arriba sobre un banco.\nEleva la cadera hasta alinear el cuerpo, con la pierna de abajo despegada.\nMantén la posición o sube y baja la cadera controlado.\nCompleta el tiempo o las repeticiones y cambia de lado.",
+        "en": "Lie on your side on your forearm and rest your top leg on a bench.\nLift your hips until your body is straight, bottom leg off the floor.\nHold the position or raise and lower your hips under control.\nFinish the time or reps and switch sides."
       },
       "primaryMuscle": "adductors",
       "secondaryMuscles": ["obliques"],

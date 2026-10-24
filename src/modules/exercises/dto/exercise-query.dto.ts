@@ -86,6 +86,15 @@ export class ExerciseQueryDto extends PaginationQueryDto {
   @IsBoolean()
   custom?: boolean;
 
+  /**
+   * Also return the localized `description` and `instructions` of each item (the mobile app
+   * downloads the whole catalog with them to work offline). Ignored by the admin listing.
+   */
+  @IsOptional()
+  @QueryBoolean()
+  @IsBoolean()
+  withText?: boolean;
+
   /** `relevance` only applies with `q`; otherwise behaves like `name`. */
   @IsOptional()
   @IsIn(EXERCISE_SORTS)

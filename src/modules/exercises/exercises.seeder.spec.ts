@@ -24,6 +24,15 @@ describe('exercises seed file', () => {
     }
   });
 
+  it('every exercise has bilingual execution steps, one per line, as translations', () => {
+    for (const e of seed.exercises) {
+      const es = (e.instructions?.es ?? '').split('\n').filter((s) => s.trim());
+      const en = (e.instructions?.en ?? '').split('\n').filter((s) => s.trim());
+      expect([e.slug, es.length >= 3]).toEqual([e.slug, true]);
+      expect([e.slug, en.length]).toEqual([e.slug, es.length]);
+    }
+  });
+
   it('matches the SPEC tier examples', () => {
     const bySlug = new Map(seed.exercises.map((e) => [e.slug, e]));
     expect(bySlug.get('barbell-back-squat')!.tiers).toEqual({
@@ -53,11 +62,13 @@ describe('exercises seed file', () => {
           primaryMuscle: 'neck' as never,
           tags: ['nope'],
           tiers: { hypertrophy: 'X' as never, powerlifting: null },
+          instructions: { es: 'Paso 1', en: '' },
         },
       ],
     };
     const errors = validateSeedFile(broken).join('\n');
     expect(errors).toMatch(/tag basic: name needs es and en/);
+    expect(errors).toMatch(/instructions needs es and en/);
     expect(errors).toMatch(/invalid slug/);
     expect(errors).toMatch(/bad primaryMuscle neck/);
     expect(errors).toMatch(/unknown tag nope/);

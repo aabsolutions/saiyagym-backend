@@ -315,13 +315,21 @@ export class ExerciseSummaryDto {
   hasGuide!: boolean;
 }
 
+/** `GET /exercises` item: with `withText=true` it also carries the localized texts. */
+export class ExerciseListItemDto extends ExerciseSummaryDto {
+  @ApiProperty({ required: false }) description?: string;
+  /** Execution steps, one per line. */
+  @ApiProperty({ required: false }) instructions?: string;
+}
+
 export class ExerciseDetailDto extends ExerciseSummaryDto {
   description!: string;
+  /** Execution steps, one per line ('' when there are none). */
   instructions!: string;
 }
 
 export class ExercisePageDto {
-  @ApiProperty({ type: [ExerciseSummaryDto] }) items!: ExerciseSummaryDto[];
+  @ApiProperty({ type: [ExerciseListItemDto] }) items!: ExerciseListItemDto[];
   meta!: PageMetaDto;
 }
 

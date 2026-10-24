@@ -116,12 +116,14 @@ included):
    ```bash
    export MONGODB_URI='mongodb+srv://…/saiyagym…'   # production — double-check!
    ADMIN_EMAIL=you@example.com ADMIN_PASSWORD='…' npm run seed   # plans + admin user
-   npm run seed:exercises    # catalog (141 exercises, tags)
+   npm run seed:exercises    # catalog (141 exercises, tags); fills EMPTY instructions only
    npm run seed:templates    # program templates (needs exercises)
    npm run seed:nutrition    # foods, meal suggestions, guidelines
    unset MONGODB_URI
    ```
    All seeds are idempotent and insert-only by default (admin edits are never overwritten).
+   Re-run `npm run seed:exercises` (without `--update`) after deploying a seed that adds execution
+   instructions: it only fills exercises whose instructions are still empty.
    Your IP must be allowed in Atlas Network Access.
 4. Smoke test:
    ```bash

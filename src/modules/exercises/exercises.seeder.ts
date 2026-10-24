@@ -29,6 +29,8 @@ export interface SeedExercise {
   slug: string;
   name: Translatable;
   description?: Translatable;
+  /** Execution steps, one per line. */
+  instructions?: Translatable;
   primaryMuscle: Muscle;
   secondaryMuscles: Muscle[];
   equipment: Equipment;
@@ -85,6 +87,8 @@ export function validateSeedFile(data: SeedFile): string[] {
     if (!bilingual(e.name)) errors.push(`${at}: name needs es and en`);
     if (e.description && !bilingual(e.description))
       errors.push(`${at}: description needs es and en`);
+    if (e.instructions && !bilingual(e.instructions))
+      errors.push(`${at}: instructions needs es and en`);
     if (!MUSCLES.includes(e.primaryMuscle))
       errors.push(`${at}: bad primaryMuscle ${e.primaryMuscle}`);
     for (const m of e.secondaryMuscles) {
@@ -106,7 +110,8 @@ export function validateSeedFile(data: SeedFile): string[] {
 
 /**
  * Idempotent upsert by slug.
- * - Default: inserts what's missing, never touches existing docs (admin edits win).
+ * - Default: inserts what's missing, never touches existing docs (admin edits win) — except
+ *   `instructions`, which are filled where still EMPTY (they were added to the seed later).
  * - `update: true`: overwrites existing, non-deleted docs with the JSON.
  * Soft-deleted items keep their slug, so they're found and skipped — never resurrected.
  */
@@ -122,7 +127,7 @@ export class ExercisesSeeder {
   async run(
     data: SeedFile,
     options: { update: boolean },
-  ): Promise<{ tags: SeedReport; exercises: SeedReport }> {
+  ): Promise<{ tags: SeedReport; exercises: SeedReport; instructionsFilled: number }> {
     const errors = validateSeedFile(data);
     if (errors.length) throw new Error(`Invalid seed file:\n- ${errors.join('\n- ')}`);
 
@@ -130,11 +135,34 @@ export class ExercisesSeeder {
     const exercises = await this.upsertAll(this.exercises, data.exercises, options.update, (e) => ({
       ...e,
       description: e.description ?? {},
+      instructions: e.instructions ?? {},
       isGlobal: true,
       ownerId: null,
     }));
-    this.logger.log(`Tags ${JSON.stringify(tags)} · Exercises ${JSON.stringify(exercises)}`);
-    return { tags, exercises };
+    const instructionsFilled = await this.fillEmptyInstructions(data.exercises);
+    this.logger.log(
+      `Tags ${JSON.stringify(tags)} · Exercises ${JSON.stringify(exercises)} · ` +
+        `instructions filled: ${instructionsFilled}`,
+    );
+    return { tags, exercises, instructionsFilled };
+  }
+
+  /** Never overwrites instructions an admin wrote: only missing / `{}` ones. */
+  private async fillEmptyInstructions(items: SeedExercise[]): Promise<number> {
+    let filled = 0;
+    for (const item of items) {
+      if (!item.instructions) continue;
+      const result = await this.exercises.updateOne(
+        {
+          slug: item.slug,
+          deletedAt: null,
+          $or: [{ instructions: { $exists: false } }, { instructions: {} }],
+        },
+        { $set: { instructions: item.instructions } },
+      );
+      filled += result.modifiedCount;
+    }
+    return filled;
   }
 
   private async upsertAll<

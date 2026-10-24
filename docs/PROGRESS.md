@@ -1,5 +1,20 @@
 # Progress — gymapp-api
 
+## 2026-10-24 — Instrucciones de ejecución
+
+### Hecho
+- **Seed**: pasos de ejecución es/en para los 141 ejercicios (`instructions`, un paso por línea, 4 por ejercicio, mismos pasos en ambos idiomas). `validateSeedFile` exige es+en si hay instrucciones.
+- **Seeder**: además del upsert, completa `instructions` SOLO donde están vacías o no existen (`instructionsFilled` en el reporte), incluso sin `--update`: así llegan a una base ya sembrada sin pisar lo que escribió el admin.
+- **`GET /exercises?withText=true`**: los ítems traen además `description` e `instructions` localizadas (`ExerciseListItemDto`). Lo usa el móvil para tener el detalle offline; el listado normal sigue liviano. `GET /exercises/:id` no cambia.
+- `openapi.json` regenerado.
+
+### Verificación
+- `npm run lint` ✅ · unit 246/246 ✅ · e2e 265/265 ✅ (nuevos: el seed tiene pasos bilingües y en igual cantidad; el llenado respeta el texto del admin y una segunda corrida no cambia nada; `withText` sí/no).
+
+### Decisiones y gotchas
+- Tras desplegar: `npm run seed:exercises` (sin `--update`) contra producción para cargar las instrucciones (ver `docs/DEPLOYMENT.md`).
+- Prettier conserva los objetos JSON expandidos si ya tienen saltos de línea: para no reformatear todo el seed, el JSON se escribe compacto y lo formatea Prettier.
+
 ## 2026-10-23 — Guías de ejecución de ejercicios (backend)
 
 ### Hecho

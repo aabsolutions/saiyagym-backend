@@ -512,4 +512,53 @@ describe('Exercises catalog (e2e)', () => {
       await as(ana, http().get('/api/v1/admin/exercises')).expect(403);
     });
   });
+
+  describe('execution instructions', () => {
+    const withSteps = (): SeedFile => ({
+      ...FIXTURE,
+      exercises: FIXTURE.exercises.map((e) => ({
+        ...e,
+        instructions: { es: 'Paso 1\nPaso 2\nPaso 3', en: 'Step 1\nStep 2\nStep 3' },
+      })),
+    });
+
+    it('seeding fills EMPTY instructions only (admin text wins); a second run changes nothing', async () => {
+      const db = app.get<Connection>(getConnectionToken());
+      await db
+        .collection('exercises')
+        .updateOne({ slug: 't-bench' }, { $set: { instructions: { es: 'Del admin' } } });
+
+      const report = await app.get(ExercisesSeeder).run(withSteps(), { update: false });
+      expect(report.instructionsFilled).toBe(FIXTURE.exercises.length - 1);
+      expect(report.exercises.updated).toBe(0);
+
+      const bench = await as(ana, http().get(`/api/v1/exercises/${ids.get('t-bench')}`)).expect(
+        200,
+      );
+      expect(bench.body.instructions).toBe('Del admin');
+      const legExt = await as(
+        ana,
+        http().get(`/api/v1/exercises/${ids.get('t-leg-ext')}`),
+        'en',
+      ).expect(200);
+      expect(legExt.body.instructions).toBe('Step 1\nStep 2\nStep 3');
+
+      const again = await app.get(ExercisesSeeder).run(withSteps(), { update: false });
+      expect(again.instructionsFilled).toBe(0);
+    });
+
+    it('withText=true adds the localized texts to the listing; the plain listing stays light', async () => {
+      type Item = { slug: string; description?: string; instructions?: string };
+      const full = await list('withText=true&limit=100', ana, 'en').expect(200);
+      const item = (full.body as { items: Item[] }).items.find((i) => i.slug === 't-leg-ext')!;
+      expect(item.instructions).toBe('Step 1\nStep 2\nStep 3');
+      expect(typeof item.description).toBe('string');
+
+      const plain = await list('limit=100').expect(200);
+      for (const i of (plain.body as { items: Item[] }).items) {
+        expect(i).not.toHaveProperty('instructions');
+        expect(i).not.toHaveProperty('description');
+      }
+    });
+  });
 });

@@ -49,7 +49,9 @@ hipertrofia y powerlifting. Monetizable con planes Free y Premium.
 2. Perfil y preferencias: nombre, fecha de nacimiento, sexo, altura, nivel
    (principiante/intermedio/avanzado), objetivo (hipertrofia/powerlifting/ambos),
    unidades, idioma, tema, descanso por defecto, sonidos (fin de descanso, recordatorio de entreno, pesaje), primer día de la semana.
-3. Catálogo de ejercicios: globales (seed + admin) y personalizados del usuario.
+3. Catálogo de ejercicios: globales (seed + admin) y personalizados del usuario. En el
+   móvil vive en la pestaña Biblioteca (Ejercicios | Nutrición) y el historial de sesiones
+   dentro de Progreso: Hoy · Entrenar · Biblioteca · Progreso · Perfil.
 4. Rutinas (plantillas) y programas (rutinas en el tiempo, con progresión).
 5. Sesiones (workouts): registro en móvil, consulta/edición en web.
 6. Estadísticas y récords personales (PR).
@@ -96,6 +98,12 @@ hipertrofia y powerlifting. Monetizable con planes Free y Premium.
     en vivo; las demás desbloqueadas se descargan al abrirlas (con red). Lo que deja de estar
     desbloqueado (cambio del admin o de plan) se borra del dispositivo en la siguiente
     actualización; cerrar sesión borra todas.
+- Instrucciones de ejecución (`instructions`, traducible): un paso por línea; los clientes los
+  muestran numerados (ignoran un "1." o "-" escrito a mano) junto a la descripción y las guías,
+  en el detalle del ejercicio (web y móvil). El seed trae pasos es/en para todo el catálogo y
+  solo completa los que están vacíos: nunca pisa lo que escribió el admin.
+  - El móvil descarga el catálogo con los textos (`GET /exercises?withText=true`) para verlos
+    offline.
 - Cada usuario puede poner su propio tier personal POR OBJETIVO (hipertrofia/powerlifting, como el
   global; vacío = usa el global) y marcar favoritos (colección aparte).
 - Etiquetas libres administrables (p. ej. "básico", "unilateral", "lumbar-friendly").
